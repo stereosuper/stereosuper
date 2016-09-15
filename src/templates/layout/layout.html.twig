@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang='fr-FR' class='no-js'>
+    <head>
+        <meta charset='utf-8'>
+        <meta name='description' content=''>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+        <title></title>
+
+        {% block stylesheets %}
+            <link rel='stylesheet' href='css/main.css'>
+        {% endblock stylesheets %}
+
+        {% block javascript_top %}{% endblock %}
+    </head>
+
+    <body {% block body_attr %}{% endblock %}>
+        <header>
+        </header>
+
+        {% block content %}{% endblock %}
+
+        <footer>
+        </footer>
+
+        {% block javascript_bottom %}
+            <script src='js/libs/jquery/dist/jquery.min.js' defer></script>
+            
+                <script src='js/libs/gsap/src/minified/TweenMax.min.js' defer></script>
+                <script src='js/libs/gsap/src/minified/TimelineMax.min.js' defer></script>
+            
+            <script src='js/main.js' defer></script>
+        {% endblock %}
+    </body>
+</html>
