@@ -1,1 +1,36 @@
 /* Header */
+#header{
+	padding: 22px 0 0;
+	border-bottom: 1px solid $grey;
+	.container{
+		display: flex;
+		justify-content: space-between;
+	}
+}
+#logo{
+	@include gotham(1.8rem);
+	text-transform: uppercase;
+	strong{
+		@include gotham-bold(1em);
+	}
+}
+.menu-header{
+	display: inline-block;
+	vertical-align: top;
+	margin: 0;
+	padding: 12px 30px 22px 0;
+	border-right: 1px solid $grey;
+	> li{
+		margin: 10px 0;
+	}
+}
+.lang-social{
+	display: inline-block;
+	vertical-align: top;
+	padding: 0 0 0 30px;
+}
+.social{
+	>li{
+		@include hide-text;
+	}
+}

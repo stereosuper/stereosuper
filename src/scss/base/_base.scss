@@ -21,11 +21,18 @@ body{
     line-height: 1.2;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background: $black;
+    color: $white;
+}
+
+h1, h2, h3, h4, h5, h6{
+    @include gotham-bold(1rem);
 }
 
 h1{
-    font-size: 5rem;
+    font-size: 10.6rem;
     margin: 0.67em 0;
+    letter-spacing: -0.07em;
 }
 
 h2{
@@ -72,6 +79,7 @@ blockquote{
 ol, ul{
     padding: 0;
     margin: 1em 0;
+    list-style-type: none;
 }
 
 ol{

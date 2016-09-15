@@ -18,6 +18,12 @@
     overflow: hidden;
 }
 
+@mixin hide-text{
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
 /// Helper to size an element
 /// @author Hugo Giraudel
 /// @param {Length} $width
@@ -61,7 +67,51 @@
 }
 
 // Fonts
-// @mixin font($size){
-//     font-family: $font;
-//     font-size: $size;
-// }
+@mixin gotham-light($size){
+    font-family: $gotham;
+    font-style: normal;
+    font-weight: 300;
+    font-size: $size;
+}
+@mixin gotham-light-italic($size){
+    font-family: $gotham;
+    font-style: italic;
+    font-weight: 300;
+    font-size: $size;
+}
+@mixin gotham($size){
+    font-family: $gotham;
+    font-style: normal;
+    font-weight: 400;
+    font-size: $size;
+}
+@mixin gotham-italic($size){
+    font-family: $gotham;
+    font-style: italic;
+    font-weight: 400;
+    font-size: $size;
+}
+@mixin gotham-bold($size){
+    font-family: $gotham;
+    font-style: normal;
+    font-weight: 700;
+    font-size: $size;
+}
+@mixin gotham-bold-italic($size){
+    font-family: $gotham;
+    font-style: italic;
+    font-weight: 700;
+    font-size: $size;
+}
+@mixin gotham-black($size){
+    font-family: $gotham;
+    font-style: normal;
+    font-weight: 800;
+    font-size: $size;
+}
+@mixin gotham-black-italic($size){
+    font-family: $gotham;
+    font-style: italic;
+    font-weight: 800;
+    font-size: $size;
+}

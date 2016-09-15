@@ -4,18 +4,49 @@
         <meta charset='utf-8'>
         <meta name='description' content=''>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <meta name='format-detection' content='telephone=no' />
 
         <title></title>
 
         {% block stylesheets %}
             <link rel='stylesheet' href='css/main.css'>
+            <link rel='stylesheet' type='text/css' href='https://cloud.typography.com/719316/609682/css/fonts.css' />
         {% endblock stylesheets %}
 
         {% block javascript_top %}{% endblock %}
     </head>
 
     <body {% block body_attr %}{% endblock %}>
-        <header>
+        <header id='header'>
+            <div class='container'>
+                <div class='header-left'>
+                    <a href='#' id='logo'><strong>Stéréo</strong>super</a>
+                    <a href='#' class='link-arrow'>bisou@stereosuper.fr</a>
+                    <div class='tel-number'>+33 9 51 24 85 36</div>
+                </div>
+                <div class='header-right'>
+                    <ul class='menu-header'>
+                        <li>
+                            <a href='#'>À propos</a>
+                        </li>
+                        <li>
+                            <a href='#'>Nous trouver</a>
+                        </li>
+                    </ul>
+                    <div class='lang-social'>
+                        <span>fr</span>
+                        <a href='#'>en</a>
+                        <ul class='social'>
+                            <li>
+                                <a href='#'>Follow us on Twitter</a>
+                            </li>
+                            <li>
+                                <a href='#'>Like us on Facebook</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </header>
 
         {% block content %}{% endblock %}

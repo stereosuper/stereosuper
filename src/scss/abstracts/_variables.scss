@@ -4,12 +4,14 @@
 // Colors
 $white: rgb(255, 255, 255);
 $black: rgb(0, 0, 0);
+$grey: rgb(77, 77, 77);
+$blue: rgb(0, 155, 227);
 
 // Transitions
 $transition: 0.3s ease-in-out;
 
 // Fonts
-// $font: 'font', sans-serif;
+$gotham: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
 
 // Mediaqueries
 $retina: 'only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi)';
