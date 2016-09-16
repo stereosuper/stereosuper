@@ -91,6 +91,18 @@
     font-weight: 400;
     font-size: $size;
 }
+@mixin gotham-medium($size){
+    font-family: $gotham;
+    font-style: normal;
+    font-weight: 500;
+    font-size: $size;
+}
+@mixin gotham-medium-italic($size){
+    font-family: $gotham;
+    font-style: italic;
+    font-weight: 500;
+    font-size: $size;
+}
 @mixin gotham-bold($size){
     font-family: $gotham;
     font-style: normal;
@@ -113,5 +125,29 @@
     font-family: $gotham;
     font-style: italic;
     font-weight: 800;
+    font-size: $size;
+}
+@mixin elena($size){
+    font-family: $elena;
+    font-style: normal;
+    font-weight: normal;
+    font-size: $size;
+}
+@mixin elena-italic($size){
+    font-family: $elenaitalic;
+    font-style: normal;
+    font-weight: normal;
+    font-size: $size;
+}
+@mixin elena-bold($size){
+    font-family: $elenabold;
+    font-style: normal;
+    font-weight: normal;
+    font-size: $size;
+}
+@mixin elena-bold-italic($size){
+    font-family: $elenabolditalic;
+    font-style: normal;
+    font-weight: normal;
     font-size: $size;
 }

@@ -43,3 +43,20 @@
 		font-size: 20px;
 	}
 }
+.tel-number{
+	font-family: $elenabold;
+}
+.lang{
+	@include elena-italic(1.5rem);
+	.non-active{
+		@include gotham-medium(1rem);
+		text-transform: uppercase;
+	}
+	.slash{
+		margin: 0 5px;
+	}
+	a{
+		@include elena-italic(1.5rem);
+		color: $blue;
+	}
+}

@@ -12,6 +12,10 @@ $transition: 0.3s ease-in-out;
 
 // Fonts
 $gotham: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+$elena: 'elena', sans-serif;
+$elenaitalic: 'elenaitalic', $elena;
+$elenabold: 'elenabold', $elena;
+$elenabolditalic: 'elenabolditalic', $elenaitalic;
 
 // Mediaqueries
 $retina: 'only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi)';
