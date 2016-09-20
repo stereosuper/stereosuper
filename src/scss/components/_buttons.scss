@@ -2,7 +2,15 @@
 
 .link-arrow{
 	font-family: $elenabold;
+    color: $blue;
 	.icon{
 		height: 7px;
+        margin: -2px 0 0;
+        font-size: 1.8rem;
 	}
+}
+
+.link-caps{
+    @include gotham(1rem);
+    text-transform: uppercase;
 }
