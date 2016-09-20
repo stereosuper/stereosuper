@@ -129,25 +129,17 @@
 }
 @mixin elena($size){
     font-family: $elena;
-    font-style: normal;
-    font-weight: normal;
     font-size: $size;
 }
 @mixin elena-italic($size){
     font-family: $elenaitalic;
-    font-style: normal;
-    font-weight: normal;
     font-size: $size;
 }
 @mixin elena-bold($size){
     font-family: $elenabold;
-    font-style: normal;
-    font-weight: normal;
     font-size: $size;
 }
 @mixin elena-bold-italic($size){
     font-family: $elenabolditalic;
-    font-style: normal;
-    font-weight: normal;
     font-size: $size;
 }

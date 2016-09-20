@@ -1,23 +1,22 @@
 /******* GÉNÉRAL *******/
 
 ::-moz-selection{
-    background: $black;
+    background: $blue;
     color: $white;
     text-shadow: none;
 }
 ::selection{
-    background: $black;
+    background: $blue;
     color: $white;
     text-shadow: none;
 }
 
 html{
-    font-size: 62.5%; /* sets the base font to 10px for easier math */
+    font-size: 62.5%;
 }
 
 body{
-    font-family: $elena;
-    font-size: 1.6em;
+    @include elena(1.6em);
     line-height: 1.2;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -65,11 +64,11 @@ p{
 }
 
 b, strong{
-
+    font-family: $elenabold;
 }
 
 i, em{
-
+    font-family: $elenaitalic;
 }
 
 blockquote{
@@ -194,7 +193,7 @@ a{
     }
 }
 
-.icon {
+.icon{
     display: inline-block;
     width: 1em;
     height: 1em;

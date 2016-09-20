@@ -7,6 +7,7 @@
 		justify-content: space-between;
 	}
 }
+
 #logo{
 	@include gotham(1.8rem);
 	text-transform: uppercase;
@@ -14,6 +15,7 @@
 		@include gotham-bold(1em);
 	}
 }
+
 .menu-header{
 	display: inline-block;
 	vertical-align: top;
@@ -24,11 +26,13 @@
 		margin: 10px 0;
 	}
 }
+
 .lang-social{
 	display: inline-block;
 	vertical-align: top;
 	padding: 0 0 0 30px;
 }
+
 .social{
 	>li{
 		display: inline-block;
@@ -43,9 +47,11 @@
 		font-size: 20px;
 	}
 }
+
 .tel-number{
 	font-family: $elenabold;
 }
+
 .lang{
 	@include elena-italic(1.5rem);
 	.non-active{
