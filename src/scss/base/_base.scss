@@ -16,7 +16,7 @@ html{
 }
 
 body{
-    @include elena(1.6em);
+    @include elena(1.8em);
     line-height: 1.2;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -30,8 +30,9 @@ h1, h2, h3, h4, h5, h6{
 
 h1{
     font-size: 10.6rem;
-    margin: 0.67em 0;
-    letter-spacing: -0.07em;
+    margin: 0.85em -0.08em 0.25em;
+    letter-spacing: -0.08em;
+    color: $blue;
 }
 
 h2{
