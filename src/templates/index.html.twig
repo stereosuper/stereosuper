@@ -3,14 +3,18 @@
 {% block body_attr %}class='home'{% endblock %}
 
 {% block content %}
-	<div class='container'>
-    	<h1>Finis, les sites mononuls</h1>
-    	<p>Nous adorons vous aider à atteindre vos objectifs grâce à une communication créative sur Internet.</p>
-        <a href='#' class='link-arrow link-caps'>
-            En savoir plus
-            <svg class='icon'><use xlink:href='#icon-big-arrow'/></svg>
-        </a>
+	<header class='container block-title'>
+    	<h1>Finis<br> les sites mononuls</h1>
+        <div class='text-home'>
+        	<p>Nous adorons vous aider à atteindre vos objectifs grâce à une communication créative sur Internet.</p>
+            <a href='#' class='link-arrow link-caps'>
+                En savoir plus
+                <svg class='icon'><use xlink:href='#icon-big-arrow'/></svg>
+            </a>
+        </div>
+    </header>
 
+    <div class='skills-home container'>
         <ul class='skills'>
             <li class='skill'>
                 <svg width='95' height='2'>
@@ -34,4 +38,6 @@
             </li>
         </ul>
     </div>
+
+
 {% endblock content %}

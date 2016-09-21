@@ -29,9 +29,13 @@ h1, h2, h3, h4, h5, h6{
 }
 
 h1{
-    font-size: 10.6rem;
-    margin: 0.85em -0.08em 0.25em;
+    max-width: 75%;
+    //font-size: 18.8rem;
+    font-size: 10.5vw;
+    padding: 0.12em 0 0;
+    margin: 0 -0.08em 0.25em;
     letter-spacing: -0.08em;
+    line-height: 0.9;
     color: $blue;
 }
 
@@ -155,7 +159,7 @@ a{
     @include clearfix;
 }
 
-.pos-relative{
+.p-relative{
     position: relative;
 }
 
@@ -201,4 +205,33 @@ a{
     stroke-width: 0;
     stroke: currentColor;
     fill: currentColor;
+}
+
+
+@media (min-width: 1200px){
+    @media (max-height: 870px){
+        h1{
+            font-size: 20vh;
+        }
+    }
+
+    @media (max-height: 700px){
+        h1{
+            max-width: 50%;
+            margin-top: 0;
+            font-size: 12rem;
+        }
+    }
+}
+
+@media (max-width: 960px){
+    h1{
+        font-size: 10rem;
+    }
+}
+
+@media (max-width: 700px){
+    h1{
+        font-size: 7rem;
+    }
 }

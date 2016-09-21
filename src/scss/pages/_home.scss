@@ -1,9 +1,70 @@
 /* Home specific style */
 
-.home{
-	#header{
-		a.link-arrow{
-			color: $blue;
-		}
-	}
+.block-title{
+    position: absolute;
+    transform: translate3d(0, -42%, 0);
+    top: 50%;
+    left: 0;
+    right: 0;
+}
+
+.text-home{
+    width: 35%;
+    padding: 2.5em $gutter 0;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    p{
+        line-height: 1.4;
+    }
+}
+
+
+.skills-home{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 97.5vh;
+    .skills{
+        padding-top: 0;
+    }
+}
+
+
+@media (max-height: 650px){
+    .skills-home{
+        position: static;
+        .skills{
+            padding-top: 80px;
+        }
+    }
+}
+
+@media (max-width: 1200px){
+    .block-title{
+        transform: translate3d(0, -50%, 0);
+    }
+
+    .text-home{
+        width: 100%;
+        padding: 50px 0 0;
+        position: static;
+    }
+
+    @media (max-height: 800px){
+        .skills-home{
+            position: static;
+            .skills{
+                padding-top: 100px;
+            }
+        }
+    }
+}
+
+@media (max-height: 870px){
+    .block-title{
+        position: relative;
+        transform: none;
+        top: 0;
+    }
 }
