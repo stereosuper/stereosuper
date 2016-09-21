@@ -1,0 +1,102 @@
+/* Portfolio-list */
+
+.portfolio-list{
+	padding: 95vh 0 0;
+	ul{
+		margin: 0;
+	}
+}
+
+.portfolio-item{
+	width: 85%;
+	height: 140px;
+	position: relative;
+	margin: 0 $gutter;
+	&:nth-of-type(odd){
+		clear: both;
+	}
+	&:nth-of-type(even){
+		float: right;
+	}
+	a{
+		display: block;
+	}
+	h2{
+		width: 90%;
+		height: 115px;
+		position: relative;
+		margin: 0;
+		text-indent: -99em;
+		overflow: hidden;
+		background: $blue;
+		transform: translate3d(0, 15px, 0);
+		&:before, &:after{
+			content: '';
+			position: absolute;
+			top: 0;
+			bottom: 0;
+		}
+		&:after{
+			left: $gutter;
+			margin: auto;
+		}
+		&:before{
+			content: '';
+			left: 0;
+			right: 0;
+			opacity: 0.1;
+		}
+	}
+	div{
+		width: 305px;
+		border-left: 1px solid rgba(#fff, 0.5);
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+	}
+	time, span{
+		display: block;
+		height: 50%;
+	}
+	time{
+		font-size: 1.6rem;
+		padding: 30px $gutter 25px;
+	}
+	.title{
+		padding: 25px $gutter 30px;
+		border-top: 1px solid rgba(#fff, 0.5);
+		@include gotham-bold(1.3rem);
+		text-transform: uppercase;
+	}
+}
+
+.alven-item{
+	h2{
+		background: #19a2a5;
+		&:before{
+			background: url(../img/bg-alven.png) no-repeat 50% 60%;
+			background-size: 100%;
+		}
+		&:after{
+			width: 199px;
+			height: 31px;
+			background: url(../img/logo-alven.png) no-repeat;
+			background-size: 100%;
+		}
+	}
+}
+
+@media (max-height: 870px){
+	.portfolio-list{
+		padding-top: 200px;
+		margin-top: 5vh;
+	}
+}
+
+@media (max-height: 650px){
+	.portfolio-list{
+		padding-top: 0;
+		margin-top: 0;
+	}
+}
