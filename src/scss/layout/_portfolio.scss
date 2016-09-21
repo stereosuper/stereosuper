@@ -35,16 +35,18 @@
 			position: absolute;
 			top: 0;
 			bottom: 0;
+			background-repeat: no-repeat;
+			background-size: 100%;
 		}
 		&:after{
 			left: $gutter;
 			margin: auto;
 		}
 		&:before{
-			content: '';
 			left: 0;
 			right: 0;
 			opacity: 0.1;
+			background-position: 50% 60%;
 		}
 	}
 	div{
@@ -71,7 +73,25 @@
 	}
 }
 
-.alven-item{
+
+@for $i from 1 through $portfolioNb{
+	$name: nth($portfolio, $i);
+    .#{$name}-item{
+    	h2{
+    		background: nth($portfolioColors, $i);
+    		&:before{
+    			background-image: url(../img/bg-#{$name}.png);
+    		}
+    		&:after{
+    			width: #{nth($portfolioWidths, $i)}px;
+    			height: #{nth($portfolioHeights, $i)}px;
+    			background-image: url(../img/logo-#{$name}.png);
+    		}
+    	}
+    }
+}
+
+/*.alven-item{
 	h2{
 		background: #19a2a5;
 		&:before{
@@ -85,7 +105,9 @@
 			background-size: 100%;
 		}
 	}
-}
+}*/
+
+
 
 @media (max-height: 870px){
 	.portfolio-list{
