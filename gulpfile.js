@@ -11,6 +11,7 @@ var buffer = require('vinyl-buffer');
 var uglify = require('gulp-uglify');
 var watch = require('gulp-watch');
 var imagemin = require('gulp-imagemin');
+var htmlmin = require('gulp-htmlmin');
 
 var report_error = function(error) {
     $.notify({
@@ -82,12 +83,11 @@ gulp.task('js', function () {
 });
 
 gulp.task('templates', function() {
-    
-        return gulp.src('src/templates/*.html.twig')
-            .pipe($.twig())
-            .pipe($.extReplace('.html', '.html.html'))
-    
-        .pipe($.prettify({ indent_size: 4 }))
+   return gulp.src('src/templates/*.html.twig')
+        .pipe($.twig())
+        .pipe($.extReplace('.html', '.html.html'))
+        //.pipe($.prettify({ indent_size: 4 }))
+        .pipe(htmlmin({collapseWhitespace: true}))
         .pipe(gulp.dest('dest'))
         .pipe($.size({title: 'template'}));
 });

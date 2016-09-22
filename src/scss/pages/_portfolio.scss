@@ -1,0 +1,17 @@
+/* Portfolio single page specific style */
+
+.portfolio-cover{
+    display: inline-block;
+    width: 50%;
+}
+
+.portfolio-text{
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+    h1{
+        max-width: none;
+        font-size: 5rem;
+        color: #fff;
+    }
+}

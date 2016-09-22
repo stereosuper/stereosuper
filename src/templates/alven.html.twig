@@ -2,10 +2,35 @@
 
 {% block title %}Alvencapital &bull; Stéréosuper{% endblock %}
 {% block description %}{% endblock %}
-{% block body_attr %}class='portfolio'{% endblock %}
+{% block body_attr %}class='portfolio alven-portfolio'{% endblock %}
 
 {% block content %}
     <div class='container'>
-        <h1>Alvencapital</h1>
+        <img src='img/cover-akeneo.png' alt='' class='portfolio-cover'><div class='portfolio-text'>
+            <h1>Alvencapital</h1>
+            <p>Akeneo est une solution de gestion de catalogue produit (PIM) adaptée à la diversité des marchés et supports, utilisée par exemple par Vuitton, Auchan, Made.com, Pimkie et de nombreux autres géants de la vente.</p>
+            <a href='./' class='btn-close'>Fermer</a>
+        </div>
+    </div>
+    <div class='portfolio-role'>
+        <div class='container'>
+            <p>En 2016, nous avons refondu leur site Internet.</p>
+            <ul class='skills'>
+                <li class='skill'>
+                    Design
+                </li><li class='skill'>
+                    <svg width='91' height='8'>
+                        <rect fill='url(#twist)' width='100' height='8'/>
+                    </svg>
+                    Animation
+                </li><li class='skill'>
+                    <svg width='95' height='4'>
+                        <rect fill='url(#dot)' width='100' height='4'/>
+                    </svg>
+                    Développement
+                </li>
+            </ul>
+            <a href='http://alvencapital.fr' class='btn' target='_blank'>Voir le site</a>
+        </div>
     </div>
 {% endblock content %}
