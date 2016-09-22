@@ -1,8 +1,11 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}{% block portfolio_title %}{% endblock %} &bull; Stéréosuper{% endblock %}
 {% block body_attr %}class='portfolio {% block portfolio_slug %}{% endblock %}-portfolio'{% endblock %}
 
+{# Meta #}
+{% block title %}{% block portfolio_title %}{% endblock %} &bull; Stéréosuper{% endblock %}
+
+{# Content #}
 {% block content %}
     <div id='page' class='barba-container' data-class='portfolio {% block portfolio_slug %}{% endblock %}-portfolio'>
         <section class='container p-relative'>
