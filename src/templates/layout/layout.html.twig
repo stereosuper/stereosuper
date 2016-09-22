@@ -67,7 +67,7 @@
         <header id='header'>
             <div class='container'>
                 <div class='header-left'>
-                    <a href='#' id='logo'>
+                    <a href='./' id='logo'>
                         <svg class='icon'>
                             <use xlink:href='#icon-stereo'/>
                         </svg><svg class='icon'>
@@ -118,19 +118,16 @@
             </div>
         </header>
 
-        <main id='main'>
-            {% block content %}{% endblock %}
+        <main id='barba-wrapper'>
+            <div class='barba-container'>
+                {% block content %}{% endblock %}
+            </div>
         </main>
 
         <footer>
         </footer>
 
         {% block javascript_bottom %}
-            <script src='js/libs/jquery/dist/jquery.min.js' defer></script>
-
-            <script src='js/libs/gsap/src/minified/TweenMax.min.js' defer></script>
-            <script src='js/libs/gsap/src/minified/TimelineMax.min.js' defer></script>
-
             <script src='js/main.js' defer></script>
         {% endblock %}
     </body>
