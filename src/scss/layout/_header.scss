@@ -9,6 +9,10 @@
 	}
 }
 
+.header-left{
+	padding: 9px 0 0;
+}
+
 #logo{
 	display: inline-block;
 	vertical-align: top;
@@ -20,6 +24,9 @@
 	.icon{
 		width: 25px;
 		height: 25px;
+		&.stereo{
+			margin-right: 3px;
+		}
 	}
 	span{
 		display: inline-block;
@@ -45,7 +52,7 @@
 	padding: 12px 30px 22px 0;
 	border-right: 1px solid $grey;
 	> li{
-		margin: 0 0 10px;
+		margin: 0 0 8px;
 		line-height: 1.1;
 		&:last-child{
 			margin-bottom: 0;
@@ -64,7 +71,7 @@
 }
 
 .social{
-	margin: 9px 0 0;
+	margin: 8px 0 0;
 	>li{
 		display: inline-block;
 		vertical-align: top;
@@ -74,17 +81,23 @@
 			margin-right: 0;
 		}
 	}
-	.twitter{
-		width: 13px;
-		height: 11px;
+	a{
+		display: block;
 	}
-	.facebook{
-		width: 6px;
-		height: 11px;
+	.icon{
+		&.twitter{
+			width: 14px;
+			height: 15px;
+		}
+		&.facebook{
+			width: 8px;
+			height: 14px;
+		}
 	}
 }
 
 .tel-number{
+	margin: 3px 0 0 0;
 	font-family: $elenabold;
 }
 
