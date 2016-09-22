@@ -1,40 +1,33 @@
-{% extends 'layout/layout.html.twig' %}
+{% extends 'layout/portfolio.html.twig' %}
 
-{% block title %}Alvencapital &bull; Stéréosuper{% endblock %}
+
+{% block portfolio_slug %}alven{% endblock %}
+{% block portfolio_url %}http://alvencapital.com{% endblock %}
+
+
+{% block portfolio_title %}Alencapital{% endblock %}
 {% block description %}{% endblock %}
-{% block body_attr %}class='portfolio alven-portfolio'{% endblock %}
 
-{% block content %}
-    <div id='page' class='barba-container' data-class='portfolio alven-portfolio'>
-        <section class='container p-relative'>
-            <img src='img/cover-akeneo.png' alt='' class='portfolio-cover'><div class='portfolio-text'>
-                <h1>Alvencapital</h1>
-                <p>Akeneo est une solution de gestion de catalogue produit (PIM) adaptée à la diversité des marchés et supports, utilisée par exemple par Vuitton, Auchan, Made.com, Pimkie et de nombreux autres géants de la vente.</p>
-                <a href='./' class='btn-close'>Fermer</a>
-            </div>
-        </section>
-        <section class='portfolio-role'>
-            <div class='container'>
-                <div class='portfolio-role-content'>
-                    <p>En 2016, nous avons refondu leur site Internet.</p>
-                    <ul class='skills'>
-                        <li class='skill'>
-                            Design
-                        </li><li class='skill'>
-                            <svg width='91' height='8'>
-                                <rect fill='url(#twist)' width='100' height='8'/>
-                            </svg>
-                            Animation
-                        </li><li class='skill'>
-                            <svg width='95' height='4'>
-                                <rect fill='url(#dot)' width='100' height='4'/>
-                            </svg>
-                            Développement
-                        </li>
-                    </ul>
-                    <a href='http://alvencapital.com' class='btn' target='_blank'>Voir le site</a>
-                </div>
-            </div>
-        </section>
-    </div>
-{% endblock content %}
+
+{% block portfolio_text %}
+    <p>Akeneo est une solution de gestion de catalogue produit (PIM) adaptée à la diversité des marchés et supports, utilisée par exemple par Vuitton, Auchan, Made.com, Pimkie et de nombreux autres géants de la vente.</p>
+{% endblock %}
+
+{% block portfolio_role %}
+    <p>En 2016, nous avons refondu leur site Internet.</p>
+    <ul class='skills'>
+        <li class='skill'>
+            Design
+        </li><li class='skill'>
+            <svg width='91' height='8'>
+                <rect fill='url(#twist)' width='100' height='8'/>
+            </svg>
+            Animation
+        </li><li class='skill'>
+            <svg width='95' height='4'>
+                <rect fill='url(#dot)' width='100' height='4'/>
+            </svg>
+            Développement
+        </li>
+    </ul>
+{% endblock %}
