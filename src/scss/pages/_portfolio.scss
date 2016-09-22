@@ -4,6 +4,16 @@
     #barba-wrapper{
         padding-bottom: 0;
     }
+    .link-arrow, .lang a{
+        color: #fff;
+    }
+    #logo{
+        .icon{
+            &.stereo{
+                fill: #fff;
+            }
+        }
+    }
 }
 @for $i from 1 through $portfolioNb{
     $name: nth($portfolio, $i);
@@ -11,6 +21,9 @@
         background: nth($portfolioColors, $i);
         h1{
             background-image: url(../img/logo-#{$name}.png);
+        }
+        .btn{
+            background: nth($portfolioColors, $i);
         }
     }
 }
