@@ -1,9 +1,12 @@
 {% extends 'layout/layout.html.twig' %}
 
-{% block title %}Finis, les sites mononuls &bull; Stéréosuper{% endblock %}
-{% block description %}{% endblock %}
 {% block body_attr %}class='home'{% endblock %}
 
+{# Meta #}
+{% block title %}Finis, les sites mononuls &bull; Stéréosuper{% endblock %}
+{% block description %}{% endblock %}
+
+{# Content #}
 {% block content %}
 	<div id='page' class='barba-container' data-class='home'>
         <header class='container block-title'>
@@ -11,8 +14,9 @@
             <div class='text-home'>
                 <p>Nous adorons vous aider à atteindre vos objectifs grâce à une communication créative sur Internet.</p>
                 <a href='#' class='link-arrow link-caps'>
-                    En savoir plus
-                    <svg class='icon'><use xlink:href='#icon-big-arrow'/></svg>
+                    <span>En savoir plus</span>
+                    <svg class='icon i1'><use xlink:href='#icon-big-arrow'/></svg>
+                    <svg class='icon i2'><use xlink:href='#icon-big-arrow'/></svg>
                 </a>
             </div>
         </header>

@@ -129,6 +129,7 @@ a{
         outline: 0;
     }
     &:active{
+        filter: contrast(300%);
     }
 }
 

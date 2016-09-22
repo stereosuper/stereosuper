@@ -1,27 +1,106 @@
 /* Buttons */
 
 .link-arrow{
+    display: inline-block;
+    position: relative;
 	font-family: $elenabold;
     color: $blue;
+    span{
+        display: inline-block;
+        transition: transform .25s ease-in-out;
+    }
 	.icon{
 		height: 7px;
-        margin: -2px 0 0;
+        margin: -2px 0 0 9px;
         font-size: 1.8rem;
+        transition: transform .25s ease-in-out, opacity .35s ease-in-out;
 	}
+    .i2{
+        position: absolute;
+        top: -1px;
+        left: -10px;
+        bottom: 0;
+        margin: auto;
+        transform: translate3d(-100%, 0, 0);
+        opacity: 0;
+    }
+    &:hover, &:focus{
+        opacity: 0.8;
+        .i1{
+            transform: translate3d(100%, 0, 0);
+            opacity: 0;
+        }
+        .i2{
+            transform: translate3d(0, 0, 0);
+            transition-delay: .15s;
+            opacity: 1;
+        }
+        span{
+            transform: translate3d(18px, 0, 0);
+            transition-delay: .1s;
+        }
+    }
 }
 
 .link-caps{
-    @include gotham(1rem);
+    @include gotham-medium(1rem);
     text-transform: uppercase;
 }
 
 .btn{
-    padding: 22px 45px 20px;
-    @include gotham(1.3rem);
+    padding: 22px 60px 20px 45px;
+    position: relative;
+    @include gotham-medium(1.3rem);
     text-transform: uppercase;
     border-radius: 3px;
+    z-index: 1;
     color: #fff;
     background: $blue;
+    &:after{
+        content: '';
+        position: absolute;
+        top: -5px;
+        right: -10px;
+        bottom: -5px;
+        left: -10px;
+        border-radius: 50px;
+        z-index: -1;
+        filter: blur(7px);
+        background: rgba(#000, 0.1);
+        transform: scale(0);
+        opacity: 0;
+        transition: $transition;
+    }
+    .icon{
+        width: 10px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 35px;
+        margin: auto;
+    }
+    .i2{
+        transform: translate3d(-7px, 7px, 0);
+        opacity: 0;
+    }
+    &:hover, &:focus{
+        background: #000 !important;
+        color: $blue;
+        &:after{
+            opacity: 1;
+            transform: scale(1);
+        }
+        .i1{
+            transform: translate3d(7px, -7px, 0);
+            opacity: 0;
+            transition: transform .2s ease-out, .3s opacity ease-out;
+        }
+        .i2{
+            transform: translate3d(1px, -1px, 0);
+            opacity: 1;
+            transition: .2s transform .15s ease-out, .2s opacity .15s ease-out;
+        }
+    }
 }
 
 .btn-close{
