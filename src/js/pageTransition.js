@@ -15,9 +15,8 @@ module.exports = Barba.BaseTransition.extend({
     fadeIn: function(){
         var _this = this;
         var $el = $(this.newContainer);
-        var $bodyClass = $el.find('#page') ? $el.find('#page').data('class') : '';
 
-        $('body').removeClass().addClass($bodyClass);
+        $('body').removeClass().addClass($el.data('class'));
 
         $(this.oldContainer).hide();
 
