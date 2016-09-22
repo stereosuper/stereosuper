@@ -14,3 +14,17 @@
     @include gotham(1rem);
     text-transform: uppercase;
 }
+
+.btn{
+    padding: 22px 45px 20px;
+    @include gotham(1.3rem);
+    text-transform: uppercase;
+    border-radius: 3px;
+    color: #fff;
+    background: $blue;
+}
+
+.btn-close{
+    @include gotham(1.3rem);
+    text-transform: uppercase;
+}
