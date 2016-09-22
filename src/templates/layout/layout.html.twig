@@ -3,11 +3,12 @@
 <html lang='fr-FR' class='no-js'>
     <head>
         <meta charset='utf-8'>
-        <meta name='description' content=''>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
-        <meta name='format-detection' content='telephone=no'>
 
-        <title>Finis, les sites mononuls &bull; Stéréosuper</title>
+        <title>{% block title %}{% endblock %}</title>
+
+        <meta name='description' content='{% block description %}{% endblock %}'>
+        <meta name='format-detection' content='telephone=no'>
 
         {% block stylesheets %}
             <link rel='stylesheet' type='text/css' href='css/main.css'>
@@ -61,7 +62,7 @@
         <header id='header'>
             <div class='container'>
                 <div class='header-left'>
-                    <a href='#' id='logo'>
+                    <a href='./' id='logo'>
                         <svg class='icon stereo'><use xlink:href='#icon-stereo'/></svg><svg class='icon super'><use xlink:href='#icon-super'/></svg><span><strong>Stéréo</strong>super</span>
                     </a>
                     <ul class='menu-contact'>
@@ -114,19 +115,16 @@
             </div>
         </header>
 
-        <main id='main'>
-            {% block content %}{% endblock %}
+        <main id='barba-wrapper'>
+            <div class='barba-container'>
+                {% block content %}{% endblock %}
+            </div>
         </main>
 
         <footer>
         </footer>
 
         {% block javascript_bottom %}
-            <script src='js/libs/jquery/dist/jquery.min.js' defer></script>
-
-            <script src='js/libs/gsap/src/minified/TweenMax.min.js' defer></script>
-            <script src='js/libs/gsap/src/minified/TimelineMax.min.js' defer></script>
-
             <script src='js/main.js' defer></script>
         {% endblock %}
     </body>
