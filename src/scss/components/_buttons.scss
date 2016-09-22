@@ -13,8 +13,10 @@
 		height: 7px;
         margin: -2px 0 0 9px;
         font-size: 1.8rem;
-        transition: transform .25s ease-in-out, opacity .35s ease-in-out;
 	}
+    .i1{
+        transition: transform .25s ease-in-out, opacity .35s ease-in-out;
+    }
     .i2{
         position: absolute;
         top: -1px;
@@ -23,6 +25,7 @@
         margin: auto;
         transform: translate3d(-100%, 0, 0);
         opacity: 0;
+        transition: transform .2s ease-in-out, opacity .2s ease-in-out;
     }
     &:hover, &:focus{
         opacity: 0.8;
@@ -104,6 +107,35 @@
 }
 
 .btn-close{
+    display: inline-block;
+    padding: 0 0 0 35px;
     @include gotham(1.3rem);
     text-transform: uppercase;
+    &:before, &:after{
+        content: '';
+        width: 14px;
+        height: 1px;
+        background: #fff;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        transition: $transition;
+    }
+    &:before{
+        transform: rotate(45deg);
+    }
+    &:after{
+        transform: rotate(-45deg);
+    }
+    &:hover, &:focus{
+        opacity: 0.7;
+        &:before{
+            transform: rotate(135deg);
+        }
+        &:after{
+            transform: rotate(-135deg);
+        }
+    }
 }

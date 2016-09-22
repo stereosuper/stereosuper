@@ -28,7 +28,9 @@
 @for $i from 1 through $portfolioNb{
     $name: nth($portfolio, $i);
     .#{$name}-portfolio{
-        background: nth($portfolioColors, $i);
+        #header, #barba-wrapper{
+            background: nth($portfolioColors, $i);
+        }
         h1{
             width: #{nth($portfolioWidths, $i)}px;
             height: #{nth($portfolioHeights, $i)}px;
