@@ -11,7 +11,7 @@
 	width: 85%;
 	height: 140px;
 	position: relative;
-	margin: 0 $gutter;
+	margin: 40px $gutter;
 	&:nth-of-type(odd){
 		clear: both;
 	}
@@ -29,7 +29,9 @@
 		text-indent: -99em;
 		overflow: hidden;
 		background: $blue;
-		transform: translate3d(0, 15px, 0);
+		top: 15px;
+		transform-origin: 50% 50%;
+		backface-visibility: hidden;
 		&:before, &:after{
 			content: '';
 			position: absolute;

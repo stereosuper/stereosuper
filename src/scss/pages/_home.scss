@@ -32,6 +32,23 @@
     }
 }
 
+.offset{
+    position: fixed;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 100px;
+    &.top{
+        top: 0;
+        border-bottom: 1px dashed #555;
+    }
+    &.bottom{
+        bottom: 0;
+        border-top: 1px dashed #555;
+    }
+}
+
 
 @media (max-height: 650px){
     .skills-home{
