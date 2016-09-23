@@ -2,8 +2,8 @@
 
 var Barba = require('./libs/barba.min.js');
 var $ = require('./libs/jquery/dist/jquery.min.js');
-// var TweenMax = require('.libs/gsap/src/minified/TweenMax.min.js');
-// var TimelineMax = require('.libs/gsap/src/minified/TimelineMax.min.js');
+var TweenMax = require('./libs/gsap/src/minified/TweenMax.min.js');
+//var TimelineMax = require('./libs/gsap/src/minified/TimelineMax.min.js');
 
 
 $(function(){
@@ -37,6 +37,8 @@ $(function(){
     var areaReaction = 200;
     var strength = 0.6;
     var strengthRotation = 0.05;
+    var portfolioItems = $('.portfolio-items li');
+    var exp, expR;
 
     // position en y d'un item sans son translate
     function getPosWithoutTranslate(myObj) {
@@ -50,32 +52,24 @@ $(function(){
     // Request anim frame
     function scrollPage(){
         myScroll = $(document).scrollTop();
-        $('.portfolio-items li').each(function(i) {
-            if (getPosWithoutTranslate($(this))>=myScroll+$(window).height()-areaReaction) {
-                var exp = Math.round((getPosWithoutTranslate($(this))-myScroll-$(window).height()+areaReaction)*strength);
-                if(i%2 === 0){
-                    var expR = exp*strengthRotation;
-                }else{
-                    var expR = -(exp*strengthRotation);
-                }
-                $(this).find('h2').css('transform','translateY('+exp+'px) rotate('+expR+'deg)');
+        windowWidth = $(window).width();
+        windowHeight = $(window).height();
+        portfolioItems.each(function(i) {
+            if (getPosWithoutTranslate($(this))>=myScroll+windowHeight-areaReaction) {
+                exp = Math.round((getPosWithoutTranslate($(this))-myScroll-windowHeight+areaReaction)*strength);
+                expR = i%2 === 0 ? exp*strengthRotation : -(exp*strengthRotation);
+                TweenMax.set($(this).find('h2'), {y: exp, rotation: expR});
             } else if(getPosWithoutTranslate($(this))<=myScroll+areaReaction) {
-                var exp = Math.round((getPosWithoutTranslate($(this))-myScroll-areaReaction)*strength);
-                if(i%2 === 0){
-                    var expR = exp*strengthRotation;
-                }else{
-                    var expR = -(exp*strengthRotation);
-                }
-                $(this).find('h2').css('transform','translateY('+exp+'px) rotate('+expR+'deg)');
+                exp = Math.round((getPosWithoutTranslate($(this))-myScroll-areaReaction)*strength);
+                expR = i%2 === 0 ? exp*strengthRotation : -(exp*strengthRotation);
+                TweenMax.set($(this).find('h2'), {y: exp, rotation: expR});
             } else {
-                $(this).find('h2').css('transform','translateY(0px) rotate(0deg)');
+                TweenMax.set($(this).find('h2'), {y: 0, rotation: 0});
             }
         });
         requestAnimFrame(scrollPage);
     }
-
-    $('.offset').css('height',areaReaction+'px');
-    $('.portfolio-items').css({'height':$('.portfolio-items').outerHeight(true)+'px','overflow':'hidden','padding-top':areaReaction+'px','padding-bottom':areaReaction+'px'});
+    TweenMax.set($('.offset'), {'height': areaReaction+'px'});
     scrollPage();
 
     ////////////////////////////////////////////////
@@ -85,8 +79,7 @@ $(function(){
 
     $(window).on('resize', function(){
 
-        windowWidth = $(window).width();
-        windowHeight = $(window).height();
+        
 
 	}).on('load', function(){
 

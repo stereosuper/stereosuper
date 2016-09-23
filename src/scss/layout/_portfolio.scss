@@ -32,6 +32,7 @@
 		top: 15px;
 		transform-origin: 50% 50%;
 		backface-visibility: hidden;
+		outline: 1px solid transparent;
 		&:before, &:after{
 			content: '';
 			position: absolute;
@@ -68,10 +69,19 @@
 		padding: 30px $gutter 25px;
 	}
 	.title{
-		padding: 25px $gutter 30px;
+		display: inline-block;
+		vertical-align: top;
+		padding: 25px 0 30px $gutter;
 		border-top: 1px solid rgba(#fff, 0.5);
 		@include gotham-bold(1.3rem);
 		text-transform: uppercase;
+	}
+	.souvenir{
+		display: inline-block;
+		vertical-align: top;
+		width: 74px;
+		height: 26px;
+		margin: 18px 0 0 6px;
 	}
 }
 
