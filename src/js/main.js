@@ -3,6 +3,7 @@
 var Barba = require('./libs/barba.min.js');
 var $ = require('./libs/jquery/dist/jquery.min.js');
 var TweenMax = require('./libs/gsap/src/minified/TweenMax.min.js');
+//var Roll = require('./libs/roll.min.js');
 //var TimelineMax = require('./libs/gsap/src/minified/TimelineMax.min.js');
 
 
@@ -32,7 +33,7 @@ $(function(){
     ////////////////////////////////////////////////
     // anim ref home
     ////////////////////////////////////////////////
-    
+
     var myScroll;
     var areaReaction = 200;
     var strength = 0.6;
@@ -79,15 +80,43 @@ $(function(){
 
     $(window).on('resize', function(){
 
-        
 
 	}).on('load', function(){
 
 	});
 
 
-    $(document).on('scroll', function(){
+    var animatingTop = false;
+    var blockTitle = $('#blockTitle'), skillsHome = $('#skillsHome'), htmlBody = $('html, body');
+    var skillsTop = skillsHome.offset().top;
 
+    $(document).on('scroll', function(e){
+        myScroll = $(document).scrollTop();
+        if(body.hasClass('home')){
+            if(myScroll > 100 && !body.hasClass('scrolled') && !animatingTop){
+                TweenMax.to(blockTitle, 0.6, {opacity: 0});
+                body.addClass('scrolled');
+                animatingTop = true;
+                htmlBody.stop().animate({scrollTop: skillsTop - 30}, 700, function(){
+                    animatingTop = false;
+                });
+            }
+            if(myScroll < skillsTop - 50 && body.hasClass('scrolled') && !animatingTop){
+                TweenMax.to(blockTitle, 0.6, {opacity: 1, delay: 0.6});
+                body.removeClass('scrolled');
+                animatingTop = true;
+                htmlBody.stop().animate({scrollTop: 0}, 700, function(){
+                    animatingTop = false;
+                });
+            }
+        }
+    });
+
+    body.on('mousewheel', function(e){
+        if(animatingTop){
+            e.preventDefault();
+            e.stopPropagation();
+        }
     });
 
 });

@@ -1,5 +1,6 @@
 var Barba = require('./libs/barba.min.js');
 var $ = require('./libs/jquery/dist/jquery.min.js');
+var TweenMax = require('./libs/gsap/src/minified/TweenMax.min.js');
 
 module.exports = Barba.BaseTransition.extend({
     start: function(){
@@ -18,13 +19,16 @@ module.exports = Barba.BaseTransition.extend({
 
         $('body').removeClass().addClass($el.data('class'));
 
-        $(this.oldContainer).hide();
-
-        $el.css({
+       $el.css({
             visibility : 'visible',
             opacity : 0
-        }).animate({ opacity: 1 }, 400, function(){
+        }).delay(100).animate({ opacity: 1 }, 400, function(){
+            /*if($el.find('.portfolio-role').length){
+                TweenMax.to($el.find('.portfolio-role'), 0.3, {y: '0%'});
+            }*/
             _this.done();
         });
+
+        $(this.oldContainer).hide();
     }
 });

@@ -4,6 +4,9 @@
 	padding: 22px 0 0;
 	border-bottom: 1px solid rgba(#fff, 0.3);
 	background: #000;
+	.home &{
+		background: none;
+	}
 	.container{
 		display: flex;
 		justify-content: space-between;
@@ -144,5 +147,12 @@
 	a{
 		@include elena-italic(1.5rem);
 		color: $blue;
+	}
+}
+
+
+@media (max-width: 860px){
+	.menu-contact{
+		display: none;
 	}
 }
