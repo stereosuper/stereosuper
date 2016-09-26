@@ -8,9 +8,16 @@
     right: 0;
 }
 
+h1{
+    .first-line{
+        display: block;
+        line-height: 1.2;
+    }
+}
+
 .text-home{
     width: 35%;
-    padding: 2.5em $gutter 0;
+    padding: 3em $gutter 0;
     position: absolute;
     top: 0;
     left: 50%;
