@@ -16,7 +16,8 @@ $(function(){
     var portfolioItemsAnimation = require('./portfolioItemsAnimation.js');
 
 
-    var windowWidth = $(window).width(), windowHeight = $(window).height(), myScroll = $(document).scrollTop();
+    var windowWidth = $(window).width(), windowHeight = $(window).height();
+    var myScroll = $(document).scrollTop();
 
     var body = $('body');
     var main = $('#main');
