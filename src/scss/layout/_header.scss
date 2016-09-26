@@ -11,6 +11,9 @@
 	z-index: 2;
 	.home &{
 		background: none;
+		&.scrolled{
+			background: #000;
+		}
 	}
 	.container{
 		display: flex;

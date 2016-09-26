@@ -16,11 +16,18 @@ $(function(){
 
     var body = $('body');
     var main = $('#main');
+    var header = $('#header');
 
 
 
     // isMobile.any ? body.addClass('is-mobile') : body.addClass('is-desktop');
 
+
+    ////////////////////////////////////////////////
+    // Anim Top Home
+    ////////////////////////////////////////////////
+
+    var animSetUp = animTop(myScroll, body, header);
 
     ////////////////////////////////////////////////
     // Load Page
@@ -30,13 +37,12 @@ $(function(){
     Barba.Pjax.getTransition = function(){
         return PageTransition;
     };
+    Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container){
+        if(!animSetUp){
+            animTop(myScroll, body, header);
+        }
+    });
 
-
-    ////////////////////////////////////////////////
-    // Anim Top Home
-    ////////////////////////////////////////////////
-
-    animTop(myScroll, body);
 
 
     ////////////////////////////////////////////////
