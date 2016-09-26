@@ -3,7 +3,6 @@
 var Barba = require('./libs/barba.min.js');
 var $ = require('./libs/jquery/dist/jquery.min.js');
 var TweenMax = require('./libs/gsap/src/minified/TweenMax.min.js');
-//var Roll = require('./libs/roll.min.js');
 //var TimelineMax = require('./libs/gsap/src/minified/TimelineMax.min.js');
 
 
@@ -11,8 +10,9 @@ $(function(){
 
     window.requestAnimFrame = require('./requestAnimFrame.js');
     var PageTransition = require('./pageTransition.js');
+    var animTop = require('./animTop.js');
 
-    var windowWidth = $(window).width(), windowHeight = $(window).height();
+    var windowWidth = $(window).width(), windowHeight = $(window).height(), myScroll = $(document).scrollTop();
 
     var body = $('body');
     var main = $('#main');
@@ -22,12 +22,21 @@ $(function(){
     // isMobile.any ? body.addClass('is-mobile') : body.addClass('is-desktop');
 
 
-    /// LOAD PAGE ///
+    ////////////////////////////////////////////////
+    // Load Page
+    ////////////////////////////////////////////////
 
     Barba.Pjax.start();
     Barba.Pjax.getTransition = function(){
         return PageTransition;
     };
+
+
+    ////////////////////////////////////////////////
+    // Anim Top Home
+    ////////////////////////////////////////////////
+
+    animTop(myScroll, body);
 
 
     ////////////////////////////////////////////////
@@ -84,39 +93,5 @@ $(function(){
 	}).on('load', function(){
 
 	});
-
-
-    var animatingTop = false;
-    var blockTitle = $('#blockTitle'), skillsHome = $('#skillsHome'), htmlBody = $('html, body');
-    var skillsTop = skillsHome.offset().top;
-
-    $(document).on('scroll', function(e){
-        myScroll = $(document).scrollTop();
-        if(body.hasClass('home')){
-            if(myScroll > 100 && !body.hasClass('scrolled') && !animatingTop){
-                TweenMax.to(blockTitle, 0.6, {opacity: 0});
-                body.addClass('scrolled');
-                animatingTop = true;
-                htmlBody.stop().animate({scrollTop: skillsTop - 30}, 700, function(){
-                    animatingTop = false;
-                });
-            }
-            if(myScroll < skillsTop - 50 && body.hasClass('scrolled') && !animatingTop){
-                TweenMax.to(blockTitle, 0.6, {opacity: 1, delay: 0.6});
-                body.removeClass('scrolled');
-                animatingTop = true;
-                htmlBody.stop().animate({scrollTop: 0}, 700, function(){
-                    animatingTop = false;
-                });
-            }
-        }
-    });
-
-    body.on('mousewheel', function(e){
-        if(animatingTop){
-            e.preventDefault();
-            e.stopPropagation();
-        }
-    });
 
 });
