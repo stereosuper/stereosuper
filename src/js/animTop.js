@@ -2,10 +2,9 @@ var $ = require('./libs/jquery/dist/jquery.min.js');
 var TweenMax = require('./libs/gsap/src/minified/TweenMax.min.js');
 window.requestAnimFrame = require('./requestAnimFrame.js');
 
-module.exports = function(myScroll, body, header){
+module.exports = function(myScroll, body, header, skillsHome, skillsTop){
     var animatingTop = false;
-    var skillsHome = $('#skillsHome'), htmlBody = $('html, body');
-    var skillsTop = skillsHome.offset().top - 130;
+    var htmlBody = $('html, body');
     var isHome = body.hasClass('home') ? true : false;
 
     (function onScroll(){
@@ -14,12 +13,13 @@ module.exports = function(myScroll, body, header){
         if(body.hasClass('home')){
             if(myScroll > 100 && !body.hasClass('scrolled') && !animatingTop){
                 TweenMax.to(blockTitle, 0.6, {opacity: 0});
-                TweenMax.to(video, 0.6, {opacity: 0});
+                TweenMax.to(video, 0.3, {opacity: 0});
                 body.addClass('scrolled');
                 animatingTop = true;
                 htmlBody.stop().animate({scrollTop: skillsTop}, 700, function(){
                     animatingTop = false;
                     header.addClass('scrolled');
+                    skillsHome.addClass('fixed');
                 });
             }
             if(myScroll < skillsTop - 20 && body.hasClass('scrolled') && !animatingTop){
@@ -27,9 +27,11 @@ module.exports = function(myScroll, body, header){
                 TweenMax.to(video, 0.6, {opacity: 1, delay: 0.6});
                 body.removeClass('scrolled');
                 header.removeClass('scrolled');
+                skillsHome.removeClass('fixed').removeClass('down');
                 animatingTop = true;
                 htmlBody.stop().animate({scrollTop: 0}, 700, function(){
                     animatingTop = false;
+                    header.removeClass('off');
                 });
             }
         }else{

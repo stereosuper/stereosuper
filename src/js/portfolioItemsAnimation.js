@@ -3,7 +3,7 @@ var TweenMax = require('./libs/gsap/src/minified/TweenMax.min.js');
 
 var getPosWithoutTranslate = require('./getPosWithoutTranslate.js');
 
-module.exports = function(myScroll, portfolioItems){
+module.exports = function(myScroll, windowHeight, portfolioItems){
     var areaReaction = 200, strength = 0.6, strengthRotation = 0.05;
     var exp, expR, thisPos, thisTitle;
 

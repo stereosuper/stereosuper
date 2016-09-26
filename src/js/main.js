@@ -8,10 +8,11 @@ var TweenMax = require('./libs/gsap/src/minified/TweenMax.min.js');
 
 $(function(){
 
-    window.requestAnimFrame = require('./requestAnimFrame.js');
-    var getPosWithoutTranslate = require('./getPosWithoutTranslate.js');
+    // window.requestAnimFrame = require('./requestAnimFrame.js');
+    // var getPosWithoutTranslate = require('./getPosWithoutTranslate.js');
 
-    var PageTransition = require('./pageTransition.js');
+    var pageTransition = require('./pageTransition.js');
+    var animHeader = require('./animHeader.js');
     var animTop = require('./animTop.js');
     var portfolioItemsAnimation = require('./portfolioItemsAnimation.js');
 
@@ -20,34 +21,49 @@ $(function(){
     var myScroll = $(document).scrollTop();
 
     var body = $('body');
-    var main = $('#main');
+    // var main = $('#main');
     var header = $('#header');
+    var skillsHome = $('#skillsHome'), skillsTop = skillsHome.length ? skillsHome.offset().top - 100 : 0;
 
 
 
     // isMobile.any ? body.addClass('is-mobile') : body.addClass('is-desktop');
 
 
+
+    ////////////////////////////////////////////////
+    // Header Scroll Animation
+    ////////////////////////////////////////////////
+
+    animHeader(myScroll, body, header, skillsHome, skillsTop);
+
+
     ////////////////////////////////////////////////
     // Anim Top Home
     ////////////////////////////////////////////////
 
-    var animSetUp = animTop(myScroll, body, header);
+    var animTopSetUp = animTop(myScroll, body, header, skillsHome, skillsTop);
 
 
     ////////////////////////////////////////////////
-    // Anim Refs Home
+    // Home functions
     ////////////////////////////////////////////////
 
     var Home = Barba.BaseView.extend({
         namespace: 'home',
         onEnter: function(){
             // The new Container is ready and attached to the DOM.
+            skillsTop = skillsHome.offset().top - 100;
+            if(!animTopSetUp){
+                animTop(myScroll, body, header, skillsHome, skillsTop);
+            }
         },
         onEnterCompleted: function(){
             // The Transition has just finished.
+
+            // Anim Refs Home
             var portfolioItems = $('#portfolio').find('li');
-            portfolioItemsAnimation(myScroll, portfolioItems);
+            portfolioItemsAnimation(myScroll, windowHeight, portfolioItems);
         },
         onLeave: function(){
             // A new Transition toward a new page has just started.
@@ -65,13 +81,13 @@ $(function(){
 
     Barba.Pjax.start();
     Barba.Pjax.getTransition = function(){
-        return PageTransition;
+        return pageTransition;
     };
-    Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container){
-        if(!animSetUp){
-            animTop(myScroll, body, header);
-        }
-    });
+    // Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container){
+    //     if(!animTopSetUp){
+    //         animTop(myScroll, body, header, skillsHome, skillsTop);
+    //     }
+    // });
 
 
     $(window).on('resize', function(){
