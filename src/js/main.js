@@ -9,8 +9,10 @@ var TweenMax = require('./libs/gsap/src/minified/TweenMax.min.js');
 $(function(){
 
     window.requestAnimFrame = require('./requestAnimFrame.js');
+    var getPosWithoutTranslate = require('./getPosWithoutTranslate.js');
     var PageTransition = require('./pageTransition.js');
     var animTop = require('./animTop.js');
+    var portfolioItemsAnimation = require('./portfolioItemsAnimation.js');
 
     var windowWidth = $(window).width(), windowHeight = $(window).height(), myScroll = $(document).scrollTop();
 
@@ -30,6 +32,32 @@ $(function(){
     var animSetUp = animTop(myScroll, body, header);
 
     ////////////////////////////////////////////////
+    // anim ref home
+    ////////////////////////////////////////////////
+
+    //var portfolioSetUp = portfolioItemsAnimation(myScroll, body);
+
+    var Homepage = Barba.BaseView.extend({
+      namespace: 'homepage',
+      onEnter: function() {
+          // The new Container is ready and attached to the DOM.
+      },
+      onEnterCompleted: function() {
+          // The Transition has just finished.
+          portfolioItemsAnimation(myScroll);
+      },
+      onLeave: function() {
+          // A new Transition toward a new page has just started.
+      },
+      onLeaveCompleted: function() {
+          // The Container has just been removed from the DOM.
+      }
+    });
+
+    // Don't forget to init the view!
+    Homepage.init();
+
+    ////////////////////////////////////////////////
     // Load Page
     ////////////////////////////////////////////////
 
@@ -42,55 +70,7 @@ $(function(){
             animTop(myScroll, body, header);
         }
     });
-
-
-
-    ////////////////////////////////////////////////
-    // anim ref home
-    ////////////////////////////////////////////////
-
-    var myScroll;
-    var areaReaction = 200;
-    var strength = 0.6;
-    var strengthRotation = 0.05;
-    var portfolioItems = $('.portfolio-items li');
-    var exp, expR;
-
-    // position en y d'un item sans son translate
-    function getPosWithoutTranslate(myObj) {
-        var pos = myObj.offset().top;
-        if (myObj.css('transform').indexOf('(') > 0) {
-            pos += -parseInt(myObj.css('transform').split(/[()]/)[1].split(',')[5]);
-        }
-        return Math.round(pos);
-    }
-
-    // Request anim frame
-    function scrollPage(){
-        myScroll = $(document).scrollTop();
-        windowWidth = $(window).width();
-        windowHeight = $(window).height();
-        portfolioItems.each(function(i) {
-            if (getPosWithoutTranslate($(this))>=myScroll+windowHeight-areaReaction) {
-                exp = Math.round((getPosWithoutTranslate($(this))-myScroll-windowHeight+areaReaction)*strength);
-                expR = i%2 === 0 ? exp*strengthRotation : -(exp*strengthRotation);
-                TweenMax.set($(this).find('h2'), {y: exp, rotation: expR});
-            } else if(getPosWithoutTranslate($(this))<=myScroll+areaReaction) {
-                exp = Math.round((getPosWithoutTranslate($(this))-myScroll-areaReaction)*strength);
-                expR = i%2 === 0 ? exp*strengthRotation : -(exp*strengthRotation);
-                TweenMax.set($(this).find('h2'), {y: exp, rotation: expR});
-            } else {
-                TweenMax.set($(this).find('h2'), {y: 0, rotation: 0});
-            }
-        });
-        requestAnimFrame(scrollPage);
-    }
-    TweenMax.set($('.offset'), {'height': areaReaction+'px'});
-    scrollPage();
-
-    ////////////////////////////////////////////////
-    ////////////////////////////////////////////////
-    ////////////////////////////////////////////////
+   
 
 
     $(window).on('resize', function(){
