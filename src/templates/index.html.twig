@@ -10,7 +10,7 @@
 {% block content %}
 	<div id='page' class='barba-container' data-class='home'>
         <div class='wrapper-video-home' id='video'>
-            <video preload='auto' poster='' loop autoplay>
+            <video preload='auto' poster='' loop autoplay muted>
                 <source src='video/video-home.mp4' type='video/mp4' />
             </video>
         </div>
@@ -160,3 +160,8 @@
         </section>
     </div>
 {% endblock content %}
+
+{% block javascript_bottom %}
+    {{parent()}}
+    <script src='js/libs/fitie.js' defer></script>
+{% endblock javascript_bottom %}
