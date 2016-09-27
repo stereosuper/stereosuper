@@ -2,7 +2,7 @@
 
 var Barba = require('./libs/barba.min.js');
 var $ = require('./libs/jquery/dist/jquery.min.js');
-var TweenMax = require('./libs/gsap/src/minified/TweenMax.min.js');
+// var TweenMax = require('./libs/gsap/src/uncompressed/TweenMax.js');
 //var TimelineMax = require('./libs/gsap/src/minified/TimelineMax.min.js');
 
 

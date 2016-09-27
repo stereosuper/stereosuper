@@ -1,5 +1,6 @@
 var $ = require('./libs/jquery/dist/jquery.min.js');
-var TweenMax = require('./libs/gsap/src/minified/TweenMax.min.js');
+var TweenMax = require('./libs/gsap/src/uncompressed/TweenMax.js');
+
 window.requestAnimFrame = require('./requestAnimFrame.js');
 
 module.exports = function(myScroll, body, header, skillsHome, skillsTop){

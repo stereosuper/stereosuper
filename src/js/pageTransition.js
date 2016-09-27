@@ -12,14 +12,11 @@ module.exports = Barba.BaseTransition.extend({
 
     fadeOut: function(){
         // return $(this.oldContainer).animate({ opacity: 0 }).promise();
-        // $(this.oldContainer).animate({ opacity: 0 });
-        //TweenMax.to([$('#skillsHome')], 0.3, {opacity: 0});
-
         return new Promise( function(resolve, reject) {
             var tlFadeOut = new TimelineMax({onComplete: function(){
                 resolve(true);
             }});
-            tlFadeOut.to([$('#skillsHome'), $('.portfolio-item a >div'), $('.portfolio-item .bg')], 2, {opacity: 0});
+            tlFadeOut.to([$('#skillsHome'), $('.portfolio-item a > div'), $('.portfolio-item .bg')], 2, {opacity: 0});
         } );
     },
 

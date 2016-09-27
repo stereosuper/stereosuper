@@ -1,5 +1,5 @@
 var $ = require('./libs/jquery/dist/jquery.min.js');
-var TweenMax = require('./libs/gsap/src/minified/TweenMax.min.js');
+var TweenMax = require('./libs/gsap/src/uncompressed/TweenMax.js');
 
 var getPosWithoutTranslate = require('./getPosWithoutTranslate.js');
 
