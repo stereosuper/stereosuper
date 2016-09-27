@@ -16,7 +16,7 @@ module.exports = Barba.BaseTransition.extend({
             var tlFadeOut = new TimelineMax({onComplete: function(){
                 resolve(true);
             }});
-            tlFadeOut.to([$('#skillsHome'), $('.portfolio-item a > div'), $('.portfolio-item .bg')], 2, {opacity: 0});
+            tlFadeOut.to([$('#skillsHome'), $('.portfolio-item a > div'), $('.portfolio-item .bg')], 0.5, {opacity: 0});
         } );
     },
 
