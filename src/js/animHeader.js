@@ -3,7 +3,7 @@ var $ = require('./libs/jquery/dist/jquery.min.js');
 window.requestAnimFrame = require('./requestAnimFrame.js');
 var detectScrollDir = require('./detectScrollDir.js');
 
-module.exports = function(myScroll, body, header, skillsHome, skillsTop){
+module.exports = function(myScroll, body, header, skillsTop){
     var lastScroll = myScroll, scrollDir = 0;
 
     (function scrollHeader(){

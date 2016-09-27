@@ -9,6 +9,13 @@
     display: inline-block;
     vertical-align: bottom;
     margin: 0 55px 0 0;
+    transition: color $transition;
+    &.on{
+        color: $blue;
+    }
+    .js &{
+        cursor: pointer;
+    }
     &:last-child{
         margin: 0;
     }

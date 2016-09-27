@@ -10,6 +10,7 @@ module.exports = function(myScroll, body, header, skillsHome, skillsTop){
     function onScroll(){
         blockTitle = $('#blockTitle');
         video = $('#video');
+        skillsHome = $('#skillsHome');
         myScroll = $(document).scrollTop();
 
         if(body.hasClass('home')){

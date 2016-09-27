@@ -12,6 +12,10 @@
 	height: 140px;
 	position: relative;
 	margin: 40px $gutter;
+	transition: opacity $transition;
+	&.off{
+		opacity: 0.2;
+	}
 	&:nth-of-type(odd){
 		clear: both;
 	}

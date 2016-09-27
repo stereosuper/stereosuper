@@ -10,13 +10,15 @@ $(function(){
 
     // window.requestAnimFrame = require('./requestAnimFrame.js');
     // var getPosWithoutTranslate = require('./getPosWithoutTranslate.js');
+    // var stringToArray = require('./stringToArray.js');
 
     var pageTransition = require('./pageTransition.js');
-    var animHeader = require('./animHeader.js');
+    var animHeaderScroll = require('./animHeader.js');
 
     var animTop = require('./animTop.js');
-    var animSkills = require('./animSkills.js');
+    var animSkillsScroll = require('./animSkills.js');
     var portfolioItemsAnimation = require('./portfolioItemsAnimation.js');
+    var animSkillsHover = require('./animSkillsHover.js');
 
 
     var windowWidth = $(window).width(), windowHeight = $(window).height();
@@ -37,9 +39,8 @@ $(function(){
     // Header Scroll Animation
     ////////////////////////////////////////////////
 
-    animHeader(myScroll, body, header, skillsHome, skillsTop);
-    //console.log(skillsTop);
-    var animSkillsSetUp = animSkills(myScroll, body, header, skillsHome, skillsTop);
+    animHeaderScroll(myScroll, body, header, skillsTop);
+    var animSkillsSetUp = animSkillsScroll(myScroll, body, header, skillsHome, skillsTop);
 
 
     ////////////////////////////////////////////////
@@ -60,6 +61,8 @@ $(function(){
         onEnterCompleted: function(){
             // The Transition has just finished.
 
+            var portfolioItems = $('#portfolio').find('.portfolio-item');
+
             skillsHome = $('#skillsHome');
             skillsTop = skillsHome.offset().top - 100;
 
@@ -70,12 +73,14 @@ $(function(){
 
             // Anim skills with header
             if(!animSkillsSetUp){
-                animSkillsSetUp = animSkills(myScroll, body, header, skillsHome, skillsTop);
+                animSkillsSetUp = animSkillsScroll(myScroll, body, header, skillsHome, skillsTop);
             }
 
             // Anim Refs Home
-            var portfolioItems = $('#portfolio').find('li');
             portfolioItemsAnimation(myScroll, windowHeight, portfolioItems);
+
+            // Anim skills hover
+            animSkillsHover(body);
         },
         onLeave: function(){
             // A new Transition toward a new page has just started.
