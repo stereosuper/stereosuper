@@ -24,6 +24,12 @@
 	}
 	a{
 		display: block;
+		position: relative;
+		&:hover{
+			h2{
+				transform: scale(1.05);
+			}
+		}
 	}
 	h2{
 		width: 90%;
@@ -37,6 +43,21 @@
 		transform-origin: 50% 50%;
 		backface-visibility: hidden;
 		outline: 1px solid transparent;
+		.bg{
+			display: block;
+			height: auto;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			opacity: 0.1;
+			background-position: 50% 60%;
+			background-repeat: no-repeat;
+			background-size: 100%;
+			//transform: scale(1.05);
+			transform-origin: 50% 50%;
+		}
 		&:before, &:after{
 			content: '';
 			position: absolute;
@@ -58,10 +79,10 @@
 	}
 	div{
 		width: 305px;
+		height: 140px;
 		border-left: 1px solid rgba(#fff, 0.5);
 		position: absolute;
 		top: 0;
-		bottom: 0;
 		right: 0;
 	}
 	time, span{
@@ -95,7 +116,7 @@
     .#{$name}-item{
     	h2{
     		background: nth($portfolioColors, $i);
-    		&:before{
+    		.bg{
     			background-image: url(../img/bg-#{$name}.png);
     		}
     		&:after{
