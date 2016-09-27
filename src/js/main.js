@@ -30,7 +30,7 @@ $(function(){
     var skillsHome = $('#skillsHome'), skillsTop = skillsHome.length ? skillsHome.offset().top - 100 : 0;
 
 
-
+    body.removeClass('no-js').addClass('js');
     // isMobile.any ? body.addClass('is-mobile') : body.addClass('is-desktop');
 
 
@@ -112,17 +112,17 @@ $(function(){
     ////////////////////////////////////////////////
 
     /*var aFx = 70,
-        trF = 4;  
-    $('.portfolio-item').on('mousemove touchmove',function(e){  
+        trF = 4;
+    $('.portfolio-item').on('mousemove touchmove',function(e){
         var cH = $('.portfolio-item').innerHeight(),
             cW = $('.portfolio-item').innerWidth(),
             eX = (e.originalEvent.type === 'touchmove') ? e.originalEvent.touches[0].pageX  : e.offsetX,
             eY = (e.originalEvent.type === 'touchmove') ? e.originalEvent.touches[0].pageY  : e.offsetY;
 
-            TweenMax.to($(this).find('.bg'), 0.5, { 
-                rotationX: ((eY - cH / 2) / aFx) - 1 * 2, 
+            TweenMax.to($(this).find('.bg'), 0.5, {
+                rotationX: ((eY - cH / 2) / aFx) - 1 * 2,
                 rotationY: ((eX - cW / 2) / aFx * -1) - 1 * 2,
-                y:(eY - (cH / 2)) / (70 - 1 * 20),  
+                y:(eY - (cH / 2)) / (70 - 1 * 20),
                 x:(eX - (cW / 2)) / (70 - 1 * 20)
             });
     }).on('mouseout touchend',function(e){
@@ -132,7 +132,7 @@ $(function(){
             x:0,
             rotationX: 0,
             rotationY: 0,
-            transformPerspective:'1500' 
+            transformPerspective:'1500'
         });
     });*/
 
