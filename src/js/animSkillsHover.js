@@ -23,11 +23,11 @@ module.exports = function(body){
         theseDatas = stringToArray($(this).data('skill'));
         skills.each(function(){
             thisData = $(this).data('skill');
-            if(theseDatas.indexOf(thisData) > -1){
-                $(this).addClass('on');
+            if(theseDatas.indexOf(thisData) < 0){
+                $(this).addClass('off');
             }
         });
     }).on('mouseleave', '.portfolio-item', function(){
-        skills.removeClass('on');
+        skills.removeClass('off');
     });
 }
