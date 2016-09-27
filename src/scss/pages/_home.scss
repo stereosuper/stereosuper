@@ -46,12 +46,12 @@ h1{
     left: 0;
     right: 0;
     top: 94vh;
-    z-index: 1;
+    z-index: 2;
     &.fixed{
         position: fixed;
         top: -30px;
         background: #000;
-        transform: translate3d(0, 130px, 0);
+        transform: translate3d(0, 133px, 0);
         &.top{
             transform: translate3d(0, 30px, 0);
             transition: transform $transition;

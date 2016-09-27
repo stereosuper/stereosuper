@@ -4,12 +4,14 @@ window.requestAnimFrame = require('./requestAnimFrame.js');
 
 module.exports = function(myScroll, body, header, skillsHome, skillsTop){
     var animatingTop = false;
-    var htmlBody = $('html, body');
+    var htmlBody = $('html, body'), blockTitle, video;
     var isHome = body.hasClass('home') ? true : false;
 
-    (function onScroll(){
-        var blockTitle = $('#blockTitle'), video = $('#video');
+    function onScroll(){
+        blockTitle = $('#blockTitle');
+        video = $('#video');
         myScroll = $(document).scrollTop();
+
         if(body.hasClass('home')){
             if(myScroll > 100 && !body.hasClass('scrolled') && !animatingTop){
                 TweenMax.to(blockTitle, 0.6, {opacity: 0});
@@ -37,16 +39,22 @@ module.exports = function(myScroll, body, header, skillsHome, skillsTop){
         }else{
             body.removeClass('scrolled');
             header.removeClass('scrolled');
+            animatingTop = false;
         }
-        requestAnimFrame(onScroll);
-    }());
 
-    body.on('mousewheel', function(e){
-        if(animatingTop){
-            e.preventDefault();
-            e.stopPropagation();
-        }
-    });
+        requestAnimFrame(onScroll);
+    }
+
+    if(isHome){
+        onScroll();
+
+        body.on('mousewheel', function(e){
+            if(animatingTop){
+                e.preventDefault();
+                e.stopPropagation();
+            }
+        });
+    }
 
     return isHome;
 };

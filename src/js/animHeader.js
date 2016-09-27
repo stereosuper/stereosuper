@@ -11,17 +11,12 @@ module.exports = function(myScroll, body, header, skillsHome, skillsTop){
         scrollDir = detectScrollDir(myScroll, lastScroll);
         lastScroll = myScroll;
 
-        if((header.hasClass('scrolled') && myScroll > skillsTop + 20) || !body.hasClass('home')){
+        // synch with animSkills.js (only on home)
+        if((header.hasClass('scrolled') && myScroll > skillsTop + 50) || !body.hasClass('home')){
             if(scrollDir > 0){
                 header.removeClass('off');
-                if(skillsHome.length){
-                    skillsHome.removeClass('top').addClass('down');
-                }
             }else if(scrollDir < 0){
                 header.addClass('off');
-                if(skillsHome.length){
-                    skillsHome.addClass('top').removeClass('down');
-                }
             }
         }
 

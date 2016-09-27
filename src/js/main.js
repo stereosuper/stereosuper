@@ -13,7 +13,9 @@ $(function(){
 
     var pageTransition = require('./pageTransition.js');
     var animHeader = require('./animHeader.js');
+
     var animTop = require('./animTop.js');
+    var animSkills = require('./animSkills.js');
     var portfolioItemsAnimation = require('./portfolioItemsAnimation.js');
 
 
@@ -49,17 +51,22 @@ $(function(){
     // Home functions
     ////////////////////////////////////////////////
 
-    var Home = Barba.BaseView.extend({
-        namespace: 'home',
+    var Home = Barba.BaseView.extend({ namespace: 'home',
         onEnter: function(){
             // The new Container is ready and attached to the DOM.
-            skillsTop = skillsHome.offset().top - 100;
-            if(!animTopSetUp){
-                animTop(myScroll, body, header, skillsHome, skillsTop);
-            }
         },
         onEnterCompleted: function(){
             // The Transition has just finished.
+
+            // Anim top home
+            skillsHome = $('#skillsHome');
+            skillsTop = skillsHome.offset().top - 100;
+            if(!animTopSetUp){
+                animTopSetUp = animTop(myScroll, body, header, skillsHome, skillsTop);
+            }
+
+            // Anim skills with header
+            animSkills(myScroll, body, header, skillsHome, skillsTop);
 
             // Anim Refs Home
             var portfolioItems = $('#portfolio').find('li');
