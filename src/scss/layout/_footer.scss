@@ -1,2 +1,17 @@
 /* Footer */
 
+#footer{
+    position: fixed;
+    right: 20px;
+    bottom: 10px;
+    @include gotham-medium(1rem);
+    text-transform: uppercase;
+    transform: rotate(-90deg) translate3d(100%, 0, 0);
+    transform-origin: 100% 50%;
+    opacity: 0.7;
+    a{
+        &:hover, &:focus{
+            opacity: 0.7;
+        }
+    }
+}
