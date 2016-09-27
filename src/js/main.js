@@ -38,6 +38,8 @@ $(function(){
     ////////////////////////////////////////////////
 
     animHeader(myScroll, body, header, skillsHome, skillsTop);
+    //console.log(skillsTop);
+    var animSkillsSetUp = animSkills(myScroll, body, header, skillsHome, skillsTop);
 
 
     ////////////////////////////////////////////////
@@ -58,15 +60,18 @@ $(function(){
         onEnterCompleted: function(){
             // The Transition has just finished.
 
-            // Anim top home
             skillsHome = $('#skillsHome');
             skillsTop = skillsHome.offset().top - 100;
+
+            // Anim top home
             if(!animTopSetUp){
                 animTopSetUp = animTop(myScroll, body, header, skillsHome, skillsTop);
             }
 
             // Anim skills with header
-            animSkills(myScroll, body, header, skillsHome, skillsTop);
+            if(!animSkillsSetUp){
+                animSkillsSetUp = animSkills(myScroll, body, header, skillsHome, skillsTop);
+            }
 
             // Anim Refs Home
             var portfolioItems = $('#portfolio').find('li');
