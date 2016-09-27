@@ -111,30 +111,30 @@ $(function(){
     // Hover portfolio items
     ////////////////////////////////////////////////
 
-    /*var aFx = 70,
-        trF = 4;
-    $('.portfolio-item').on('mousemove touchmove',function(e){
-        var cH = $('.portfolio-item').innerHeight(),
-            cW = $('.portfolio-item').innerWidth(),
-            eX = (e.originalEvent.type === 'touchmove') ? e.originalEvent.touches[0].pageX  : e.offsetX,
-            eY = (e.originalEvent.type === 'touchmove') ? e.originalEvent.touches[0].pageY  : e.offsetY;
+    // var aFx = 70;
+    // $('.portfolio-item').on('mousemove touchmove',function(e){
+    //     var itemHeight = $('.portfolio-item').innerHeight(),
+    //         itemWidth = $('.portfolio-item').innerWidth(),
+    //         eX = (e.originalEvent.type === 'touchmove') ? e.originalEvent.touches[0].pageX : e.offsetX,
+    //         eY = (e.originalEvent.type === 'touchmove') ? e.originalEvent.touches[0].pageY : e.offsetY;
 
-            TweenMax.to($(this).find('.bg'), 0.5, {
-                rotationX: ((eY - cH / 2) / aFx) - 1 * 2,
-                rotationY: ((eX - cW / 2) / aFx * -1) - 1 * 2,
-                y:(eY - (cH / 2)) / (70 - 1 * 20),
-                x:(eX - (cW / 2)) / (70 - 1 * 20)
-            });
-    }).on('mouseout touchend',function(e){
-        TweenMax.to($(this).find('.bg'), 1, {
-            delay:.2,
-            y:0,
-            x:0,
-            rotationX: 0,
-            rotationY: 0,
-            transformPerspective:'1500'
-        });
-    });*/
+    //         TweenMax.to($(this).find('.bg'), 0.5, {
+    //             rotationX: ((eY - itemHeight / 2) / aFx) - 1 * 2,
+    //             rotationY: ((eX - itemWidth / 2) / aFx * -1) - 1 * 2,
+    //             y:(eY - (itemHeight / 2)) / (70 - 1 * 20),
+    //             x:(eX - (itemWidth / 2)) / (70 - 1 * 20)
+    //         });
+    // }).on('mouseout touchend',function(e){
+    //     console.log('aze');
+    //     TweenMax.to($(this).find('.bg'), 1, {
+    //         delay:.2,
+    //         y:0,
+    //         x:0,
+    //         rotationX: 0,
+    //         rotationY: 0,
+    //         transformPerspective:'1500'
+    //     });
+    // });
 
     $(window).on('resize', function(){
 

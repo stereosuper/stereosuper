@@ -26,8 +26,10 @@
 		display: block;
 		position: relative;
 		&:hover{
-			h2{
+			.bg{
 				transform: scale(1.05);
+				opacity: 0.3;
+				transition: 0.5s transform cubic-bezier(0.165, 0.045, 0.360, 0.995), 0.5s opacity cubic-bezier(0.165, 0.045, 0.360, 0.995);
 			}
 		}
 	}
@@ -56,6 +58,7 @@
 			background-repeat: no-repeat;
 			background-size: 100%;
 			//transform: scale(1.05);
+			transition: 1s transform cubic-bezier(0.165, 0.045, 0.360, 0.995), 1s opacity cubic-bezier(0.165, 0.045, 0.360, 0.995);
 			transform-origin: 50% 50%;
 		}
 		&:before, &:after{
