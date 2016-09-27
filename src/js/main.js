@@ -25,12 +25,13 @@ $(function(){
     var myScroll = $(document).scrollTop();
 
     var body = $('body');
+    var htmlTag = $('html');
     // var main = $('#main');
     var header = $('#header');
     var skillsHome = $('#skillsHome'), skillsTop = skillsHome.length ? skillsHome.offset().top - 100 : 0;
 
 
-    body.removeClass('no-js').addClass('js');
+    htmlTag.removeClass('no-js').addClass('js');
     // isMobile.any ? body.addClass('is-mobile') : body.addClass('is-desktop');
 
 
