@@ -98,13 +98,14 @@ $(function(){
     ////////////////////////////////////////////////
 
     var lastClickedLink;
+
     Barba.Pjax.start();
     Barba.Dispatcher.on('linkClicked', function(e){
         lastClickedLink = e;
+        Barba.Pjax.getTransition = function(){
+            return pageTransition(lastClickedLink);
+        };
     });
-    Barba.Pjax.getTransition = function(){
-        return pageTransition;
-    };
     // Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container){
     //     if(!animTopSetUp){
     //         animTop(myScroll, body, header, skillsHome, skillsTop);
