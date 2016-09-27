@@ -12,8 +12,10 @@ module.exports = Barba.BaseTransition.extend({
 
     fadeOut: function(){
         // return $(this.oldContainer).animate({ opacity: 0 }).promise();
+        console.log(this);
+        var tlFadeOut;
         return new Promise( function(resolve, reject) {
-            var tlFadeOut = new TimelineMax({onComplete: function(){
+            tlFadeOut = new TimelineMax({onComplete: function(){
                 resolve(true);
             }});
             tlFadeOut.to([$('#skillsHome'), $('.portfolio-item a > div'), $('.portfolio-item .bg')], 0.5, {opacity: 0});

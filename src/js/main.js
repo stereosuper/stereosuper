@@ -97,7 +97,11 @@ $(function(){
     // Load Page
     ////////////////////////////////////////////////
 
+    var lastClickedLink;
     Barba.Pjax.start();
+    Barba.Dispatcher.on('linkClicked', function(e){
+        lastClickedLink = e;
+    });
     Barba.Pjax.getTransition = function(){
         return pageTransition;
     };
