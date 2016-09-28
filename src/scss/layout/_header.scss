@@ -48,7 +48,19 @@
 }
 
 .header-left{
+	width: 50%;
 	padding: 9px 0 0;
+}
+
+.header-right{
+	width: 25%;
+}
+
+.wrapper-logo{
+	display: inline-block;
+	vertical-align: top;
+	width: 50%;
+	padding: 0 $gutter;
 }
 
 #logo{
@@ -77,8 +89,9 @@
 .menu-contact{
 	display: inline-block;
 	vertical-align: top;
-	margin: 0 0 0 95px;
-	padding: 0;
+	width: 50%;
+	margin: 0;
+	padding: 0 $gutter;
 	> li{
 		margin: 2px 0;
 	}
@@ -87,8 +100,9 @@
 .menu-header{
 	display: inline-block;
 	vertical-align: top;
+	width: 50%;
 	margin: 0;
-	padding: 12px 30px 22px 0;
+	padding: 12px $gutter 22px;
 	border-right: 1px solid rgba(#fff, 0.3);
 	> li{
 		margin: 0 0 8px;
@@ -135,7 +149,8 @@
 .lang-social{
 	display: inline-block;
 	vertical-align: top;
-	padding: 12px 0 0 30px;
+	width: 50%;
+	padding: 12px $gutter 0;
 }
 
 .social{
