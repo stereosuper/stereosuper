@@ -41,9 +41,15 @@
 }
 
 .header-left{
+	width: 50%;
 	padding: 9px 0 0;
 }
-
+.wrapper-logo{
+	display: inline-block;
+	vertical-align: top;
+	width: 50%;
+	padding: 0 $gutter;
+}
 #logo{
 	display: inline-block;
 	vertical-align: top;
@@ -70,8 +76,9 @@
 .menu-contact{
 	display: inline-block;
 	vertical-align: top;
-	margin: 0 0 0 95px;
-	padding: 0;
+	width: 50%;
+	margin: 0;
+	padding: 0 $gutter;
 	> li{
 		margin: 2px 0;
 	}
