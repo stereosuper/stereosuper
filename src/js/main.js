@@ -35,7 +35,6 @@ $(function(){
     // isMobile.any ? body.addClass('is-mobile') : body.addClass('is-desktop');
 
 
-
     ////////////////////////////////////////////////
     // Header Scroll Animation
     ////////////////////////////////////////////////
@@ -48,6 +47,7 @@ $(function(){
     // Anim Top Home
     ////////////////////////////////////////////////
 
+    skillsHome.data('top', skillsTop);
     var animTopSetUp = animTop(myScroll, body, header, skillsHome);
 
 
@@ -58,15 +58,15 @@ $(function(){
     var Home = Barba.BaseView.extend({ namespace: 'home',
         onEnter: function(){
             // The new Container is ready and attached to the DOM.
+
+            skillsHome = $('#skillsHome');
+            skillsTop = skillsHome.offset().top - 100;
+            skillsHome.data('top', skillsTop);
         },
         onEnterCompleted: function(){
             // The Transition has just finished.
 
             var portfolioItems = $('#portfolio').find('.portfolio-item');
-
-            skillsHome = $('#skillsHome');
-            skillsTop = skillsHome.offset().top - 100;
-            skillsHome.data('top', skillsTop);
 
             // Anim top home
             if(!animTopSetUp){
