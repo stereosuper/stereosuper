@@ -14,6 +14,10 @@
 	margin: 40px 0;
 	padding: 0 $gutter;
 	transition: opacity $transition;
+	&.pageTransition{
+	    transition: $transitionOpacityPage;
+	    opacity: 0;
+	}
 	&.off{
 		opacity: 0.2;
 	}
@@ -49,6 +53,13 @@
 		transform-origin: 50% 50%;
 		backface-visibility: hidden;
 		outline: 1px solid transparent;
+		&.pageTransition{
+			&:after{
+				transition: $transitionOpacityPage, $transitionTransformPage;
+				opacity: 0;
+				transform: translateY(15px);
+			}
+		}
 		.bg{
 			display: block;
 			height: auto;
@@ -64,6 +75,10 @@
 			//transform: scale(1.05);
 			transition: 1s transform cubic-bezier(0.165, 0.045, 0.360, 0.995), 1s opacity cubic-bezier(0.165, 0.045, 0.360, 0.995);
 			transform-origin: 50% 50%;
+			&.pageTransition{
+			    transition: $transitionOpacityPage;
+			    opacity: 0;
+			}
 		}
 		&:before, &:after{
 			content: '';
@@ -87,10 +102,23 @@
 	div{
 		width: 28.6%;
 		height: 140px;
-		border-left: 1px solid rgba(#fff, 0.5);
 		position: absolute;
 		top: 0;
 		right: 0;
+		&:before{
+			content: '';
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			border-left: 1px solid rgba(#fff, 0.5);
+		}
+		&.pageTransition{
+			&:before, time, span{
+			    transition: $transitionOpacityPage;
+			    opacity: 0;
+			}
+		}
 	}
 	time, span{
 		display: block;

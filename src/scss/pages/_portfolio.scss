@@ -10,6 +10,14 @@
         text-indent: -99em;
         background-repeat: no-repeat;
         background-size: 100%;
+
+        transform: translateY(-15px);
+        opacity: 0;
+        &.pageTransitionFadeIn{
+            transform: translateY(0);
+            transition: $transitionOpacityPage, $transitionTransformPage;
+            opacity: 1;
+        }
     }
     #barba-wrapper{
         padding-bottom: 0;
