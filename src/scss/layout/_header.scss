@@ -38,6 +38,13 @@
 		display: flex;
 		justify-content: space-between;
 	}
+	ul{
+		> li{
+			&:before{
+				display: none;
+			}
+		}
+	}
 }
 
 .header-left{

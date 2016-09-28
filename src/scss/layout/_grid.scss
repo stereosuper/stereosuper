@@ -10,3 +10,13 @@
     padding: 0 $gutter;
     margin: 0 auto;
 }
+
+.small-container{
+    width: 75%;
+}
+
+@media (max-width: 860px){
+    .small-container{
+        width: 100%;
+    }
+}
