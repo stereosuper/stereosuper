@@ -22,6 +22,9 @@
 	&:nth-of-type(even){
 		float: right;
 	}
+	&:before{
+		display: none;
+	}
 	a{
 		display: block;
 		position: relative;

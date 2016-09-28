@@ -10,6 +10,9 @@
     vertical-align: bottom;
     margin: 0 55px 0 0;
     transition: opacity $transition;
+    &:before{
+        display: none;
+    }
     &.off{
         opacity: 0.3;
     }
