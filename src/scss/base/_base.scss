@@ -39,8 +39,8 @@ h1{
     color: $blue;
     .home &{
         max-width: 75%;
-        margin: 0 -0.08em 0.25em;
         padding: 0.12em $gutter 0;
+        margin: 0 -0.08em 0.25em;
         font-size: 10.5vw;
     }
 }
