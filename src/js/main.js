@@ -102,9 +102,8 @@ $(function(){
 
     Barba.Pjax.start();
     Barba.Dispatcher.on('linkClicked', function(e){
-        lastClickedLink = e;
         Barba.Pjax.getTransition = function(){
-            return pageTransition(lastClickedLink);
+            return pageTransition(e);
         };
     });
     // Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container){

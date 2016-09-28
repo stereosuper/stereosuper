@@ -12,34 +12,45 @@ module.exports = function(lastClickedLink){
         },
 
         fadeOut: function(){
-            // return $(this.oldContainer).animate({ opacity: 0 }).promise();
-
-            console.log(lastClickedLink);
-
-            var tlFadeOut;
+            var tlFadeOut,
+                tpsTransition = 0.5;
             return new Promise( function(resolve, reject) {
                 tlFadeOut = new TimelineMax({onComplete: function(){
                     resolve(true);
                 }});
-                tlFadeOut.to([$('#skillsHome'), $('.portfolio-item a > div'), $('.portfolio-item .bg')], 0.5, {opacity: 0});
-            } );
+                tlFadeOut.to([$('#skillsHome'), $(lastClickedLink).parents('.portfolio-item').siblings(), $('#blockTitle'), $('#video')], tpsTransition, {className: '+=pageTransition'});
+                tlFadeOut.to([$('.portfolio-item .bg'), $(lastClickedLink).find('> div')], tpsTransition, {className: '+=pageTransition'});
+                tlFadeOut.to([$(lastClickedLink).find('h2')], tpsTransition, {className: '+=pageTransition'});
+            });
         },
 
         fadeIn: function(){
             var _this = this;
             var $el = $(this.newContainer);
+            var tlFadeIn
+                tpsTransitionFadeIn = 0.5;
 
-            $('body').removeClass().addClass($el.data('class'));
+            tlFadeIn = new TimelineMax({onComplete: function(){
+                _this.done();
+            }});
+            
+            //tlFadeIn.to($(lastClickedLink), 1, {opacity: 0});
+            tlFadeIn.set($('body'), {className: '-='+$(this.oldContainer).data('class')});
+            tlFadeIn.to($('body'), 1, {className: '+='+$el.data('class')});
+            tlFadeIn.set($el, {visibility: 'visible', opacity: 0, onComplete: function(){
+                $(document).scrollTop(0);
+            }});
+            tlFadeIn.to($el, 1, {opacity: 1});
+            tlFadeIn.to([$('h1')], tpsTransitionFadeIn, {className: '+=pageTransitionFadeIn'});
 
-           $el.css({
+            /*$('body').removeClass().addClass($el.data('class'));
+
+            $el.css({
                 visibility : 'visible',
                 opacity : 0
             }).delay(100).animate({ opacity: 1 }, 400, function(){
-                /*if($el.find('.portfolio-role').length){
-                    TweenMax.to($el.find('.portfolio-role'), 0.3, {y: '0%'});
-                }*/
                 _this.done();
-            });
+            });*/
 
             $(this.oldContainer).hide();
         }
