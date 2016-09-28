@@ -18,7 +18,7 @@ module.exports = function(myScroll, body, header, skillsHome){
         if(header.hasClass('scrolled') && myScroll > skillsHome.data('top') + 50){
             if(scrollDir > 0){
                 skillsHome.removeClass('top').addClass('down');
-            }else if(scrollDir < 0){
+            }else if(scrollDir < 0 && header.hasClass('off')){
                 skillsHome.addClass('top').removeClass('down');
             }
         }
