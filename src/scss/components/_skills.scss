@@ -8,7 +8,8 @@
 .skill{
     display: inline-block;
     vertical-align: bottom;
-    margin: 0 55px 0 0;
+    width: 20%;
+    padding: 0 $gutter;
     transition: opacity $transition;
     &:before{
         display: none;
