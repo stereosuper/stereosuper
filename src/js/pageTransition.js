@@ -41,7 +41,7 @@ module.exports = function(lastClickedLink){
                 $(document).scrollTop(0);
             }});
             tlFadeIn.to($el, 1, {opacity: 1});
-            tlFadeIn.to([$('h1')], tpsTransitionFadeIn, {className: '+=pageTransitionFadeIn'});
+            tlFadeIn.to([$('.portfolio-text h1'), $('.portfolio-text p'), $('.portfolio-role')], tpsTransitionFadeIn, {className: '+=pageTransitionFadeIn'});
 
             /*$('body').removeClass().addClass($el.data('class'));
 
