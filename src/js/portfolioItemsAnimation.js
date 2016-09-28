@@ -19,15 +19,19 @@ module.exports = function(myScroll, windowHeight, portfolioItems){
         portfolioItems.each(function(i) {
             thisPos = getPosWithoutTranslate($(this));
             thisTitle = $(this).find('h2');
+            thisDesc = $(this).find('a >div');
 
             if (thisPos >= myScroll+windowHeight-areaReaction) {
                 exp = (thisPos-myScroll-windowHeight+areaReaction)*strength | 0;
                 expResult = calcExp(exp, i);
+                TweenMax.to(thisDesc, 1, {opacity: 0});
             } else if(thisPos <= myScroll+areaReaction) {
                 exp = (thisPos-myScroll-areaReaction)*strength | 0;
                 expResult = calcExp(exp, i);
+                TweenMax.to(thisDesc, 1, {opacity: 0});
             } else {
                 expResult = [0, 0];
+                TweenMax.to(thisDesc, 1, {opacity: 1});
             }
             TweenMax.set(thisTitle, {y: expResult[0], rotation: expResult[1]});
         });
