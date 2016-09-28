@@ -11,6 +11,8 @@ module.exports = function(myScroll, body, header, skillsHome){
         scrollDir = detectScrollDir(myScroll, lastScroll);
         lastScroll = myScroll;
 
+        skillsHome = $('#skillsHome');
+
         // synch with animSkills.js (only on home)
         if((header.hasClass('scrolled') && myScroll > skillsHome.data('top') + 50) || !body.hasClass('home')){
             if(scrollDir > 0){
