@@ -3,7 +3,7 @@ var $ = require('./libs/jquery/dist/jquery.min.js');
 window.requestAnimFrame = require('./requestAnimFrame.js');
 var detectScrollDir = require('./detectScrollDir.js');
 
-module.exports = function(myScroll, body, header, skillsHome, skillsTop){
+module.exports = function(myScroll, body, header, skillsHome){
     var lastScroll = myScroll, scrollDir = 0;
     var isHome = body.hasClass('home') ? true : false;
 
@@ -15,7 +15,7 @@ module.exports = function(myScroll, body, header, skillsHome, skillsTop){
         skillsHome = $('#skillsHome');
 
         // synch with animHeader.js
-        if(header.hasClass('scrolled') && myScroll > skillsTop + 50){
+        if(header.hasClass('scrolled') && myScroll > skillsHome.data('top') + 50){
             if(scrollDir > 0){
                 skillsHome.removeClass('top').addClass('down');
             }else if(scrollDir < 0){

@@ -3,7 +3,7 @@ var TweenMax = require('./libs/gsap/src/uncompressed/TweenMax.js');
 
 window.requestAnimFrame = require('./requestAnimFrame.js');
 
-module.exports = function(myScroll, body, header, skillsHome, skillsTop){
+module.exports = function(myScroll, body, header, skillsHome){
     var animatingTop = false;
     var htmlBody = $('html, body'), blockTitle, video;
     var isHome = body.hasClass('home') ? true : false;
@@ -20,13 +20,13 @@ module.exports = function(myScroll, body, header, skillsHome, skillsTop){
                 TweenMax.to(video, 0.3, {opacity: 0});
                 body.addClass('scrolled');
                 animatingTop = true;
-                htmlBody.stop().animate({scrollTop: skillsTop}, 700, function(){
+                htmlBody.stop().animate({scrollTop: skillsHome.data('top')}, 700, function(){
                     animatingTop = false;
                     header.addClass('scrolled');
                     skillsHome.addClass('fixed');
                 });
             }
-            if(myScroll < skillsTop - 20 && body.hasClass('scrolled') && !animatingTop){
+            if(myScroll < skillsHome.data('top') - 20 && body.hasClass('scrolled') && !animatingTop){
                 TweenMax.to(blockTitle, 0.6, {opacity: 1, delay: 0.6});
                 TweenMax.to(video, 0.6, {opacity: 1, delay: 0.6});
                 body.removeClass('scrolled');

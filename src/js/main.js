@@ -40,15 +40,15 @@ $(function(){
     // Header Scroll Animation
     ////////////////////////////////////////////////
 
-    animHeaderScroll(myScroll, body, header, skillsTop);
-    var animSkillsSetUp = animSkillsScroll(myScroll, body, header, skillsHome, skillsTop);
+    animHeaderScroll(myScroll, body, header, skillsHome);
+    var animSkillsSetUp = animSkillsScroll(myScroll, body, header, skillsHome);
 
 
     ////////////////////////////////////////////////
     // Anim Top Home
     ////////////////////////////////////////////////
 
-    var animTopSetUp = animTop(myScroll, body, header, skillsHome, skillsTop);
+    var animTopSetUp = animTop(myScroll, body, header, skillsHome);
 
 
     ////////////////////////////////////////////////
@@ -66,15 +66,16 @@ $(function(){
 
             skillsHome = $('#skillsHome');
             skillsTop = skillsHome.offset().top - 100;
+            skillsHome.data('top', skillsTop);
 
             // Anim top home
             if(!animTopSetUp){
-                animTopSetUp = animTop(myScroll, body, header, skillsHome, skillsTop);
+                animTopSetUp = animTop(myScroll, body, header, skillsHome);
             }
 
             // Anim skills with header
             if(!animSkillsSetUp){
-                animSkillsSetUp = animSkillsScroll(myScroll, body, header, skillsHome, skillsTop);
+                animSkillsSetUp = animSkillsScroll(myScroll, body, header, skillsHome);
             }
 
             // Anim Refs Home
@@ -143,7 +144,10 @@ $(function(){
     // });
 
     $(window).on('resize', function(){
-
+        if(skillsHome.length && !skillsHome.hasClass('fixed')){
+            skillsTop = skillsHome.offset().top - 100;
+            skillsHome.data('top', skillsTop);
+        }
 	}).on('load', function(){
 
 	});
