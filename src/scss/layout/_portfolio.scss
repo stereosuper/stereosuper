@@ -163,6 +163,22 @@
     		}
     	}
     }
+    @if $name == 'lbb'{
+    	.#{$name}-item{
+    		h2{
+    			.bg{
+    				opacity: 0.6;
+    			}
+    		}
+    		a{
+    			&:hover, &:focus{
+    				.bg{
+    					opacity: 1;
+    				}
+    			}
+    		}
+    	}
+    }
 }
 
 

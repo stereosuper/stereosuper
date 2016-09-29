@@ -216,8 +216,39 @@
 }
 
 
-@media (max-width: 860px){
-	.menu-contact{
+
+@media (max-width: 1240px){
+	.header-right{
+		width: 30%;
+	}
+}
+
+@media (max-width: 1180px){
+	.header-left{
+		width: 60%;
+	}
+}
+
+@media (max-width: 1060px){
+	.header-left{
+		width: 65%;
+	}
+	.header-right{
+		width: 35%;
+	}
+}
+
+@media (max-width: 960px){
+	.menu-header{
+		width: 100%;
+		border: 0;
+		li{
+			&:first-child{
+				display: none;
+			}
+		}
+	}
+	.lang-social{
 		display: none;
 	}
 }
