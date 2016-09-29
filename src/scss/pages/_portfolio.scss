@@ -15,7 +15,8 @@
         opacity: 0;
         &.pageTransitionFadeIn{
             transform: translateY(0);
-            transition: $transitionOpacityPage, $transitionTransformPage;
+            //transition: $transitionOpacityPage, $transitionTransformPage;
+            transition: opacity 0.3s ease-out, transform 0.3s ease-out;
             opacity: 1;
         }
     }
@@ -63,7 +64,7 @@
     &.pageTransitionFadeIn{
         transform: translateY(0);
         transition: $transitionOpacityPage, $transitionTransformPage;
-        transition-delay: 3s;
+        transition-delay: 8s;
         opacity: 1;
     }
 }
@@ -100,12 +101,12 @@
     transform-origin: 50% 100%;
     &.pageTransitionFadeIn{
         transform: scaleY(1);
-        transition: $transitionTransformPage;
+        transition: transform 0.3s ease-out;
         .portfolio-role-content{
             transform: translateY(0);
             opacity: 1;
             transition: $transitionOpacityPage, $transitionTransformPage;
-            transition-delay: 1.5s;
+            transition-delay: 0.3s;
         }
     }
     &-content{

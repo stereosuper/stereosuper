@@ -28,7 +28,7 @@ module.exports = function(lastClickedLink){
             var _this = this;
             var $el = $(this.newContainer);
             var tlFadeIn
-                tpsTransitionFadeIn = 0.5;
+                tpsTransitionFadeIn = 0.3;
 
             tlFadeIn = new TimelineMax({onComplete: function(){
                 _this.done();
@@ -36,11 +36,11 @@ module.exports = function(lastClickedLink){
             
             //tlFadeIn.to($(lastClickedLink), 1, {opacity: 0});
             tlFadeIn.set($('body'), {className: '-='+$(this.oldContainer).data('class')});
-            tlFadeIn.to($('body'), 0.5, {className: '+='+$el.data('class')});
+            tlFadeIn.to($('body'), tpsTransitionFadeIn, {className: '+='+$el.data('class')});
             tlFadeIn.set($el, {visibility: 'visible', opacity: 0, onComplete: function(){
                 $(document).scrollTop(0);
             }});
-            tlFadeIn.to($el, 0.5, {opacity: 1});
+            tlFadeIn.to($el, tpsTransitionFadeIn, {opacity: 1});
             tlFadeIn.to([$('.portfolio-text h1'), $('.portfolio-text p'), $('.portfolio-role'), $('.portfolio-cover')], tpsTransitionFadeIn, {className: '+=pageTransitionFadeIn'});
 
             /*$('body').removeClass().addClass($el.data('class'));
