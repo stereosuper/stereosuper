@@ -15,9 +15,9 @@ module.exports = function(myScroll, windowHeight, portfolioItems){
 
     (function portfolioItemsAnimation(){
         myScroll = $(document).scrollTop();
-        windowHeight = $(window).height();
 
         if(myScroll !== lastScroll){
+            windowHeight = $(window).height();
             portfolioItems.each(function(i) {
                 thisPos = getPosWithoutTranslate($(this));
                 thisTitle = $(this).find('h2');
