@@ -36,12 +36,12 @@ module.exports = function(lastClickedLink){
             
             //tlFadeIn.to($(lastClickedLink), 1, {opacity: 0});
             tlFadeIn.set($('body'), {className: '-='+$(this.oldContainer).data('class')});
-            tlFadeIn.to($('body'), 1, {className: '+='+$el.data('class')});
+            tlFadeIn.to($('body'), 0.5, {className: '+='+$el.data('class')});
             tlFadeIn.set($el, {visibility: 'visible', opacity: 0, onComplete: function(){
                 $(document).scrollTop(0);
             }});
-            tlFadeIn.to($el, 1, {opacity: 1});
-            tlFadeIn.to([$('h1')], tpsTransitionFadeIn, {className: '+=pageTransitionFadeIn'});
+            tlFadeIn.to($el, 0.5, {opacity: 1});
+            tlFadeIn.to([$('.portfolio-text h1'), $('.portfolio-text p'), $('.portfolio-role'), $('.portfolio-cover')], tpsTransitionFadeIn, {className: '+=pageTransitionFadeIn'});
 
             /*$('body').removeClass().addClass($el.data('class'));
 
