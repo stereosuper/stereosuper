@@ -5,6 +5,7 @@
     position: relative;
 	font-family: $elenabold;
     color: $blue;
+    text-decoration: none;
     span{
         display: inline-block;
         transition: transform .25s ease-in-out;
@@ -48,6 +49,7 @@
 .link-caps{
     @include gotham-medium(1rem);
     text-transform: uppercase;
+    text-decoration: none;
 }
 
 .btn{
@@ -59,6 +61,7 @@
     z-index: 1;
     color: #fff;
     background: $blue;
+    text-decoration: none;
     /*&:after{
         content: '';
         position: absolute;
@@ -88,6 +91,7 @@
     }
     &:hover, &:focus{
         background: #000 !important;
+        color: #fff;
         //color: $blue;
         /*&:after{
             opacity: 1;
@@ -111,6 +115,7 @@
     padding: 0 0 0 35px;
     @include gotham(1.3rem);
     text-transform: uppercase;
+    text-decoration: none;
     &:before, &:after{
         content: '';
         width: 14px;
@@ -131,6 +136,7 @@
     }
     &:hover, &:focus{
         opacity: 0.7;
+        color: #fff;
         &:before{
             transform: rotate(135deg);
         }

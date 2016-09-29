@@ -5,18 +5,19 @@
     background: #000;
 }
 
-.container{
-    max-width: 1300px;
+.container, .container-small{
     padding: 0 $gutter;
     margin: 0 auto;
 }
-
-.small-container{
+.container{
+    max-width: 1300px;
+}
+.container-small{
     width: 75%;
 }
 
-@media (max-width: 860px){
-    .small-container{
+@media (max-width: 1060px){
+    .container-small{
         width: 100%;
     }
 }

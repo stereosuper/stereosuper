@@ -33,7 +33,8 @@
 	a{
 		display: block;
 		position: relative;
-		&:hover{
+		color: #fff;
+		&:hover, &:focus{
 			.bg{
 				transform: scale(1.05);
 				opacity: 0.3;
@@ -57,7 +58,7 @@
 			&:after{
 				transition: $transitionOpacityPage, $transitionTransformPage;
 				opacity: 0;
-				transform: translateY(15px);
+				transform: translate3d(0, 15px, 0);
 			}
 		}
 		.bg{

@@ -22,13 +22,26 @@
     #barba-wrapper{
         padding-bottom: 0;
     }
-    .link-arrow, .lang a{
+    .link-arrow, .lang a, .social a{
         color: #fff;
+    }
+    .social{
+        a{
+            &:hover, &:focus{
+                opacity: 0.7;
+            }
+        }
     }
     #logo{
         .icon{
-            &.stereo{
-                fill: #fff;
+            fill: #fff;
+        }
+        strong{
+            color: #fff;
+        }
+        &:hover, &:focus{
+            .icon{
+                opacity: 0.7;
             }
         }
     }
