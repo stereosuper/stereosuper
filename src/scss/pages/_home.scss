@@ -66,7 +66,7 @@ h1{
     &.fixed{
         position: fixed;
         top: -30px;
-        transform: translate3d(0, 133px, 0);
+        transform: translate3d(0, 130px, 0);
         &.top{
             transform: translate3d(0, 30px, 0);
             transition: transform $transition;
