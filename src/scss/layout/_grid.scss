@@ -3,6 +3,10 @@
 #barba-wrapper{
     padding: 170px 0;
     background: #000;
+    min-height: 100vh;
+    .portfolio &{
+    	position: relative;
+    }
 }
 
 .container, .container-small{

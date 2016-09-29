@@ -22,6 +22,7 @@ body{
     -moz-osx-font-smoothing: grayscale;
     color: $white;
     counter-reset: title-counter;
+    min-height: 100vh;
     &.home{
         background: #000;
     }
