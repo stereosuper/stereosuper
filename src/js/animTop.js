@@ -24,9 +24,9 @@ module.exports = function(myScroll, body, header, skillsHome){
                     animatingTop = false;
                     header.addClass('scrolled');
                     skillsHome.addClass('fixed');
+                    //video.find('video').pause();
                 });
-            }
-            if(myScroll < skillsHome.data('top') - 20 && body.hasClass('scrolled') && !animatingTop){
+            }else if(myScroll < skillsHome.data('top') - 20 && body.hasClass('scrolled') && !animatingTop){
                 TweenMax.to(blockTitle, 0.6, {opacity: 1, delay: 0.6});
                 TweenMax.to(video, 0.6, {opacity: 1, delay: 0.6});
                 body.removeClass('scrolled');
@@ -39,9 +39,11 @@ module.exports = function(myScroll, body, header, skillsHome){
                 });
             }
         }else{
-            body.removeClass('scrolled');
-            header.removeClass('scrolled');
-            animatingTop = false;
+            if(body.hasClass('scrolled')){
+                body.removeClass('scrolled');
+                header.removeClass('scrolled');
+                animatingTop = false;
+            }
         }
 
         requestAnimFrame(onScroll);

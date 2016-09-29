@@ -9,19 +9,23 @@ module.exports = function(myScroll, body, header, skillsHome){
 
     function scrollSkills(){
         myScroll = $(document).scrollTop();
-        scrollDir = detectScrollDir(myScroll, lastScroll);
-        lastScroll = myScroll;
 
-        skillsHome = $('#skillsHome');
+        if(myScroll !== lastScroll){
+            scrollDir = detectScrollDir(myScroll, lastScroll);
 
-        // synch with animHeader.js
-        if(header.hasClass('scrolled') && myScroll > skillsHome.data('top') + 50){
-            if(scrollDir > 0){
-                skillsHome.removeClass('top').addClass('down');
-            }else if(scrollDir < 0 && header.hasClass('off')){
-                skillsHome.addClass('top').removeClass('down');
+            skillsHome = $('#skillsHome');
+
+            // synch with animHeader.js
+            if(header.hasClass('scrolled') && myScroll > skillsHome.data('top') + 50){
+                if(scrollDir > 0){
+                    skillsHome.removeClass('top').addClass('down');
+                }else if(scrollDir < 0 && header.hasClass('off')){
+                    skillsHome.addClass('top').removeClass('down');
+                }
             }
         }
+
+        lastScroll = myScroll;
 
         requestAnimFrame(scrollSkills);
     }
