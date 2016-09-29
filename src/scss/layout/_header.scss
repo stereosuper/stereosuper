@@ -45,6 +45,9 @@
 			}
 		}
 	}
+	a{
+		text-decoration: none;
+	}
 }
 
 .header-left{
@@ -68,12 +71,15 @@
 	vertical-align: top;
 	@include gotham(1.8rem);
 	text-transform: uppercase;
+	transition: none;
 	strong{
 		@include gotham-bold(1em);
+		color: $blue;
 	}
 	.icon{
 		width: 25px;
 		height: 25px;
+		transition: $transition;
 		&.stereo{
 			margin-right: 3px;
 			fill: $blue;
@@ -83,6 +89,15 @@
 		display: inline-block;
 		vertical-align: top;
 		padding: 2px 0 0 20px;
+	}
+	&:hover, &:focus{
+		color: #fff;
+		.icon{
+			fill: $blue;
+			&.stereo{
+				fill: #fff;
+			}
+		}
 	}
 }
 
@@ -116,6 +131,7 @@
 		position: relative;
 		@include gotham-medium(1rem);
 		text-transform: uppercase;
+		color: #fff;
 		&:before{
 			content: '';
 			width: 15px;
