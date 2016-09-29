@@ -41,7 +41,8 @@ module.exports = function(lastClickedLink){
                 $(document).scrollTop(0);
             }});
             tlFadeIn.to($el, tpsTransitionFadeIn, {opacity: 1});
-            tlFadeIn.to([$('.portfolio-text h1'), $('.portfolio-text p'), $('.portfolio-role'), $('.portfolio-cover')], tpsTransitionFadeIn, {className: '+=pageTransitionFadeIn'});
+            console.log($('#page'));
+            tlFadeIn.to([$('.portfolio-text h1'), $('.portfolio-text p'), $('.portfolio-role'), $('.portfolio-cover'), $('.barba-container')], tpsTransitionFadeIn, {className: '+=pageTransitionFadeIn'});
 
             /*$('body').removeClass().addClass($el.data('class'));
 
