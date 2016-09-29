@@ -40,11 +40,9 @@ module.exports = function(myScroll, body, header, skillsHome){
                 });
             }
         }else{
-            if(body.hasClass('scrolled')){
-                body.removeClass('scrolled');
-                header.removeClass('scrolled');
-                animatingTop = false;
-            }
+            body.removeClass('scrolled');
+            header.removeClass('scrolled');
+            animatingTop = false;
         }
 
         requestAnimFrame(onScroll);
