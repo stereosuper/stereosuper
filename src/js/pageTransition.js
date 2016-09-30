@@ -34,7 +34,6 @@ module.exports = function(lastClickedLink){
                 _this.done();
             }});
             
-            //tlFadeIn.to($(lastClickedLink), 1, {opacity: 0});
             tlFadeIn.set($('body'), {className: '-='+$(this.oldContainer).data('class')});
             tlFadeIn.to($('body'), tpsTransitionFadeIn, {className: '+='+$el.data('class')});
             tlFadeIn.set($el, {visibility: 'visible', opacity: 0, onComplete: function(){
@@ -43,15 +42,6 @@ module.exports = function(lastClickedLink){
             tlFadeIn.to($el, tpsTransitionFadeIn, {opacity: 1});
             console.log($('#page'));
             tlFadeIn.to([$('.portfolio-text h1'), $('.portfolio-text p'), $('.portfolio-role'), $('.portfolio-cover'), $('.barba-container')], tpsTransitionFadeIn, {className: '+=pageTransitionFadeIn'});
-
-            /*$('body').removeClass().addClass($el.data('class'));
-
-            $el.css({
-                visibility : 'visible',
-                opacity : 0
-            }).delay(100).animate({ opacity: 1 }, 400, function(){
-                _this.done();
-            });*/
 
             $(this.oldContainer).hide();
         }

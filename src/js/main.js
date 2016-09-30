@@ -50,6 +50,32 @@ $(function(){
     skillsHome.data('top', skillsTop);
     var animTopSetUp = animTop(myScroll, body, header, skillsHome);
 
+    ////////////////////////////////////////////////
+    // Sprites skills
+    ////////////////////////////////////////////////
+
+    var skills = $('.skills'),
+        nbSkills = skills.find('li').length, j = 0,
+        numCols = 6, numRows = 6, frameWidth = 95, frameHeight = 11,
+        symbols = skills.find('.symbol'),
+        steppedEase = new SteppedEase(numCols-1),
+        spritesTl = [];
+        
+    for(j; j<nbSkills; j++){
+        var i = 0, sprite = symbols.eq(j);
+        spritesTl[j] = new TimelineMax({paused: true, repeat: -1});
+        for(i; i<numRows; i++){
+           spritesTl[j].add(TweenMax.fromTo(sprite, 0.15, {backgroundPosition: '0 -'+(frameHeight*i)+'px'}, {backgroundPosition: '-'+(frameWidth*(numCols-1))+'px -'+(frameHeight*i)+'px', ease: steppedEase}));
+        }
+        TweenMax.set(sprite, {backgroundPosition: '0 0'});
+    }
+    spritesTl[0].play();
+    spritesTl[1].play();
+    spritesTl[2].play();
+    spritesTl[3].play();
+    spritesTl[4].play();
+
+
 
     ////////////////////////////////////////////////
     // Home functions
