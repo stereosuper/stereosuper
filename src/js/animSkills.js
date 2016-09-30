@@ -22,6 +22,8 @@ module.exports = function(myScroll, body, header, skillsHome){
                 }else if(scrollDir < 0 && header.hasClass('off')){
                     skillsHome.addClass('top').removeClass('down');
                 }
+            }else{
+                skillsHome.removeClass('fixed').removeClass('top').removeClass('down');
             }
         }
 
