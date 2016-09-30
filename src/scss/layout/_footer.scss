@@ -1,22 +1,127 @@
 /* Footer */
 
 #footer{
+    padding: 10px 0;
     position: fixed;
     right: 20px;
-    bottom: 10px;
+    bottom: -50px;
     @include gotham-medium(1rem);
-    text-transform: uppercase;
     transform: rotate(-90deg) translate3d(100%, 0, 0);
     transform-origin: 100% 50%;
-    opacity: 0.7;
+    background: #000;
     .portfolio &{
         color: #000;
+        background: none;
+        .lang, .social{
+            a{
+                color: inherit;
+            }
+        }
     }
     a{
         text-decoration: none;
-        color: inherit;
         &:hover, &:focus{
             opacity: 0.7;
+        }
+    }
+    .footer-about{
+        display: none;
+        float: right;
+        margin: 0 0 60px;
+        font-size: 1.3rem;
+    }
+}
+
+.mentions{
+    display: inline-block;
+    padding: 0 20px;
+    text-transform: uppercase;
+    opacity: 0.7;
+    a{
+        color: inherit;
+    }
+}
+
+.footer-bottom{
+    position: relative;
+    clear: both;
+    &:before{
+        content: '';
+        display: none;
+        position: absolute;
+        top: 0;
+        left: -30px;
+        right: -30px;
+        border-top: 1px solid rgba(#fff, 0.3);
+        .portfolio &{
+            border-color: rgba(#000, 0.3);
+        }
+    }
+    .lang, .social{
+        display: none;
+    }
+    li{
+        &:before{
+            display: none
+        }
+    }
+    .lang{
+        padding: 15px 20px 15px 0;
+        border-right: 1px solid rgba(#fff, 0.3);
+        .portfolio &{
+            border-color: rgba(#000, 0.3);
+        }
+        .non-active{
+            font-size: 1.2rem;
+        }
+        .slash{
+            font-size: 2rem;
+            vertical-align: middle;
+        }
+        a{
+            font-size: 1.8rem;
+        }
+    }
+    .social{
+        float: right;
+        margin: 15px 0px;
+        > li{
+            vertical-align: middle;
+        }
+        .twitter{
+            width: 20px;
+            height: 21px;
+        }
+        .facebook{
+            width: 10px;
+            height: 17px;
+        }
+    }
+}
+
+@media (max-width: 960px){
+    #footer{
+        position: static;
+        transform: none;
+        .footer-about{
+            display: inline-block;
+        }
+    }
+
+    .mentions{
+        opacity: 0.5;
+        a{
+            @include elena(1.3rem);
+            text-transform: none;
+        }
+    }
+
+    .footer-bottom{
+        &:before{
+            display: block;
+        }
+        .lang, .social{
+            display: inline-block;
         }
     }
 }

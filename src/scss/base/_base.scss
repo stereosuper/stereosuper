@@ -265,6 +265,14 @@ a{
     }
 }
 
+@media (max-width: 870px){
+    h2{
+        &:before{
+            margin: 0;
+        }
+    }
+}
+
 @media (max-width: 700px){
     h1{
         font-size: 7rem;

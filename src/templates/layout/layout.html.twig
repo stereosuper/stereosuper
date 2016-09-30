@@ -141,7 +141,39 @@
         </main>
 
         <footer id='footer'>
-            &copy; 2016 &bull; <a href='/mentions.html'>Mentions</a>
+            <div class='container'>
+                <a href='#' class='link-arrow link-caps footer-about'>
+                    <span>A propos</span>
+                    <svg class='icon i1'><use xlink:href='#icon-big-arrow'/></svg>
+                    <svg class='icon i2'><use xlink:href='#icon-big-arrow'/></svg>
+                </a>
+
+                <div class='footer-bottom'>
+                    <div class='lang'>
+                        <span class='non-active'>
+                            fr
+                        </span><span class='slash'>
+                            /
+                        </span><a href='#' title='English'>
+                            en
+                        </a>
+                    </div>
+
+                    <div class='mentions'>&copy; 2016 &bull; <a href='/mentions.html'>Mentions</a></div>
+
+                    <ul class='social'>
+                        <li>
+                            <a href='https://twitter.com/stereosuper' target='_blank' title='Suivez-nous sur Twitter'>
+                                <svg class='icon twitter'><use xlink:href='#icon-twitter'/></svg>
+                            </a>
+                        </li><li>
+                            <a href='https://www.facebook.com/stereosuper' target='_blank' title='Suivez-nous sur Facebook'>
+                                <svg class='icon facebook'><use xlink:href='#icon-facebook'/></svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </footer>
 
         {% block javascript_bottom %}
