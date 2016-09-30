@@ -23,8 +23,41 @@
     &:last-child{
         margin: 0;
     }
+    .symbol{
+        display: block;
+        width: 95px;
+        height: 11px;
+        margin: 0 0 25px;
+        background-size: 570px 66px;
+        background-repeat: no-repeat;
+    }
     svg{
         display: block;
         margin: 0 0 25px;
+    }
+    &[data-skill='strategy']{
+        .symbol{
+            background-image: url('../layoutImg/dashes.png');
+        }
+    }
+    &[data-skill='identity']{
+        .symbol{
+            background-image: url('../layoutImg/waves.png');
+        }
+    }
+    &[data-skill='design']{
+        .symbol{
+            background-image: url('../layoutImg/zigzags.png');
+        }
+    }
+    &[data-skill='animation']{
+        .symbol{
+            background-image: url('../layoutImg/slashes.png');
+        }
+    }
+    &[data-skill='dev']{
+        .symbol{
+            background-image: url('../layoutImg/dots.png');
+        }
     }
 }

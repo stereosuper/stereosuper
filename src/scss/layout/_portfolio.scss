@@ -2,6 +2,7 @@
 
 .portfolio-list{
 	padding-top: 97vh;
+	backface-visibility: hidden;
 	ul{
 		margin: 0;
 	}
