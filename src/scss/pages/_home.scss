@@ -121,7 +121,7 @@ h1{
 
     .text-home{
         width: 100%;
-        padding: 50px 0 0;
+        padding: 50px $gutter 0;
         position: static;
     }
 
@@ -140,6 +140,20 @@ h1{
         .skills{
             width: 100%;
             margin: 0;
+        }
+    }
+}
+
+@media (max-width: 870px){
+    .home h1, .text-home{
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .skills-home{
+        .skills{
+            padding-left: 0;
+            padding-right: 0;
         }
     }
 }

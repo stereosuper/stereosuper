@@ -8,8 +8,15 @@
     @include gotham-medium(1rem);
     transform: rotate(-90deg) translate3d(100%, 0, 0);
     transform-origin: 100% 50%;
+    background: #000;
     .portfolio &{
         color: #000;
+        background: none;
+        .lang, .social{
+            a{
+                color: inherit;
+            }
+        }
     }
     a{
         text-decoration: none;
@@ -46,6 +53,9 @@
         left: -30px;
         right: -30px;
         border-top: 1px solid rgba(#fff, 0.3);
+        .portfolio &{
+            border-color: rgba(#000, 0.3);
+        }
     }
     .lang, .social{
         display: none;
@@ -58,6 +68,9 @@
     .lang{
         padding: 15px 20px 15px 0;
         border-right: 1px solid rgba(#fff, 0.3);
+        .portfolio &{
+            border-color: rgba(#000, 0.3);
+        }
         .non-active{
             font-size: 1.2rem;
         }
