@@ -67,6 +67,7 @@
 			top: 50%;
 			left: $gutter;
 			margin: -28px 0 0;
+			z-index: 1;
 			background-repeat: no-repeat;
 			background-size: 100%;
 			background-position: 50% 50%;
@@ -211,7 +212,7 @@
 		h2{
 			// width: 96%;
 			height: 120px;
-			&:after{
+			&:before{
 				bottom: 10px;
 				left: 40px;
 			}
@@ -264,7 +265,7 @@
 		div{
 			width: 98%;
 		}
-		.bg{
+		.bg-img{
 			display: none;
 		}
 		time{
