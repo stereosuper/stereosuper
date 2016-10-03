@@ -40,7 +40,7 @@ module.exports = function(myScroll, body, header, skillsHome){
                 $(this).removeClass('top').addClass('down');
             }
         }).on('mouseleave', function(){
-            if(!$(this).hasClass('top')){
+            if(!$(this).hasClass('top') && header.hasClass('scrolled')){
                 header.addClass('off');
                 $(this).addClass('top').removeClass('down');
             }
