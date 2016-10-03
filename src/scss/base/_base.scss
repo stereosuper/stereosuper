@@ -278,3 +278,17 @@ a{
         font-size: 7rem;
     }
 }
+
+@media (max-width: 480px){
+    h1{
+        .home &{
+            max-width: 100%;
+        }
+    }
+}
+
+@media (max-width: 380px){
+    h1{
+        font-size: 5.3rem;
+    }
+}

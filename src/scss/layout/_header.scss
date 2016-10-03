@@ -243,35 +243,50 @@
 
 @media (max-width: 960px){
 	#header{
+		padding: 10px 0 0;
 		.m-icon{
 			display: block;
+			margin: 0 0 0 45px;
 		}
 	}
 
 	.header-left{
-		width: calc(100% - 20px);
+		width: calc(100% - 65px);
+		padding: 0;
 	}
 	.header-right{
-		width: 20px;
-		padding: 9px 0 0;
+		width: 65px;
+		padding: 10px 0 0;
+		margin: 0 $gutter 0 0;
+	}
+
+	.wrapper-logo{
+		width: 60%;
+		padding: 13px 0 13px 30px;
 	}
 
 	.menu-contact{
 		width: auto;
-		padding: 0;
+		padding: 10px 0 18px;
+		border-left: 1px solid rgba(#fff, 0.3);
 		float: right;
 		> li{
 			display: inline-block;
 			margin: 0;
+			.m-icon{
+				width: 26px;
+				height: 20px;
+			}
+			&:last-child{
+				.m-icon{
+					height: 23px;
+					width: 32px;
+				}
+			}
 		}
 		a{
 			overflow: hidden;
 			color: #fff;
-			.m-icon{
-				width: 26px;
-				height: 20px;
-				margin: 0;
-			}
 		}
 		span, .icon:not(.m-icon){
 			position: absolute;
@@ -311,5 +326,37 @@
 @media (max-width: 870px){
 	.wrapper-logo{
 		padding-left: 0;
+	}
+
+	.header-right{
+		margin: 0;
+	}
+}
+
+@media (max-width: 550px){
+	.wrapper-logo{
+		width: 55px;
+	}
+
+	#logo{
+		span{
+			display: none;
+		}
+	}
+}
+
+@media (max-width: 385px){
+	#header{
+		.m-icon{
+			margin: 0 0 0 25px;
+		}
+	}
+
+	.header-left{
+		width: calc(100% - 45px);
+	}
+
+	.header-right{
+		width: 45px;
 	}
 }
