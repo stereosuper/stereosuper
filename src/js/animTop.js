@@ -17,21 +17,21 @@ module.exports = function(myScroll, body, header, skillsHome){
         if(skillsHome.is(':visible')){
             if(body.hasClass('home')){
                 if(myScroll > 100 && !body.hasClass('scrolled') && !animatingTop){
+                    animatingTop = true;
                     TweenMax.to(blockTitle, 0.6, {opacity: 0});
                     TweenMax.to(video, 0.3, {opacity: 0});
                     body.addClass('scrolled');
-                    animatingTop = true;
                     htmlBody.stop().animate({scrollTop: skillsHome.data('top')}, 700, function(){
                         animatingTop = false;
                         header.addClass('scrolled');
                         video.find('video').get(0).pause();
                     });
                 }else if(myScroll < skillsHome.data('top') - 20 && body.hasClass('scrolled') && !animatingTop){
+                    animatingTop = true;
                     TweenMax.to(blockTitle, 0.6, {opacity: 1, delay: 0.6});
                     TweenMax.to(video, 0.6, {opacity: 1, delay: 0.6});
                     body.removeClass('scrolled');
                     header.removeClass('scrolled').removeClass('off');
-                    animatingTop = true;
                     htmlBody.stop().animate({scrollTop: 0}, 700, function(){
                         animatingTop = false;
                         header.removeClass('off');
@@ -44,11 +44,7 @@ module.exports = function(myScroll, body, header, skillsHome){
             header.removeClass('scrolled');
             animatingTop = false;
             if(body.hasClass('home')){
-                if(myScroll > 50){
-                    $('.wrapper-video-home').addClass('off');
-                }else{
-                    $('.wrapper-video-home').removeClass('off');
-                }
+                myScroll > 50 ? video.addClass('off') : video.removeClass('off');
             }
         }
 
