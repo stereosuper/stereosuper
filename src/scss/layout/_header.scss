@@ -244,6 +244,9 @@
 @media (max-width: 960px){
 	#header{
 		padding: 10px 0 0;
+		.home &{
+			background: #000;
+		}
 		.m-icon{
 			display: block;
 			margin: 0 0 0 45px;
@@ -285,8 +288,12 @@
 			}
 		}
 		a{
+			display: block;
 			overflow: hidden;
 			color: #fff;
+			&:hover, &:focus{
+				opacity: 0.5;
+			}
 		}
 		span, .icon:not(.m-icon){
 			position: absolute;
@@ -306,10 +313,14 @@
 			}
 		}
 		a{
+			display: block;
 			overflow: hidden;
 			.m-icon{
 				width: 20px;
 				height: 30px;
+			}
+			&:hover, &:focus{
+				opacity: 0.5;
 			}
 		}
 		span{
