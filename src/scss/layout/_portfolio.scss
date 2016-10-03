@@ -36,9 +36,9 @@
 		color: #fff;
 		&:hover, &:focus{
 			.bg{
-				transform: scale(1.05);
+				/*transform: scale(1.05);
 				opacity: 0.3;
-				transition: 0.5s transform cubic-bezier(0.165, 0.045, 0.360, 0.995), 0.5s opacity cubic-bezier(0.165, 0.045, 0.360, 0.995);
+				transition: 0.5s transform cubic-bezier(0.165, 0.045, 0.360, 0.995), 0.5s opacity cubic-bezier(0.165, 0.045, 0.360, 0.995);*/
 			}
 		}
 	}
@@ -47,41 +47,44 @@
 		height: 115px;
 		position: relative;
 		margin: 0;
-		text-indent: -99em;
-		overflow: hidden;
-		background: $blue;
 		top: 15px;
 		transform-origin: 50% 50%;
 		backface-visibility: hidden;
 		outline: 1px solid transparent;
 		&.pageTransition{
-			&:after{
+			&:before{
 				//transition: $transitionOpacityPage, $transitionTransformPage;
 				transition: transform 0.2s ease-in, opacity 0.3s ease-in;
 				opacity: 0;
 				transform: translate3d(0, 15px, 0);
 			}
 		}
-		&:before, &:after{
+		&:before{
 			content: '';
 			position: absolute;
 			top: 0;
 			bottom: 0;
+			top: 50%;
+			left: $gutter;
+			margin: -28px 0 0 0;
 			background-repeat: no-repeat;
 			background-size: 100%;
 		}
-		&:after{
-			left: $gutter;
-			margin: auto;
-		}
-		&:before{
-			left: 0;
-			right: 0;
-			opacity: 0.1;
-			background-position: 50% 60%;
-		}
+	}
+	.logo{
+		text-indent: -99em;
+		overflow: hidden;
 	}
 	.bg{
+		display: block;
+		height: auto;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+	.bg-img{
 		display: block;
 		height: auto;
 		position: absolute;
@@ -152,27 +155,29 @@
 	$name: nth($portfolio, $i);
     .#{$name}-item{
     	h2{
-    		background: nth($portfolioColors, $i);
-    		.bg{
-    			background-image: url(../img/bg-#{$name}.png);
-    		}
-    		&:after{
+    		&:before{
     			width: #{nth($portfolioWidths, $i)}px;
     			height: #{nth($portfolioHeights, $i)}px;
     			background-image: url(../img/logo-#{$name}.png);
+    		}
+    		.bg{
+    			background: nth($portfolioColors, $i);
+    		}
+    		.bg-img{
+    			background-image: url(../img/bg-#{$name}.png);
     		}
     	}
     }
     @if $name == 'lbb'{
     	.#{$name}-item{
     		h2{
-    			.bg{
+    			.bg-img{
     				opacity: 0.6;
     			}
     		}
     		a{
     			&:hover, &:focus{
-    				.bg{
+    				.bg-img{
     					opacity: 1;
     				}
     			}
