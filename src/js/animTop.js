@@ -23,7 +23,6 @@ module.exports = function(myScroll, body, header, skillsHome){
                 htmlBody.stop().animate({scrollTop: skillsHome.data('top')}, 700, function(){
                     animatingTop = false;
                     header.addClass('scrolled');
-                    skillsHome.addClass('fixed');
                     video.find('video').get(0).pause();
                 });
             }else if(myScroll < skillsHome.data('top') - 20 && body.hasClass('scrolled') && !animatingTop){
@@ -31,7 +30,6 @@ module.exports = function(myScroll, body, header, skillsHome){
                 TweenMax.to(video, 0.6, {opacity: 1, delay: 0.6});
                 body.removeClass('scrolled');
                 header.removeClass('scrolled').removeClass('off');
-                skillsHome.removeClass('fixed').removeClass('down').removeClass('top');
                 animatingTop = true;
                 htmlBody.stop().animate({scrollTop: 0}, 700, function(){
                     animatingTop = false;
