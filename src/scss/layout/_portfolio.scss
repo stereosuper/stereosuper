@@ -61,14 +61,15 @@
 		}
 		&:before{
 			content: '';
+			max-width: 75%;
 			position: absolute;
-			top: 0;
 			bottom: 0;
 			top: 50%;
 			left: $gutter;
-			margin: -28px 0 0 0;
+			margin: -28px 0 0;
 			background-repeat: no-repeat;
 			background-size: 100%;
+			background-position: 50% 50%;
 		}
 	}
 	.logo{
