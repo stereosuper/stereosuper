@@ -1,5 +1,11 @@
 /* Portfolio-list */
 
+@mixin fixAnimation{
+	backface-visibility: hidden;
+	transform-style: preserve-3d;
+	will-change: transform;
+}
+
 .portfolio-list{
 	padding-top: 97vh;
 	backface-visibility: hidden;
@@ -35,11 +41,11 @@
 		position: relative;
 		color: #fff;
 		&:hover, &:focus{
-			.bg{
-				/*transform: scale(1.05);
-				opacity: 0.3;
-				transition: 0.5s transform cubic-bezier(0.165, 0.045, 0.360, 0.995), 0.5s opacity cubic-bezier(0.165, 0.045, 0.360, 0.995);*/
-			}
+			// .bg{
+			// 	transform: scale(1.05);
+			// 	opacity: 0.3;
+			// 	transition: 0.5s transform cubic-bezier(0.165, 0.045, 0.360, 0.995), 0.5s opacity cubic-bezier(0.165, 0.045, 0.360, 0.995);
+			// }
 		}
 	}
 	h2{
@@ -51,6 +57,8 @@
 		transform-origin: 50% 50%;
 		backface-visibility: hidden;
 		outline: 1px solid transparent;
+		backface-visibility: hidden;
+		transform-style: preserve-3d;
 		&.pageTransition{
 			&:before{
 				//transition: $transitionOpacityPage, $transitionTransformPage;
@@ -66,8 +74,9 @@
 			bottom: 0;
 			top: 50%;
 			left: $gutter;
-			margin: -28px 0 0;
-			z-index: 1;
+			transform: translateY(-50%);
+			margin: 0;
+			z-index: 3;
 			background-repeat: no-repeat;
 			background-size: 100%;
 			background-position: 50% 50%;
@@ -85,6 +94,23 @@
 		bottom: 0;
 		left: 0;
 		right: 0;
+		overflow: hidden;
+		mix-blend-mode: multiply;
+		z-index: 2;
+
+		@inculde fixAnimation;
+	}
+	.wrapper-bg-img{
+		display: block;
+		height: auto;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		overflow: hidden;
+		
+		@inculde fixAnimation;
 	}
 	.bg-img{
 		display: block;
@@ -94,13 +120,14 @@
 		bottom: 0;
 		left: 0;
 		right: 0;
-		opacity: 0.2;
+		opacity: 0.15;
 		background-position: 50% 60%;
 		background-repeat: no-repeat;
 		background-size: 100%;
-		//transform: scale(1.05);
-		transition: 1s transform cubic-bezier(0.165, 0.045, 0.360, 0.995), 1s opacity cubic-bezier(0.165, 0.045, 0.360, 0.995);
+		transform: scale(1.05) rotate(0.01deg);
 		transform-origin: 50% 50%;
+		
+		@inculde fixAnimation;
 		&.pageTransition{
 		    transition: $transitionOpacityPage;
 		    opacity: 0;

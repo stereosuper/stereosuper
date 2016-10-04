@@ -145,10 +145,11 @@ $(function(){
 
     var tlPortolioItemHover = new TimelineMax();
     $('.portfolio-item a').on('mouseenter', function(){
-        tlPortolioItemHover.to($(this).find('.bg'), 0.5, {css:{scale: 1.35}, ease:Quad.easeInOut});
-        //tlPortolioItemHover.to($(this).find('h2'), 0.5, {rotation: '0deg', ease:Quad.easeInOut});
+        TweenMax.to([$(this).find('.bg'), $(this).find('.wrapper-bg-img')], 0.5, {css:{scale: 1.05, rotation: '0.01deg', force3D: true}, ease:Quad.easeInOut});
+        TweenMax.to($(this).find('.bg-img'), 0.5, {css:{scale: 1, rotation: '0.01deg', force3D: true}, ease:Quad.easeInOut});
     }).on('mouseleave', function(){
-        tlPortolioItemHover.to($(this).find('.bg'), 0.5, {css:{scale: 1}, ease:Quad.easeInOut});
+        TweenMax.to([$(this).find('.bg'), $(this).find('.wrapper-bg-img')], 0.5, {css:{scale: 1, rotation: '0.01deg', force3D: true}, ease:Quad.easeInOut});
+        TweenMax.to($(this).find('.bg-img'), 0.5, {css:{scale: 1.05, rotation:  '0.01deg', force3D: true}, ease:Quad.easeInOut});
     });
 
     $(window).on('resize', function(){
