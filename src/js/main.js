@@ -145,11 +145,13 @@ $(function(){
 
     var tlPortolioItemHover = new TimelineMax();
     $('.portfolio-item a').on('mouseenter', function(){
-        TweenMax.to([$(this).find('.bg'), $(this).find('.wrapper-bg-img')], 0.5, {css:{scale: 1.05, rotation: '0.01deg', force3D: true}, ease:Quad.easeInOut});
-        TweenMax.to($(this).find('.bg-img'), 0.5, {css:{scale: 1, rotation: '0.01deg', force3D: true}, ease:Quad.easeInOut});
+        TweenMax.set($(this).find('h2'), {css:{rotation: '0.01deg', z: 0.01, force3D: true}});
+        TweenMax.to([$(this).find('.bg'), $(this).find('.wrapper-bg-img')], 0.5, {css:{scale: 1.05, rotation: '0.01deg', z: 0.01, force3D: true}, ease:Quad.easeInOut});
+        TweenMax.to($(this).find('.bg-img'), 0.5, {css:{opacity: 0.3, scale: 1, rotation: '0.01deg', z: 0.01, force3D: true}, ease:Quad.easeInOut});
     }).on('mouseleave', function(){
-        TweenMax.to([$(this).find('.bg'), $(this).find('.wrapper-bg-img')], 0.5, {css:{scale: 1, rotation: '0.01deg', force3D: true}, ease:Quad.easeInOut});
-        TweenMax.to($(this).find('.bg-img'), 0.5, {css:{scale: 1.05, rotation:  '0.01deg', force3D: true}, ease:Quad.easeInOut});
+        TweenMax.set($(this).find('h2'), {css:{clearProps: 'rotation', force3D: true}});
+        TweenMax.to([$(this).find('.bg'), $(this).find('.wrapper-bg-img')], 0.5, {css:{scale: 1, rotation: '0.01deg', z: 0.01, force3D: true}, ease:Quad.easeInOut});
+        TweenMax.to($(this).find('.bg-img'), 0.5, {css:{opacity: 0.15, scale: 1.05, rotation:  '0.01deg', z: 0.01, force3D: true}, ease:Quad.easeInOut});
     });
 
     $(window).on('resize', function(){
