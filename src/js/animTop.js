@@ -1,5 +1,6 @@
 var $ = require('./libs/jquery/dist/jquery.min.js');
 var TweenMax = require('./libs/gsap/src/uncompressed/TweenMax.js');
+var isMobile = require('./isMobile.min.js');
 
 window.requestAnimFrame = require('./requestAnimFrame.js');
 
@@ -14,7 +15,7 @@ module.exports = function(myScroll, body, header, skillsHome){
         skillsHome = $('#skillsHome');
         myScroll = $(document).scrollTop();
 
-        if(skillsHome.is(':visible')){
+        if(skillsHome.is(':visible') && !isMobile.any){
             if(body.hasClass('home')){
                 if(myScroll > 100 && !body.hasClass('scrolled') && !animatingTop){
                     animatingTop = true;
@@ -54,12 +55,14 @@ module.exports = function(myScroll, body, header, skillsHome){
     if(isHome){
         onScroll();
 
-        body.on('mousewheel', function(e){
-            if(animatingTop){
-                e.preventDefault();
-                e.stopPropagation();
-            }
-        });
+        if(!isMobile.any){
+            body.on('mousewheel', function(e){
+                if(animatingTop){
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+            });
+        }
     }
 
     return isHome;
