@@ -1,4 +1,5 @@
 var $ = require('./libs/jquery/dist/jquery.min.js');
+var isMobile = require('./isMobile.min.js');
 
 window.requestAnimFrame = require('./requestAnimFrame.js');
 var detectScrollDir = require('./detectScrollDir.js');
@@ -6,7 +7,7 @@ var detectScrollDir = require('./detectScrollDir.js');
 module.exports = function(myScroll, body, header, skillsHome){
     var lastScroll = myScroll, scrollDir = 0;
 
-    (function scrollHeader(){
+    function scrollHeader(){
         myScroll = $(document).scrollTop();
 
         if(myScroll !== lastScroll){
@@ -29,5 +30,9 @@ module.exports = function(myScroll, body, header, skillsHome){
         lastScroll = myScroll;
 
         requestAnimFrame(scrollHeader);
-    })();
+    }
+
+    if(!isMobile.any){
+        scrollHeader();
+    }
 }

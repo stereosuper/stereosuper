@@ -2,8 +2,9 @@
 
 var Barba = require('./libs/barba.min.js');
 var $ = require('./libs/jquery/dist/jquery.min.js');
+// var isMobile = require('./isMobile.min.js');
 // var TweenMax = require('./libs/gsap/src/uncompressed/TweenMax.js');
-//var TimelineMax = require('./libs/gsap/src/minified/TimelineMax.min.js');
+// var TimelineMax = require('./libs/gsap/src/minified/TimelineMax.min.js');
 
 
 $(function(){
@@ -60,7 +61,7 @@ $(function(){
         symbols = skills.find('.symbol'),
         steppedEase = new SteppedEase(numCols-1),
         spritesTl = [];
-        
+
     for(j; j<nbSkills; j++){
         var i = 0, sprite = symbols.eq(j);
         spritesTl[j] = new TimelineMax({paused: true, repeat: -1});
