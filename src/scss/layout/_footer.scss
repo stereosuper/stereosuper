@@ -3,11 +3,10 @@
 #footer{
     padding: 10px 0;
     position: fixed;
-    right: 20px;
-    bottom: -50px;
-    @include gotham-medium(1rem);
-    transform: rotate(-90deg) translate3d(100%, 0, 0);
-    transform-origin: 100% 50%;
+    left: 0;
+    bottom: -75px;
+    transform: rotate(-90deg) translate3d(0, 0, 0);
+    transform-origin: 0 0;
     background: #000;
     .portfolio &{
         color: #000;
@@ -35,8 +34,8 @@
 .mentions{
     display: inline-block;
     padding: 0 20px;
-    text-transform: uppercase;
-    opacity: 0.7;
+    font-size: 1.3rem;
+    opacity: 0.5;
     a{
         color: inherit;
     }
@@ -105,14 +104,6 @@
         transform: none;
         .footer-about{
             display: inline-block;
-        }
-    }
-
-    .mentions{
-        opacity: 0.5;
-        a{
-            @include elena(1.3rem);
-            text-transform: none;
         }
     }
 

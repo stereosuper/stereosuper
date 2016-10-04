@@ -16,7 +16,7 @@ module.exports = function(myScroll, body, header, skillsHome){
             skillsHome = $('#skillsHome');
 
             // synch with animHeader.js
-            if(header.hasClass('scrolled') && myScroll > skillsHome.data('top')){
+            if(header.hasClass('scrolled') && myScroll > skillsHome.data('top') && skillsHome.is(':visible')){
                 skillsHome.addClass('fixed').removeClass('top');
                 if(scrollDir < 0 && header.hasClass('off')){
                     skillsHome.addClass('top').addClass('down');
@@ -40,7 +40,7 @@ module.exports = function(myScroll, body, header, skillsHome){
                 $(this).removeClass('top').addClass('down');
             }
         }).on('mouseleave', function(){
-            if(!$(this).hasClass('top')){
+            if(!$(this).hasClass('top') && header.hasClass('scrolled')){
                 header.addClass('off');
                 $(this).addClass('top').removeClass('down');
             }
