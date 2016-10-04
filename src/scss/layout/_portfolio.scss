@@ -104,6 +104,8 @@
 		margin: 0;
 		top: 15px;
 		transform-origin: 50% 50%;
+		text-indent: -99em;
+		overflow: hidden;
 
 		outline: 1px solid transparent;
 		backface-visibility: hidden;
@@ -116,7 +118,7 @@
 				transform: translate3d(0, 15px, 0);
 			}
 		}
-		&:before{
+		.logo{
 			content: '';
 			max-width: 75%;
 			position: absolute;
@@ -130,10 +132,14 @@
 			background-size: 100%;
 			background-position: 50% 50%;
 		}
-	}
-	.logo{
-		text-indent: -99em;
-		overflow: hidden;
+		&:after{
+			content: '';
+			position: absolute;
+			top: -100px;
+			right: -100px;
+			left: -100px;
+			bottom: -100px;
+		}
 	}
 	.bg{
 		display: block;
@@ -147,6 +153,9 @@
 		
 		mix-blend-mode: multiply;
 		@inculde fixAnimation;
+		&.transi{
+			mix-blend-mode: normal;
+		}
 	}
 	.wrapper-bg-img{
 		display: block;
@@ -180,6 +189,19 @@
 		    transition: $transitionOpacityPage;
 		    opacity: 0;
 		}
+	}
+	.bg-transition{
+		display: block;
+		width: auto;
+		height: auto;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		//transform: scaleX(0) scaleY(1) rotate(0.01deg) translate3d(0, 0, 0.01px);
+		transform-origin: 50% 50%;
+		z-index: -1;
 	}
 	div{
 		width: 28.6%;
@@ -232,12 +254,12 @@
 	$name: nth($portfolio, $i);
     .#{$name}-item{
     	h2{
-    		&:before{
+    		.logo{
     			width: #{nth($portfolioWidths, $i)}px;
     			height: #{nth($portfolioHeights, $i)}px;
     			background-image: url(../img/logo-#{$name}.png);
     		}
-    		.bg{
+    		.bg, .bg-transition{
     			background: nth($portfolioColors, $i);
     		}
     		.bg-img{

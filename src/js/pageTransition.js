@@ -18,9 +18,26 @@ module.exports = function(lastClickedLink){
                 tlFadeOut = new TimelineMax({onComplete: function(){
                     resolve(true);
                 }});
-                tlFadeOut.to([$('#skillsHome'), $(lastClickedLink).parents('.portfolio-item').siblings(), $('#blockTitle'), $('#video')], tpsTransition, {className: '+=pageTransition'});
-                tlFadeOut.to([$('.portfolio-item .bg'), $(lastClickedLink).find('> div')], tpsTransition, {className: '+=pageTransition'});
-                tlFadeOut.to([$(lastClickedLink).find('h2')], tpsTransition, {className: '+=pageTransition'});
+                //tlFadeOut.to([$('#skillsHome'), $(lastClickedLink).parents('.portfolio-item').siblings(), $('#blockTitle'), $('#video')], tpsTransition, {className: '+=pageTransition'});
+                //tlFadeOut.to([$('.portfolio-item .bg'), $(lastClickedLink).find('> div')], tpsTransition, {className: '+=pageTransition'});
+                //tlFadeOut.to([$(lastClickedLink).find('h2')], tpsTransition, {className: '+=pageTransition'});
+                $(lastClickedLink).find('h2').prepend('<span class="bg-transition"></span>');
+                var gapLeft = $(lastClickedLink).find('h2').offset().left;
+                var gapRight = $(window).width() - gapLeft - $(lastClickedLink).find('h2').outerWidth();
+                tlFadeOut.to($('.portfolio-item .bg-img'), 0, {opacity: 0, ease: Power4.easeOut});
+                tlFadeOut.set($(lastClickedLink).find('.bg'), {className: '+=transi'})
+                tlFadeOut.set($(lastClickedLink).find('.bg-transition'), {left: -gapLeft+'px', right: -gapRight+'px', scaleX: 0, scaleY: 1});
+                var tw1 = new TweenMax.to($(lastClickedLink).find('.bg-transition'), 0.4, {scaleX: 1, scaleY: 1.05, ease: Power4.easeOut});
+                var tw2 = new TweenMax.to($(lastClickedLink).find('.logo'), 0.2, {y: 20, opacity: 0, ease: Linear.easeNone});
+                tlFadeOut.add(
+                    [
+                        tw1,
+                        tw2
+                    ], '+=0', 'sequence'
+                );
+                
+                //tlFadeOut.to(afterPortfolioItem, 0.4, {background: 'red', ease: Power4.easeOut});
+                //tlFadeOut.to($(lastClickedLink).find(), 0.4, {ease: Power4.easeOut});
             });
         },
 
