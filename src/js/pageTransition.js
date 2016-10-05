@@ -61,20 +61,20 @@ module.exports = function(lastClickedLink){
             var twFadeIn1 = new TweenMax.to($('.bgPortfolio'), 0.5, {scaleY:1, ease: Power4.easeOut});
             var twFadeIn2 = new TweenMax.to($('.bgPagePortfolio'), 0.5, {scaleY:1, ease: Power4.easeOut});
             var twFadeIn3 = new TweenMax.to($('.portfolio-text h1'), 0.5, {y: 0, opacity: 1, ease: Circ.easeOut});
+            var twFadeIn4 = new TweenMax.to([$('.portfolio-cover')], 0.5, {x: 0, opacity: 1, ease: Power4.easeOut, delay: 0.3});
             tlFadeIn.add(
                 [
                     twFadeIn1,
                     twFadeIn2,
-                    twFadeIn3
+                    twFadeIn3,
+                    twFadeIn4
                 ]
             );
             tlFadeIn.set($('#header'), {className: '+= bgVisible'});
 
-            var twFadeIn4 = new TweenMax.to([$('.portfolio-text p')], 0.3, {y: 0, opacity: 1, ease: Power4.easeOut});
-            var twFadeIn5 = new TweenMax.to([$('.portfolio-cover')], 0.3, {x: 0, opacity: 1, ease: Power4.easeOut});
+            var twFadeIn5 = new TweenMax.to([$('.portfolio-text p')], 0.3, {y: 0, opacity: 1, ease: Power4.easeOut});
             tlFadeIn.add(
                 [
-                    twFadeIn4,
                     twFadeIn5
                 ]
             );
