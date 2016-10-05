@@ -18,26 +18,27 @@ module.exports = function(lastClickedLink){
                 tlFadeOut = new TimelineMax({onComplete: function(){
                     resolve(true);
                 }});
-                //tlFadeOut.to([$('#skillsHome'), $(lastClickedLink).parents('.portfolio-item').siblings(), $('#blockTitle'), $('#video')], tpsTransition, {className: '+=pageTransition'});
-                //tlFadeOut.to([$('.portfolio-item .bg'), $(lastClickedLink).find('> div')], tpsTransition, {className: '+=pageTransition'});
-                //tlFadeOut.to([$(lastClickedLink).find('h2')], tpsTransition, {className: '+=pageTransition'});
                 $(lastClickedLink).find('h2').prepend('<span class="bg-transition"></span>');
                 var gapLeft = $(lastClickedLink).find('h2').offset().left;
                 var gapRight = $(window).width() - gapLeft - $(lastClickedLink).find('h2').outerWidth();
                 tlFadeOut.to($('.portfolio-item .bg-img'), 0, {opacity: 0, ease: Power4.easeOut});
                 tlFadeOut.set($(lastClickedLink).find('.bg'), {className: '+=transi'})
                 tlFadeOut.set($(lastClickedLink).find('.bg-transition'), {left: -gapLeft+'px', right: -gapRight+'px', scaleX: 0, scaleY: 1});
-                var tw1 = new TweenMax.to($(lastClickedLink).find('.bg-transition'), 0.4, {scaleX: 1, scaleY: 1.05, ease: Power4.easeOut});
-                var tw2 = new TweenMax.to($(lastClickedLink).find('.logo'), 0.2, {y: 20, opacity: 0, ease: Linear.easeNone});
+                var twFadeOut1 = new TweenMax.to($(lastClickedLink).find('.bg-transition'), 0.4, {scaleX: 1, scaleY: 1.05, ease: Power4.easeOut});
+                var twFadeOut2 = new TweenMax.to($(lastClickedLink).find('.logo'), 0.2, {y: 40, opacity: 0, ease: Linear.easeNone});
+                var twFadeOut3 = new TweenMax.to([$(lastClickedLink).find('time'), $(lastClickedLink).find('.title')], 0.4, {x: 60, opacity: 0, ease: Circ.easeOut});
+                var twFadeOut4 = new TweenMax.to($(lastClickedLink).find('.border-left'), 0.4, {scaleY: 0, ease: Circ.easeOut});
+                var twFadeOut5 = new TweenMax.to($(lastClickedLink).find('.border-middle'), 0.4, {scaleX: 0, ease: Circ.easeOut});
                 tlFadeOut.add(
                     [
-                        tw1,
-                        tw2
-                    ], '+=0', 'sequence'
+                        twFadeOut1,
+                        twFadeOut2,
+                        twFadeOut3,
+                        twFadeOut4,
+                        twFadeOut5
+                    ]
                 );
                 
-                //tlFadeOut.to(afterPortfolioItem, 0.4, {background: 'red', ease: Power4.easeOut});
-                //tlFadeOut.to($(lastClickedLink).find(), 0.4, {ease: Power4.easeOut});
             });
         },
 
@@ -50,15 +51,34 @@ module.exports = function(lastClickedLink){
             tlFadeIn = new TimelineMax({onComplete: function(){
                 _this.done();
             }});
-            
+
             tlFadeIn.set($('body'), {className: '-='+$(this.oldContainer).data('class')});
-            tlFadeIn.to($('body'), tpsTransitionFadeIn, {className: '+='+$el.data('class')});
+            tlFadeIn.set($('body'), {className: '+='+$el.data('class')});
             tlFadeIn.set($el, {visibility: 'visible', opacity: 0, onComplete: function(){
                 $(document).scrollTop(0);
             }});
-            tlFadeIn.to($el, tpsTransitionFadeIn, {opacity: 1});
-            console.log($('#page'));
-            tlFadeIn.to([$('.portfolio-text h1'), $('.portfolio-text p'), $('.portfolio-role'), $('.portfolio-cover'), $('.barba-container')], tpsTransitionFadeIn, {className: '+=pageTransitionFadeIn'});
+            tlFadeIn.set($el, {opacity: 1});
+            var twFadeIn1 = new TweenMax.to($('.bgPortfolio'), 0.5, {scaleY:1, ease: Power4.easeOut});
+            var twFadeIn2 = new TweenMax.to($('.bgPagePortfolio'), 0.5, {scaleY:1, ease: Power4.easeOut});
+            var twFadeIn3 = new TweenMax.to($('.portfolio-text h1'), 0.5, {y: 0, opacity: 1, ease: Circ.easeOut});
+            tlFadeIn.add(
+                [
+                    twFadeIn1,
+                    twFadeIn2,
+                    twFadeIn3
+                ]
+            );
+            tlFadeIn.set($('#header'), {className: '+= bgVisible'});
+
+            var twFadeIn4 = new TweenMax.to([$('.portfolio-text p')], 0.3, {y: 0, opacity: 1, ease: Power4.easeOut});
+            var twFadeIn5 = new TweenMax.to([$('.portfolio-cover')], 0.3, {x: 0, opacity: 1, ease: Power4.easeOut});
+            tlFadeIn.add(
+                [
+                    twFadeIn4,
+                    twFadeIn5
+                ]
+            );
+            tlFadeIn.staggerTo([$('.portfolio-role p'), $('.portfolio-role a')], 0.5, {y: 0, opacity: 1, ease: Circ.easeOut}, 0.1);
 
             $(this.oldContainer).hide();
         }
