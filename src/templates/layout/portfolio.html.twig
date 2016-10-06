@@ -8,6 +8,7 @@
 {# Content #}
 {% block content %}
     <div id='page' class='barba-container' data-class='portfolio {% block portfolio_slug %}{% endblock %}-portfolio'>
+        <div class='bgPortfolio'></div>
         <section class='portfolio-desc p-relative'>
             <!--<img src='img/cover-{% block portfolio_slug %}{% endblock %}.png' alt='' class='portfolio-cover'>-->
             <img src='img/cover-akeneo.png' alt='' class='portfolio-cover'>
@@ -20,6 +21,7 @@
             </div>
         </section>
         <section class='portfolio-role'>
+            <div class='bgPagePortfolio'></div>
             <div class='container'>
                 <div class='portfolio-role-content'>
                     {% block portfolio_role %}{% endblock %}

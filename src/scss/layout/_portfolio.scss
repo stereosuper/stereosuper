@@ -2,7 +2,6 @@
 
 @mixin fixAnimation{
 	backface-visibility: hidden;
-	transform-style: preserve-3d;
 	will-change: transform;
 }
 
@@ -22,6 +21,56 @@
 	padding: 0 $gutter;
 	clear: both;
 	transition: opacity $transition;
+	&:nth-child(10n+1){
+		h2{
+			transform: rotate(0);
+		}
+	}
+	&:nth-child(10n+2){
+		h2{
+			transform: rotate(-0.8deg);
+		}
+	}
+	&:nth-child(10n+3){
+		h2{
+			transform: rotate(1deg);
+		}
+	}
+	&:nth-child(10n+4){
+		h2{
+			transform: rotate(1.1deg);
+		}
+	}
+	&:nth-child(10n+5){
+		h2{
+			transform: rotate(-1.6deg);
+		}
+	}
+	&:nth-child(10n+6){
+		h2{
+			transform: rotate(0.8deg);
+		}
+	}
+	&:nth-child(10n+7){
+		h2{
+			transform: rotate(-0.8deg);
+		}
+	}
+	&:nth-child(10n+8){
+		h2{
+			transform: rotate(-1.6deg);
+		}
+	}
+	&:nth-child(10n+9){
+		h2{
+			transform: rotate(2.7deg);
+		}
+	}
+	&:nth-child(10n+10){
+		h2{
+			transform: rotate(-2.5deg);
+		}
+	}
 	&.pageTransition{
 	    transition: $transitionOpacityPage;
 	    opacity: 0;
@@ -55,10 +104,13 @@
 		margin: 0;
 		top: 15px;
 		transform-origin: 50% 50%;
-		backface-visibility: hidden;
+
 		outline: 1px solid transparent;
 		backface-visibility: hidden;
-		transform-style: preserve-3d;
+		transition: transform 0.5s ease-in-out;
+		&:before{
+			display: none;
+		}
 		&.pageTransition{
 			&:before{
 				//transition: $transitionOpacityPage, $transitionTransformPage;
@@ -67,7 +119,7 @@
 				transform: translate3d(0, 15px, 0);
 			}
 		}
-		&:before{
+		.logo{
 			content: '';
 			max-width: 75%;
 			position: absolute;
@@ -80,11 +132,17 @@
 			background-repeat: no-repeat;
 			background-size: 100%;
 			background-position: 50% 50%;
+			text-indent: -99em;
+			overflow: hidden;
 		}
-	}
-	.logo{
-		text-indent: -99em;
-		overflow: hidden;
+		&:after{
+			content: '';
+			position: absolute;
+			top: -100px;
+			right: -100px;
+			left: -100px;
+			bottom: -100px;
+		}
 	}
 	.bg{
 		display: block;
@@ -94,11 +152,13 @@
 		bottom: 0;
 		left: 0;
 		right: 0;
-		overflow: hidden;
-		mix-blend-mode: multiply;
 		z-index: 2;
-
+		
+		mix-blend-mode: multiply;
 		@inculde fixAnimation;
+		&.transi{
+			mix-blend-mode: normal;
+		}
 	}
 	.wrapper-bg-img{
 		display: block;
@@ -108,8 +168,8 @@
 		bottom: 0;
 		left: 0;
 		right: 0;
-		overflow: hidden;
 		
+		overflow: hidden;
 		@inculde fixAnimation;
 	}
 	.bg-img{
@@ -124,14 +184,27 @@
 		background-position: 50% 60%;
 		background-repeat: no-repeat;
 		background-size: 100%;
-		transform: scale(1.05) rotate(0.01deg);
+		transform: scale(1.05) rotate(0.01deg) translate3d(0, 0, 0.01px);
 		transform-origin: 50% 50%;
-		
+
 		@inculde fixAnimation;
 		&.pageTransition{
 		    transition: $transitionOpacityPage;
 		    opacity: 0;
 		}
+	}
+	.bg-transition{
+		display: block;
+		width: auto;
+		height: auto;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		//transform: scaleX(0) scaleY(1) rotate(0.01deg) translate3d(0, 0, 0.01px);
+		transform-origin: 50% 50%;
+		z-index: -1;
 	}
 	div{
 		width: 28.6%;
@@ -139,13 +212,22 @@
 		position: absolute;
 		top: 0;
 		right: 0;
-		&:before{
-			content: '';
+		.border-left{
 			height: 100%;
 			position: absolute;
 			top: 0;
 			left: 0;
 			border-left: 1px solid rgba(#fff, 0.5);
+			transform-origin: 50% 50%;
+		}
+		.border-middle{
+			width: 100%;
+			height: 0;
+			position: absolute;
+			top: 50%;
+			left: 1px;
+			border-bottom: 1px solid rgba(#fff, 0.5);
+			transform-origin: 0 50%;
 		}
 		&.pageTransition{
 			&:before, time, span{
@@ -161,7 +243,6 @@
 	time{
 		font-size: 1.6rem;
 		padding: 30px $gutter 25px;
-		border-bottom: 1px solid rgba(#fff, 0.5);
 	}
 	.title{
 		display: inline-block;
@@ -184,12 +265,12 @@
 	$name: nth($portfolio, $i);
     .#{$name}-item{
     	h2{
-    		&:before{
+    		.logo{
     			width: #{nth($portfolioWidths, $i)}px;
     			height: #{nth($portfolioHeights, $i)}px;
     			background-image: url(../img/logo-#{$name}.png);
     		}
-    		.bg{
+    		.bg, .bg-transition{
     			background: nth($portfolioColors, $i);
     		}
     		.bg-img{
