@@ -8,6 +8,7 @@ module.exports = function(myScroll, windowHeight, portfolioItems){
     var areaReaction = 200, strength = 0.6, strengthRotation = 0.05;
     var exp, expR, thisPos, thisTitle;
     var lastScroll = myScroll;
+    var positionItem, xValue;
 
     /*function calcExp(exp, i){
         expS = exp*strengthRotation;
@@ -20,6 +21,7 @@ module.exports = function(myScroll, windowHeight, portfolioItems){
 
         if(myScroll !== lastScroll){
             windowHeight = $(window).height();
+            windowWidth = $(window).width();
             portfolioItems.each(function(i) {
                 thisPos = getPosWithoutTranslate($(this));
                 thisTitle = $(this).find('h2');
@@ -41,8 +43,9 @@ module.exports = function(myScroll, windowHeight, portfolioItems){
                     TweenMax.to(thisDesc, 1, {opacity: 1});
                 }
                 //TweenMax.set(thisTitle, {y: exp});
-                var aze = $(this).position().top + myScroll;
-                TweenMax.set(thisTitle, {y: exp, x: sinusoid(150, 0, aze, 50)});
+                positionItem = $(this).position().top + myScroll;
+                if (windowWidth > 780){ xValue = sinusoid(150, 0, positionItem, 50); }else{ xValue = 0; }
+                TweenMax.set(thisTitle, {y: exp, x: xValue});
             });
         }
 
