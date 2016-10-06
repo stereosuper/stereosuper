@@ -22,52 +22,52 @@
 	clear: both;
 	transition: opacity $transition;
 	&:nth-child(10n+1){
-		h2{
+		.wrapper-bloc{
 			transform: rotate(0);
 		}
 	}
 	&:nth-child(10n+2){
-		h2{
+		.wrapper-bloc{
 			transform: rotate(-0.8deg);
 		}
 	}
 	&:nth-child(10n+3){
-		h2{
+		.wrapper-bloc{
 			transform: rotate(1deg);
 		}
 	}
 	&:nth-child(10n+4){
-		h2{
+		.wrapper-bloc{
 			transform: rotate(1.1deg);
 		}
 	}
 	&:nth-child(10n+5){
-		h2{
+		.wrapper-bloc{
 			transform: rotate(-1.6deg);
 		}
 	}
 	&:nth-child(10n+6){
-		h2{
+		.wrapper-bloc{
 			transform: rotate(0.8deg);
 		}
 	}
 	&:nth-child(10n+7){
-		h2{
+		.wrapper-bloc{
 			transform: rotate(-0.8deg);
 		}
 	}
 	&:nth-child(10n+8){
-		h2{
+		.wrapper-bloc{
 			transform: rotate(-1.6deg);
 		}
 	}
 	&:nth-child(10n+9){
-		h2{
+		.wrapper-bloc{
 			transform: rotate(2.7deg);
 		}
 	}
 	&:nth-child(10n+10){
-		h2{
+		.wrapper-bloc{
 			transform: rotate(-2.5deg);
 		}
 	}
@@ -97,17 +97,26 @@
 			// }
 		}
 	}
-	h2{
+	.wrapper-bloc{
 		width: 91%;
 		height: 115px;
 		position: relative;
 		margin: 0;
 		top: 15px;
 		transform-origin: 50% 50%;
-
+		
+		transition: transform 0.5s ease-in-out;
 		outline: 1px solid transparent;
 		backface-visibility: hidden;
-		transition: transform 0.5s ease-in-out;
+	}
+	h2{
+		width: 100%;
+		height: 100%;
+		position: relative;
+		margin: 0;
+		transform-origin: 50% 50%;
+
+		backface-visibility: hidden;
 		&:before{
 			display: none;
 		}
