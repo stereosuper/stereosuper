@@ -5,17 +5,17 @@ var isMobile = require('./isMobile.min.js');
 window.requestAnimFrame = require('./requestAnimFrame.js');
 
 module.exports = function(myScroll, body, header, skillsHome){
-    var animatingTop = false;
-    var htmlBody = $('html, body'), blockTitle, video;
+    //var animatingTop = false;
+    var /*htmlBody = $('html, body'), blockTitle,*/ video;
     var isHome = body.hasClass('home') ? true : false;
 
     function onScroll(){
-        blockTitle = $('#blockTitle');
+        //blockTitle = $('#blockTitle');
         video = $('#video');
-        skillsHome = $('#skillsHome');
+        //skillsHome = $('#skillsHome');
         myScroll = $(document).scrollTop();
 
-        if(skillsHome.is(':visible') && !isMobile.any){
+        /*if(skillsHome.is(':visible') && !isMobile.any){
             if(body.hasClass('home')){
                 if(myScroll > 100 && !body.hasClass('scrolled') && !animatingTop){
                     animatingTop = true;
@@ -47,6 +47,16 @@ module.exports = function(myScroll, body, header, skillsHome){
             if(body.hasClass('home')){
                 myScroll > 50 ? video.addClass('off') : video.removeClass('off');
             }
+        }*/
+
+        if(body.hasClass('home')){
+            if(myScroll > 50){
+                video.addClass('off');
+                header.addClass('scrolled');
+            }else{
+                video.removeClass('off');
+                header.removeClass('scrolled');
+            }
         }
 
         requestAnimFrame(onScroll);
@@ -55,14 +65,14 @@ module.exports = function(myScroll, body, header, skillsHome){
     if(isHome){
         onScroll();
 
-        if(!isMobile.any){
+        /*if(!isMobile.any){
             body.on('mousewheel', function(e){
                 if(animatingTop){
                     e.preventDefault();
                     e.stopPropagation();
                 }
             });
-        }
+        }*/
     }
 
     return isHome;
