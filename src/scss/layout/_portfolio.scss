@@ -192,7 +192,7 @@
 		transform-origin: 50% 50%;
 		z-index: -1;
 	}
-	div{
+	.wrapper-desc{
 		width: 28.6%;
 		height: 140px;
 		position: absolute;
@@ -296,19 +296,19 @@
 
 @media (max-width: 780px){
 	.portfolio-item{
-		// width: 95.5%;
 		.wrapper-bloc{
 			height: 120px;
+			width: 100%;
+			left: 0;
+			transform: rotate(0) !important;
 		}
 		h2{
-			// width: 96%;
-			
-			&:before{
+			.logo{
 				bottom: 10px;
 				left: 40px;
 			}
 		}
-		div{
+		.wrapper-desc{
 			width: calc(100% - 30px);
 			right: auto;
 			left: $gutter;
@@ -339,10 +339,7 @@
 @media (max-width: 480px){
 	.portfolio-item{
 		width: calc(100% - 30px);
-		.wrapper-bloc{
-			width: 100%;
-		}
-		div{
+		.wrapper-desc{
 			width: 98%;
 		}
 		.bg-img{
