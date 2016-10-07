@@ -21,6 +21,8 @@ $(function(){
     var portfolioItemsAnimation = require('./portfolioItemsAnimation.js');
     var animSkillsHover = require('./animSkillsHover.js');
 
+    var animYearAbout = require('./animYearABout.js');
+
 
     var windowWidth = $(window).width(), windowHeight = $(window).height();
     var myScroll = $(document).scrollTop();
@@ -119,6 +121,30 @@ $(function(){
         }
     });
     Home.init();
+
+
+
+    ////////////////////////////////////////////////
+    // About functions
+    ////////////////////////////////////////////////
+
+    var About = Barba.BaseView.extend({ namespace: 'about',
+        onEnter: function(){
+            // The new Container is ready and attached to the DOM.
+        },
+        onEnterCompleted: function(){
+            // The Transition has just finished.
+            animYearAbout();
+        },
+        onLeave: function(){
+            // A new Transition toward a new page has just started.
+        },
+        onLeaveCompleted: function(){
+            // The Container has just been removed from the DOM.
+        }
+    });
+    About.init();
+
 
 
     ////////////////////////////////////////////////

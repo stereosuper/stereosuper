@@ -53,8 +53,10 @@ module.exports = function(myScroll, body, header, skillsHome){
             if(myScroll > 50){
                 video.addClass('off');
                 header.addClass('scrolled');
+                video.find('video').get(0).pause();
             }else{
                 video.removeClass('off');
+                video.find('video').get(0).play();
                 header.removeClass('scrolled');
             }
         }
