@@ -25,7 +25,7 @@ module.exports = function(myScroll, windowHeight, portfolioItems){
             portfolioItems.each(function(i) {
                 thisPos = getPosWithoutTranslate($(this));
                 thisTitle = $(this).find('h2');
-                thisDesc = $(this).find('a >div');
+                thisDesc = $(this).find('.wrapper-desc');
 
                 if (thisPos >= myScroll+windowHeight-areaReaction) {
                     exp = (thisPos-myScroll-windowHeight+areaReaction)*strength | 0;
@@ -44,8 +44,9 @@ module.exports = function(myScroll, windowHeight, portfolioItems){
                 }
                 //TweenMax.set(thisTitle, {y: exp});
                 positionItem = $(this).position().top + myScroll;
-                if (windowWidth > 780){ xValue = sinusoid(150, 0, positionItem, 50); }else{ xValue = 0; }
-                TweenMax.set(thisTitle, {y: exp, x: xValue});
+                xValue = (windowWidth > 780) ? sinusoid(150, 0, positionItem, 50) : 0;
+                //TweenMax.set(thisTitle, {y: exp, x: xValue});
+                TweenMax.to(thisTitle, 0.1, {y: exp, x: xValue});
             });
         }
 
