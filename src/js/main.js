@@ -39,6 +39,15 @@ $(function(){
 
 
     ////////////////////////////////////////////////
+    // Background blend mode detection
+    ////////////////////////////////////////////////
+    if('CSS' in window && 'supports' in window.CSS) {
+       var support = window.CSS.supports('mix-blend-mode','soft-light');
+           support = support?'mix-blend-mode':'no-mix-blend-mode';
+           $('html').addClass(support);
+    }
+
+    ////////////////////////////////////////////////
     // Header Scroll Animation
     ////////////////////////////////////////////////
 
