@@ -4,6 +4,20 @@
     h1{
         padding-left: 30px;
     }
+    h2{
+        line-height: 1;
+        &:before{
+            display: none;
+        }
+    }
+    #footer{
+        background: none;
+    }
+}
+
+.content-white{
+    background: #fff;
+    color: #000;
 }
 
 .content-about{
@@ -14,7 +28,27 @@
         color: $blue;
     }
     h2{
-        margin: 0;
+        margin: 0 0 0 -0.07em;
+        font-size: 4rem;
+        letter-spacing: -0.03em;
+    }
+}
+
+.title-about{
+    padding: 0 $gutter;
+    margin: 0;
+    font-size: 10rem;
+    text-indent: 25.5%;
+    letter-spacing: -0.08em;
+    span{
+        display: block;
+        text-indent: 0;
+    }
+    + a{
+        padding: 0 $gutter;
+        @include gotham-bold(10rem);
+        letter-spacing: -0.08em;
+        text-decoration: none;
     }
 }
 
