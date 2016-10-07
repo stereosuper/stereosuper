@@ -145,7 +145,7 @@
 		z-index: 2;
 		
 		mix-blend-mode: multiply;
-		@inculde fixAnimation;
+		@include fixAnimation;
 		&.transi{
 			mix-blend-mode: normal;
 		}
@@ -160,7 +160,10 @@
 		right: 0;
 		
 		overflow: hidden;
-		@inculde fixAnimation;
+		.no-mix-blend-mode &{
+			z-index: 2;
+		}
+		@include fixAnimation;
 	}
 	.bg-img{
 		display: block;
@@ -177,7 +180,7 @@
 		transform: scale(1.05) rotate(0.01deg) translate3d(0, 0, 0.01px);
 		transform-origin: 50% 50%;
 
-		@inculde fixAnimation;
+		@include fixAnimation;
 	}
 	.bg-transition{
 		display: block;
