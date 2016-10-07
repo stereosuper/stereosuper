@@ -5,6 +5,10 @@ window.requestAnimFrame = require('./requestAnimFrame.js');
 // var detectScrollDir = require('./detectScrollDir.js');
 
 module.exports = function(){
-    var year = $('#year');
-    // year.append('<div>2008</div>');
+    var yearWrapper = $('#year'), years = $('[data-year]'), yearsHtml = '';
+
+    years.each(function(){
+        yearsHtml += '<div style="top: '+ $(this).offset().top +'px">' + $(this).data('year') + '</div>';
+    });
+    yearWrapper.append(yearsHtml);
 }
