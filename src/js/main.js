@@ -66,7 +66,7 @@ $(function(){
     // Sprites skills
     ////////////////////////////////////////////////
 
-    var skills = $('.skills'),
+    /*var skills = $('.skills'),
         nbSkills = skills.find('li').length, j = 0,
         numCols = 6, numRows = 6, frameWidth = 95, frameHeight = 11,
         symbols = skills.find('.symbol'),
@@ -85,7 +85,7 @@ $(function(){
     spritesTl[1].play();
     spritesTl[2].play();
     spritesTl[3].play();
-    spritesTl[4].play();
+    spritesTl[4].play();*/
 
 
 

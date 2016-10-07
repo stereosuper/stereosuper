@@ -2,7 +2,11 @@
   "name": "Stéréosuper",
   "version": "0.0.0",
   "main": "gulpfile.js",
-  "dependencies": {},
+  "dependencies": {
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-watchify": "^0.6.0",
+    "watchify": "^3.7.0"
+  },
   "devDependencies": {
     "barba.js": "^1.0.0",
     "browser-sync": "^2.16.0",
