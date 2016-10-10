@@ -1,7 +1,7 @@
 /* About specific style */
 
 .about{
-    h1{
+    .title{
         padding-left: 30px;
     }
     h2{
@@ -9,6 +9,12 @@
         &:before{
             display: none;
         }
+    }
+    .subtitle{
+        left: 58vw;
+    }
+    #barba-wrapper{
+        padding-bottom: 0;
     }
     #footer{
         background: none;
@@ -42,8 +48,16 @@
     }
 }
 
+.text-img{
+    //margin-top: 7em;
+    margin-right: -30%;
+    img{
+        margin: -50px 0 0 18%;
+    }
+}
+
 .title-about{
-    padding: 0 $gutter;
+    padding: 20px $gutter 0;
     margin: 0;
     font-size: 10rem;
     text-indent: 25.5%;
@@ -53,7 +67,9 @@
         text-indent: 0;
     }
     + a{
+        display: inline-block;
         padding: 0 $gutter;
+        margin: 0 0 3em;
         @include gotham-bold(10rem);
         letter-spacing: -0.08em;
         text-decoration: none;
@@ -73,15 +89,126 @@
     right: 0;
 }
 .year{
+    width: 125px;
+    height: 125px;
+    border: 1px solid rgba(#000, 0.2);
+    @include gotham-medium(1em);
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 125px;
+    border-radius: 50%;
+}
+.year-wrapper{
     width: 23.8%;
-    border-right: 1px solid rgba($blue, 0.5);
     position: absolute;
     top: 0;
-    bottom: 0;
-    > div{
+    bottom: -50px;
+    overflow: hidden;
+    &:after{
+        content: '';
+        border-right: 1px solid rgba($blue, 0.5);
         position: absolute;
-        left: 0;
-        text-transform: uppercase;
+        top: 0;
+        bottom: 63px;
+        right: 0;
+    }
+    .year{
+        position: fixed;
+        //left: 0;
+        color: #000;
+        transition: opacity $transition;
+        &:first-child{
+            color: #fff;
+            border-color: rgba(#fff, 0.3);
+        }
+        &:last-child{
+            color: $blue;
+        }
+        &:after{
+            content: '';
+            width: 150%;
+            height: 1px;
+            position: absolute;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            left: 100%;
+            background: rgba($blue, 0.5);
+            transform: scaleX(0);
+            transform-origin: 0 0;
+            transition: $transition;
+        }
+        &.fixed{
+            position: absolute;
+            &:after{
+                transform: scaleX(1);
+            }
+        }
+        &.fixed, &.fixed + div{
+            opacity: 1 !important;
+        }
+    }
+}
+
+.intro-img{
+    margin: 10px 0 150px -45%;
+    img{
+        display: inline-block;
+        vertical-align: top;
+        margin: 0 20px;
+        &:nth-of-type(2){
+            margin-top: 70px;
+        }
+        &:nth-of-type(3){
+            margin-top: 95px;
+        }
+    }
+}
+.img-cp{
+    position: absolute;
+    top: -125px;
+    left: -320px;
+}
+.team{
+    margin: 40px -45% 100px;
+    img{
+        margin: 0 10px;
+        &:nth-child(2){
+            margin-top: 70px;
+        }
+        &:nth-child(3){
+            margin-top: 40px;
+        }
+    }
+}
+
+.last-p{
+    margin-bottom: 0;
+}
+
+.hide-footer{
+    margin: 0 0 300px;
+}
+.footer-about{
+    padding: 10px 0 100px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background: #000;
+    .content-about{
+        position: static;
+    }
+    .container{
+        position: relative;
+    }
+    .year{
+        border: 1px dashed $blue;
+        position: absolute;
+        top: 25px;
+        left: $gutter;
+        font-size: 1.4rem;
         color: $blue;
     }
 }

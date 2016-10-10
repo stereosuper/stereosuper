@@ -11,8 +11,10 @@
     <div id='page' class='barba-container' data-class='about' data-namespace='about'>
         <div class='p-relative'>
             <div class='container'>
-                <h1>Super story</h1>
-                <p><a href='https://twitter.com/hashtag/Vismavie' target='_blank'>#Vismavie</a> <a href='https://twitter.com/hashtag/3615malife' target='_blank'>#3615malife</a> <a href='https://twitter.com/hashtag/StephaneBern' target='_blank'>#StephaneBern</a></p>
+                <div class='title'>
+                    <h1>Super story</h1>
+                    <p class='subtitle'><a href='https://twitter.com/hashtag/Vismavie' target='_blank'>#Vismavie</a> <a href='https://twitter.com/hashtag/3615malife' target='_blank'>#3615malife</a> <a href='https://twitter.com/hashtag/StephaneBern' target='_blank'>#StephaneBern</a></p>
+                </div>
 
                 <header class='content-about'>
                     <p data-year='2008'>Après des années à travailler chez les autres, on décide de créer l’agence de nos rêves.</p>
@@ -30,7 +32,10 @@
                         <h2>C'est décidé</h2>
                         <p class='subtitle-about'>Et on s’appelera “Méganet” ! <br>
                         Quoi ? C’est déjà pris ? Bon, “Stéréosuper”, c’est bien aussi.</p>
-
+                        <div class='intro-img'>
+                            <img src='img/casquette.png' width='330' alt=''>
+                            <img src='img/masques.png' width='330' alt=''>
+                        </div>
                         <p data-year='2010' >Drivy voulait que les Français comprennent qu’une voiture a <br>mieux à faire que stationner 97 % du temps. On s’est trouvés.</p>
                         <p class='subtitle-about'>On a designé la page qui s’est montré très performante. <br>
                         On s’est rendus compte qu’on aime beaucoup…</p>
@@ -43,12 +48,20 @@
                         <p class='subtitle-about'>Pour convaincre. Élargir la cible. Valoriser un produit.</p>
                         <h2>Donner une image <br>plus qualitative</h2>
                         <p data-year='2012'>Nous avons ainsi donné une cravate rouge à <a href='#'>Chauffeur Privé</a>, <br>désigné leur application mobile et leur site.rnet.</p>
+                        <img src='img/cravate.png' width='280' alt='' class='img-cp'>
 
-                        <p data-year='2013'>Bâti un site à <a href='#'>iAdvize</a></p>
+                        <p class='text-img'>
+                            <span data-year='2013'>Bâti un site à <a href='#'>iAdvize</a></span>
+                        </p>
 
-                        <p data-year='2015'>Réfléchi à la nouvelle image de <a href='#'>Captain Train</a></p>
+                        <p class='text-img'>
+                            <psan data-year='2015'>Réfléchi à la nouvelle image de <a href='#'>Captain Train</a></psan>
+                            <img src='img/sac.png' width='330' alt=''>
+                        </p>
 
-                        <p data-year='2016'>Bâti le site d’<a href='#'>Akeneo</a>, et celui de <a href='#'>Alven Capital</a></p>
+                        <p class='text-img'>
+                            <span data-year='2016'>Bâti le site d’<a href='#'>Akeneo</a>, et celui de <a href='#'>Alven Capital</a></span>
+                        </p>
                     </section>
 
                     <section class='content-about'>
@@ -58,40 +71,47 @@
                         <p class='subtitle-about'>L’objectif a toujours été d’améliorer la qualité de nos productions.</p>
                         <p>Nous sommes maintenant 6 à faire des choses super.</p>
                         <p>En plus de partager une fascination pour les <a href='#'>chatons</a>, les <a href='#'>Furbys</a>, la <a href='#'>musique pourrie</a> le vendredi et les <a href='#'>Nerfs</a>.</p>
-                    </section>
 
-                    <section class='content-about'>
+                        <div class='team'>
+                            <img src='img/boris.png' width='215' alt=''>
+                            <img src='img/adrien.png' width='225' alt=''>
+                            <img src='img/vincent.png' width='225' alt=''>
+                        </div>
+
                         <p>Toutes ces challenges nous ont rendus meilleurs. Professionnellement et humainement. <br>
                         Nous adorons mettre cette expérience au profit d’une large gamme de projets et de clients. <br>
                         Même <a href='#'>là où on ne nous attend pas</a>.</p>
 
-                        <p data-year='now'>Et c'est pas fini !</p>
+                        <p data-year='now' class='last-p'>Et c'est pas fini !</p>
                     </section>
                 </div>
             </div>
 
             <div class='container container-year'>
-                <div class='year' id='year'></div>
+                <div class='year-wrapper' id='year'></div>
             </div>
         </div>
 
-        <div class='content-white'>
+        <div class='content-white hide-footer'>
             <div class='container'>
                 <h2 class='title-about'>Et si on travaillait ensemble, en stéréo, <span>un super site internet ?</span></h2>
                 <a href='#'>Contactons-nous</a>
             </div>
         </div>
 
-        <div class='container'>
-            <footer data-year='tomorrow' class='content-about'>
-                <p>Last but not least, Stéréosuper ose l’aventure américaine et se développe à Brooklyn, New York.
-                    <a href='#' class='link-arrow'>
-                        <span>Want to talk about it?</span>
-                        <svg class='icon i1'><use xlink:href='#icon-big-arrow'/></svg>
-                        <svg class='icon i2'><use xlink:href='#icon-big-arrow'/></svg>
-                    </a>
-                </p>
-            </footer>
-        </div>
+        <footer class='footer-about'>
+            <div class='container'>
+                <div class='content-about'>
+                    <div class='year'>Tomorrow</div>
+                    <p>Last but not least, Stéréosuper ose l’aventure américaine et se développe à Brooklyn, New York.
+                        <a href='#' class='link-arrow'>
+                            <span>Want to talk about it?</span>
+                            <svg class='icon i1'><use xlink:href='#icon-big-arrow'/></svg>
+                            <svg class='icon i2'><use xlink:href='#icon-big-arrow'/></svg>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </footer>
     </div>
 {% endblock content %}

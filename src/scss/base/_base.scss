@@ -236,8 +236,20 @@ a{
     fill: currentColor;
 }
 
+.title{
+    position: relative;
+    margin: 0 0 7em;
+}
+
 .subtitle{
-    margin-bottom: 7em;
+    position: absolute;
+    left: 35vw;
+    bottom: -30px;
+    opacity: 0.25;
+    a{
+        display: block;
+        text-decoration: none;
+    }
 }
 
 
@@ -245,6 +257,13 @@ a{
     @media (max-height: 870px){
         h1{
             font-size: 20vh;
+        }
+
+        .subtitle{
+            position: static;
+            a{
+                display: inline-block;
+            }
         }
     }
 
@@ -255,6 +274,15 @@ a{
                 max-width: 50%;
                 margin-top: 0;
             }
+        }
+    }
+}
+
+@media (max-width: 1200px){
+    .subtitle{
+        position: static;
+        a{
+            display: inline-block;
         }
     }
 }
