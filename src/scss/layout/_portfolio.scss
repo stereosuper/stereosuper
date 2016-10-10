@@ -8,6 +8,8 @@
 .portfolio-list{
 	padding-top: 90vh;
 	backface-visibility: hidden;
+	position: relative;
+	z-index: 1;
 	ul{
 		margin: 0;
 	}
