@@ -9,6 +9,7 @@ var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 var watch = require('gulp-watch');
+var cache = require('gulp-cache');
 
 var report_error = function(error) {
     $.notify({
@@ -59,14 +60,14 @@ gulp.task('fonts', function() {
 
 gulp.task('img', function() {
     return gulp.src('src/img/**/*')
-        .pipe($.imagemin())
+        .pipe(cache($.imagemin()))
         .pipe(gulp.dest('dest/img'))
         .pipe($.size({ title: 'img' }));
 });
 
 gulp.task('layoutImg', function() {
     return gulp.src('src/layoutImg/**/*')
-        .pipe($.imagemin())
+        .pipe(cache($.imagemin()))
         .pipe(gulp.dest('dest/layoutImg'))
         .pipe($.size({ title: 'layoutImg' }));
 });
