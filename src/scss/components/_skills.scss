@@ -24,39 +24,124 @@
     }
     .symbol{
         display: block;
+        position: relative;
         width: 95px;
         height: 11px;
         margin: 0 0 25px;
         background-size: 570px 66px;
         background-repeat: no-repeat;
+        overflow: hidden;
     }
-    svg{
+    .list-symbols{
         display: block;
-        margin: 0 0 25px;
-    }
-    &[data-skill='strategy']{
-        .symbol{
-            background-image: url('../layoutImg/dashes.png');
+        margin: 0;
+        padding: 0;
+        width: 130%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        >li{
+            display: inline-block;
+            background: $blue-flash;
+            padding: 0;
+            &:before{
+                display: none;
+            }
         }
     }
-    &[data-skill='identity']{
-        .symbol{
-            background-image: url('../layoutImg/waves.png');
+
+    .dashes{
+        >li{
+            width: 8px;
+            height: 2px;
+            margin: 0 2px 0;
+
+            transform: translate3d(0, 6px, 0);
+            opacity: 0;
         }
     }
-    &[data-skill='design']{
-        .symbol{
-            background-image: url('../layoutImg/zigzags.png');
+
+    .waves{
+        width: 130%;
+        height: 8px;
+
+        fill: $blue-flash;
+        // transform: scaleX(0);
+        transform-origin: 0 50%;
+    }
+
+    .zigzags{
+        width: 130%;
+        height: 8px;
+
+        fill: $blue-flash;
+        // transform: scaleX(0);
+        transform-origin: 0 50%;
+    }
+
+    .slashes{
+        > li{
+            display: inline-block;
+            width: 10px;
+            height: 2px;
+            position: relative;
+            margin: 0;
+            transform: scaleY(0);
+            transform-origin: 0 0;
+            opacity: 0;
+            background: none;
+            &:after{
+                content: '';
+                display: block;
+                width: 100%;
+                height: 100%;
+                transform: rotate(-45deg) translate3d(0, 0, 0);
+                transform-origin: 50% 50%;
+                background: $blue-flash;
+                margin: -3px 0 0;
+            }
         }
     }
-    &[data-skill='animation']{
-        .symbol{
-            background-image: url('../layoutImg/slashes.png');
+
+    .dots{
+        > li{
+            width: 4px;
+            height: 4px;
+            margin: 0 3px 0;
+            border-radius: 50%;
+
+            transform: translate3d(0, 6px, 0);
+            opacity: 0;
         }
     }
-    &[data-skill='dev']{
-        .symbol{
-            background-image: url('../layoutImg/dots.png');
-        }
-    }
+
+    // svg{
+    //     display: block;
+    //     margin: 0 0 25px;
+    // }
+    // &[data-skill='strategy']{
+    //     .symbol{
+    //         background-image: url('../layoutImg/dashes.png');
+    //     }
+    // }
+    // &[data-skill='identity']{
+    //     .symbol{
+    //         background-image: url('../layoutImg/waves.png');
+    //     }
+    // }
+    // &[data-skill='design']{
+    //     .symbol{
+    //         background-image: url('../layoutImg/zigzags.png');
+    //     }
+    // }
+    // &[data-skill='animation']{
+    //     .symbol{
+    //         background-image: url('../layoutImg/slashes.png');
+    //     }
+    // }
+    // &[data-skill='dev']{
+    //     .symbol{
+    //         background-image: url('../layoutImg/dots.png');
+    //     }
+    // }
 }

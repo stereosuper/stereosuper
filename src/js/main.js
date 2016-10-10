@@ -87,6 +87,17 @@ $(function(){
     spritesTl[3].play();
     spritesTl[4].play();*/
 
+    var dashes = $('.dashes >li'),
+        slashes = $('.slashes >li'),
+        dots = $('.dots >li'),
+        waves = $('.waves');
+    var StagIcon, StagIcon2;
+    var AnimHoverAll;
+    TweenMax.staggerTo(dashes, 0.35, {opacity: 1, y: 0, ease:Back.easeOut.config(5)}, 0.06);
+    TweenMax.to(waves, 2, {scaleY: 1});
+    TweenMax.staggerTo(slashes, 0.35, {opacity: 1, scaleY: 1, ease:Back.easeOut.config(5)}, 0.06);
+    TweenMax.staggerTo(dots, 0.35, {opacity: 1, y: 0, ease:Back.easeOut.config(5)}, 0.06);
+
 
 
     ////////////////////////////////////////////////
