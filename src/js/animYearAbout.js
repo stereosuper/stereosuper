@@ -4,7 +4,7 @@ var isMobile = require('./isMobile.min.js');
 window.requestAnimFrame = require('./requestAnimFrame.js');
 // var detectScrollDir = require('./detectScrollDir.js');
 
-module.exports = function(){
+module.exports = function(myScroll){
     var yearWrapper = $('#year'), yearsData = $('[data-year]'), yearsHtml = '', style = '',
         years, initialTop, thisYear, thisYearPos;
 
@@ -25,25 +25,28 @@ module.exports = function(){
         myScroll = $(this).scrollTop();
 
         years.each(function(){
-            /*if($(this).data('y') < $(this).data('top')){
-                $(this).data('y', initialTop + myScroll);
-                TweenMax.set($(this), {y: $(this).data('y') + 'px'});
-            }else if(!$(this).hasClass('fixed')){
-                $(this).addClass('fixed');
-            }*/
-
             thisYear = $(this);
             thisYearPos = thisYear.data('top');
 
             if(thisYear.hasClass('fixed')){
-                if(myScroll + initialTop < thisYearPos){
+                if(myScroll + initialTop - 1 < thisYearPos){
                     thisYear.css('top', initialTop + 'px').removeClass('fixed');
                 }
             }else{
-                if(thisYear.offset().top >= thisYearPos){
+                if(thisYear.offset().top - 1 >= thisYearPos){
                     thisYear.css('top', thisYearPos + 'px').addClass('fixed');
                 }
             }
+        });
+    });
+
+    $(window).on('resize', function(){
+        years.each(function(i){
+            thisYear = $(this);
+            if(i === 0){
+                initialTop = (yearsData.eq(i).offset().top - 55) | 0;
+            }
+            thisYear.data('top', (yearsData.eq(i).offset().top - 55)|0).css({'top': initialTop, 'opacity': 0}).removeClass('fixed');
         });
     });
 }
