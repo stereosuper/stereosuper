@@ -22,6 +22,7 @@ $(function(){
     var animSkillsHover = require('./animSkillsHover.js');
 
     var animYearAbout = require('./animYearABout.js');
+    var animTextAbout = require('./animTextABout.js');
 
 
     var windowWidth = $(window).width(), windowHeight = $(window).height();
@@ -162,6 +163,7 @@ $(function(){
         onEnterCompleted: function(){
             // The Transition has just finished.
             animYearAbout(myScroll);
+            animTextAbout();
         },
         onLeave: function(){
             // A new Transition toward a new page has just started.
