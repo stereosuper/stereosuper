@@ -26,11 +26,6 @@
     z-index: 1;
 }
 
-.content-white{
-    background: #fff;
-    color: #000;
-}
-
 .content-about{
     // width: 62.5%;
     padding: 40px $gutter 0;
@@ -95,77 +90,7 @@
     color: $blue;
 }
 
-.container-year{
-    position: absolute;
-    top: -170px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
-.year{
-    width: 125px;
-    height: 125px;
-    border: 1px solid rgba(#000, 0.2);
-    @include gotham-medium(1em);
-    text-transform: uppercase;
-    text-align: center;
-    line-height: 125px;
-    border-radius: 50%;
-    &:after{
-        content: '';
-        width: 150%;
-        height: 1px;
-        position: absolute;
-        margin: auto;
-        top: 0;
-        bottom: 0;
-        left: 100%;
-        background: rgba($blue, 0.5);
-    }
-}
-.year-wrapper{
-    width: 23.8%;
-    position: absolute;
-    top: 0;
-    bottom: -50px;
-    overflow: hidden;
-    &:after{
-        content: '';
-        border-right: 1px solid rgba($blue, 0.5);
-        position: absolute;
-        top: 0;
-        bottom: 63px;
-        right: 0;
-    }
-    .year{
-        position: fixed;
-        //left: 0;
-        color: #000;
-        transition: opacity $transition;
-        &:first-child{
-            color: #fff;
-            border-color: rgba(#fff, 0.3);
-        }
-        &:last-child{
-            font-size: 1.4rem;
-            color: $blue;
-        }
-        &:after{
-            transform: scaleX(0);
-            transform-origin: 100% 0;
-            transition: $transition;
-        }
-        &.fixed{
-            position: absolute;
-            &:after{
-                transform: scaleX(1);
-            }
-        }
-        &.fixed, &.fixed + div{
-            opacity: 1 !important;
-        }
-    }
-}
+
 
 .intro-img{
     margin: 10px -20% 150px -50%;
