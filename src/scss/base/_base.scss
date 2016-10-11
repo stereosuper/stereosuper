@@ -161,6 +161,11 @@ a{
     }
 }
 
+button{
+    border: 0;
+    transition: $transition;
+}
+
 
 /******* CLASSES GENERALES  *******/
 
