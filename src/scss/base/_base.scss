@@ -23,6 +23,7 @@ body{
     color: $white;
     counter-reset: title-counter;
     min-height: 100vh;
+    background: #fff;
     &.home{
         background: #000;
     }
@@ -159,11 +160,6 @@ a{
     &:active{
         filter: contrast(300%);
     }
-}
-
-button{
-    border: 0;
-    transition: $transition;
 }
 
 

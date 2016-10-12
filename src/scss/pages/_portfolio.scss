@@ -44,6 +44,11 @@
     .link-arrow, .lang a, .social a{
         color: #fff;
     }
+    .link-arrow{
+        &.footer-about{
+            color: #000;
+        }
+    }
     .social{
         a{
             &:hover, &:focus{

@@ -17,7 +17,7 @@ $(function(){
     var animHeaderScroll = require('./animHeader.js');
 
     var animTop = require('./animTop.js');
-    var animSkillsScroll = require('./animSkills.js');
+    var animSkillsScroll = require('./animSkillsScroll.js');
     var portfolioItemsAnimation = require('./portfolioItemsAnimation.js');
     var animSkillsHover = require('./animSkillsHover.js');
 
@@ -64,7 +64,7 @@ $(function(){
     var animTopSetUp = animTop(myScroll, body, header, skillsHome);
 
     ////////////////////////////////////////////////
-    // Sprites skills
+    // Skills
     ////////////////////////////////////////////////
 
     var dashes = $('.dashes >span'), tlInDashes = new TimelineMax({paused: true}), tlHoverDashes = new TimelineMax({paused: true}),
@@ -200,11 +200,6 @@ $(function(){
             // The Transition has just finished.
             animYearAbout(myScroll);
             animTextAbout();
-            body.on('click', '#openTxtAbout', function(e){
-                e.preventDefault();
-                $('#fadeTxtAbout').toggleClass('on');
-                $(this).parents('.fade-txt-wrapper').toggleClass('off');
-            });
         },
         onLeave: function(){
             // A new Transition toward a new page has just started.
