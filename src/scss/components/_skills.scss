@@ -40,7 +40,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        >li{
+        >span{
             display: inline-block;
             background: $blue-flash;
             padding: 0;
@@ -51,7 +51,7 @@
     }
 
     .dashes{
-        >li{
+        >span{
             width: 8px;
             height: 2px;
             margin: 0 2px 0;
@@ -90,7 +90,7 @@
     }
 
     .slashes{
-        > li{
+        >span{
             display: inline-block;
             width: 8px;
             height: 2px;
@@ -114,7 +114,7 @@
     }
 
     .dots{
-        > li{
+        >span{
             width: 4px;
             height: 4px;
             margin: 0 3px 0 0;
