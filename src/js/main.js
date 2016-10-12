@@ -200,6 +200,11 @@ $(function(){
             // The Transition has just finished.
             animYearAbout(myScroll);
             animTextAbout();
+            body.on('click', '#openTxtAbout', function(e){
+                e.preventDefault();
+                $('#fadeTxtAbout').toggleClass('on');
+                $(this).parents('.fade-txt-wrapper').toggleClass('off');
+            });
         },
         onLeave: function(){
             // A new Transition toward a new page has just started.
