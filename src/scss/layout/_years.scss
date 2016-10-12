@@ -6,6 +6,12 @@
     bottom: 0;
     left: 0;
     right: 0;
+    svg{
+        width: 125px;
+        position: fixed;
+        fill: none;
+        stroke: $blue;
+    }
 }
 .year{
     width: 125px;

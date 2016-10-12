@@ -80,7 +80,7 @@ $(function(){
     if(dashes.length){
         tlInDashes.staggerTo(dashes, 0.35, {opacity: 1, y: 0, ease:Back.easeOut.config(5)}, 0.06);
         tlInDashes.play();
-        
+
         diffTranslation = -36;
         symbolToAnimate = dashes.closest('.symbol').find('.hoverAnimation');
         tlHoverDashes.to(symbolToAnimate, 0.2, {scaleX: 1.5, ease:Quad.easeIn});
@@ -90,7 +90,7 @@ $(function(){
         tlInWaves.to(wrapperWaves, 2, {width: '130%'});
         tlInWaves.to(waves, 0.8, {scaleY: 1, ease:Back.easeOut.config(5)}, 0);
         tlInWaves.play();
-        
+
         diffTranslation = -17; // multiple 17
         symbolToAnimate = wrapperWaves.closest('.symbol').find('.hoverAnimation');
         tlHoverWaves.to(symbolToAnimate, 0.2, {scaleX: 1.5, ease:Quad.easeIn});
@@ -100,7 +100,7 @@ $(function(){
         tlInZigzags.to(wrapperZigzags, 2, {width: '130%'});
         tlInZigzags.to(zigzags, 0.8, {scaleY: 1, ease:Back.easeOut.config(5)}, 0);
         tlInZigzags.play();
-        
+
         diffTranslation = -19;
         symbolToAnimate = wrapperZigzags.closest('.symbol').find('.hoverAnimation');
         tlHoverZigzags.to(symbolToAnimate, 0.2, {scaleX: 1.5, ease:Quad.easeIn});
@@ -109,7 +109,7 @@ $(function(){
     if(slashes.length){
         tlInSlashes.staggerTo(slashes, 0.35, {opacity: 1, scaleY: 1, ease:Back.easeOut.config(5)}, 0.06);
         tlInSlashes.play();
-        
+
         diffTranslation = -33;
         symbolToAnimate = slashes.closest('.symbol').find('.hoverAnimation');
         tlHoverSlashes.to(symbolToAnimate, 0.2, {scaleX: 1.5, ease:Quad.easeIn});
@@ -118,7 +118,7 @@ $(function(){
     if(dots.length){
         tlInDots.staggerTo(dots, 0.35, {opacity: 1, y: 0, ease:Back.easeOut.config(5)}, 0.06);
         tlInDots.play();
-        
+
         diffTranslation = -35;
         symbolToAnimate = dots.closest('.symbol').find('.hoverAnimation');
         tlHoverDots.to(symbolToAnimate, 0.2, {scaleX: 1.5, ease:Quad.easeIn});
