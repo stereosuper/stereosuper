@@ -67,42 +67,78 @@ $(function(){
     // Sprites skills
     ////////////////////////////////////////////////
 
-    var dashes = $('.dashes >li'),
-        wrapperWaves = $('.wrapper-waves'), waves = $('.waves'),
-        wrapperZigzags = $('.wrapper-zigzags'), zigzags = $('.zigzags'),
-        slashes = $('.slashes >li'),
-        dots = $('.dots >li'),
+    var dashes = $('.dashes >span'), tlInDashes = new TimelineMax({paused: true}), tlHoverDashes = new TimelineMax({paused: true}),
+        wrapperWaves = $('.wrapper-waves'), waves = $('.waves'), tlInWaves = new TimelineMax({paused: true}), tlHoverWaves = new TimelineMax({paused: true}),
+        wrapperZigzags = $('.wrapper-zigzags'), zigzags = $('.zigzags'), tlInZigzags = new TimelineMax({paused: true}), tlHoverZigzags = new TimelineMax({paused: true}),
+        slashes = $('.slashes >span'), tlInSlashes = new TimelineMax({paused: true}), tlHoverSlashes = new TimelineMax({paused: true}),
+        dots = $('.dots >span'), tlInDots = new TimelineMax({paused: true}), tlHoverDots = new TimelineMax({paused: true}),
         dataSkill, symbolToAnimate, diffTranslation = 0;
     var StagIcon, StagIcon2;
     var AnimHoverAll;
 
-    // Anims d'apparition
-    TweenMax.staggerTo(dashes, 0.35, {opacity: 1, y: 0, ease:Back.easeOut.config(5)}, 0.06);
-    TweenMax.to(wrapperWaves, 2, {width: '130%'});
-    TweenMax.to(waves, 0.8, {scaleY: 1, ease:Back.easeOut.config(5)});
-    TweenMax.to(wrapperZigzags, 2, {width: '130%'});
-    TweenMax.to(zigzags, 0.8, {scaleY: 1, ease:Back.easeOut.config(5)});
-    TweenMax.staggerTo(slashes, 0.35, {opacity: 1, scaleY: 1, ease:Back.easeOut.config(5)}, 0.06);
-    TweenMax.staggerTo(dots, 0.35, {opacity: 1, y: 0, ease:Back.easeOut.config(5)}, 0.06);
+    // Timelines for apparition and hover
+    if(dashes.length){
+        tlInDashes.staggerTo(dashes, 0.35, {opacity: 1, y: 0, ease:Back.easeOut.config(5)}, 0.06);
+        tlInDashes.play();
+        
+        diffTranslation = -36;
+        symbolToAnimate = dashes.closest('.symbol').find('.hoverAnimation');
+        tlHoverDashes.to(symbolToAnimate, 0.2, {scaleX: 1.5, ease:Quad.easeIn});
+        tlHoverDashes.to(symbolToAnimate, 0.3, {scaleX: 1, x: diffTranslation, ease:Quad.easeOut});
+    }
+    if(wrapperWaves.length){
+        tlInWaves.to(wrapperWaves, 2, {width: '130%'});
+        tlInWaves.to(waves, 0.8, {scaleY: 1, ease:Back.easeOut.config(5)}, 0);
+        tlInWaves.play();
+        
+        diffTranslation = -17; // multiple 17
+        symbolToAnimate = wrapperWaves.closest('.symbol').find('.hoverAnimation');
+        tlHoverWaves.to(symbolToAnimate, 0.2, {scaleX: 1.5, ease:Quad.easeIn});
+        tlHoverWaves.to(symbolToAnimate, 0.3, {scaleX: 1, x: diffTranslation, ease:Quad.easeOut});
+    }
+    if(wrapperZigzags.length){
+        tlInZigzags.to(wrapperZigzags, 2, {width: '130%'});
+        tlInZigzags.to(zigzags, 0.8, {scaleY: 1, ease:Back.easeOut.config(5)}, 0);
+        tlInZigzags.play();
+        
+        diffTranslation = -19;
+        symbolToAnimate = wrapperZigzags.closest('.symbol').find('.hoverAnimation');
+        tlHoverZigzags.to(symbolToAnimate, 0.2, {scaleX: 1.5, ease:Quad.easeIn});
+        tlHoverZigzags.to(symbolToAnimate, 0.3, {scaleX: 1, x: diffTranslation, ease:Quad.easeOut});
+    }
+    if(slashes.length){
+        tlInSlashes.staggerTo(slashes, 0.35, {opacity: 1, scaleY: 1, ease:Back.easeOut.config(5)}, 0.06);
+        tlInSlashes.play();
+        
+        diffTranslation = -33;
+        symbolToAnimate = slashes.closest('.symbol').find('.hoverAnimation');
+        tlHoverSlashes.to(symbolToAnimate, 0.2, {scaleX: 1.5, ease:Quad.easeIn});
+        tlHoverSlashes.to(symbolToAnimate, 0.3, {scaleX: 1, x: diffTranslation, ease:Quad.easeOut});
+    }
+    if(dots.length){
+        tlInDots.staggerTo(dots, 0.35, {opacity: 1, y: 0, ease:Back.easeOut.config(5)}, 0.06);
+        tlInDots.play();
+        
+        diffTranslation = -35;
+        symbolToAnimate = dots.closest('.symbol').find('.hoverAnimation');
+        tlHoverDots.to(symbolToAnimate, 0.2, {scaleX: 1.5, ease:Quad.easeIn});
+        tlHoverDots.to(symbolToAnimate, 0.3, {scaleX: 1, x: diffTranslation, ease:Quad.easeOut});
+    }
 
     // Préparation des timelines pour le hover
     $('.skill').on('mouseenter', function(){
-        symbolToAnimate = $(this).find('.hoverAnimation');
         dataSkill = $(this).data('skill');
         if(dataSkill == 'strategy'){
-            diffTranslation = -36;
+            tlHoverDashes.progress(0).tweenTo(tlHoverDashes.duration());
         }else if(dataSkill == 'identity'){
-            diffTranslation = -17; // multiple de 17
+            tlHoverWaves.progress(0).tweenTo(tlHoverWaves.duration());
         }else if(dataSkill == 'design'){
-            diffTranslation = -19;
+            tlHoverZigzags.progress(0).tweenTo(tlHoverZigzags.duration());
         }else if(dataSkill == 'animation'){
-            diffTranslation = -33;
+            tlHoverSlashes.progress(0).tweenTo(tlHoverSlashes.duration());
         }else if(dataSkill == 'dev'){
-            diffTranslation = -35;
+            tlHoverDots.progress(0).tweenTo(tlHoverDots.duration());
         }
-        AnimHoverAll= new TimelineMax();
-        AnimHoverAll.to(symbolToAnimate, 0.2, {scaleX: 1.5, ease:Quad.easeIn});//anim de hover
-        AnimHoverAll.to(symbolToAnimate, 0.3, {scaleX: 1, x: diffTranslation, ease:Quad.easeOut});//anim de hover suite
     }).on('mouseleave', function(){
         symbolToAnimate = $(this).find('.hoverAnimation');
         TweenMax.to(symbolToAnimate, 0.3, {scaleX: 1, x: 0});
