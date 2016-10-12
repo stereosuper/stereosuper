@@ -66,19 +66,19 @@ $(function(){
     ////////////////////////////////////////////////
     // Skills
     ////////////////////////////////////////////////
+    var createTl = require('./tlSkillsIn.js');
 
-    var dashes = $('.dashes >span'), tlInDashes = new TimelineMax({paused: true}), tlHoverDashes = new TimelineMax({paused: true}),
-        wrapperWaves = $('.wrapper-waves'), waves = $('.waves'), tlInWaves = new TimelineMax({paused: true}), tlHoverWaves = new TimelineMax({paused: true}),
-        wrapperZigzags = $('.wrapper-zigzags'), zigzags = $('.zigzags'), tlInZigzags = new TimelineMax({paused: true}), tlHoverZigzags = new TimelineMax({paused: true}),
-        slashes = $('.slashes >span'), tlInSlashes = new TimelineMax({paused: true}), tlHoverSlashes = new TimelineMax({paused: true}),
-        dots = $('.dots >span'), tlInDots = new TimelineMax({paused: true}), tlHoverDots = new TimelineMax({paused: true}),
+    var dashes = $('.dashes >span'), tlInDashes, tlHoverDashes = new TimelineMax({paused: true}),
+        wrapperWaves = $('.wrapper-waves'), waves = $('.waves'), tlInWaves, tlHoverWaves = new TimelineMax({paused: true}),
+        wrapperZigzags = $('.wrapper-zigzags'), zigzags = $('.zigzags'), tlInZigzags, tlHoverZigzags = new TimelineMax({paused: true}),
+        slashes = $('.slashes >span'), tlInSlashes, tlHoverSlashes = new TimelineMax({paused: true}),
+        dots = $('.dots >span'), tlInDots, tlHoverDots = new TimelineMax({paused: true}),
         dataSkill, symbolToAnimate, diffTranslation = 0;
     var StagIcon, StagIcon2;
     var AnimHoverAll;
 
-    // Timelines for apparition and hover
     if(dashes.length){
-        tlInDashes.staggerTo(dashes, 0.35, {opacity: 1, y: 0, ease:Back.easeOut.config(5)}, 0.06);
+        tlInDashes = createTl(true, dashes, true);
         tlInDashes.play();
 
         diffTranslation = -36;
@@ -87,8 +87,7 @@ $(function(){
         tlHoverDashes.to(symbolToAnimate, 0.3, {scaleX: 1, x: diffTranslation, ease:Quad.easeOut});
     }
     if(wrapperWaves.length){
-        tlInWaves.to(wrapperWaves, 2, {width: '130%'});
-        tlInWaves.to(waves, 0.8, {scaleY: 1, ease:Back.easeOut.config(5)}, 0);
+        tlInWaves = createTl(false, waves, wrapperWaves);
         tlInWaves.play();
 
         diffTranslation = -17; // multiple 17
@@ -97,8 +96,7 @@ $(function(){
         tlHoverWaves.to(symbolToAnimate, 0.3, {scaleX: 1, x: diffTranslation, ease:Quad.easeOut});
     }
     if(wrapperZigzags.length){
-        tlInZigzags.to(wrapperZigzags, 2, {width: '130%'});
-        tlInZigzags.to(zigzags, 0.8, {scaleY: 1, ease:Back.easeOut.config(5)}, 0);
+        tlInZigzags = createTl(false, zigzags, wrapperZigzags);
         tlInZigzags.play();
 
         diffTranslation = -19;
@@ -107,7 +105,7 @@ $(function(){
         tlHoverZigzags.to(symbolToAnimate, 0.3, {scaleX: 1, x: diffTranslation, ease:Quad.easeOut});
     }
     if(slashes.length){
-        tlInSlashes.staggerTo(slashes, 0.35, {opacity: 1, scaleY: 1, ease:Back.easeOut.config(5)}, 0.06);
+        tlInSlashes = createTl(true, slashes, false);
         tlInSlashes.play();
 
         diffTranslation = -33;
@@ -116,7 +114,7 @@ $(function(){
         tlHoverSlashes.to(symbolToAnimate, 0.3, {scaleX: 1, x: diffTranslation, ease:Quad.easeOut});
     }
     if(dots.length){
-        tlInDots.staggerTo(dots, 0.35, {opacity: 1, y: 0, ease:Back.easeOut.config(5)}, 0.06);
+        tlInDots = createTl(true, dots, true);
         tlInDots.play();
 
         diffTranslation = -35;
