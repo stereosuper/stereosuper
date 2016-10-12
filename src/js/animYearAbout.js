@@ -1,4 +1,6 @@
 var $ = require('./libs/jquery/dist/jquery.min.js');
+var TweenMax = require('./libs/gsap/src/uncompressed/TweenMax.js');
+ var drawSvg = require('./libs/gsap/src/uncompressed/plugins/DrawSvgPlugin.js');
 // var isMobile = require('./isMobile.min.js');
 
 // window.requestAnimFrame = require('./requestAnimFrame.js');
@@ -6,7 +8,8 @@ var $ = require('./libs/jquery/dist/jquery.min.js');
 
 module.exports = function(myScroll){
     var yearWrapper = $('#year'), yearsData = $('[data-year]'), yearsHtml = '', style = '',
-        years, initialTop, thisYear, thisYearPos, yearText, thisYearHtml, nbYears, i, thisYearData;
+        years, initialTop, thisYear, thisYearPos, yearText, thisYearHtml, nbYears, i, thisYearData,
+        svg = $('#yearSvg');
 
     function incrementYear(year, html, i){
         setTimeout(function(){ year.html(html + i); }, 200*i);
@@ -26,6 +29,9 @@ module.exports = function(myScroll){
     });
     yearWrapper.append(yearsHtml);
     years = yearWrapper.find('.year');
+
+    svg.css('top', initialTop +'px');
+    TweenMax.to(svg.find('path'), 1, {drawSvg: 0});
 
 
     $(document).on('scroll', function(){
@@ -68,5 +74,6 @@ module.exports = function(myScroll){
             }
             thisYear.data('top', (yearsData.eq(i).offset().top - 55)|0).css({'top': initialTop, 'opacity': 0}).removeClass('fixed');
         });
+        svg.css('top', initialTop +'px');
     });
 }
