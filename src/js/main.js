@@ -66,65 +66,35 @@ $(function(){
     ////////////////////////////////////////////////
     // Skills
     ////////////////////////////////////////////////
-    var createTl = require('./tlSkillsIn.js'),
-        createTlHover = require('./tlSkillsHover.js');
+    var createTl = require('./tlSkillsIn.js');
 
-    var dashes = $('.dashes >span'), tlInDashes, tlHoverDashes,
-        wrapperWaves = $('.wrapper-waves'), waves = $('.waves'), tlInWaves, tlHoverWaves,
-        wrapperZigzags = $('.wrapper-zigzags'), zigzags = $('.zigzags'), tlInZigzags, tlHoverZigzags,
-        slashes = $('.slashes >span'), tlInSlashes, tlHoverSlashes,
-        dots = $('.dots >span'), tlInDots, tlHoverDots,
+    var dashes = $('.dashes >span'), tlInDashes,
+        wrapperWaves = $('.wrapper-waves'), waves = $('.waves'), tlInWaves,
+        wrapperZigzags = $('.wrapper-zigzags'), zigzags = $('.zigzags'), tlInZigzags,
+        slashes = $('.slashes >span'), tlInSlashes,
+        dots = $('.dots >span'), tlInDots,
         dataSkill, symbolToAnimate;
 
     if(dashes.length){
         tlInDashes = createTl(true, dashes, true);
         tlInDashes.play();
-
-        tlHoverDashes = createTlHover(dashes.closest('.symbol').find('.hoverAnimation'), -36);
     }
     if(wrapperWaves.length){
         tlInWaves = createTl(false, waves, wrapperWaves);
         tlInWaves.play();
-
-        tlHoverWaves = createTlHover(wrapperWaves.closest('.symbol').find('.hoverAnimation'), -17);
     }
     if(wrapperZigzags.length){
         tlInZigzags = createTl(false, zigzags, wrapperZigzags);
         tlInZigzags.play();
-
-        tlHoverZigzags = createTlHover(wrapperZigzags.closest('.symbol').find('.hoverAnimation'), -19);
     }
     if(slashes.length){
         tlInSlashes = createTl(true, slashes, false);
         tlInSlashes.play();
-
-        tlHoverSlashes = createTlHover(slashes.closest('.symbol').find('.hoverAnimation'), -33);
     }
     if(dots.length){
         tlInDots = createTl(true, dots, true);
         tlInDots.play();
-
-        tlHoverDots = createTlHover(dots.closest('.symbol').find('.hoverAnimation'), -35);
     }
-
-    // Préparation des timelines pour le hover
-    $('.skill').on('mouseenter', function(){
-        dataSkill = $(this).data('skill');
-        if(dataSkill == 'strategy'){
-            tlHoverDashes.progress(0).tweenTo(tlHoverDashes.duration());
-        }else if(dataSkill == 'identity'){
-            tlHoverWaves.progress(0).tweenTo(tlHoverWaves.duration());
-        }else if(dataSkill == 'design'){
-            tlHoverZigzags.progress(0).tweenTo(tlHoverZigzags.duration());
-        }else if(dataSkill == 'animation'){
-            tlHoverSlashes.progress(0).tweenTo(tlHoverSlashes.duration());
-        }else if(dataSkill == 'dev'){
-            tlHoverDots.progress(0).tweenTo(tlHoverDots.duration());
-        }
-    }).on('mouseleave', function(){
-        symbolToAnimate = $(this).find('.hoverAnimation');
-        TweenMax.to(symbolToAnimate, 0.3, {scaleX: 1, x: 0});
-    });
 
     ////////////////////////////////////////////////
     // Home functions
