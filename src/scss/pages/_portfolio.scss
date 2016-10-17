@@ -92,6 +92,27 @@
         .btn{
             background: nth($portfolioColors, $i);
         }
+        .skill{
+            .list-symbols{
+                >span{
+                    background: nth($portfolioColors, $i);
+                }
+            }
+            .waves{
+                fill: nth($portfolioColors, $i);
+            }
+            .zigzags{
+                fill: nth($portfolioColors, $i);
+            }
+            .slashes{
+                >span{
+                    background: none;
+                    &:after{
+                        background: nth($portfolioColors, $i);
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -142,5 +163,11 @@
     }
     a{
         display: inline-block;
+    }
+    .skills{
+        position: relative;
+        margin: 40px 0 60px;
+        padding: 0;
+        color: $black;
     }
 }

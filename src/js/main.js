@@ -4,7 +4,7 @@ var Barba = require('./libs/barba.min.js');
 var $ = require('./libs/jquery/dist/jquery.min.js');
 // var isMobile = require('./isMobile.min.js');
 // var TweenMax = require('./libs/gsap/src/uncompressed/TweenMax.js');
-// var TimelineMax = require('./libs/gsap/src/minified/TimelineMax.min.js');
+// var TimelineMax = require('./libs/gsap/src/uncompressed/TimelineMax.js');
 
 
 $(function(){
@@ -62,39 +62,6 @@ $(function(){
 
     skillsHome.data('top', skillsTop);
     var animTopSetUp = animTop(myScroll, body, header, skillsHome);
-
-    ////////////////////////////////////////////////
-    // Skills
-    ////////////////////////////////////////////////
-    var createTl = require('./tlSkillsIn.js');
-
-    var dashes = $('.dashes >span'), tlInDashes,
-        wrapperWaves = $('.wrapper-waves'), waves = $('.waves'), tlInWaves,
-        wrapperZigzags = $('.wrapper-zigzags'), zigzags = $('.zigzags'), tlInZigzags,
-        slashes = $('.slashes >span'), tlInSlashes,
-        dots = $('.dots >span'), tlInDots,
-        dataSkill, symbolToAnimate;
-
-    if(dashes.length){
-        tlInDashes = createTl(true, dashes, true);
-        tlInDashes.play();
-    }
-    if(wrapperWaves.length){
-        tlInWaves = createTl(false, waves, wrapperWaves);
-        tlInWaves.play();
-    }
-    if(wrapperZigzags.length){
-        tlInZigzags = createTl(false, zigzags, wrapperZigzags);
-        tlInZigzags.play();
-    }
-    if(slashes.length){
-        tlInSlashes = createTl(true, slashes, false);
-        tlInSlashes.play();
-    }
-    if(dots.length){
-        tlInDots = createTl(true, dots, true);
-        tlInDots.play();
-    }
 
     ////////////////////////////////////////////////
     // Home functions

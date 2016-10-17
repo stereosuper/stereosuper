@@ -1,4 +1,6 @@
 var $ = require('./libs/jquery/dist/jquery.min.js');
+var TweenMax = require('./libs/gsap/src/uncompressed/TweenMax.js');
+var TimelineMax = require('./libs/gsap/src/uncompressed/TimelineMax.js');
 
 module.exports = function(isStagger, elemToAnim, thirdParameter){
     var tlSkillsIn = new TimelineMax({paused: true});
