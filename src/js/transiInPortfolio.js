@@ -4,21 +4,22 @@ var TimelineMax = require('./libs/gsap/src/uncompressed/TimelineMax.js');
 var animSkillsIn = require('./animSkillsIn.js');
 
 module.exports = function(aze){
-    var _this = aze;
-    var $el = $(aze.newContainer);
     var tlFadeIn
         tpsTransitionFadeIn = 0.3;
+    tlFadeIn = new TimelineMax({onComplete: fadeInPartTwo});
 
-    tlFadeIn = new TimelineMax({onComplete: function(){
-        _this.done();
-    }});
+    if(aze !== undefined){
+        var _this = aze;
+        var $el = $(aze.newContainer);
+        tlFadeIn.set($('body'), {className: '-='+$(aze.oldContainer).data('class')});
+        tlFadeIn.set($('body'), {className: '+='+$el.data('class')});
+        tlFadeIn.set($el, {visibility: 'visible', opacity: 0, onComplete: function(){
+            $(document).scrollTop(0);
+        }});
+        tlFadeIn.set($el, {opacity: 1});
+        $(aze.oldContainer).hide();
+    }
 
-    tlFadeIn.set($('body'), {className: '-='+$(aze.oldContainer).data('class')});
-    tlFadeIn.set($('body'), {className: '+='+$el.data('class')});
-    tlFadeIn.set($el, {visibility: 'visible', opacity: 0, onComplete: function(){
-        $(document).scrollTop(0);
-    }});
-    tlFadeIn.set($el, {opacity: 1});
     var twFadeIn1 = new TweenMax.to($('.bgPortfolio'), 0.5, {scaleY:1, ease: Power4.easeOut});
     var twFadeIn2 = new TweenMax.to($('.bgPagePortfolio'), 0.5, {scaleY:1, ease: Power4.easeOut});
     var twFadeIn3 = new TweenMax.to($('.portfolio-text h1'), 0.5, {y: 0, opacity: 1, ease: Circ.easeOut});
@@ -32,7 +33,9 @@ module.exports = function(aze){
         ]
     );
     tlFadeIn.set($('#header'), {className: '+= bgVisible'});
+    
 
+    /*
     var twFadeIn5 = new TweenMax.to([$('.portfolio-text p')], 0.3, {y: 0, opacity: 1, ease: Power4.easeOut});
     tlFadeIn.add(
         [
@@ -46,6 +49,22 @@ module.exports = function(aze){
         tableSkillsApparition
     );
     tlFadeIn.to($('.portfolio-role a'), 0.5, {y: 0, opacity: 1, ease: Circ.easeOut});
-
-    $(aze.oldContainer).hide();
+    */
+    
+    //////// 
+    function fadeInPartTwo(){
+        TweenMax.to([$('.portfolio-text p')], 0.3, {y: 0, opacity: 1, ease: Power4.easeOut});
+        TweenMax.staggerTo($('.portfolio-role p'), 0.5, {y: 0, opacity: 1, ease: Circ.easeOut, delay: 0.2}, 0.1);
+        TweenMax.to($('.skills'), 0.5, {y: 0, opacity: 1, ease: Circ.easeOut, delay: 0.5});
+        var tableSkillsApparition = animSkillsIn();
+        var tlSkillsApparition = new TimelineMax();
+        tlSkillsApparition.add(
+            tableSkillsApparition
+        );
+        TweenMax.to($('.portfolio-role a'), 0.5, {y: 0, opacity: 1, ease: Circ.easeOut, delay: 0.6, onComplete: function(){
+            if(aze !== undefined){
+                _this.done();
+            }
+        }});
+    }
 };

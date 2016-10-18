@@ -70,7 +70,6 @@ $(function(){
     var Home = Barba.BaseView.extend({ namespace: 'home',
         onEnter: function(){
             // The new Container is ready and attached to the DOM.
-
             skillsHome = $('#skillsHome');
             skillsTop = skillsHome.offset().top - 100;
             skillsHome.data('top', skillsTop);
@@ -105,6 +104,27 @@ $(function(){
     });
     Home.init();
 
+    ////////////////////////////////////////////////
+    // Portfolio functions
+    ////////////////////////////////////////////////
+
+    var Portfolio = Barba.BaseView.extend({ namespace: 'portfolio',
+        onEnter: function(){
+            // The new Container is ready and attached to the DOM.
+            
+        },
+        onEnterCompleted: function(){
+            // The Transition has just finished.
+
+        },
+        onLeave: function(){
+            // A new Transition toward a new page has just started.
+        },
+        onLeaveCompleted: function(){
+            // The Container has just been removed from the DOM.
+        }
+    });
+    Portfolio.init();
 
 
     ////////////////////////////////////////////////
@@ -129,6 +149,18 @@ $(function(){
     });
     About.init();
 
+    ////////////////////////////////////////////////
+    // Transitions in
+    ////////////////////////////////////////////////
+    var transiInPortfolio = require('./transiInPortfolio.js');
+
+    if($('body').hasClass('home')){
+
+    }else if($('body').hasClass('portfolio')){
+        return transiInPortfolio();
+    }else if($('body').hasClass('about')){
+
+    }
 
 
     ////////////////////////////////////////////////
