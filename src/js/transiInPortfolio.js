@@ -8,18 +8,6 @@ module.exports = function(aze){
         tpsTransitionFadeIn = 0.3;
     tlFadeIn = new TimelineMax({onComplete: fadeInPartTwo});
 
-    if(aze !== undefined){
-        var _this = aze;
-        var $el = $(aze.newContainer);
-        tlFadeIn.set($('body'), {className: '-='+$(aze.oldContainer).data('class')});
-        tlFadeIn.set($('body'), {className: '+='+$el.data('class')});
-        tlFadeIn.set($el, {visibility: 'visible', opacity: 0, onComplete: function(){
-            $(document).scrollTop(0);
-        }});
-        tlFadeIn.set($el, {opacity: 1});
-        $(aze.oldContainer).hide();
-    }
-
     var twFadeIn1 = new TweenMax.to($('.bgPortfolio'), 0.5, {scaleY:1, ease: Power4.easeOut});
     var twFadeIn2 = new TweenMax.to($('.bgPagePortfolio'), 0.5, {scaleY:1, ease: Power4.easeOut});
     var twFadeIn3 = new TweenMax.to($('.portfolio-text h1'), 0.5, {y: 0, opacity: 1, ease: Circ.easeOut});
@@ -63,7 +51,7 @@ module.exports = function(aze){
         );
         TweenMax.to($('.portfolio-role a'), 0.5, {y: 0, opacity: 1, ease: Circ.easeOut, delay: 0.6, onComplete: function(){
             if(aze !== undefined){
-                _this.done();
+                aze.done();
             }
         }});
     }

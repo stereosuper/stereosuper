@@ -20,7 +20,18 @@ module.exports = function(lastClickedLink){
 
         fadeIn: function(){
             var _this = this;
-            return transiInPortfolio(_this);
+            var $el = $(this.newContainer);
+            TweenMax.set($('body'), {className: '-='+$(this.oldContainer).data('class')});
+            TweenMax.set($('body'), {className: '+='+$el.data('class')});
+            TweenMax.set($el, {visibility: 'visible', opacity: 0, onComplete: function(){
+                $(document).scrollTop(0);
+            }});
+            TweenMax.set($el, {opacity: 1});
+            $(this.oldContainer).hide();
+
+            if($('body').hasClass('portfolio')){
+                return transiInPortfolio(_this);
+            }
         }
     })
 };
