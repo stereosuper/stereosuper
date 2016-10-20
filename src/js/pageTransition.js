@@ -5,6 +5,7 @@ var TimelineMax = require('./libs/gsap/src/uncompressed/TimelineMax.js');
 
 var transiOutHome = require('./transiOutHome.js');
 var transiInPortfolio = require('./transiInPortfolio.js');
+var transiOutPortfolio = require('./transiOutPortfolio.js');
 
 module.exports = function(lastClickedLink){
     return Barba.BaseTransition.extend({
@@ -15,7 +16,13 @@ module.exports = function(lastClickedLink){
         },
 
         fadeOut: function(){
-            return transiOutHome(lastClickedLink);
+            if($('body').hasClass('home')){
+                return transiOutHome(lastClickedLink);
+            }else if($('body').hasClass('portfolio')){
+                return transiOutPortfolio();
+            }else{
+                return $(this.oldContainer).animate({ opacity: 0 }).promise();
+            }
         },
 
         fadeIn: function(){
@@ -31,6 +38,8 @@ module.exports = function(lastClickedLink){
 
             if($('body').hasClass('portfolio')){
                 return transiInPortfolio(_this);
+            }else{
+                _this.done();
             }
         }
     })

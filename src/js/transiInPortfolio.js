@@ -4,7 +4,7 @@ var TimelineMax = require('./libs/gsap/src/uncompressed/TimelineMax.js');
 var animSkillsIn = require('./animSkillsIn.js');
 
 module.exports = function(aze){
-    var tlFadeIn
+    var tlFadeIn,
         tpsTransitionFadeIn = 0.3;
     tlFadeIn = new TimelineMax({onComplete: fadeInPartTwo});
 
