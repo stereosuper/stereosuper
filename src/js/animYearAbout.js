@@ -8,7 +8,7 @@ var TweenMax = require('./libs/gsap/src/uncompressed/TweenMax.js');
 
 module.exports = function(myScroll){
     var yearWrapper = $('#year'), yearsData = $('[data-year]'), yearsHtml = '', style = '',
-        years, initialTop, thisYear, thisYearPos, yearText, thisYearHtml, nbYears, i, thisYearData,
+        years, totalYears, initialTop, thisYear, thisYearPos, yearText, thisYearHtml, nbYears, i, thisYearData, firstYear, lastYear, nbYearsTotal, nbYearsDone, percentageYears,
         svg = $('#yearSvg');
 
     function incrementYear(year, html, i){
@@ -29,9 +29,12 @@ module.exports = function(myScroll){
     });
     yearWrapper.append(yearsHtml);
     years = yearWrapper.find('.year');
+    totalYears = years.length;
+    firstYear = parseInt(years.eq(0).data('year'));
+    lastYear = parseInt(years.eq(-2).data('year'));
 
+    TweenMax.set(svg.find('path'), {drawSVG: '0%'});
     svg.css('top', initialTop +'px');
-    TweenMax.to(svg.find('path'), 1, {drawSVG: '0'});
 
 
     $(document).on('scroll', function(){
@@ -46,13 +49,14 @@ module.exports = function(myScroll){
             if(thisYear.hasClass('fixed')){
                 if(myScroll + initialTop - 1 < thisYearPos){
                     thisYear.css('top', initialTop + 'px').removeClass('fixed').html(thisYearData).data('year', thisYearHtml);
+                    svgProgression(thisYearData);
                 }
             }else{
                 if(thisYear.offset().top - 1 >= thisYearPos){
                     thisYear.css('top', thisYearPos + 'px').addClass('fixed');
-
                     if(thisYearData === 'now'){
                         thisYear.html(thisYearData).data('year', thisYearHtml);
+                        svgProgression(lastYear+1);
                     }else{
                         nbYears = thisYearData - thisYearHtml;
                         i = 1;
@@ -60,6 +64,7 @@ module.exports = function(myScroll){
                         for(i; i <= nbYears; i++){
                             incrementYear(thisYear, thisYearHtml, i);
                         }
+                        svgProgression(thisYearData);
                     }
                 }
             }
@@ -76,4 +81,12 @@ module.exports = function(myScroll){
         });
         svg.css('top', initialTop +'px');
     });
+
+    function svgProgression(currentYear){
+        // faire avancer le svg
+        nbYearsTotal = lastYear + 1 - firstYear;
+        nbYearsDone = nbYearsTotal - (lastYear + 1 - currentYear);
+        percentageYears = (nbYearsDone * 100) / nbYearsTotal;
+        TweenMax.to(svg.find('path'), 1, {drawSVG: percentageYears+'%'});
+    }
 }
