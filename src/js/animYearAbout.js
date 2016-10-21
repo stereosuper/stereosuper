@@ -1,6 +1,6 @@
 var $ = require('./libs/jquery/dist/jquery.min.js');
 var TweenMax = require('./libs/gsap/src/uncompressed/TweenMax.js');
- var drawSvg = require('./libs/gsap/src/uncompressed/plugins/DrawSvgPlugin.js');
+ var drawSVG = require('./libs/gsap/src/uncompressed/plugins/DrawSvgPlugin.js');
 // var isMobile = require('./isMobile.min.js');
 
 // window.requestAnimFrame = require('./requestAnimFrame.js');
@@ -31,7 +31,7 @@ module.exports = function(myScroll){
     years = yearWrapper.find('.year');
 
     svg.css('top', initialTop +'px');
-    TweenMax.to(svg.find('path'), 1, {drawSvg: 0});
+    TweenMax.to(svg.find('path'), 1, {drawSVG: '0'});
 
 
     $(document).on('scroll', function(){
