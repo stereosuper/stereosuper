@@ -1,0 +1,66 @@
+{% extends 'layout/layout.html.twig' %}
+
+{% block body_attr %}class='contact'{% endblock %}
+
+{# Meta #}
+{% block title %}Nous trouver &bull; Stéréosuper{% endblock %}
+{% block description %}{% endblock %}
+
+{# Content #}
+{% block content %}
+    <div id='page' class='barba-container' data-class='contact'>
+        <div class='container contact-container'>
+            <div class='title'>
+                <h1>Nous trouver <sup>*</sup></h1>
+                <p>Pour le moment nous n'avons qu'une seule super adresse à Nantes. <br>Nous travaillons à l'ouverture de la prochaine à New York !</p>
+            </div>
+
+            <div class='content'>
+                <b class='col'>
+                    * Notre café est super bon.
+                </b><ul class='col'>
+                    <li>
+                        <a href='mailto:bisou@stereosuper.fr' title='Envoyez nous un email' class='link-arrow'>
+                            <span>bisou@stereosuper.fr</span>
+                            <svg class='icon i1'><use xlink:href='#icon-big-arrow'/></svg>
+                            <svg class='icon i2'><use xlink:href='#icon-big-arrow'/></svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href='tel:+33951248536' title='Passez nous un coup de fil'>
+                            <strong>+33 9 51 24 85 36</strong>
+                        </a>
+                    </li>
+                </ul><ul class='col'>
+                    <li><strong>92 Quai de la Fosse - 44100 NANTES</strong></li>
+                    <li>
+                        <a href='https://www.google.fr/maps/place/St%C3%A9r%C3%A9osuper/@47.2082126,-1.5728455,17z/data=!3m1!4b1!4m5!3m4!1s0x4805ec71a9670acd:0x10ec4e5d2650ddf0!8m2!3d47.208209!4d-1.5706515' target='_blank' class='link-arrow'>
+                            <span>Voir sur Google Maps</span>
+                            <svg class='icon i1'><use xlink:href='#icon-big-arrow'/></svg>
+                            <svg class='icon i2'><use xlink:href='#icon-big-arrow'/></svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id='map'></div>
+
+    </div>
+{% endblock content %}
+
+{% block javascript_bottom %}
+    {{parent()}}
+
+    <script src='js/libs/mapbox-gl.min.js'></script>
+    <script>
+       mapboxgl.accessToken = 'pk.eyJ1Ijoic3RlcmVvc3VwZXIiLCJhIjoiY2lyM2JnMDIwMDAxM2k0bWNndmUzeTFhbSJ9.UZ-XuPASxGVtYFSqdVyppg';
+
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/stereosuper/ciupk936g00ni2iqq9o4sbz1s',
+            center: [-1.75, 47.22],
+            zoom: 10
+        });
+    </script>
+{% endblock javascript_bottom %}

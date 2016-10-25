@@ -10,8 +10,8 @@
     'base/fonts',
     'base/base';
 
-//@import
-//  'vendors/';
+@import
+    'plugins/map';
 
 @import
     'abstracts/placeholders';
@@ -31,7 +31,8 @@
 @import
     'pages/home',
     'pages/portfolio',
-    'pages/about';
+    'pages/about',
+    'pages/contact';
 
 @import
     'base/print';
