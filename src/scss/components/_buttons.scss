@@ -98,11 +98,11 @@
         }*/
         .i1{
             transform: translate3d(35px, -35px, 0);
-            transition: transform .15s cubic-bezier(0.47, 0, 0.745, 0.715);
+            transition: transform .20s cubic-bezier(1,0,1,1);
         }
         .i2{
             transform: translate3d(0px, 0px, 0);
-            transition: .15s transform .15s cubic-bezier(0.39, 0.575, 0.565, 1);
+            transition: .35s transform .15s cubic-bezier(0,1,1,1);
         }
     }
 }
