@@ -5,9 +5,10 @@
     position: fixed;
     left: 0;
     bottom: -75px;
+    z-index: 1;
     transform: rotate(-90deg) translate3d(0, 0, 0);
     transform-origin: 0 0;
-    .portfolio &{
+    .bw &{
         color: #000;
         background: none;
         .lang, .social{
@@ -51,7 +52,7 @@
         left: -30px;
         right: -30px;
         border-top: 1px solid rgba(#fff, 0.3);
-        .portfolio &{
+        .bw &{
             border-color: rgba(#000, 0.3);
         }
     }
@@ -66,7 +67,7 @@
     .lang{
         padding: 15px 20px 15px 0;
         border-right: 1px solid rgba(#fff, 0.3);
-        .portfolio &{
+        .bw &{
             border-color: rgba(#000, 0.3);
         }
         .non-active{

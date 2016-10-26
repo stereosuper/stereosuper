@@ -1,22 +1,26 @@
 /* Contact specific style */
 
 .contact{
+    #header{
+        background: none;
+    }
     #barba-wrapper{
+        padding-bottom: 50px;
         background: #fff;
     }
-    h1{
-        max-width: 700px;
-    }
-    .title{
-        padding-left: 30px;
-    }
     .content{
-        width: 75%;
-        padding: 0 0 0 $gutter;
+        padding: 30px 0 0;
+        font-size: 1.6rem;
         color: #000;
+        background: #fff;
+        pointer-events: auto;
         a{
             text-decoration: none;
         }
+    }
+    .grid{
+        width: 75%;
+        padding: 0 0 0 $gutter;
     }
     .col{
         display: inline-block;
@@ -29,14 +33,93 @@
 .contact-container{
     position: relative;
     z-index: 1;
+    pointer-events: none;
 }
 
 #map{
     height: 80vh;
     min-height: 500px;
-    max-height: 620px;
+    max-height: 700px;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
+    background: #000;
+}
+.mapboxgl-canvas-container{
+    opacity: 0;
+    transition: opacity 1s ease-in;
+    &.on{
+        opacity: 1;
+    }
+}
+.mapboxgl-control-container{
+    display: none;
+}
+.marker{
+    width: 30px;
+    height: 35px;
+    background: url(../layoutImg/marker.svg) no-repeat 50% 50%;
+    // opacity: 0;
+    transition: opacity $transition;
+    // &.on{
+    //     opacity: 0.7;
+    // }
+    opacity: 0.7;
+}
+
+@media (max-width: 1500px){
+    .contact{
+        .grid{
+            width: 100%;
+            padding-right: $gutter;
+        }
+    }
+
+    #map{
+        height: 72vh;
+        max-height: 600px;
+    }
+}
+
+@media (max-width: 960px){
+    .contact{
+        .col{
+            width: 50%;
+            &:first-child{
+                width: 100%;
+                margin: 0 0 50px;
+            }
+        }
+    }
+
+    #map{
+        height: 52vh;
+        max-height: 550px;
+    }
+}
+
+@media (max-width: 870px){
+    .contact{
+        .grid{
+            padding: 0;
+        }
+    }
+}
+
+@media (max-width: 700px){
+    .contact{
+        .col{
+            width: 100%;
+            &:nth-child(2){
+                margin: 0 0 20px;
+            }
+        }
+    }
+}
+
+@media (max-width: 500px){
+    .mapboxgl-canvas-container{
+        display: none;
+    }
 }

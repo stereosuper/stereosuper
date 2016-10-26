@@ -1,13 +1,13 @@
 {% extends 'layout.html.twig' %}
 
-{% block body_attr %}class='portfolio {% block portfolio_slug %}{% endblock %}-portfolio'{% endblock %}
+{% block body_attr %}class='portfolio bw {% block portfolio_slug %}{% endblock %}-portfolio'{% endblock %}
 
 {# Meta #}
 {% block title %}{% block portfolio_title %}{% endblock %} &bull; Stéréosuper{% endblock %}
 
 {# Content #}
 {% block content %}
-    <div id='page' class='barba-container' data-class='portfolio {% block portfolio_slug %}{% endblock %}-portfolio' data-namespace='portfolio'>
+    <div id='page' class='barba-container' data-class='portfolio bw {% block portfolio_slug %}{% endblock %}-portfolio' data-namespace='portfolio'>
         <div class='bgPortfolio'></div>
         <section class='portfolio-desc p-relative'>
             <!--<img src='img/cover-{% block portfolio_slug %}{% endblock %}.png' alt='' class='portfolio-cover'>-->

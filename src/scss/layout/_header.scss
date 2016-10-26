@@ -11,6 +11,7 @@
 	z-index: 2;
 	transition: transform $transition;
 	backface-visibility: hidden;
+	line-height: 1.2;
 	&.bgVisible{
 		&:before{
 			opacity: 1;
