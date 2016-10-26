@@ -13,7 +13,7 @@
             <div class='container'>
                 <div class='title'>
                     <h1>Nous<br> trouver&nbsp;<sup>*</sup></h1>
-                    <p>Pour le moment nous n'avons qu'une seule super adresse à Nantes. <br>Nous travaillons à l'ouverture de la prochaine à New York !</p>
+                    <p>Pour le moment nous n'avons qu'une seule super adresse à Nantes. <br>Nous travaillons à l'ouverture de la prochaine à New York&nbsp;!</p>
                 </div>
             </div>
 
@@ -60,9 +60,14 @@
 
     <script src='js/libs/mapbox-gl.min.js'></script>
     <script>
-       mapboxgl.accessToken = 'pk.eyJ1Ijoic3RlcmVvc3VwZXIiLCJhIjoiY2lyM2JnMDIwMDAxM2k0bWNndmUzeTFhbSJ9.UZ-XuPASxGVtYFSqdVyppg';
+        mapboxgl.accessToken = 'pk.eyJ1Ijoic3RlcmVvc3VwZXIiLCJhIjoiY2lyM2JnMDIwMDAxM2k0bWNndmUzeTFhbSJ9.UZ-XuPASxGVtYFSqdVyppg';
 
-       var geojson = {
+        var coordinates = [-1.62, 47.2];
+        if(window.innerWidth < 1100){
+            coordinates = [-1.59, 47.2];
+        }
+
+        var geojson = {
             "type": "FeatureCollection",
             "features": [
                 {
@@ -82,7 +87,7 @@
         var map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/stereosuper/ciuqyq3oc00so2jl8t50ltwwl',
-            center: [-1.62, 47.2],
+            center: coordinates,
             zoom: 5,
             bearing: 20
         });
@@ -100,9 +105,17 @@
                 .addTo(map);
         });
 
+        map.scrollZoom.disable();
+
         map.on('load', function(){
             var canvas = document.querySelector('.mapboxgl-canvas-container'), classes = canvas.className;
+            var hand = document.createElement('div');
+
+            hand.className = 'hand';
             canvas.className = classes + ' on';
+
+            canvas.appendChild(hand);
+
             setTimeout(function(){
                 map.easeTo({ duration: 7000, zoom: 12, bearing: 0 });
             }, 800);
