@@ -11,7 +11,7 @@ module.exports = function(isStagger, elemToAnim, thirdParameter){
             tlSkillsIn.staggerTo(elemToAnim, 0.35, {opacity: 1, scaleY: 1, ease:Back.easeOut.config(5)}, 0.06);
         }
     }else{
-        tlSkillsIn.to(thirdParameter, 2, {width: '130%'});
+        tlSkillsIn.to(thirdParameter, 2, {width: '140%'});
         tlSkillsIn.to(elemToAnim, 0.8, {scaleY: 1, ease:Back.easeOut.config(5)}, 0);
     }
 
