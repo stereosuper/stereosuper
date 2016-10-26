@@ -96,7 +96,7 @@
 		top: 15px;
 		transform-origin: 50% 50%;
 		
-		transition: transform 0.5s ease-in-out;
+		transition: transform 0.3s ease-in-out;
 		outline: 1px solid transparent;
 		backface-visibility: hidden;
 	}
@@ -258,6 +258,12 @@
     }
     @if $name == 'lbb'{
     	.#{$name}-item{
+    		.bg{
+    			mix-blend-mode: normal;
+    		}
+    		.wrapper-bg-img{
+				z-index: 2;
+    		}
     		h2{
     			.bg-img{
     				opacity: 0.6;

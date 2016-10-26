@@ -63,13 +63,23 @@ module.exports = function(myScroll, windowHeight, portfolioItems){
 
     var tlPortolioItemHover = new TimelineMax();
     $('.portfolio-item').on('mouseenter', function(){
+        if($(this).hasClass('lbb-item')){
+            opacityItemHover = 0.75
+        }else{
+            opacityItemHover = 0.3;
+        }
         TweenMax.set($(this).find('.wrapper-bloc'), {css:{rotation: '0.01deg', z: 0.01, force3D: true}});
         TweenMax.to([$(this).find('.bg'), $(this).find('.wrapper-bg-img')], 0.3, {css:{scale: 1.05, rotation: '0.01deg', z: 0.01, force3D: true}, ease: Power1.easeInOut});
-        TweenMax.to($(this).find('.bg-img'), 0.3, {css:{opacity: 0.3, scale: 1, rotation: '0.01deg', z: 0.01, force3D: true}, ease: Power1.easeInOut});
+        TweenMax.to($(this).find('.bg-img'), 0.3, {css:{opacity: opacityItemHover, scale: 1, rotation: '0.01deg', z: 0.01, force3D: true}, ease: Power1.easeInOut});
     }).on('mouseleave', function(){
+        if($(this).hasClass('lbb-item')){
+            opacityItemLeave = 0.6;
+        }else{
+            opacityItemLeave = 0.15;
+        }
         TweenMax.set($(this).find('.wrapper-bloc'), {css:{clearProps: 'rotation', force3D: true}});
         TweenMax.to([$(this).find('.bg'), $(this).find('.wrapper-bg-img')], 0.25, {css:{scale: 1, rotation: '0.01deg', z: 0.01, force3D: true}, ease: Power1.easeInOut});
-        TweenMax.to($(this).find('.bg-img'), 0.25, {css:{opacity: 0.15, scale: 1.05, rotation:  '0.01deg', z: 0.01, force3D: true}, ease: Power1.easeInOut});
+        TweenMax.to($(this).find('.bg-img'), 0.25, {css:{opacity: opacityItemLeave, scale: 1.05, rotation:  '0.01deg', z: 0.01, force3D: true}, ease: Power1.easeInOut});
     });
 
 }

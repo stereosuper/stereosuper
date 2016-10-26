@@ -38,6 +38,8 @@ module.exports = function(lastClickedLink){
 
             if($('body').hasClass('portfolio')){
                 return transiInPortfolio(_this);
+            }else if($('body').hasClass('home')){
+                return transiInHome(_this);
             }else{
                 _this.done();
             }
