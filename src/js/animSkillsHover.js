@@ -19,10 +19,10 @@ module.exports = function(body){
         tlHoverDashes = createTlHover(dashes.closest('.symbol').find('.hoverAnimation'), -36);
     }
     if(wrapperWaves.length){
-        tlHoverWaves = createTlHover(wrapperWaves.closest('.symbol').find('.hoverAnimation'), -17);
+        tlHoverWaves = createTlHover(wrapperWaves.closest('.symbol').find('.hoverAnimation'), -34);
     }
     if(wrapperZigzags.length){
-        tlHoverZigzags = createTlHover(wrapperZigzags.closest('.symbol').find('.hoverAnimation'), -19);
+        tlHoverZigzags = createTlHover(wrapperZigzags.closest('.symbol').find('.hoverAnimation'), -38);
     }
     if(slashes.length){
         tlHoverSlashes = createTlHover(slashes.closest('.symbol').find('.hoverAnimation'), -33);
