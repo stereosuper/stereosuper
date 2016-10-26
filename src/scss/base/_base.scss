@@ -17,7 +17,7 @@ html{
 
 body{
     @include elena(1.8em);
-    line-height: 1.2;
+    line-height: 1.4;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: $white;
@@ -41,7 +41,9 @@ h1{
     letter-spacing: -0.08em;
     line-height: 0.8;
     sup{
-        font-size: 0.5em;
+        top: -1.05em;
+        left: -0.3em;
+        font-size: 0.4em;
     }
     .home &{
         max-width: 75%;
@@ -241,6 +243,7 @@ a{
 }
 
 .title{
+    padding-left: 30px;
     position: relative;
     margin: 0 0 7em;
 }
@@ -320,6 +323,10 @@ a{
         &:before{
             margin: 0;
         }
+    }
+
+    .title{
+        padding: 0;
     }
 }
 

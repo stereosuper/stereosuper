@@ -21,6 +21,9 @@
 }
 .container-small{
     width: 75%;
+    .title{
+        padding: 0;
+    }
 }
 
 @media (max-width: 1060px){
