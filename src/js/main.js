@@ -73,6 +73,7 @@ $(function(){
             skillsHome = $('#skillsHome');
             skillsTop = skillsHome.offset().top - 100;
             skillsHome.data('top', skillsTop);
+            console.log('home');
         },
         onEnterCompleted: function(){
             // The Transition has just finished.
@@ -152,12 +153,13 @@ $(function(){
     ////////////////////////////////////////////////
     // Transitions in
     ////////////////////////////////////////////////
+    var transiInHome = require('./transiInHome.js');
     var transiInPortfolio = require('./transiInPortfolio.js');
 
     if($('body').hasClass('home')){
-
+        transiInHome();
     }else if($('body').hasClass('portfolio')){
-        return transiInPortfolio();
+        transiInPortfolio();
     }else if($('body').hasClass('about')){
 
     }
