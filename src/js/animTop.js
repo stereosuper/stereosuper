@@ -56,7 +56,9 @@ module.exports = function(myScroll, body, header, skillsHome){
                 video.find('video').get(0).pause();
             }else{
                 video.removeClass('off');
-                video.find('video').get(0).play();
+                if(video.hasClass('ready')){
+                    video.find('video').get(0).play();
+                }
                 header.removeClass('scrolled');
             }
         }

@@ -80,7 +80,8 @@ $(function(){
         onEnterCompleted: function(){
             // The Transition has just finished.
 
-            var portfolioItems = $('#portfolio').find('.portfolio-item');
+            var portfolioItems = $('#portfolio').find('.portfolio-item'),
+                video = $('#video');
 
             // Anim top home
             if(!animTopSetUp){
@@ -97,6 +98,10 @@ $(function(){
 
             // Anim skills hover
             animSkillsHover(body);
+
+            video.find('video').on('canplaythrough', function(){
+                video.addClass('ready').find('video').get(0).play();
+            })
         },
         onLeave: function(){
             // A new Transition toward a new page has just started.
