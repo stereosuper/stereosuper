@@ -80,11 +80,22 @@ module.exports = function(){
             mouseX = e.clientX;
             mouseY = e.clientY;
 
-            if(mouseX > markerX - 10 && mouseX < markerX + 10 && mouseY > markerY - 10 && mouseY < markerY + 10){
+            if((mouseX > markerX - 10 && mouseX < markerX + 10) && (mouseY > markerY - 10 && mouseY < markerY + 10)){
                 return;
             }
 
-            hand.css({'left': markerX - handWidth + 'px', 'top': markerY - handHeight + 'px', 'transform': transform(mouseX, mouseY, markerX, markerY, 400, -100)});
+            hand.css({
+                'left': markerX - handWidth + 'px',
+                'top': markerY - handHeight + 'px',
+                'transform': transform(mouseX, mouseY, markerX, markerY, (mapHtml.width() - marker.offset().left - handWidth/2), -(marker.offset().top/2))
+            });
         });
     });
+
+    $(window).on('resize', function(){
+        coordinates = $(window).width() < 1100 ? [-1.59, 47.2] : [-1.62, 47.2];
+        map.flyTo({center: coordinates});
+    });
 }
+
+
