@@ -8,12 +8,12 @@
 
 {# Content #}
 {% block content %}
-    <div id='page' class='barba-container' data-class='contact bw'>
+    <div id='page' class='barba-container' data-class='contact bw' data-namespace='contact'>
         <div class='contact-container'>
             <div class='container'>
                 <div class='title'>
                     <h1>Nous<br> trouver&nbsp;<sup>*</sup></h1>
-                    <p>Pour le moment nous n'avons qu'une seule super adresse à Nantes. <br>Nous travaillons à l'ouverture de la prochaine à New York !</p>
+                    <p>Pour le moment nous n'avons qu'une seule super adresse à Nantes. <br>Nous travaillons à l'ouverture de la prochaine à New York&nbsp;!</p>
                 </div>
             </div>
 
@@ -60,55 +60,6 @@
 
     <script src='js/libs/mapbox-gl.min.js'></script>
     <script>
-       mapboxgl.accessToken = 'pk.eyJ1Ijoic3RlcmVvc3VwZXIiLCJhIjoiY2lyM2JnMDIwMDAxM2k0bWNndmUzeTFhbSJ9.UZ-XuPASxGVtYFSqdVyppg';
 
-       var geojson = {
-            "type": "FeatureCollection",
-            "features": [
-                {
-                    "type": "Feature",
-                    "properties": {
-                        "message": "Stéréosuper",
-                        "iconSize": [30, 35]
-                    },
-                    "geometry": {
-                        "type": "Point",
-                        "coordinates": [-1.5728402, 47.2082126]
-                    }
-                }
-            ]
-        };
-
-        var map = new mapboxgl.Map({
-            container: 'map',
-            style: 'mapbox://styles/stereosuper/ciuqyq3oc00so2jl8t50ltwwl',
-            center: [-1.62, 47.2],
-            zoom: 5,
-            bearing: 20
-        });
-
-        geojson.features.forEach(function(marker){
-            var elMarker = document.createElement('div');
-            elMarker.className = 'marker';
-
-            // el.addEventListener('click', function(){
-            //     window.alert(marker.properties.message);
-            // });
-
-            new mapboxgl.Marker(elMarker, {offset: [-marker.properties.iconSize[0] / 2, -marker.properties.iconSize[1] / 2]})
-                .setLngLat(marker.geometry.coordinates)
-                .addTo(map);
-        });
-
-        map.on('load', function(){
-            var canvas = document.querySelector('.mapboxgl-canvas-container'), classes = canvas.className;
-            canvas.className = classes + ' on';
-            setTimeout(function(){
-                map.easeTo({ duration: 7000, zoom: 12, bearing: 0 });
-            }, 800);
-            // map.once('moveend', function(){
-            //     elMarker.className = 'marker on';
-            // });
-        });
     </script>
 {% endblock javascript_bottom %}

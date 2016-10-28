@@ -17,6 +17,11 @@
         a{
             text-decoration: none;
         }
+        li{
+            &:before{
+                display: none;
+            }
+        }
     }
     .grid{
         width: 75%;
@@ -61,11 +66,27 @@
     height: 35px;
     background: url(../layoutImg/marker.svg) no-repeat 50% 50%;
     // opacity: 0;
-    transition: opacity $transition;
+    //transition: opacity $transition;
     // &.on{
     //     opacity: 0.7;
     // }
     opacity: 0.7;
+}
+.hand{
+    width: 328px;
+    height: 547px;
+    position: absolute;
+    top: -250px;
+    left: 250px;
+    //right: 0;
+    //margin: auto;
+    background: url(../layoutImg/hand.png) no-repeat;
+    transform-origin: 100% 100%;
+    opacity: 0;
+    transition: opacity $transition;
+    &.on{
+        opacity: 1;
+    }
 }
 
 @media (max-width: 1500px){
