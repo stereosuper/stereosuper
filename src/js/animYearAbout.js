@@ -9,24 +9,81 @@ var svgYearContent = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 102
 
 module.exports = function(myScroll){
     var yearWrapper = $('#year'), yearsData = $('[data-year]'), yearsHtml = '', style = '',
-        years, totalYears, initialTop, thisYear, thisYearSpan, thisYearPos, yearText, thisYearHtml, nbYears, i, thisYearData, firstYear, lastYear, nbYearsTotal, nbYearsDone, percentageYears,
-        svg = $('#yearSvg');
+        years, totalYears, initialTop, thisYear, thisYearSpan, thisYearPos, yearText, thisYearHtml, nbYears, i, thisYearData, newYearData, firstYear, lastYear, nbYearsTotal, nbYearsDone, percentageYears, yearTopPosition,
+        svg = $('#yearSvg'), containerYearLandmark = $('.container-year-landmark'), yearLandmark = $('.year-landmark'), yearLandmarkSpan = yearLandmark.find('span'), borderSvg = yearLandmark.find('.border-svg'), yearLandmarkTop, currentYearHtml, newCurrentYearHtml, firstYearTop, lastYearTop;
 
     function incrementYear(year, html, i){
         setTimeout(function(){ year.html(html + i); }, 200*i);
     }
 
+    function zIndexContainerYearLandmark(){
+        if(yearLandmark.offset().top > ($('.container-title').offset().top + $('.container-title').outerHeight())){
+            containerYearLandmark.addClass('big-z-index');
+        }else{
+            containerYearLandmark.removeClass('big-z-index');
+        }
+    }
 
-    yearsData.each(function(i){
-        if(i === 0){
-            initialTop = ($(this).offset().top - 55) | 0;
-            style = 'top:' + initialTop +'px';
-        }else if(i === 1){
-            style += ';opacity:0';
+    function scrollProgression(){
+        myScroll = $(this).scrollTop();
+        yearLandmarkTop = yearLandmark.offset().top;
+
+        years.each(function(){
+            thisYear = $(this);
+            thisYearSpan = thisYear.find('span');
+            thisYearPos = thisYear.data('top');
+            if(yearLandmarkTop > thisYearPos){
+                // bounce year
+                if(!thisYear.hasClass('fixed')){
+                    TweenMax.fromTo(borderSvg, 0.5, {scale: 0.8}, {scale: 1, ease: Elastic.easeOut.config({strength:5})});
+                }
+                thisYear.addClass('fixed');
+                newYearData = thisYear.data('year');
+            }else{
+                // bounce year
+                if(thisYear.hasClass('fixed')){
+                    TweenMax.fromTo(borderSvg, 0.5, {scale: 0.8}, {scale: 1, ease: Elastic.easeOut.config({strength:5})});
+                }
+                thisYear.removeClass('fixed');
+            }
+        });
+        if(newYearData != thisYearData){
+            thisYearData = newYearData;
+            if(thisYearData === 'now'){
+                yearLandmarkSpan.html(thisYearData);
+                svgProgression(svg, lastYear+1, true);
+            }else{
+                thisYearHtml = isNaN(parseInt(yearLandmarkSpan.html())) ? yearLandmarkSpan.html() : parseInt(yearLandmarkSpan.html());
+                nbYears = thisYearData - thisYearHtml;
+                i = 1;
+                yearLandmarkSpan.html(thisYearData);
+                svgProgression(svg, thisYearData, true);
+            }
         }
 
-        yearText = i > 0 ? yearsData.eq(i - 1).data('year') : $(this).data('year');
-        yearsHtml += '<div class="year" data-top="'+ (($(this).offset().top - 55) | 0) +'" style="'+ style +'" data-year="' + $(this).data('year') + '"><span class="">' + yearText + '</span>' + svgYearContent + '</div>';
+        firstYearTop = years.first().data('top');
+        lastYearTop = years.last().data('top');
+        if(myScroll+firstYearTop < lastYearTop){
+            TweenMax.set(yearLandmark, {position: 'fixed', 'top': firstYearTop+'px'});
+        }else{
+            TweenMax.set(yearLandmark, {position: 'absolute', 'top': lastYearTop+1+'px'});
+        }
+    }
+
+    // Position initiale des années
+    yearsData.each(function(i){
+        if(i === 0){
+            initialTop = ($(this).offset().top - 50) | 0;
+        }
+        yearText = $(this).data('year');
+        var windowWidth = $(window).width();
+        if(windowWidth > 767){
+            yearTopPosition = ($(this).offset().top - 50) | 0;
+        }else{
+            yearTopPosition = ($(this).offset().top - 3) | 0;
+        }
+        style = 'top:'+yearTopPosition+'px;';
+        yearsHtml += '<div class="year" data-top="'+ yearTopPosition +'" style="'+ style +'" data-year="' + $(this).data('year') + '"><span class="">' + yearText + '</span>' + '</div>';
     });
     yearWrapper.append(yearsHtml);
     years = yearWrapper.find('.year');
@@ -34,66 +91,21 @@ module.exports = function(myScroll){
     firstYear = parseInt(years.eq(0).data('year'));
     lastYear = parseInt(years.eq(-2).data('year'));
 
-    svg.css('top', initialTop +'px');
+    yearLandmark.css('top', initialTop +'px');
 
-    TweenMax.set([svg.find('path'), $('.svg-year-content').find('path')], {drawSVG: '0%'});
+    TweenMax.set(svg.find('path'), {drawSVG: '0%'});
     var beforeLastYear;
-    years.each(function(){
-        thisYear = $(this);
-        thisYearData = thisYear.data('year');
-        if(thisYearData === 'now'){
-            thisYearData = beforeLastYear+1;
-        }else{
-            beforeLastYear = thisYearData;
-        }
-        svgProgression(thisYear, thisYearData, false);
-    });
+    scrollProgression();
+    zIndexContainerYearLandmark();
 
     $(document).on('scroll', function(){
-        myScroll = $(this).scrollTop();
-
-        years.each(function(){
-            thisYear = $(this);
-            thisYearSpan = thisYear.find('span');
-            thisYearPos = thisYear.data('top');
-            thisYearHtml = isNaN(parseInt(thisYearSpan.html())) ? thisYearSpan.html() : parseInt(thisYearSpan.html());
-            thisYearData = thisYear.data('year');
-            if(thisYear.hasClass('fixed')){
-                if(myScroll + initialTop - 1 < thisYearPos){
-                    thisYear.css('top', initialTop + 'px').removeClass('fixed').data('year', thisYearHtml);
-                    thisYearSpan.html(thisYearData);
-                    svgProgression(svg, thisYearData, true);
-                }
-            }else{
-                if(thisYear.offset().top - 1 >= thisYearPos){
-                    thisYear.css('top', thisYearPos + 'px').addClass('fixed');
-                    if(thisYearData === 'now'){
-                        thisYear.data('year', thisYearHtml);
-                        thisYearSpan.html(thisYearData);
-                        svgProgression(svg, lastYear+1, true);
-                    }else{
-                        nbYears = thisYearData - thisYearHtml;
-                        i = 1;
-                        thisYear.data('year', thisYearHtml);
-                        for(i; i <= nbYears; i++){
-                            incrementYear(thisYearSpan, thisYearHtml, i);
-                        }
-                        svgProgression(svg, thisYearData, true);
-                    }
-                }
-            }
-        });
+        scrollProgression();
+        zIndexContainerYearLandmark();
     });
 
     $(window).on('resize', function(){
-        years.each(function(i){
-            thisYear = $(this);
-            if(i === 0){
-                initialTop = (yearsData.eq(i).offset().top - 55) | 0;
-            }
-            thisYear.data('top', (yearsData.eq(i).offset().top - 55)|0).css({'top': initialTop, 'opacity': 0}).removeClass('fixed');
-        });
-        svg.css('top', initialTop +'px');
+        scrollProgression();
+        zIndexContainerYearLandmark();
     });
 
     function svgProgression(currentSvg, currentYear, isAnimated){

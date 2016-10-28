@@ -6,8 +6,9 @@
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 1;
-    //pointer-events: none;
+    //z-index: 1;
+    z-index: 3;
+    pointer-events: none;
     svg{
         width: 125px;
         height: 125px;
@@ -16,18 +17,92 @@
         stroke: $blue;
     }
 }
-.year{
+.container-timeline{
+    position: absolute;
+    top: -170px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    pointer-events: none;
+    &:after{
+        content: '';
+        border-right: 1px solid rgba($blue, 0.5);
+        position: absolute;
+        top: 0;
+        // bottom: 63px;
+        bottom: 13px;
+        width: 23.8%;
+        left: 30px;
+    }
+}
+.container-year-landmark{
+    position: absolute;
+    top: -170px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    pointer-events: none;
+    &.big-z-index{
+        z-index: 4;
+    }
+}
+.year-landmark-wrapper{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+.year-landmark{
+    position: fixed;
     width: 125px;
     height: 125px;
-    border: 1px solid rgba(#000, 0.2);
+    @include gotham-medium(1em);
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 125px;
+    color: $blue;
+    .border-svg{
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 1px solid rgba(#000, 0.2);
+        width: 125px;
+        height: 125px;
+        border-radius: 50%;
+    }
+    svg{
+        fill: none;
+        position: absolute;
+        width: 125px;
+        height: 125px;
+        top: -1px;
+        left: -1px;
+        stroke: $blue;
+    }
+}
+.year{
+    // width: 80px;
+    width: 125px;
+    height: 125px;
     @include gotham-medium(1em);
     text-transform: uppercase;
     text-align: center;
     line-height: 125px;
     border-radius: 50%;
+    span{
+        opacity: 0;
+        transition: opacity 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    }
     &.fixed{
+        left: 125px;
         .svg-year-content{
             opacity: 1;
+        }
+        span{
+            opacity: 1;
+            transition: opacity 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
     }
     .svg-year-content{
@@ -47,7 +122,10 @@
         top: 0;
         bottom: 0;
         left: 100%;
-        background: rgba($blue, 0.5);
+        background: rgba(#000, 0.2);
+        .footer-page-about &{
+            background: rgba($blue, 0.5);
+        }
     }
 }
 .year-wrapper{
@@ -56,36 +134,46 @@
     top: 0;
     bottom: -50px;
     overflow: hidden;
-    &:after{
+    /*&:after{
         content: '';
         border-right: 1px solid rgba($blue, 0.5);
         position: absolute;
         top: 0;
         bottom: 63px;
         right: 0;
-    }
+    }*/
     .year{
-        position: fixed;
-        //left: 0;
-        color: #000;
+        opacity: 1;
+        position: absolute;
+        left: 0;
+        // left: 170px;
+        color: rgba(#000, 0.2);
         transition: opacity 0.1s ease-in-out;
         &:first-child{
             color: #fff;
-            border-color: rgba(#fff, 0.3);
+            span{
+                opacity: 1;
+            }
         }
         &:last-child{
             font-size: 1.4rem;
             color: $blue;
+            &:after{
+                background: rgba($blue, 0.5);
+            }
+            span{
+                opacity: 0;
+            }
         }
         &:after{
             transform: scaleX(0);
             transform-origin: 100% 0;
-            transition: $transition;
+            transition: transform 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
         }
         &.fixed{
-            position: absolute;
             &:after{
                 transform: scaleX(1);
+                transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             }
         }
         &.fixed, &.fixed + div{
