@@ -24,6 +24,8 @@ $(function(){
     var animYearAbout = require('./animYearABout.js');
     var animTextAbout = require('./animTextABout.js');
 
+    var animHandMap = require('./map.js');
+
 
     var windowWidth = $(window).width(), windowHeight = $(window).height();
     var myScroll = $(document).scrollTop();
@@ -112,7 +114,7 @@ $(function(){
     var Portfolio = Barba.BaseView.extend({ namespace: 'portfolio',
         onEnter: function(){
             // The new Container is ready and attached to the DOM.
-            
+
         },
         onEnterCompleted: function(){
             // The Transition has just finished.
@@ -149,6 +151,29 @@ $(function(){
         }
     });
     About.init();
+
+
+    ////////////////////////////////////////////////
+    // Contact functions
+    ////////////////////////////////////////////////
+
+    var Contact = Barba.BaseView.extend({ namespace: 'contact',
+        onEnter: function(){
+            // The new Container is ready and attached to the DOM.
+        },
+        onEnterCompleted: function(){
+            // The Transition has just finished.
+            animHandMap();
+        },
+        onLeave: function(){
+            // A new Transition toward a new page has just started.
+        },
+        onLeaveCompleted: function(){
+            // The Container has just been removed from the DOM.
+        }
+    });
+    Contact.init();
+
 
     ////////////////////////////////////////////////
     // Transitions in
