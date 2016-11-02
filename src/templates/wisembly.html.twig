@@ -1,0 +1,26 @@
+{% extends 'layout/portfolio.html.twig' %}
+
+{# The portfolio_slug should be the same used in sass variable and to name all the images #}
+{% block portfolio_slug %}wisembly{% endblock %}
+
+{# Meta #}
+{% block portfolio_title %}Wisembly{% endblock %}
+{% block description %}{% endblock %}
+
+{# Content #}
+{% block portfolio_text %}
+    <p></p>
+{% endblock %}
+
+{% block portfolio_role %}
+    <p></p>
+{% endblock %}
+
+{% set strategy = false %}
+{% set identity = false %}
+{% set design = true %}
+{% set animation = false %}
+{% set dev = true %}
+
+{% set website = true %}
+{% block portfolio_url %}http://wisembly.com/{% endblock %}

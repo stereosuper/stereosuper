@@ -8,10 +8,10 @@
 {# Content #}
 {% block content %}
     <div id='page' class='barba-container' data-class='portfolio bw {% block portfolio_slug %}{% endblock %}-portfolio' data-namespace='portfolio'>
-        <div class='bgPortfolio'></div>
+        <!--<div class='bgPortfolio'></div>-->
         <section class='portfolio-desc p-relative'>
             <!--<img src='img/cover-{% block portfolio_slug %}{% endblock %}.png' alt='' class='portfolio-cover'>-->
-            <img src='img/cover-akeneo.png' alt='' class='portfolio-cover'>
+            <img src='img/cover-captain.png' alt='' class='portfolio-cover'>
             <div class='container p-relative'>
                 <div class='portfolio-text'>
                     <h1>{% block portfolio_title %}{% endblock %}</h1>
@@ -19,17 +19,76 @@
                     <a href='./' class='btn-close'>Fermer</a>
                 </div>
             </div>
+            <!--<img src='img/mb-cover-{% block portfolio_slug %}{% endblock %}.png' alt='' class='portfolio-cover-mb'>-->
+            <img src='img/cover-akeneo.png' alt='' class='portfolio-cover-mb'>
         </section>
+
         <section class='portfolio-role'>
-            <div class='bgPagePortfolio'></div>
+            <!--<div class='bgPagePortfolio'></div>-->
             <div class='container'>
                 <div class='portfolio-role-content'>
                     {% block portfolio_role %}{% endblock %}
-                    <a href='{% block portfolio_url %}{% endblock %}' class='btn' target='_blank'>
-                        Voir le site
-                        <svg class='icon i1'><use xlink:href='#icon-arrow'/></svg>
-                        <svg class='icon i2'><use xlink:href='#icon-arrow'/></svg>
-                    </a>
+
+                    <ul class='skills'>
+                        {% if strategy == true %}
+                            <li class='skill' data-skill='strategy'>
+                                <div class='symbol'>
+                                    <div class='list-symbols dashes hoverAnimation'>
+                                        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                                    </div>
+                                </div>
+                                Stratégie d'image
+                            </li>
+                        {% endif %}
+                        {% if identity == true %}
+                            <li class='skill' data-skill='identity'>
+                                <div class='symbol'>
+                                    <div class='wrapper-waves hoverAnimation'>
+                                        <svg class='icon waves'><use xlink:href='#icon-waves'/></svg>
+                                    </div>
+                                </div>
+                                Identité visuelle
+                            </li>
+                        {% endif %}
+                        {% if design == true %}
+                            <li class='skill' data-skill='design'>
+                                <div class='symbol'>
+                                    <div class='wrapper-zigzags hoverAnimation'>
+                                        <svg class='icon zigzags'><use xlink:href='#icon-zigzags'/></svg>
+                                    </div>
+                                </div>
+                                Design
+                            </li>
+                        {% endif %}
+                        {% if animation == true %}
+                            <li class='skill' data-skill='animation'>
+                                <div class='symbol'>
+                                    <div class='list-symbols slashes hoverAnimation'>
+                                        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                                    </div>
+                                </div>
+                                Animation
+                            </li>
+                        {% endif %}
+                        {% if dev == true %}
+                            <li class='skill' data-skill='dev'>
+                                <div class='symbol'>
+                                    <div class='list-symbols dots hoverAnimation'>
+                                        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                                    </div>
+                                </div>
+                                Développement
+                            </li>
+                        {% endif %}
+                    </ul>
+
+                    {% if website == true %}
+                        <a href='{% block portfolio_url %}{% endblock %}' class='btn' target='_blank'>
+                            Voir le site
+                            <svg class='icon i1'><use xlink:href='#icon-arrow'/></svg>
+                            <svg class='icon i2'><use xlink:href='#icon-arrow'/></svg>
+                        </a>
+                    {% endif %}
                 </div>
             </div>
         </section>

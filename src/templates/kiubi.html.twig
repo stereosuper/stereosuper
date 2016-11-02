@@ -1,0 +1,26 @@
+{% extends 'layout/portfolio.html.twig' %}
+
+{# The portfolio_slug should be the same used in sass variable and to name all the images #}
+{% block portfolio_slug %}kiubi{% endblock %}
+
+{# Meta #}
+{% block portfolio_title %}Kiubi{% endblock %}
+{% block description %}{% endblock %}
+
+{# Content #}
+{% block portfolio_text %}
+    <p></p>
+{% endblock %}
+
+{% block portfolio_role %}
+    <p></p>
+{% endblock %}
+
+{% set strategy = true %}
+{% set identity = true %}
+{% set design = true %}
+{% set animation = true %}
+{% set dev = true %}
+
+{% set website = true %}
+{% block portfolio_url %}https://www.kiubi.com/{% endblock %}

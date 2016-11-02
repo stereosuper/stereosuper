@@ -74,7 +74,7 @@
 		}
 	}
 	&.off{
-		opacity: 0.2;
+		opacity: 0.5;
 	}
 	&:nth-of-type(even){
 		float: right;
@@ -95,7 +95,7 @@
 		margin: 0;
 		top: 15px;
 		transform-origin: 50% 50%;
-		
+
 		transition: transform 0.3s ease-in-out;
 		outline: 1px solid transparent;
 		backface-visibility: hidden;
@@ -137,7 +137,7 @@
 		left: 0;
 		right: 0;
 		z-index: 2;
-		
+
 		mix-blend-mode: multiply;
 		@include fixAnimation;
 		&.transi{
@@ -152,7 +152,7 @@
 		bottom: 0;
 		left: 0;
 		right: 0;
-		
+
 		overflow: hidden;
 		.no-mix-blend-mode &{
 			z-index: 2;
