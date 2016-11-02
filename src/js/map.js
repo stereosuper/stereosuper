@@ -38,6 +38,7 @@ module.exports = function(){
         bearing: 20
     });
     map.scrollZoom.disable();
+    map.dragPan.disable();
 
     geojson.features.forEach(function(marker){
         var elMarker = document.createElement('div');
