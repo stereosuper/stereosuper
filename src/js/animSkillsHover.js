@@ -33,17 +33,24 @@ module.exports = function(body){
 
     body.on('mouseenter', '.skill', function(){
         thisData = $(this).data('skill');
-        if(thisData == 'strategy'){
-            tlHoverDashes.progress(0).tweenTo(tlHoverDashes.duration());
-        }else if(thisData == 'identity'){
-            tlHoverWaves.progress(0).tweenTo(tlHoverWaves.duration());
-        }else if(thisData == 'design'){
-            tlHoverZigzags.progress(0).tweenTo(tlHoverZigzags.duration());
-        }else if(thisData == 'animation'){
-            tlHoverSlashes.progress(0).tweenTo(tlHoverSlashes.duration());
-        }else if(thisData == 'dev'){
-            tlHoverDots.progress(0).tweenTo(tlHoverDots.duration());
+        switch(thisData){
+            case 'strategy':
+                tlHoverDashes.progress(0).tweenTo(tlHoverDashes.duration());
+                break;
+            case 'identity':
+                tlHoverWaves.progress(0).tweenTo(tlHoverWaves.duration());
+                break;
+            case 'design':
+                tlHoverZigzags.progress(0).tweenTo(tlHoverZigzags.duration());
+                break;
+            case 'animation':
+                tlHoverSlashes.progress(0).tweenTo(tlHoverSlashes.duration());
+                break;
+            case 'dev':
+                tlHoverDots.progress(0).tweenTo(tlHoverDots.duration());
+                break;
         }
+
         portfolioItems.each(function(){
             theseDatas = stringToArray($(this).data('skill'));
             if(theseDatas.indexOf(thisData) < 0){

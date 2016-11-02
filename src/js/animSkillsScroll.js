@@ -35,21 +35,21 @@ module.exports = function(myScroll, body, header, skillsHome){
     if(isHome && !isMobile.any){
         scrollSkills();
 
-        skillsHome.on('mouseenter', function(){
-            if($(this).hasClass('top')){
-                header.removeClass('off');
-                $(this).removeClass('top').addClass('down');
-            }
-        }).on('mouseleave', function(){
-            if(!$(this).hasClass('top') && header.hasClass('scrolled')){
-                header.addClass('off');
-                $(this).addClass('top').removeClass('down');
-            }
-        });
-        header.on('mouseenter', function(){
-            $(this).removeClass('off');
-            skillsHome.removeClass('top').addClass('down');
-        });
+        // skillsHome.on('mouseenter', function(){
+        //     if($(this).hasClass('top')){
+        //         header.removeClass('off');
+        //         $(this).removeClass('top').addClass('down');
+        //     }
+        // }).on('mouseleave', function(){
+        //     if(!$(this).hasClass('top') && header.hasClass('scrolled')){
+        //         header.addClass('off');
+        //         $(this).addClass('top').removeClass('down');
+        //     }
+        // });
+        // header.on('mouseenter', function(){
+        //     $(this).removeClass('off');
+        //     skillsHome.removeClass('top').addClass('down');
+        // });
     }
 
     return isHome;
