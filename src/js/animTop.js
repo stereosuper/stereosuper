@@ -21,6 +21,11 @@ module.exports = function(myScroll, body, header, skillsHome){
         $(id_img).before(script);
     }*/
 
+    if(isHome){
+        videoIframe = document.getElementById('videoIframe');
+        player = new Vimeo.Player(videoIframe);
+    }
+
     function onScroll(){
         //blockTitle = $('#blockTitle');
         video = $('#video');
@@ -82,9 +87,6 @@ module.exports = function(myScroll, body, header, skillsHome){
 
     if(isHome){
         onScroll();
-
-        videoIframe = document.getElementById('videoIframe');
-        player = new Vimeo.Player(videoIframe);
 
         /*if(!isMobile.any){
             body.on('mousewheel', function(e){
