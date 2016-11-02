@@ -5,7 +5,7 @@ var sinusoid = require('./sinusoid.js');
 var getPosWithoutTranslate = require('./getPosWithoutTranslate.js');
 
 module.exports = function(myScroll, windowHeight, portfolioItems){
-    var areaReaction = 200, strength = 0.6, strengthRotation = 0.05;
+    var areaReaction, strength = 0.6, strengthRotation = 0.05;
     var exp, expR, thisPos, thisTitle;
     var lastScroll = myScroll;
     var positionItem, xValue;
@@ -22,6 +22,7 @@ module.exports = function(myScroll, windowHeight, portfolioItems){
         if(myScroll !== lastScroll){
             windowHeight = $(window).height();
             windowWidth = $(window).width();
+            areaReaction = (windowHeight > 767) ? 200 : 100;
             portfolioItems.each(function(i) {
                 thisPos = getPosWithoutTranslate($(this));
                 thisTitle = $(this).find('h2');
@@ -38,12 +39,12 @@ module.exports = function(myScroll, windowHeight, portfolioItems){
                     var degRotation = 5;
                     var distanceParcourue = thisPos - areaReaction;
                     var rotationItem = (distanceParcourue * degRotation) / areaReaction;
-
-
                     TweenMax.to(thisDesc, 1, {opacity: 1});
                 }
-                positionItem = $(this).position().top + myScroll;
+                // positionItem = $(this).position().top + myScroll;
+                positionItem = $(this).offset().top - myScroll;
                 // TweenMax.to(thisTitle, 0.1, {y: exp});
+                //console.log('positionItem de '+i+' : '+positionItem+', sa sinusoid : '+sinusoid(250, 0, positionItem, 30));
                 xValue = (windowWidth > 780) ? sinusoid(250, 0, positionItem, 30) : 0;
                 TweenMax.to(thisTitle, 0.1, {y: exp, x: xValue});
             });
