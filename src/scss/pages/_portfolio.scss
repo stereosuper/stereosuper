@@ -76,6 +76,7 @@
 @for $i from 1 through $portfolioNb{
     $name: nth($portfolio, $i);
     .#{$name}-portfolio{
+        background: nth($portfolioColors, $i);
         /*#header, #barba-wrapper, .portfolio-desc{
             background: nth($portfolioColors, $i);
         }*/
