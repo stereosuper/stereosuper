@@ -1,0 +1,43 @@
+{% extends 'layout/portfolio.html.twig' %}
+
+{# The portfolio_slug should be the same used in sass variable and to name all the images #}
+{% block portfolio_slug %}avignon{% endblock %}
+
+{# Meta #}
+{% block portfolio_title %}Institut d'Avignon{% endblock %}
+{% block description %}{% endblock %}
+
+{# Content #}
+{% block portfolio_text %}
+    <p></p>
+{% endblock %}
+
+{% block portfolio_role %}
+    <p></p>
+    <ul class='skills'>
+        <li class='skill' data-skill='design'>
+            <div class='symbol'>
+                <div class='wrapper-zigzags hoverAnimation'>
+                    <svg class='icon zigzags'><use xlink:href='#icon-zigzags'/></svg>
+                </div>
+            </div>
+            Design
+        </li><li class='skill' data-skill='animation'>
+            <div class='symbol'>
+                <div class='list-symbols slashes hoverAnimation'>
+                    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+            Animation
+        </li><li class='skill' data-skill='dev'>
+            <div class='symbol'>
+                <div class='list-symbols dots hoverAnimation'>
+                    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+            Développement
+        </li>
+    </ul>
+{% endblock %}
+
+{% block portfolio_url %}http://www.institutdavignon.fr/{% endblock %}

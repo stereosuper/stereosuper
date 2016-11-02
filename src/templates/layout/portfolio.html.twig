@@ -19,6 +19,7 @@
                     <a href='./' class='btn-close'>Fermer</a>
                 </div>
             </div>
+            <!--<img src='img/mb-cover-{% block portfolio_slug %}{% endblock %}.png' alt='' class='portfolio-cover-mb'>-->
             <img src='img/cover-akeneo.png' alt='' class='portfolio-cover-mb'>
         </section>
         <section class='portfolio-role'>
@@ -26,11 +27,13 @@
             <div class='container'>
                 <div class='portfolio-role-content'>
                     {% block portfolio_role %}{% endblock %}
-                    <a href='{% block portfolio_url %}{% endblock %}' class='btn' target='_blank'>
-                        Voir le site
-                        <svg class='icon i1'><use xlink:href='#icon-arrow'/></svg>
-                        <svg class='icon i2'><use xlink:href='#icon-arrow'/></svg>
-                    </a>
+                    {% if website != false %}
+                        <a href='{% block portfolio_url %}{% endblock %}' class='btn' target='_blank'>
+                            Voir le site
+                            <svg class='icon i1'><use xlink:href='#icon-arrow'/></svg>
+                            <svg class='icon i2'><use xlink:href='#icon-arrow'/></svg>
+                        </a>
+                    {% endif %}
                 </div>
             </div>
         </section>
