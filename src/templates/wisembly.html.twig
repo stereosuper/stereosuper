@@ -14,23 +14,13 @@
 
 {% block portfolio_role %}
     <p></p>
-    <ul class='skills'>
-        <li class='skill' data-skill='design'>
-            <div class='symbol'>
-                <div class='wrapper-zigzags hoverAnimation'>
-                    <svg class='icon zigzags'><use xlink:href='#icon-zigzags'/></svg>
-                </div>
-            </div>
-            Design
-        </li><li class='skill' data-skill='dev'>
-            <div class='symbol'>
-                <div class='list-symbols dots hoverAnimation'>
-                    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-                </div>
-            </div>
-            Développement
-        </li>
-    </ul>
 {% endblock %}
 
+{% set strategy = false %}
+{% set identity = false %}
+{% set design = true %}
+{% set animation = false %}
+{% set dev = true %}
+
+{% set website = true %}
 {% block portfolio_url %}http://wisembly.com/{% endblock %}
