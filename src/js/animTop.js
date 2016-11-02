@@ -10,9 +10,6 @@ module.exports = function(myScroll, body, header, skillsHome){
     var isHome = body.hasClass('home') ? true : false;
     var videoIframe, player;
 
-    videoIframe = document.getElementById('videoIframe');
-    player = new Vimeo.Player(videoIframe);
-
     /*function vimeoLoadingThumb(id){    
         var url = "http://vimeo.com/api/v2/video/" + id + ".json?callback=showThumb";
 
@@ -85,6 +82,9 @@ module.exports = function(myScroll, body, header, skillsHome){
 
     if(isHome){
         onScroll();
+
+        videoIframe = document.getElementById('videoIframe');
+        player = new Vimeo.Player(videoIframe);
 
         /*if(!isMobile.any){
             body.on('mousewheel', function(e){
