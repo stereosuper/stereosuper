@@ -8,6 +8,21 @@ module.exports = function(myScroll, body, header, skillsHome){
     //var animatingTop = false;
     var /*htmlBody = $('html, body'), blockTitle,*/ video;
     var isHome = body.hasClass('home') ? true : false;
+    var videoIframe, player;
+
+    videoIframe = document.getElementById('videoIframe');
+    player = new Vimeo.Player(videoIframe);
+
+    /*function vimeoLoadingThumb(id){    
+        var url = "http://vimeo.com/api/v2/video/" + id + ".json?callback=showThumb";
+
+        var id_img = "#vimeo-" + id;
+
+        var script = document.createElement( 'script' );
+        script.src = url;
+
+        $(id_img).before(script);
+    }*/
 
     function onScroll(){
         //blockTitle = $('#blockTitle');
@@ -53,12 +68,14 @@ module.exports = function(myScroll, body, header, skillsHome){
             if(myScroll > 50){
                 video.addClass('off');
                 header.addClass('scrolled');
-                video.find('video').get(0).pause();
+                //video.find('video').get(0).pause();
+                player.pause();
             }else{
                 video.removeClass('off');
                 if(video.hasClass('ready')){
-                    video.find('video').get(0).play();
+                    //video.find('video').get(0).play();
                 }
+                player.play();
                 header.removeClass('scrolled');
             }
         }

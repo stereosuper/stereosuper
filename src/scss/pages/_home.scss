@@ -38,7 +38,7 @@ h1{
     right: 0;
     bottom: 0;
     left: 0;
-    background: url(../img/stereosuper.jpg) no-repeat 50% 50%;
+    // background: url(../img/stereosuper.jpg) no-repeat 50% 50%;
     background-size: cover;
     transition: 0.5s opacity ease-in-out;
     &.pageTransition{
@@ -54,6 +54,21 @@ h1{
     }
     &.off{
         opacity: 0;
+    }
+    iframe{
+        // Old browsers support
+        width: 100%;
+        height: 100%;
+        width: 100vw;
+        // Given a 16:9 aspect ratio, 9/16*100 = 56.25
+        height: 56.25vw; 
+        min-height: 100vh;
+        // Given a 16:9 aspect ratio, 16/9*100 = 177.77
+        min-width: 177.77vh; 
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 }
 

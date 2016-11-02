@@ -36,7 +36,6 @@ $(function(){
     var header = $('#header');
     var skillsHome = $('#skillsHome'), skillsTop = skillsHome.length ? skillsHome.offset().top - 100 : 0;
 
-
     htmlTag.removeClass('no-js').addClass('js');
     // isMobile.any ? body.addClass('is-mobile') : body.addClass('is-desktop');
 
@@ -99,9 +98,9 @@ $(function(){
             // Anim skills hover
             animSkillsHover(body);
 
-            video.find('video').on('canplaythrough', function(){
-                video.addClass('ready').find('video').get(0).play();
-            });
+            // video.find('video').on('canplaythrough', function(){
+            //     video.addClass('ready').find('video').get(0).play();
+            // });
         },
         onLeave: function(){
             // A new Transition toward a new page has just started.

@@ -43,8 +43,9 @@ module.exports = function(myScroll, windowHeight, portfolioItems){
                     TweenMax.to(thisDesc, 1, {opacity: 1});
                 }
                 positionItem = $(this).position().top + myScroll;
-                // xValue = (windowWidth > 780) ? sinusoid(150, 0, positionItem, 50) : 0;
-                TweenMax.to(thisTitle, 0.1, {y: exp});
+                // TweenMax.to(thisTitle, 0.1, {y: exp});
+                xValue = (windowWidth > 780) ? sinusoid(250, 0, positionItem, 30) : 0;
+                TweenMax.to(thisTitle, 0.1, {y: exp, x: xValue});
             });
         }
 
