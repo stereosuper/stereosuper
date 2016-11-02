@@ -89,10 +89,12 @@ p{
 
 b, strong{
     font-family: $elenabold;
+    font-weight: 400;
 }
 
 i, em{
     font-family: $elenaitalic;
+    font-style: normal;
 }
 
 blockquote{
