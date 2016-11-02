@@ -22,11 +22,7 @@ module.exports = function(myScroll, windowHeight, portfolioItems){
         if(myScroll !== lastScroll){
             windowHeight = $(window).height();
             windowWidth = $(window).width();
-            if(windowHeight > 767){
-                areaReaction = 200;
-            }else{
-                areaReaction = 100;
-            }
+            areaReaction = (windowHeight > 767) ? 200 : 100;
             portfolioItems.each(function(i) {
                 thisPos = getPosWithoutTranslate($(this));
                 thisTitle = $(this).find('h2');
@@ -45,8 +41,10 @@ module.exports = function(myScroll, windowHeight, portfolioItems){
                     var rotationItem = (distanceParcourue * degRotation) / areaReaction;
                     TweenMax.to(thisDesc, 1, {opacity: 1});
                 }
-                positionItem = $(this).position().top + myScroll;
+                // positionItem = $(this).position().top + myScroll;
+                positionItem = $(this).offset().top - myScroll;
                 // TweenMax.to(thisTitle, 0.1, {y: exp});
+                //console.log('positionItem de '+i+' : '+positionItem+', sa sinusoid : '+sinusoid(250, 0, positionItem, 30));
                 xValue = (windowWidth > 780) ? sinusoid(250, 0, positionItem, 30) : 0;
                 TweenMax.to(thisTitle, 0.1, {y: exp, x: xValue});
             });
