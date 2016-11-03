@@ -2,7 +2,7 @@ var $ = require('./libs/jquery/dist/jquery.slim.min.js');
 var TweenMax = require('./libs/gsap/src/uncompressed/TweenMax.js');
 var sinusoid = require('./sinusoid.js');
 
-var getPosWithoutTranslate = require('./getPosWithoutTranslate.js');
+//var getPosWithoutTranslate = require('./getPosWithoutTranslate.js');
 
 module.exports = function(myScroll, windowHeight, windowWidth, portfolioItems){
     var areaReaction, strength = 0.6/*, strengthRotation = 0.05*/;
@@ -26,17 +26,19 @@ module.exports = function(myScroll, windowHeight, windowWidth, portfolioItems){
             areaReaction = windowHeight > 767 ? 200 : 100;
 
             portfolioItems.each(function(i) {
-                thisPos = getPosWithoutTranslate($(this));
+                //thisPos = getPosWithoutTranslate($(this));
+                thisPos = $(this).offset().top;
                 thisTitle = $(this).find('h2');
                 thisDesc = $(this).find('.wrapper-desc');
+                positionItem = thisPos - myScroll;
 
                 if(thisPos >= myScroll+windowHeight-areaReaction){
-                    exp = (thisPos-myScroll-windowHeight+areaReaction)*strength | 0;
+                    exp = (positionItem-windowHeight+areaReaction)*strength | 0;
                     TweenMax.to(thisDesc, 1, {opacity: 0});
                 }else if(thisPos <= myScroll+areaReaction) {
-                    exp = (thisPos-myScroll-areaReaction)*strength | 0;
+                    exp = (positionItem-areaReaction)*strength | 0;
                     TweenMax.to(thisDesc, 1, {opacity: 0});
-                }else {
+                }else{
                     exp = 0;
                     // var degRotation = 5;
                     // var distanceParcourue = thisPos - areaReaction;
@@ -44,7 +46,7 @@ module.exports = function(myScroll, windowHeight, windowWidth, portfolioItems){
                     TweenMax.to(thisDesc, 1, {opacity: 1});
                 }
                 // positionItem = $(this).position().top + myScroll;
-                positionItem = $(this).offset().top - myScroll;
+
                 // TweenMax.to(thisTitle, 0.1, {y: exp});
                 //console.log('positionItem de '+i+' : '+positionItem+', sa sinusoid : '+sinusoid(250, 0, positionItem, 30));
                 xValue = windowWidth > 780 ? sinusoid(250, 0, positionItem, 30) : 0;
