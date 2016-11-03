@@ -3,15 +3,15 @@ var TweenMax = require('./libs/gsap/src/uncompressed/TweenMax.js');
 var TimelineMax = require('./libs/gsap/src/uncompressed/TimelineMax.js');
 
 module.exports = function(lastClickedLink){
-    var tlFadeOut,
-        tpsTransition = 0.5;
+    var tlFadeOut, tpsTransition = 0.5;
+
     return new Promise( function(resolve, reject) {
         tlFadeOut = new TimelineMax({onComplete: function(){
             resolve(true);
         }});
         $(lastClickedLink).find('h2').prepend('<span class="bg-transition"></span>');
         var gapLeft = $(lastClickedLink).find('h2').offset().left;
-        var gapRight = $(window).width() - gapLeft - $(lastClickedLink).find('h2').outerWidth();
+        var gapRight = $(window).outerWidth() - gapLeft - $(lastClickedLink).find('h2').outerWidth();
         tlFadeOut.to($('.portfolio-item .bg-img'), 0, {opacity: 0, ease: Power4.easeOut});
         tlFadeOut.set($(lastClickedLink).find('.bg'), {className: '+=transi'})
         tlFadeOut.set($(lastClickedLink).find('.bg-transition'), {left: -gapLeft+'px', right: -gapRight+'px', scaleX: 0, scaleY: 1});

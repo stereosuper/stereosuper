@@ -9,7 +9,7 @@ module.exports = function(){
         return 'translate3d(' + tX + 'px, ' + tY + 'px, 0) rotate(' + angle + 'deg)';
     }
 
-    var coordinates = $(window).width() < 1100 ? [-1.59, 47.2] : [-1.62, 47.2];
+    var coordinates = $(window).outerWidth() < 1100 ? [-1.59, 47.2] : [-1.62, 47.2];
 
     var geojson = {
         "type": "FeatureCollection",
@@ -94,7 +94,7 @@ module.exports = function(){
     });
 
     $(window).on('resize', function(){
-        coordinates = $(window).width() < 1100 ? [-1.59, 47.2] : [-1.62, 47.2];
+        coordinates = $(window).outerWidth() < 1100 ? [-1.59, 47.2] : [-1.62, 47.2];
         map.flyTo({center: coordinates});
     });
 }

@@ -21,7 +21,7 @@ module.exports = function(myScroll, windowHeight, portfolioItems){
 
         if(myScroll !== lastScroll){
             windowHeight = $(window).height();
-            windowWidth = $(window).width();
+            windowWidth = $(window).outerWidth();
             areaReaction = (windowHeight > 767) ? 200 : 100;
             portfolioItems.each(function(i) {
                 thisPos = getPosWithoutTranslate($(this));
