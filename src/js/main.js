@@ -202,7 +202,7 @@ $(function(){
     Barba.Pjax.start();
     Barba.Dispatcher.on('linkClicked', function(e){
         Barba.Pjax.getTransition = function(){
-            return pageTransition(e);
+            return pageTransition(e, body);
         };
     });
     // Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container){
