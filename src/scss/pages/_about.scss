@@ -23,6 +23,10 @@
     }
 }
 
+.container-relative{
+    position: relative;
+}
+
 .container-title{
     position: relative;
     z-index: 3;
@@ -251,7 +255,18 @@
 }
 
 @media (max-width: 767px){
+    .container-relative{
+        position: static;
+    }
+
+    .container-timeline{
+        bottom: -140px;
+    }
+
     .about{
+        #page{
+            position: relative;
+        }
         .title{
             margin-bottom: 3em;
             padding: 0 30px;
@@ -338,8 +353,7 @@
         }
         .content-about{
             &:before{
-                top: -49px;
-                bottom: 78px;
+                display: none;
             }
         }
     }
