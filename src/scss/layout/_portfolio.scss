@@ -74,7 +74,10 @@
 		}
 	}
 	&.off{
-		opacity: 0.5;
+		// opacity: 0.5;
+		/*.wrapper-bg-img{
+			opacity: 0;
+		}*/
 	}
 	&:nth-of-type(even){
 		float: right;
@@ -110,6 +113,17 @@
 		backface-visibility: hidden;
 		&:before{
 			display: none;
+		}
+		&:after{
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			border-style: solid;
+			border-width: 1px;
 		}
 		.logo{
 			content: '';
@@ -254,6 +268,9 @@
     		.bg-img{
     			background-image: url(../img/bg-#{$name}.png);
     		}
+	        &:after{
+	            border-color: nth($portfolioColors, $i);
+	        }
     	}
     }
     @if $name == 'lbb'{

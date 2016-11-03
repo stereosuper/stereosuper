@@ -55,12 +55,14 @@ module.exports = function(body){
             theseDatas = stringToArray($(this).data('skill'));
             if(theseDatas.indexOf(thisData) < 0){
                 $(this).addClass('off');
+                TweenMax.to([$(this).find('.wrapper-bg-img'), $(this).find('.bg')], 0.2, {opacity: 0});
             }
         });
     }).on('mouseleave', '.skill', function(){
         portfolioItems.removeClass('off');
         symbolToAnimate = $(this).find('.hoverAnimation');
         TweenMax.to(symbolToAnimate, 0.3, {scaleX: 1, x: 0});
+        TweenMax.to([$('.portfolio-item .wrapper-bg-img'), $('.portfolio-item .bg')], 0.2, {opacity: 1});
     });
 
     body.on('mouseenter', '.portfolio-item', function(){
