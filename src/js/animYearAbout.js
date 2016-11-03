@@ -5,13 +5,13 @@ var drawSVG = require('./libs/gsap/src/uncompressed/plugins/DrawSvgPlugin.js');
 
 // window.requestAnimFrame = require('./requestAnimFrame.js');
 // var detectScrollDir = require('./detectScrollDir.js');
-var svgYearContent = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 102 102" class="svg-year-content"><path stroke-width="1" d="M50,0L50,0c27.6,0,50,22.4,50,50v0c0,27.6-22.4,50-50,50h0C22.4,100,0,77.6,0,50v0C0,22.4,22.4,0,50,0z"/></svg>';
+// var svgYearContent = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 102 102" class="svg-year-content"><path stroke-width="1" d="M50,0L50,0c27.6,0,50,22.4,50,50v0c0,27.6-22.4,50-50,50h0C22.4,100,0,77.6,0,50v0C0,22.4,22.4,0,50,0z"/></svg>';
 
 module.exports = function(myScroll, windowWidth){
     var yearWrapper = $('#year'), yearsData = $('[data-year]'), style = '',
-        years, totalYears, initialTop, thisYear, thisYearSpan, thisYearPos, yearText, thisYearHtml, nbYears, i, thisYearData, newYearData, firstYear, lastYear, nbYearsTotal, nbYearsDone, percentageYears, yearTopPosition,
+        years, totalYears, initialTop, thisYear, thisYearPos, yearText, thisYearHtml, nbYears, i, thisYearData, newYearData, firstYear, lastYear, nbYearsTotal, nbYearsDone, percentageYears, yearTopPosition,
         svg = $('#yearSvg'), containerYearLandmark = $('.container-year-landmark'), yearLandmark = $('.year-landmark'), yearLandmarkSpan = yearLandmark.find('span'), borderSvg = yearLandmark.find('.border-svg'),
-        yearLandmarkTop, currentYearHtml, newCurrentYearHtml, firstYearTop, lastYearTop, beforeLastYear;
+        yearLandmarkTop, firstYearTop, lastYearTop;
 
     function incrementYear(year, html, i){
         setTimeout(function(){ year.html(html + i); }, 200*i);
@@ -40,7 +40,6 @@ module.exports = function(myScroll, windowWidth){
 
         years.each(function(){
             thisYear = $(this);
-            thisYearSpan = thisYear.find('span');
             thisYearPos = thisYear.data('top');
             if(yearLandmarkTop > thisYearPos){
                 // bounce year
