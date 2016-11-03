@@ -94,7 +94,7 @@ $(function(){
             }
 
             // Anim Refs Home
-            portfolioItemsAnimation(myScroll, windowHeight, portfolioItems);
+            portfolioItemsAnimation(myScroll, windowHeight, windowWidth, portfolioItems);
 
             // Anim skills hover
             animSkillsHover(body);
