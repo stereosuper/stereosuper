@@ -23,6 +23,7 @@ $(function(){
 
     var animYearAbout = require('./animYearABout.js');
     var animTextAbout = require('./animTextABout.js');
+    var animScrollAbout = require('./animScrollAbout.js');
 
     var animHandMap = require('./map.js');
 
@@ -147,6 +148,7 @@ $(function(){
             // The Transition has just finished.
             animYearAbout(myScroll, windowWidth);
             animTextAbout();
+            animScrollAbout();
         },
         onLeave: function(){
             // A new Transition toward a new page has just started.
