@@ -1,4 +1,4 @@
-var $ = require('./libs/jquery/dist/jquery.min.js');
+var $ = require('./libs/jquery/dist/jquery.slim.min.js');
 
 // position en y d'un item sans son translate
 module.exports = function(myObj){

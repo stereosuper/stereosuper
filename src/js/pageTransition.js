@@ -1,13 +1,14 @@
 var Barba = require('./libs/barba.min.js');
-var $ = require('./libs/jquery/dist/jquery.min.js');
+var $ = require('./libs/jquery/dist/jquery.slim.min.js');
 var TweenMax = require('./libs/gsap/src/uncompressed/TweenMax.js');
-var TimelineMax = require('./libs/gsap/src/uncompressed/TimelineMax.js');
+// var TimelineMax = require('./libs/gsap/src/uncompressed/TimelineMax.js');
 
+var transiInHome = require('./transiInHome.js');
 var transiOutHome = require('./transiOutHome.js');
 var transiInPortfolio = require('./transiInPortfolio.js');
 var transiOutPortfolio = require('./transiOutPortfolio.js');
 
-module.exports = function(lastClickedLink){
+module.exports = function(lastClickedLink, body){
     return Barba.BaseTransition.extend({
         start: function(){
             Promise
@@ -16,9 +17,9 @@ module.exports = function(lastClickedLink){
         },
 
         fadeOut: function(){
-            if($('body').hasClass('home')){
+            if(body.hasClass('home')){
                 return transiOutHome(lastClickedLink);
-            }else if($('body').hasClass('portfolio')){
+            }else if(body.hasClass('portfolio')){
                 return transiOutPortfolio();
             }else{
                 return $(this.oldContainer).animate({ opacity: 0 }).promise();
@@ -28,17 +29,18 @@ module.exports = function(lastClickedLink){
         fadeIn: function(){
             var _this = this;
             var $el = $(this.newContainer);
-            TweenMax.set($('body'), {className: '-='+$(this.oldContainer).data('class')});
-            TweenMax.set($('body'), {className: '+='+$el.data('class')});
+
+            body.removeClass($(this.oldContainer).data('class')).addClass($el.data('class'));
+
             TweenMax.set($el, {visibility: 'visible', opacity: 0, onComplete: function(){
                 $(document).scrollTop(0);
             }});
             TweenMax.set($el, {opacity: 1});
             $(this.oldContainer).hide();
 
-            if($('body').hasClass('portfolio')){
+            if(body.hasClass('portfolio')){
                 return transiInPortfolio(_this);
-            }else if($('body').hasClass('home')){
+            }else if(body.hasClass('home')){
                 return transiInHome(_this);
             }else{
                 _this.done();

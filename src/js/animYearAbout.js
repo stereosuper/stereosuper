@@ -1,26 +1,36 @@
-var $ = require('./libs/jquery/dist/jquery.min.js');
+var $ = require('./libs/jquery/dist/jquery.slim.min.js');
 var TweenMax = require('./libs/gsap/src/uncompressed/TweenMax.js');
- var drawSVG = require('./libs/gsap/src/uncompressed/plugins/DrawSvgPlugin.js');
+var drawSVG = require('./libs/gsap/src/uncompressed/plugins/DrawSvgPlugin.js');
 // var isMobile = require('./isMobile.min.js');
 
 // window.requestAnimFrame = require('./requestAnimFrame.js');
 // var detectScrollDir = require('./detectScrollDir.js');
-var svgYearContent = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 102 102" class="svg-year-content"><path stroke-width="1" d="M50,0L50,0c27.6,0,50,22.4,50,50v0c0,27.6-22.4,50-50,50h0C22.4,100,0,77.6,0,50v0C0,22.4,22.4,0,50,0z"/></svg>';
+// var svgYearContent = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 102 102" class="svg-year-content"><path stroke-width="1" d="M50,0L50,0c27.6,0,50,22.4,50,50v0c0,27.6-22.4,50-50,50h0C22.4,100,0,77.6,0,50v0C0,22.4,22.4,0,50,0z"/></svg>';
 
-module.exports = function(myScroll){
-    var yearWrapper = $('#year'), yearsData = $('[data-year]'), yearsHtml = '', style = '',
-        years, totalYears, initialTop, thisYear, thisYearSpan, thisYearPos, yearText, thisYearHtml, nbYears, i, thisYearData, newYearData, firstYear, lastYear, nbYearsTotal, nbYearsDone, percentageYears, yearTopPosition,
-        svg = $('#yearSvg'), containerYearLandmark = $('.container-year-landmark'), yearLandmark = $('.year-landmark'), yearLandmarkSpan = yearLandmark.find('span'), borderSvg = yearLandmark.find('.border-svg'), yearLandmarkTop, currentYearHtml, newCurrentYearHtml, firstYearTop, lastYearTop;
+module.exports = function(myScroll, windowWidth){
+    var yearWrapper = $('#year'), yearsData = $('[data-year]'), style = '',
+        years, totalYears, initialTop, thisYear, thisYearPos, yearText, thisYearHtml, nbYears, i, thisYearData, newYearData, firstYear, lastYear, nbYearsTotal, nbYearsDone, percentageYears, yearTopPosition,
+        svg = $('#yearSvg'), containerYearLandmark = $('.container-year-landmark'), yearLandmark = $('.year-landmark'), yearLandmarkSpan = yearLandmark.find('span'), borderSvg = yearLandmark.find('.border-svg'),
+        yearLandmarkTop, firstYearTop, lastYearTop;
 
     function incrementYear(year, html, i){
         setTimeout(function(){ year.html(html + i); }, 200*i);
     }
 
     function zIndexContainerYearLandmark(){
-        if(yearLandmark.offset().top > ($('.container-title').offset().top + $('.container-title').outerHeight())){
-            containerYearLandmark.addClass('big-z-index');
+        var title = $('.container-title');
+        yearLandmark.offset().top > (title.offset().top + title.outerHeight()) ? containerYearLandmark.addClass('big-z-index') : containerYearLandmark.removeClass('big-z-index');
+    }
+
+    function svgProgression(currentSvg, currentYear, isAnimated){
+        // faire avancer le svg
+        nbYearsTotal = lastYear + 1 - firstYear;
+        nbYearsDone = nbYearsTotal - (lastYear + 1 - currentYear);
+        percentageYears = (nbYearsDone * 100) / nbYearsTotal;
+        if(isAnimated){
+            TweenMax.to(currentSvg.find('path'), 1, {drawSVG: percentageYears+'%'});
         }else{
-            containerYearLandmark.removeClass('big-z-index');
+            TweenMax.set(currentSvg.find('path'), {drawSVG: percentageYears+'%'});
         }
     }
 
@@ -30,7 +40,6 @@ module.exports = function(myScroll){
 
         years.each(function(){
             thisYear = $(this);
-            thisYearSpan = thisYear.find('span');
             thisYearPos = thisYear.data('top');
             if(yearLandmarkTop > thisYearPos){
                 // bounce year
@@ -70,31 +79,31 @@ module.exports = function(myScroll){
         }
     }
 
-    // Position initiale des années
-    yearsData.each(function(i){
-        if(i === 0){
-            initialTop = ($(this).offset().top - 50) | 0;
-        }
-        yearText = $(this).data('year');
-        var windowWidth = $(window).width();
-        if(windowWidth > 767){
-            yearTopPosition = ($(this).offset().top - 50) | 0;
-        }else{
-            yearTopPosition = ($(this).offset().top - 3) | 0;
-        }
-        style = 'top:'+yearTopPosition+'px;';
-        yearsHtml += '<div class="year" data-top="'+ yearTopPosition +'" style="'+ style +'" data-year="' + $(this).data('year') + '"><span class="">' + yearText + '</span>' + '</div>';
-    });
-    yearWrapper.append(yearsHtml);
-    years = yearWrapper.find('.year');
-    totalYears = years.length;
-    firstYear = parseInt(years.eq(0).data('year'));
-    lastYear = parseInt(years.eq(-2).data('year'));
+    function setYearsPosition(){
+        var yearsHtml = '';
 
-    yearLandmark.css('top', initialTop +'px');
+        yearsData.each(function(i){
+            if(i === 0){
+                initialTop = ($(this).offset().top - 50) | 0;
+            }
+            yearText = $(this).data('year');
+            yearTopPosition = windowWidth > 767 ? ($(this).offset().top - 50) | 0 : ($(this).offset().top - 3) | 0;
+            style = 'top:'+yearTopPosition+'px;';
+            yearsHtml += '<div class="year" data-top="'+ yearTopPosition +'" style="'+ style +'" data-year="' + $(this).data('year') + '"><span class="">' + yearText + '</span>' + '</div>';
+        });
 
-    TweenMax.set(svg.find('path'), {drawSVG: '0%'});
-    var beforeLastYear;
+        yearWrapper.html(yearsHtml);
+        years = yearWrapper.find('.year');
+        totalYears = years.length;
+        firstYear = parseInt(years.eq(0).data('year'));
+        lastYear = parseInt(years.eq(-2).data('year'));
+
+        yearLandmark.css('top', initialTop +'px');
+        TweenMax.set(svg.find('path'), {drawSVG: '0%'});
+    }
+
+    setYearsPosition();
+
     scrollProgression();
     zIndexContainerYearLandmark();
 
@@ -104,19 +113,10 @@ module.exports = function(myScroll){
     });
 
     $(window).on('resize', function(){
+        windowWidth = $(window).outerWidth();
+        setYearsPosition();
+
         scrollProgression();
         zIndexContainerYearLandmark();
     });
-
-    function svgProgression(currentSvg, currentYear, isAnimated){
-        // faire avancer le svg
-        nbYearsTotal = lastYear + 1 - firstYear;
-        nbYearsDone = nbYearsTotal - (lastYear + 1 - currentYear);
-        percentageYears = (nbYearsDone * 100) / nbYearsTotal;
-        if(isAnimated){
-            TweenMax.to(currentSvg.find('path'), 1, {drawSVG: percentageYears+'%'});
-        }else{
-            TweenMax.set(currentSvg.find('path'), {drawSVG: percentageYears+'%'});
-        }
-    }
 }

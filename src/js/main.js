@@ -1,7 +1,7 @@
 'use strict';
 
 var Barba = require('./libs/barba.min.js');
-var $ = require('./libs/jquery/dist/jquery.min.js');
+var $ = require('./libs/jquery/dist/jquery.slim.min.js');
 // var isMobile = require('./isMobile.min.js');
 // var TweenMax = require('./libs/gsap/src/uncompressed/TweenMax.js');
 // var TimelineMax = require('./libs/gsap/src/uncompressed/TimelineMax.js');
@@ -27,7 +27,7 @@ $(function(){
     var animHandMap = require('./map.js');
 
 
-    var windowWidth = $(window).width(), windowHeight = $(window).height();
+    var windowWidth = $(window).outerWidth(), windowHeight = $(window).height();
     var myScroll = $(document).scrollTop();
 
     var body = $('body');
@@ -35,6 +35,8 @@ $(function(){
     // var main = $('#main');
     var header = $('#header');
     var skillsHome = $('#skillsHome'), skillsTop = skillsHome.length ? skillsHome.offset().top - 100 : 0;
+
+
 
     htmlTag.removeClass('no-js').addClass('js');
     // isMobile.any ? body.addClass('is-mobile') : body.addClass('is-desktop');
@@ -44,9 +46,9 @@ $(function(){
     // Background blend mode detection
     ////////////////////////////////////////////////
     if('CSS' in window && 'supports' in window.CSS) {
-       var support = window.CSS.supports('mix-blend-mode','soft-light');
-           support = support?'mix-blend-mode':'no-mix-blend-mode';
-           $('html').addClass(support);
+        var support = window.CSS.supports('mix-blend-mode','soft-light');
+        support = support ? 'mix-blend-mode' : 'no-mix-blend-mode';
+        $('html').addClass(support);
     }
 
     ////////////////////////////////////////////////
@@ -74,7 +76,6 @@ $(function(){
             skillsHome = $('#skillsHome');
             skillsTop = skillsHome.offset().top - 100;
             skillsHome.data('top', skillsTop);
-            console.log('home');
         },
         onEnterCompleted: function(){
             // The Transition has just finished.
@@ -93,7 +94,7 @@ $(function(){
             }
 
             // Anim Refs Home
-            portfolioItemsAnimation(myScroll, windowHeight, portfolioItems);
+            portfolioItemsAnimation(myScroll, windowHeight, windowWidth, portfolioItems);
 
             // Anim skills hover
             animSkillsHover(body);
@@ -144,7 +145,7 @@ $(function(){
         },
         onEnterCompleted: function(){
             // The Transition has just finished.
-            animYearAbout(myScroll);
+            animYearAbout(myScroll, windowWidth);
             animTextAbout();
         },
         onLeave: function(){
@@ -185,11 +186,11 @@ $(function(){
     var transiInHome = require('./transiInHome.js');
     var transiInPortfolio = require('./transiInPortfolio.js');
 
-    if($('body').hasClass('home')){
+    if(body.hasClass('home')){
         transiInHome();
-    }else if($('body').hasClass('portfolio')){
+    }else if(body.hasClass('portfolio')){
         transiInPortfolio();
-    }else if($('body').hasClass('about')){
+    }else if(body.hasClass('about')){
 
     }
 
@@ -201,7 +202,7 @@ $(function(){
     Barba.Pjax.start();
     Barba.Dispatcher.on('linkClicked', function(e){
         Barba.Pjax.getTransition = function(){
-            return pageTransition(e);
+            return pageTransition(e, body);
         };
     });
     // Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container){

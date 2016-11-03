@@ -1,6 +1,6 @@
-var $ = require('./libs/jquery/dist/jquery.min.js');
-var TweenMax = require('./libs/gsap/src/uncompressed/TweenMax.js');
-var isMobile = require('./isMobile.min.js');
+var $ = require('./libs/jquery/dist/jquery.slim.min.js');
+//var TweenMax = require('./libs/gsap/src/uncompressed/TweenMax.js');
+//var isMobile = require('./isMobile.min.js');
 
 window.requestAnimFrame = require('./requestAnimFrame.js');
 
@@ -10,7 +10,7 @@ module.exports = function(myScroll, body, header, skillsHome){
     var isHome = body.hasClass('home') ? true : false;
     var videoIframe, player;
 
-    /*function vimeoLoadingThumb(id){    
+    /*function vimeoLoadingThumb(id){
         var url = "http://vimeo.com/api/v2/video/" + id + ".json?callback=showThumb";
 
         var id_img = "#vimeo-" + id;
@@ -74,9 +74,9 @@ module.exports = function(myScroll, body, header, skillsHome){
                 player.pause();
             }else{
                 video.removeClass('off');
-                if(video.hasClass('ready')){
-                    //video.find('video').get(0).play();
-                }
+                // if(video.hasClass('ready')){
+                //     video.find('video').get(0).play();
+                // }
                 player.play();
                 header.removeClass('scrolled');
             }
