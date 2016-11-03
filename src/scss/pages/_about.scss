@@ -65,7 +65,12 @@
 .text-img{
     //margin-top: 7em;
     margin-right: -30%;
+    span{
+        display: inline-block;
+        width: 40.5%;
+    }
     img{
+        max-width: 40%;
         margin: -50px 0 0 18%;
     }
 }
@@ -110,8 +115,9 @@
     margin: 10px -20% 150px -50%;
     img{
         display: inline-block;
+        max-width: 30%;
         vertical-align: top;
-        margin: 0 15px;
+        margin: 0 1.4%;
         &:nth-of-type(2){
             margin-top: 70px;
         }
@@ -128,7 +134,8 @@
 .team{
     margin: 40px -45% 100px;
     img{
-        margin: 0 10px;
+        max-width: 15.3%;
+        margin: 0 0.4%;
         &:nth-child(2){
             margin-top: 70px;
         }
@@ -154,12 +161,13 @@
     z-index: -1;
     background: #000;
     .content-about{
+        background: #000;
         &:before{
             content: '';
             position: absolute;
             top: -60px;
             bottom: 24px;
-            left: -2px;
+            left: -1px;
             border-left: 1px solid rgba($blue, 0.5);
         }
     }
@@ -206,44 +214,10 @@
     }
 }
 
-@media (max-width: 767px){
-    .about{
-        .title{
-            margin-bottom: 3em;
-            padding: 0 30px;
-        }
-    }
-    .content-about{
-        margin: 40px 0 0 0;
-    }
-    .container-year{
-        width: 100%;
-    }
-    .year-wrapper{
-        width: 100%;
-        &:after{
-            right: auto;
-            left: 0;
-        }
-    }
-    .container-year-landmark{
-        display: none;
-    }
-    [data-year]{
-        padding-top: 40px;
-        display: block;
-        &.year{
-            padding-top: 0;
-        }
-    }
-    .year{
-        width: auto;
-        height: auto;
-        padding: 0 30px;
-        line-height: 1.1;
-        span{
-            opacity: 1;
-        }
+
+@media (max-width: 1480px){
+    .team{
+        margin-right: -30%;
     }
 }
 
@@ -255,3 +229,137 @@
         }
     }
 }
+
+@media (max-width: 960px){
+    .footer-page-about{
+        padding-bottom: 150px;
+    }
+
+    .about{
+        #footer{
+            .footer-about{
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 860px){
+    .content-about{
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 767px){
+    .about{
+        .title{
+            margin-bottom: 3em;
+            padding: 0 30px;
+        }
+    }
+    .content-about{
+        margin: 40px 0 0;
+    }
+
+    .intro-img{
+        margin: 30px 0 120px;
+        img{
+            display: block;
+            max-width: 100%;
+            margin: 0 0 20px !important;
+        }
+    }
+
+    .text-img{
+        span{
+            display: block;
+            width: auto;
+        }
+        img{
+            max-width: 100%;
+            margin: 10px 0 20px;
+        }
+    }
+
+    .team{
+        margin-left: 0;
+        margin-right: 0;
+        img{
+            max-width: 30%;
+            margin: 0 1.4%;
+        }
+    }
+
+    .title-about{
+        text-indent: 0;
+    }
+
+    .year-wrapper{
+        left: $gutter;
+        right: $gutter;
+        &:after{
+            right: auto;
+            left: 0;
+        }
+    }
+    .container-year-landmark{
+        display: none;
+    }
+    .container-timeline{
+        &:after{
+            width: 0;
+        }
+    }
+    [data-year]{
+        display: block;
+        padding-top: 50px;
+        margin-top: 20px;
+        &.year{
+            padding-top: 0;
+        }
+    }
+    .year{
+        width: auto;
+        height: auto;
+        padding: 0 30px;
+        line-height: 1.1;
+        &:after{
+            display: none;
+        }
+        span{
+            opacity: 1;
+        }
+    }
+
+    .footer-page-about{
+        .year{
+            border: 0;
+            z-index: 2;
+        }
+        .content-about{
+            &:before{
+                top: -49px;
+                bottom: 78px;
+            }
+        }
+    }
+}
+
+@media (max-width: 500px){
+    .content-about, .about .title, .title-about, .title-about + .link-arrow, .year{
+        padding-left: 0;
+    }
+
+    .container-timeline{
+        display: none;
+    }
+
+    .footer-page-about{
+        .content-about{
+            &:before{
+                display: none;
+            }
+        }
+    }
+}
+
