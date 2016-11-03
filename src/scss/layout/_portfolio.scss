@@ -7,9 +7,10 @@
 
 .portfolio-list{
 	padding-top: 90vh;
-	backface-visibility: hidden;
 	position: relative;
 	z-index: 1;
+	overflow: hidden;
+	backface-visibility: hidden;
 	ul{
 		margin: 0;
 	}
@@ -126,7 +127,7 @@
 			border-width: 2px;
 			opacity: 0;
 			backface-visibility: hidden;
-			transform: translate3d(0, 0, 0); 
+			transform: translate3d(0, 0, 0);
 			will-change: transform;
 			outline: 1px solid transparent;
 		}
