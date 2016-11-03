@@ -1,10 +1,6 @@
+
 {
   "name": "stereosuper",
-  "version": "0.0.0",
-  "dependencies": {
-    "scrollmagic": "^2.0.5"
-  },
-  "devDependencies": {},
   "homepage": "https://github.com/stereosuper/generator-stereobase",
   "authors": [
     "Adrien Le Menthéour"
@@ -19,5 +15,10 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "gsap": "^1.19.0",
+    "scrollmagic": "^2.0.5"
+  }
 }

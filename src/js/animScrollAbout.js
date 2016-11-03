@@ -1,9 +1,10 @@
 var $ = require('./libs/jquery/dist/jquery.slim.min.js');
 var TweenMax = require('./libs/gsap/src/uncompressed/TweenMax.js');
-var ScrollMagic = require('./libs/scrollmagic/ScrollMagic.js');
-require('./libs/scrollmagic/plugins/animation.gsap.js');
+var ScrollMagic = require('./libs/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js');
+var animationGsap = require('./libs/scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js');
 
 module.exports = function(){
+    animationGsap();
     var controller = new ScrollMagic.Controller();
 
     var tween = TweenMax.to($('#test'), 0.3, {scale: 0.7});
