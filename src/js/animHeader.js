@@ -1,4 +1,4 @@
-var $ = require('./libs/jquery/dist/jquery.min.js');
+var $ = require('./libs/jquery/dist/jquery.slim.min.js');
 var isMobile = require('./isMobile.min.js');
 
 window.requestAnimFrame = require('./requestAnimFrame.js');

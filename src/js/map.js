@@ -1,4 +1,4 @@
-var $ = require('./libs/jquery/dist/jquery.min.js');
+var $ = require('./libs/jquery/dist/jquery.slim.min.js');
 
 module.exports = function(){
     function transform(x, y, centerX, centerY, maxX, maxY){

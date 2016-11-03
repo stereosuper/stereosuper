@@ -1,4 +1,4 @@
-var $ = require('./libs/jquery/dist/jquery.min.js');
+var $ = require('./libs/jquery/dist/jquery.slim.min.js');
 var TweenMax = require('./libs/gsap/src/uncompressed/TweenMax.js');
 var drawSVG = require('./libs/gsap/src/uncompressed/plugins/DrawSvgPlugin.js');
 // var isMobile = require('./isMobile.min.js');
