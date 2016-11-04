@@ -65,13 +65,13 @@ module.exports = function(myScroll, windowHeight, windowWidth, portfolioItems){
     // Hover portfolio items
     ////////////////////////////////////////////////
 
-    portfolioItems.on('mouseenter', function(){
+    portfolioItems.on('mouseenter focusin', function(){
         opacityItemHover = $(this).hasClass('lbb-item') ? 0.75 : 0.3;
 
         TweenMax.set($(this).find('.wrapper-bloc'), {css: {rotation: '0.01deg', z: 0.01, force3D: true}});
         TweenMax.to([$(this).find('.bg'), $(this).find('.wrapper-bg-img')], 0.3, {css: {scale: 1.05, rotation: '0.01deg', z: 0.01, force3D: true}, ease: Power1.easeInOut});
         TweenMax.to($(this).find('.bg-img'), 0.3, {css: {opacity: opacityItemHover, scale: 1, rotation: '0.01deg', z: 0.01, force3D: true}, ease: Power1.easeInOut});
-    }).on('mouseleave', function(){
+    }).on('mouseleave focusout', function(){
         opacityItemLeave = $(this).hasClass('lbb-item') ? 0.6 : 0.15;
 
         TweenMax.set($(this).find('.wrapper-bloc'), {css: {clearProps: 'rotation', force3D: true}});
