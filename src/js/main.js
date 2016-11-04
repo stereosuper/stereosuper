@@ -98,7 +98,7 @@ $(function(){
             portfolioItemsAnimation(myScroll, windowHeight, windowWidth, portfolioItems);
 
             // Anim skills hover
-            animSkillsHover(body);
+            animSkillsHover(body, portfolioItems);
 
             // video.find('video').on('canplaythrough', function(){
             //     video.addClass('ready').find('video').get(0).play();
