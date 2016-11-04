@@ -94,11 +94,13 @@ $(function(){
                 animSkillsSetUp = animSkillsScroll(myScroll, body, header, skillsHome);
             }
 
-            // Anim Refs Home
-            portfolioItemsAnimation(myScroll, windowHeight, windowWidth, portfolioItems);
+            if(!isMobile.any){
+                // Anim Refs Home
+                portfolioItemsAnimation(myScroll, windowHeight, windowWidth, portfolioItems);
 
-            // Anim skills hover
-            animSkillsHover(body, portfolioItems);
+                // Anim skills hover
+                animSkillsHover(body, portfolioItems);
+            }
 
             // video.find('video').on('canplaythrough', function(){
             //     video.addClass('ready').find('video').get(0).play();
