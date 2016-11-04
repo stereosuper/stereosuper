@@ -3,9 +3,8 @@ var $ = require('./libs/jquery/dist/jquery.slim.min.js');
 var stringToArray = require('./stringToArray.js');
 var createTlHover = require('./tlSkillsHover.js');
 
-module.exports = function(body){
+module.exports = function(body, portfolioItems){
     var thisData, theseDatas;
-    var portfolioItems = $('.portfolio-item');
     var skills = $('.skill');
 
     var dashes = $('.dashes >span'), tlHoverDashes,
@@ -14,6 +13,26 @@ module.exports = function(body){
         slashes = $('.slashes >span'), tlHoverSlashes,
         dots = $('.dots >span'), tlHoverDots,
         dataSkill, symbolToAnimate;
+
+    function switchSkills(data){
+        switch(data){
+            case 'strategy':
+                tlHoverDashes.progress(0).tweenTo(tlHoverDashes.duration());
+                break;
+            case 'identity':
+                tlHoverWaves.progress(0).tweenTo(tlHoverWaves.duration());
+                break;
+            case 'design':
+                tlHoverZigzags.progress(0).tweenTo(tlHoverZigzags.duration());
+                break;
+            case 'animation':
+                tlHoverSlashes.progress(0).tweenTo(tlHoverSlashes.duration());
+                break;
+            case 'dev':
+                tlHoverDots.progress(0).tweenTo(tlHoverDots.duration());
+                break;
+        }
+    }
 
     if(dashes.length){
         tlHoverDashes = createTlHover(dashes.closest('.symbol').find('.hoverAnimation'), -36);
@@ -33,23 +52,7 @@ module.exports = function(body){
 
     body.on('mouseenter', '.skill', function(){
         thisData = $(this).data('skill');
-        switch(thisData){
-            case 'strategy':
-                tlHoverDashes.progress(0).tweenTo(tlHoverDashes.duration());
-                break;
-            case 'identity':
-                tlHoverWaves.progress(0).tweenTo(tlHoverWaves.duration());
-                break;
-            case 'design':
-                tlHoverZigzags.progress(0).tweenTo(tlHoverZigzags.duration());
-                break;
-            case 'animation':
-                tlHoverSlashes.progress(0).tweenTo(tlHoverSlashes.duration());
-                break;
-            case 'dev':
-                tlHoverDots.progress(0).tweenTo(tlHoverDots.duration());
-                break;
-        }
+        switchSkills(thisData);
 
         portfolioItems.each(function(){
             theseDatas = stringToArray($(this).data('skill'));
@@ -69,21 +72,7 @@ module.exports = function(body){
         theseDatas = stringToArray($(this).data('skill'));
         skills.each(function(){
             thisData = $(this).data('skill');
-            if(theseDatas.indexOf(thisData) < 0){
-                $(this).addClass('off');
-            }else{
-                if(thisData == 'strategy'){
-                    tlHoverDashes.progress(0).tweenTo(tlHoverDashes.duration());
-                }else if(thisData == 'identity'){
-                    tlHoverWaves.progress(0).tweenTo(tlHoverWaves.duration());
-                }else if(thisData == 'design'){
-                    tlHoverZigzags.progress(0).tweenTo(tlHoverZigzags.duration());
-                }else if(thisData == 'animation'){
-                    tlHoverSlashes.progress(0).tweenTo(tlHoverSlashes.duration());
-                }else if(thisData == 'dev'){
-                    tlHoverDots.progress(0).tweenTo(tlHoverDots.duration());
-                }
-            }
+            theseDatas.indexOf(thisData) < 0 ? $(this).addClass('off') : switchSkills(thisData);
         });
     }).on('mouseleave', '.portfolio-item', function(){
         skills.removeClass('off');

@@ -2,7 +2,7 @@
 
 var Barba = require('./libs/barba.min.js');
 var $ = require('./libs/jquery/dist/jquery.slim.min.js');
-// var isMobile = require('./isMobile.min.js');
+var isMobile = require('./isMobile.min.js');
 // var TweenMax = require('./libs/gsap/src/uncompressed/TweenMax.js');
 // var TimelineMax = require('./libs/gsap/src/uncompressed/TimelineMax.js');
 
@@ -41,7 +41,7 @@ $(function(){
 
 
     htmlTag.removeClass('no-js').addClass('js');
-    // isMobile.any ? body.addClass('is-mobile') : body.addClass('is-desktop');
+    isMobile.any ? htmlTag.addClass('is-mobile') : htmlTag.addClass('is-desktop');
 
 
     ////////////////////////////////////////////////
@@ -95,11 +95,13 @@ $(function(){
                 animSkillsSetUp = animSkillsScroll(myScroll, body, header, skillsHome);
             }
 
-            // Anim Refs Home
-            portfolioItemsAnimation(myScroll, windowHeight, windowWidth, portfolioItems);
+            if(!isMobile.any){
+                // Anim Refs Home
+                portfolioItemsAnimation(myScroll, windowHeight, windowWidth, portfolioItems);
 
-            // Anim skills hover
-            animSkillsHover(body);
+                // Anim skills hover
+                animSkillsHover(body, portfolioItems);
+            }
 
             // video.find('video').on('canplaythrough', function(){
             //     video.addClass('ready').find('video').get(0).play();
