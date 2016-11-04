@@ -44,7 +44,7 @@
     #page{
         padding-top: 170px;
     }
-    .link-arrow, .lang a, .social a{
+    .link-arrow, .lang a, .social a, .menu-contact a{
         color: #fff;
     }
     .link-arrow{
@@ -52,10 +52,10 @@
             color: #000;
         }
     }
-    .social{
+    .social, .lang, .menu-contact{
         a{
             &:hover, &:focus{
-                opacity: 0.7;
+                opacity: 0.5;
             }
         }
     }

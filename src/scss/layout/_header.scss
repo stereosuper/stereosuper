@@ -231,6 +231,9 @@
 	a{
 		@include elena-italic(1.5rem);
 		color: $blue;
+		&:hover, &:focus{
+			color: #fff;
+		}
 	}
 }
 
