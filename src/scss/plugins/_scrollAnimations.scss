@@ -1,5 +1,8 @@
 .animateOnScroll{
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-out;
+    &.above-view{
+        transition: all 0.3s ease-in;
+    }
     &.pola-1{
         &.under-view{
             transform: translate3d(-20px, 100px, 0) rotate(-10deg);
@@ -22,6 +25,70 @@
         }
         &.above-view{
             transform: translate3d(20px, -100px, 0) rotate(5deg);
+        }
+    }
+    &.img-cp{
+        &.under-view{
+            transform: translate3d(20px, 100px, 0) rotate(-5deg);
+        }
+        &.above-view{
+            transform: translate3d(20px, -100px, 0) rotate(5deg);
+        }
+    }
+    &.img-sac{
+        &.under-view{
+            transform: translate3d(-20px, 100px, 0) rotate(-10deg);
+        }
+        &.above-view{
+            transform: translate3d(-20px, -100px, 0) rotate(15deg);
+        }
+    }
+    &.pola-team-1{
+        &.under-view{
+            transform: translate3d(-60px, 100px, 0) rotate(-20deg);
+        }
+        &.above-view{
+            transform: translate3d(-60px, -100px, 0) rotate(20deg);
+        }
+    }
+    &.pola-team-2{
+        &.under-view{
+            transform: translate3d(-20px, 100px, 0) rotate(-10deg);
+        }
+        &.above-view{
+            transform: translate3d(-20px, -100px, 0) rotate(15deg);
+        }
+    }
+    &.pola-team-3{
+        &.under-view{
+            transform: translate3d(-5px, 100px, 0) rotate(-5deg);
+        }
+        &.above-view{
+            transform: translate3d(-5px, -100px, 0) rotate(5deg);
+        }
+    }
+    &.pola-team-4{
+        &.under-view{
+            transform: translate3d(10px, 120px, 0) rotate(5deg);
+        }
+        &.above-view{
+            transform: translate3d(10px, -120px, 0) rotate(-5deg);
+        }
+    }
+    &.pola-team-5{
+        &.under-view{
+            transform: translate3d(20px, 100px, 0) rotate(12deg);
+        }
+        &.above-view{
+            transform: translate3d(20px, -100px, 0) rotate(-12deg);
+        }
+    }
+    &.pola-team-6{
+        &.under-view{
+            transform: translate3d(40px, 80px, 0) rotate(8deg);
+        }
+        &.above-view{
+            transform: translate3d(40px, -80px, 0) rotate(-8deg);
         }
     }
     &.in-view{
