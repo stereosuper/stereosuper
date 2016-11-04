@@ -23,6 +23,7 @@ $(function(){
 
     var animYearAbout = require('./animYearABout.js');
     var animTextAbout = require('./animTextABout.js');
+    var animTimelineAbout = require('./animTimelineAbout.js');
 
     var checkIfInView = require('./checkIfInView.js');
 
@@ -151,6 +152,7 @@ $(function(){
             // The Transition has just finished.
             animYearAbout(myScroll, windowWidth);
             animTextAbout();
+            animTimelineAbout();
             checkIfInView();
         },
         onLeave: function(){
