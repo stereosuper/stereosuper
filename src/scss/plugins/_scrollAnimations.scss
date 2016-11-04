@@ -1,0 +1,30 @@
+.animateOnScroll{
+    transition: all 0.3s ease-in-out;
+    &.pola-1{
+        &.under-view{
+            transform: translate3d(-20px, 100px, 0) rotate(-10deg);
+        }
+        &.above-view{
+            transform: translate3d(-20px, -100px, 0) rotate(15deg);
+        }
+    }
+    &.pola-2{
+        &.under-view{
+            transform: translate3d(0, 150px, 0) rotate(-20deg);
+        }
+        &.above-view{
+            transform: translate3d(0, -150px, 0) rotate(10deg);
+        }
+    }
+    &.pola-3{
+        &.under-view{
+            transform: translate3d(20px, 100px, 0) rotate(-5deg);
+        }
+        &.above-view{
+            transform: translate3d(20px, -100px, 0) rotate(5deg);
+        }
+    }
+    &.in-view{
+        transform: translate3d(0, 0, 0) rotate(0);
+    }
+}
