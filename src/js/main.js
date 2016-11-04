@@ -2,7 +2,7 @@
 
 var Barba = require('./libs/barba.min.js');
 var $ = require('./libs/jquery/dist/jquery.slim.min.js');
-// var isMobile = require('./isMobile.min.js');
+var isMobile = require('./isMobile.min.js');
 // var TweenMax = require('./libs/gsap/src/uncompressed/TweenMax.js');
 // var TimelineMax = require('./libs/gsap/src/uncompressed/TimelineMax.js');
 
@@ -40,7 +40,7 @@ $(function(){
 
 
     htmlTag.removeClass('no-js').addClass('js');
-    // isMobile.any ? body.addClass('is-mobile') : body.addClass('is-desktop');
+    isMobile.any ? htmlTag.addClass('is-mobile') : htmlTag.addClass('is-desktop');
 
 
     ////////////////////////////////////////////////

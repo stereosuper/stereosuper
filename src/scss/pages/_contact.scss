@@ -87,6 +87,9 @@
     &.on{
         opacity: 1;
     }
+    .is-mobile &{
+        display: none;
+    }
 }
 
 @media (max-width: 1500px){
