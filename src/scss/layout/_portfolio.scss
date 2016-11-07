@@ -9,7 +9,7 @@
 	padding-top: 90vh;
 	position: relative;
 	z-index: 1;
-	overflow: hidden;
+	//overflow: hidden;
 	backface-visibility: hidden;
 	ul{
 		margin: 0;
@@ -19,9 +19,9 @@
 .portfolio-item{
 	width: 87.5%;
 	height: 140px;
+	padding: 0 $gutter;
 	position: relative;
 	margin: 40px 0;
-	padding: 0 $gutter;
 	clear: both;
 	transition: opacity $transition;
 	&:nth-child(10n+1){
@@ -99,25 +99,21 @@
 		margin: 0;
 		top: 15px;
 		transform-origin: 50% 50%;
-
-		transition: transform 0.3s ease-in-out;
+		transition: transform $transition;
 		outline: 1px solid transparent;
 		backface-visibility: hidden;
 	}
 	h2{
-		width: 100%;
 		height: 100%;
 		position: relative;
 		margin: 0;
 		transform-origin: 50% 50%;
-
 		backface-visibility: hidden;
 		&:before{
 			display: none;
 		}
 		&:after{
 			content: '';
-			display: block;
 			position: absolute;
 			top: 0;
 			right: 0;
@@ -131,86 +127,61 @@
 			will-change: transform;
 			outline: 1px solid transparent;
 		}
-		.logo{
-			content: '';
-			max-width: 75%;
-			position: absolute;
-			bottom: 0;
-			top: 50%;
-			left: $gutter;
-			transform: translate3d(0, -50%, 1px);
-			margin: 0;
-			z-index: 3;
-			background-repeat: no-repeat;
-			background-size: 100%;
-			background-position: 50% 50%;
-			//text-indent: -99em;
-			background: none!important;
-			overflow: hidden;
-			.icon{
-				width: 100%;
-				height: 100%;
-				fill: #fff;
-			}
-		}
 	}
-	.bg{
-		display: block;
-		height: auto;
+	.logo{
+		max-width: 75%;
+		position: absolute;
+		bottom: 0;
+		top: 50%;
+		left: $gutter;
+		transform: translate3d(0, -50%, 1px);
+		margin: 0;
+		z-index: 3;
+		// background-repeat: no-repeat;
+		// background-size: 100%;
+		// background-position: 50% 50%;
+		text-indent: -99em;
+		// background: none !important;
+		overflow: hidden;
+	}
+	.icon{
+		width: 100%;
+		height: 100%;
+		fill: #fff;
+		float: left;
+	}
+	.bg, .wrapper-bg-img, .bg-img, .bg-transition{
 		position: absolute;
 		top: 0;
 		bottom: 0;
 		left: 0;
 		right: 0;
-		z-index: 2;
-
-		mix-blend-mode: multiply;
+	}
+	.bg, .wrapper-bg-img, .bg-img{
 		@include fixAnimation;
+	}
+	.bg{
+		z-index: 2;
+		mix-blend-mode: multiply;
 		&.transi{
 			mix-blend-mode: normal;
 		}
 	}
 	.wrapper-bg-img{
-		display: block;
-		height: auto;
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-
 		overflow: hidden;
 		.no-mix-blend-mode &{
 			z-index: 2;
 		}
-		@include fixAnimation;
 	}
 	.bg-img{
-		display: block;
-		height: auto;
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
 		opacity: 0.15;
 		background-position: 50% 60%;
 		background-repeat: no-repeat;
 		background-size: 100%;
 		transform: scale(1.05) rotate(0.01deg) translate3d(0, 0, 0.01px);
 		transform-origin: 50% 50%;
-
-		@include fixAnimation;
 	}
 	.bg-transition{
-		display: block;
-		width: auto;
-		height: auto;
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
 		//transform: scaleX(0) scaleY(1) rotate(0.01deg) translate3d(0, 0, 0.01px);
 		transform-origin: 50% 50%;
 		z-index: -1;
@@ -222,29 +193,29 @@
 		top: 0;
 		right: 0;
 		transform: translate3d(0, 0, 1px);
-		.border-left{
-			height: 100%;
-			position: absolute;
-			top: 0;
-			left: 0;
-			border-left: 1px solid rgba(#fff, 0.5);
-			transform-origin: 50% 50%;
-		}
-		.border-middle{
-			width: 100%;
-			height: 0;
-			position: absolute;
-			top: 50%;
-			left: 1px;
-			border-bottom: 1px solid rgba(#fff, 0.5);
-			transform-origin: 0 50%;
-		}
 	}
-	time, span{
-		display: block;
+	.border-left{
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		border-left: 1px solid rgba(#fff, 0.5);
+		transform-origin: 50% 50%;
+	}
+	.border-middle{
+		width: 100%;
+		height: 0;
+		position: absolute;
+		top: 50%;
+		left: 1px;
+		border-bottom: 1px solid rgba(#fff, 0.5);
+		transform-origin: 0 50%;
+	}
+	time, .title{
 		height: 50%;
 	}
 	time{
+		display: block;
 		font-size: 1.6rem;
 		padding: 30px $gutter 25px;
 	}
@@ -269,41 +240,36 @@
 	$name: nth($portfolio, $i);
     .#{$name}-item{
     	h2{
-    		.logo{
-    			width: #{nth($portfolioWidths, $i)}px;
-    			height: #{nth($portfolioHeights, $i)}px;
-    			background-image: url(../img/logo-#{$name}.png);
-    		}
-    		.bg, .bg-transition{
-    			background: nth($portfolioColors, $i);
-    		}
-    		.bg-img{
-    			background-image: url(../img/bg-#{$name}.png);
-    		}
 	        &:after{
 	            border-color: nth($portfolioColors, $i);
 	        }
     	}
     	&.off{
     		h2{
-    			.logo{
-    				.icon{
-    					fill: nth($portfolioColors, $i);
-    				}
-    			}
     			&:after{
     				opacity: 1;
     			}
     		}
+    		.icon{
+    			fill: nth($portfolioColors, $i);
+    		}
     		.wrapper-desc{
     			color: nth($portfolioColors, $i);
-    			.border-left{
-    				border-color: nth($portfolioColors, $i);
-    			}
-    			.border-middle{
-    				border-color: nth($portfolioColors, $i);
-    			}
     		}
+    		.border-left, .border-middle{
+    			border-color: nth($portfolioColors, $i);
+    		}
+    	}
+    	.logo{
+    		width: #{nth($portfolioWidths, $i)}px;
+    		height: #{nth($portfolioHeights, $i)}px;
+    		// background-image: url(../img/logo-#{$name}.png);
+    	}
+    	.bg, .bg-transition{
+    		background: nth($portfolioColors, $i);
+    	}
+    	.bg-img{
+    		background-image: url(../img/bg-#{$name}.png);
     	}
     }
     @if $name == 'lbb'{
@@ -314,10 +280,8 @@
     		.wrapper-bg-img{
 				z-index: 2;
     		}
-    		h2{
-    			.bg-img{
-    				opacity: 0.6;
-    			}
+    		.bg-img{
+    			opacity: 0.6;
     		}
     		a{
     			&:hover, &:focus{
@@ -356,11 +320,9 @@
 			left: 0;
 			transform: rotate(0) !important;
 		}
-		h2{
-			.logo{
-				bottom: 10px;
-				left: 40px;
-			}
+		.logo{
+			bottom: 10px;
+			left: 40px;
 		}
 		.wrapper-desc{
 			width: calc(100% - 30px);

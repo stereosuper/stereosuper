@@ -6,15 +6,18 @@ var detectScrollDir = require('./detectScrollDir.js');
 
 module.exports = function(myScroll, body, header, skillsHome){
     var lastScroll = myScroll, scrollDir = 0;
-    var isHome = body.hasClass('home') ? true : false;
+    //var isHome = body.hasClass('home') ? true : false;
 
-    function scrollSkills(){
+    (function scrollSkills(){
+        //if(!body.hasClass('home')) return;
+
+        skillsHome = $('#skillsHome');
+        if(!skillsHome.length) return;
+
         myScroll = $(document).scrollTop();
 
         if(myScroll !== lastScroll){
             scrollDir = detectScrollDir(myScroll, lastScroll);
-
-            skillsHome = $('#skillsHome');
 
             // synch with animHeader.js
             if(header.hasClass('scrolled') && myScroll > skillsHome.data('top') && skillsHome.is(':visible')){
@@ -30,27 +33,27 @@ module.exports = function(myScroll, body, header, skillsHome){
         lastScroll = myScroll;
 
         requestAnimFrame(scrollSkills);
-    }
+    })();
 
-    if(isHome && !isMobile.any){
-        scrollSkills();
+    // if(body.hasClass('home') && !isMobile.any){
+    //     scrollSkills();
 
-        // skillsHome.on('mouseenter', function(){
-        //     if($(this).hasClass('top')){
-        //         header.removeClass('off');
-        //         $(this).removeClass('top').addClass('down');
-        //     }
-        // }).on('mouseleave', function(){
-        //     if(!$(this).hasClass('top') && header.hasClass('scrolled')){
-        //         header.addClass('off');
-        //         $(this).addClass('top').removeClass('down');
-        //     }
-        // });
-        // header.on('mouseenter', function(){
-        //     $(this).removeClass('off');
-        //     skillsHome.removeClass('top').addClass('down');
-        // });
-    }
+    //     // skillsHome.on('mouseenter', function(){
+    //     //     if($(this).hasClass('top')){
+    //     //         header.removeClass('off');
+    //     //         $(this).removeClass('top').addClass('down');
+    //     //     }
+    //     // }).on('mouseleave', function(){
+    //     //     if(!$(this).hasClass('top') && header.hasClass('scrolled')){
+    //     //         header.addClass('off');
+    //     //         $(this).addClass('top').removeClass('down');
+    //     //     }
+    //     // });
+    //     // header.on('mouseenter', function(){
+    //     //     $(this).removeClass('off');
+    //     //     skillsHome.removeClass('top').addClass('down');
+    //     // });
+    // }
 
-    return isHome;
+    // return isHome;
 }

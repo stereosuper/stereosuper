@@ -29,6 +29,109 @@
 
     <body {% block body_attr %}{% endblock %}>
 
+        <header id='header'>
+            <div class='container'>
+                <div class='header-left'>
+                    <div class='wrapper-logo'>
+                        <a href='./' id='logo'>
+                            <svg class='icon stereo'><use xlink:href='#icon-stereo'/></svg><svg class='icon super'><use xlink:href='#icon-super'/></svg><span><strong>Stéréo</strong>super</span>
+                        </a>
+                    </div><ul class='menu-contact'>
+                        <li>
+                            <a href='mailto:bisou@stereosuper.fr' title='Envoyez nous un email' class='link-arrow'>
+                                <svg class='m-icon icon'><use xlink:href='#icon-mail'/></svg>
+                                <span>bisou@stereosuper.fr</span>
+                                <svg class='icon i1'><use xlink:href='#icon-big-arrow'/></svg>
+                                <svg class='icon i2'><use xlink:href='#icon-big-arrow'/></svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href='tel:+33951248536' title='Passez nous un coup de fil'>
+                                <svg class='m-icon icon'><use xlink:href='#icon-phone'/></svg>
+                                <span>+33 9 51 24 85 36</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div><div class='header-right'>
+                    <ul class='menu-header'>
+                        <li>
+                            <a href='about.html'><span>À propos</span></a>
+                        </li>
+                        <li>
+                            <a href='contact.html'>
+                                <svg class='m-icon icon'><use xlink:href='#icon-map'/></svg>
+                                <span>Nous trouver</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class='lang-social'>
+                        <div class='lang'>
+                            <span class='non-active'>
+                                fr
+                            </span><span class='slash'>
+                                /
+                            </span><a href='#' title='English'>
+                                en
+                            </a>
+                        </div>
+
+                        <ul class='social'>
+                            <li>
+                                <a href='https://twitter.com/stereosuper' target='_blank' title='Suivez-nous sur Twitter'>
+                                    <svg class='icon twitter'><use xlink:href='#icon-twitter'/></svg>
+                                </a>
+                            </li><li>
+                                <a href='https://www.facebook.com/stereosuper' target='_blank' title='Suivez-nous sur Facebook'>
+                                    <svg class='icon facebook'><use xlink:href='#icon-facebook'/></svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main id='barba-wrapper'>
+            {% block content %}{% endblock %}
+        </main>
+
+        <footer id='footer'>
+            <div class='container'>
+                <a href='about.html' class='link-arrow link-caps footer-about'>
+                    <span>A propos</span>
+                    <svg class='icon i1'><use xlink:href='#icon-big-arrow'/></svg>
+                    <svg class='icon i2'><use xlink:href='#icon-big-arrow'/></svg>
+                </a>
+
+                <div class='footer-bottom'>
+                    <div class='lang'>
+                        <span class='non-active'>
+                            fr
+                        </span><span class='slash'>
+                            /
+                        </span><a href='#' title='English'>
+                            en
+                        </a>
+                    </div>
+
+                    <div class='mentions'>&copy; 2016 &bull; <a href='mentions.html'>Mentions</a></div>
+
+                    <ul class='social'>
+                        <li>
+                            <a href='https://twitter.com/stereosuper' target='_blank' title='Suivez-nous sur Twitter'>
+                                <svg class='icon twitter'><use xlink:href='#icon-twitter'/></svg>
+                            </a>
+                        </li><li>
+                            <a href='https://www.facebook.com/stereosuper' target='_blank' title='Suivez-nous sur Facebook'>
+                                <svg class='icon facebook'><use xlink:href='#icon-facebook'/></svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
         {% block icons %}
             <svg style='position:absolute;width:0;height:0;overflow:hidden'>
                 <defs>
@@ -153,11 +256,11 @@
                         <path d='M52.101 21.054v-4.043h-7.018l-2.138 2.189v5.241l2.202 2.202h3.863v1.146h-6.065v4.211h6.967l2.189-2.189v-5.074l-2.176-2.176h-3.554v-1.507z'></path>
                     </symbol>
                     <symbol id='icon-waves' viewBox='0 0 881 32'>
-                        <title>waves</title>
+                        <title>Waves</title>
                         <path d='M872.585 11.447c-0.26 0.26-0.26 0.26-0.52 0.52-6.764 6.764-15.35 10.406-23.935 10.406-8.846 0-17.691-3.902-24.455-10.927-6.504-5.984-14.309-9.886-22.374-9.886s-18.992 1.821-25.496 8.585c-0.26 0.26-0.26 0.26-0.52 0.52-6.764 6.764-15.35 10.406-23.935 10.406s-17.691-3.902-24.455-10.927c-6.504-5.984-14.569-9.106-22.374-9.106s-16.39 3.122-22.634 9.106c-0.52 0.52-0.78 0.78-1.301 1.301l-1.041 1.041c-6.764 6.764-15.35 10.406-23.935 10.406-8.846 0-15.87-1.301-22.634-8.325-1.561-1.561-3.642-3.902-3.642-3.902-6.504-5.984-14.569-9.106-22.374-9.106-8.065 0-16.39 3.122-22.634 9.106-0.52 0.52-0.78 0.78-1.301 1.301l-1.041 1.041c-6.764 6.764-15.35 10.406-23.935 10.406-8.846 0-17.171-3.382-23.935-10.406l-0.78-1.041c-6.764-6.764-15.35-10.406-23.935-10.406-8.846 0-17.171 3.382-23.935 10.406-6.764 6.764-15.35 10.407-23.935 10.407s-17.171-3.382-23.935-10.406l-0.52-0.52c-6.764-6.764-15.35-10.406-23.935-10.406-8.846 0-17.171 3.382-23.935 10.406-6.764 6.764-15.35 10.406-23.935 10.406-8.846 0-17.431-3.642-23.935-10.406-6.764-6.764-15.35-10.146-23.675-10.146-8.846 0-17.171 3.382-23.935 10.406l-1.041 1.041c-6.764 6.764-15.35 10.406-23.935 10.406s-17.171-3.382-23.935-10.406l-0.78-1.041c-6.764-6.764-15.35-10.406-23.935-10.406-8.846 0-17.171 3.382-23.935 10.406-6.764 6.764-15.35 10.406-23.935 10.406-8.846 0-17.171-3.382-23.935-10.406l-2.602-0.78c-6.764-6.764-15.35-10.406-23.935-10.406-8.846 0-17.171 3.382-23.935 10.406-6.764 6.764-15.35 10.406-23.935 10.406-8.846 0-17.171-3.382-23.935-10.406l0.781-0.52c-6.504-7.024-15.35-10.406-23.675-10.406-8.846 0-17.431 3.382-23.935 10.406l6.504 6.244c4.683-4.943 10.927-7.545 17.431-7.545s12.748 2.602 17.431 7.545l0.52 0.52c8.065 8.325 18.732 13.008 30.439 13.008s22.114-4.683 30.439-13.008c4.683-4.943 10.927-7.545 17.431-7.545s12.748 2.602 17.431 7.545l0.52 0.52c8.065 8.325 18.732 13.008 30.439 13.008s22.114-4.683 30.439-13.008c4.683-4.943 10.927-7.545 17.431-7.545s12.748 2.602 17.431 7.545l0.78 1.041c8.065 8.325 18.732 13.008 30.439 13.008s22.114-4.683 30.439-13.008l1.041-1.041c4.683-4.943 10.927-7.545 17.431-7.545s12.748 2.602 17.431 7.545c8.065 8.325 18.992 13.008 30.439 13.008 11.707 0 22.114-4.683 30.439-13.008 4.683-4.943 10.927-7.545 17.431-7.545s12.748 2.602 17.431 7.545l0.52 0.52c8.065 8.325 18.732 13.008 30.439 13.008s22.114-4.683 30.439-13.008c4.683-4.943 10.927-7.545 17.431-7.545s12.748 2.602 17.431 7.545l0.78 1.041c8.065 8.325 18.732 13.008 30.439 13.008s22.114-4.683 30.439-13.008l1.041-1.041c4.683-4.943 10.927-7.545 17.431-7.545 7.285 0 12.748 3.122 17.431 7.545 0 0 0.26 0.26 0.26 0.26s-0.26-0.26-0.26-0.26c0 0 0.26 0 0.26 0.26 0.26 0.26 0.52 0.52 0.52 0.52 0.26 0.26 0.52 0.52 0.78 0.78-0.26-0.26-0.78-0.78-1.301-1.041 0.52 0.52 1.041 0.78 1.301 1.041 7.805 7.805 18.472 12.228 29.659 12.228 11.707 0 22.114-4.683 30.439-13.008l1.041-1.041c4.683-4.943 10.927-7.545 17.431-7.545s12.748 2.602 17.431 7.545c8.065 7.545 18.732 12.228 29.659 12.228 11.707 0 22.114-4.683 30.439-13.008 0.26-0.26 0.26-0.26 0.52-0.52 6.244-5.463 11.967-5.463 18.732-5.463 6.504 0 12.488 3.382 17.431 8.065 8.065 7.545 18.732 12.228 29.659 12.228 11.707 0 22.114-4.683 30.439-13.008 0.26-0.26 0.26-0.26 0.52-0.52l-6.504-6.504z'></path>
                     </symbol>
                     <symbol id='icon-zigzags' viewBox='0 0 720 32'>
-                        <title>zigzags</title>
+                        <title>Zigzags</title>
                         <path d='M527.802 9.086l-38.321 20.938-3.951 1.975-3.556-1.975-38.716-20.938-37.531 20.148-3.951 2.37-3.556-2.37-38.321-20.148-11.062 5.926-9.877 5.136-16.988 9.086-3.951 2.37-3.556-2.37-38.321-20.148-37.531 20.543-3.951 1.975-3.556-1.975-38.321-20.543-38.716 20.938-3.951 1.975-3.556-1.975-38.716-20.938-37.531 20.148-3.951 2.37-3.556-2.37-38.321-20.148-20.938 11.062-3.556-7.111 24.494-13.037 41.877 22.519 41.481-22.123 42.272 22.519 42.667-22.914 41.877 22.914 41.086-22.519h0.395v-0.395l41.877 22.519 17.383-9.481 24.494-13.037 41.877 22.519 41.481-22.123 42.272 22.519 42.272-22.914 41.877 22.519 41.481-22.123 42.272 22.519 42.272-22.914 24.494 13.037-3.556 7.111-20.938-11.062-38.321 20.938-3.951 1.975-3.556-1.975-38.716-20.938-37.531 20.148-3.951 2.37z'></path>
                     </symbol>
                     <symbol id='icon-souvenir' viewBox='0 0 92 32'>
@@ -231,109 +334,6 @@
                 </defs>
             </svg>
         {% endblock icons %}
-
-        <header id='header'>
-            <div class='container'>
-                <div class='header-left'>
-                    <div class='wrapper-logo'>
-                        <a href='./' id='logo'>
-                            <svg class='icon stereo'><use xlink:href='#icon-stereo'/></svg><svg class='icon super'><use xlink:href='#icon-super'/></svg><span><strong>Stéréo</strong>super</span>
-                        </a>
-                    </div><ul class='menu-contact'>
-                        <li>
-                            <a href='mailto:bisou@stereosuper.fr' title='Envoyez nous un email' class='link-arrow'>
-                                <svg class='m-icon icon'><use xlink:href='#icon-mail'/></svg>
-                                <span>bisou@stereosuper.fr</span>
-                                <svg class='icon i1'><use xlink:href='#icon-big-arrow'/></svg>
-                                <svg class='icon i2'><use xlink:href='#icon-big-arrow'/></svg>
-                            </a>
-                        </li>
-                        <li>
-                            <a href='tel:+33951248536' title='Passez nous un coup de fil'>
-                                <svg class='m-icon icon'><use xlink:href='#icon-phone'/></svg>
-                                <span>+33 9 51 24 85 36</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div><div class='header-right'>
-                    <ul class='menu-header'>
-                        <li>
-                            <a href='about.html'><span>À propos</span></a>
-                        </li>
-                        <li>
-                            <a href='contact.html'>
-                                <svg class='m-icon icon'><use xlink:href='#icon-map'/></svg>
-                                <span>Nous trouver</span>
-                            </a>
-                        </li>
-                    </ul>
-
-                    <div class='lang-social'>
-                        <div class='lang'>
-                            <span class='non-active'>
-                                fr
-                            </span><span class='slash'>
-                                /
-                            </span><a href='#' title='English'>
-                                en
-                            </a>
-                        </div>
-
-                        <ul class='social'>
-                            <li>
-                                <a href='https://twitter.com/stereosuper' target='_blank' title='Suivez-nous sur Twitter'>
-                                    <svg class='icon twitter'><use xlink:href='#icon-twitter'/></svg>
-                                </a>
-                            </li><li>
-                                <a href='https://www.facebook.com/stereosuper' target='_blank' title='Suivez-nous sur Facebook'>
-                                    <svg class='icon facebook'><use xlink:href='#icon-facebook'/></svg>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <main id='barba-wrapper'>
-            {% block content %}{% endblock %}
-        </main>
-
-        <footer id='footer'>
-            <div class='container'>
-                <a href='about.html' class='link-arrow link-caps footer-about'>
-                    <span>A propos</span>
-                    <svg class='icon i1'><use xlink:href='#icon-big-arrow'/></svg>
-                    <svg class='icon i2'><use xlink:href='#icon-big-arrow'/></svg>
-                </a>
-
-                <div class='footer-bottom'>
-                    <div class='lang'>
-                        <span class='non-active'>
-                            fr
-                        </span><span class='slash'>
-                            /
-                        </span><a href='#' title='English'>
-                            en
-                        </a>
-                    </div>
-
-                    <div class='mentions'>&copy; 2016 &bull; <a href='mentions.html'>Mentions</a></div>
-
-                    <ul class='social'>
-                        <li>
-                            <a href='https://twitter.com/stereosuper' target='_blank' title='Suivez-nous sur Twitter'>
-                                <svg class='icon twitter'><use xlink:href='#icon-twitter'/></svg>
-                            </a>
-                        </li><li>
-                            <a href='https://www.facebook.com/stereosuper' target='_blank' title='Suivez-nous sur Facebook'>
-                                <svg class='icon facebook'><use xlink:href='#icon-facebook'/></svg>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </footer>
 
         {% block javascript_bottom %}
             <script src='js/main.js' defer></script>

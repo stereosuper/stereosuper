@@ -1,5 +1,11 @@
 /* Home specific style */
 
+.home{
+    #page{
+        overflow: hidden;
+    }
+}
+
 .block-title{
     position: absolute;
     transform: translate3d(0, -42%, 0);
@@ -40,9 +46,9 @@ h1{
     left: 0;
     background: url(../img/img-thumbnail.jpg) no-repeat 50% 50%;
     background-size: cover;
-    transition: 0.5s opacity ease-in-out;
+    transition: opacity 0.5s ease-in-out;
     &.pageTransition{
-        video{
+        video, iframe{
             transition: $transitionOpacityPage;
             opacity: 0;
         }

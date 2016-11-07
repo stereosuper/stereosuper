@@ -7,7 +7,7 @@ var drawSVG = require('./libs/gsap/src/uncompressed/plugins/DrawSvgPlugin.js');
 // var detectScrollDir = require('./detectScrollDir.js');
 // var svgYearContent = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 102 102" class="svg-year-content"><path stroke-width="1" d="M50,0L50,0c27.6,0,50,22.4,50,50v0c0,27.6-22.4,50-50,50h0C22.4,100,0,77.6,0,50v0C0,22.4,22.4,0,50,0z"/></svg>';
 
-module.exports = function(myScroll, windowWidth){
+module.exports = function(myScroll, windowWidth, body){
     var yearWrapper = $('#year'), yearsData = $('[data-year]'), style = '',
         years, totalYears, initialTop, thisYear, thisYearPos, yearText, thisYearHtml, nbYears, i, thisYearData, newYearData, firstYear, lastYear, nbYearsTotal, nbYearsDone, percentageYears, yearTopPosition,
         svg = $('#yearSvg'), containerYearLandmark = $('.container-year-landmark'), yearLandmark = $('.year-landmark'), yearLandmarkSpan = yearLandmark.find('span'), borderSvg = yearLandmark.find('.border-svg'),
@@ -18,11 +18,15 @@ module.exports = function(myScroll, windowWidth){
     }
 
     function zIndexContainerYearLandmark(){
+        if(!body.hasClass('about')) return;
+
         var title = $('.container-title');
         yearLandmark.offset().top > (title.offset().top + title.outerHeight()) ? containerYearLandmark.addClass('big-z-index') : containerYearLandmark.removeClass('big-z-index');
     }
 
     function svgProgression(currentSvg, currentYear, isAnimated){
+        if(!body.hasClass('about')) return;
+
         // faire avancer le svg
         nbYearsTotal = lastYear + 1 - firstYear;
         nbYearsDone = nbYearsTotal - (lastYear + 1 - currentYear);
@@ -35,6 +39,8 @@ module.exports = function(myScroll, windowWidth){
     }
 
     function scrollProgression(){
+        if(!body.hasClass('about')) return;
+
         myScroll = $(this).scrollTop();
         yearLandmarkTop = yearLandmark.offset().top;
 
@@ -80,6 +86,8 @@ module.exports = function(myScroll, windowWidth){
     }
 
     function setYearsPosition(){
+        if(!body.hasClass('about')) return;
+
         var yearsHtml = '';
 
         yearsData.each(function(i){

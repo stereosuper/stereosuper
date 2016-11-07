@@ -17,12 +17,18 @@ module.exports = function(lastClickedLink, body){
         },
 
         fadeOut: function(){
+            $(lastClickedLink).blur();
+
             if(body.hasClass('home')){
-                return transiOutHome(lastClickedLink);
+                return transiOutHome(lastClickedLink, $(this.oldContainer));
             }else if(body.hasClass('portfolio')){
                 return transiOutPortfolio();
             }else{
-                return $(this.oldContainer).animate({ opacity: 0 }).promise();
+                return new Promise( function(resolve, reject){
+                    TweenMax.to($(this.oldContainer), 0.5, {opacity: 0, onComplete: function(){
+                        resolve(true);
+                    }});
+                });
             }
         },
 
@@ -32,11 +38,10 @@ module.exports = function(lastClickedLink, body){
 
             body.removeClass($(this.oldContainer).data('class')).addClass($el.data('class'));
 
-            TweenMax.set($el, {visibility: 'visible', opacity: 0, onComplete: function(){
-                $(document).scrollTop(0);
-            }});
-            TweenMax.set($el, {opacity: 1});
+            TweenMax.set($el, {visibility: 'visible', opacity: 0});
             $(this.oldContainer).hide();
+            $(document).scrollTop(0);
+            TweenMax.to($el, 0.3, {opacity: 1});
 
             if(body.hasClass('portfolio')){
                 return transiInPortfolio(_this);

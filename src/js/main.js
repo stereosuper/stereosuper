@@ -29,6 +29,9 @@ $(function(){
 
     var animHandMap = require('./map.js');
 
+    var transiInHome = require('./transiInHome.js');
+    var transiInPortfolio = require('./transiInPortfolio.js');
+
 
     var windowWidth = $(window).outerWidth(), windowHeight = $(window).height();
     var myScroll = $(document).scrollTop();
@@ -37,7 +40,7 @@ $(function(){
     var htmlTag = $('html');
     // var main = $('#main');
     var header = $('#header');
-    var skillsHome = $('#skillsHome'), skillsTop = skillsHome.length ? skillsHome.offset().top - 100 : 0;
+    var skillsHome = $('#skillsHome'), skillsTop = 0;
 
 
 
@@ -49,9 +52,8 @@ $(function(){
     // Background blend mode detection
     ////////////////////////////////////////////////
     if('CSS' in window && 'supports' in window.CSS) {
-        var support = window.CSS.supports('mix-blend-mode','soft-light');
-        support = support ? 'mix-blend-mode' : 'no-mix-blend-mode';
-        $('html').addClass(support);
+        var support = window.CSS.supports('mix-blend-mode', 'soft-light') ? 'mix-blend-mode' : 'no-mix-blend-mode';
+        htmlTag.addClass(support);
     }
 
     ////////////////////////////////////////////////
@@ -59,15 +61,26 @@ $(function(){
     ////////////////////////////////////////////////
 
     animHeaderScroll(myScroll, body, header, skillsHome);
-    var animSkillsSetUp = animSkillsScroll(myScroll, body, header, skillsHome);
+    //var animSkillsSetUp = animSkillsScroll(myScroll, body, header, skillsHome);
 
 
     ////////////////////////////////////////////////
     // Anim Top Home
     ////////////////////////////////////////////////
 
-    skillsHome.data('top', skillsTop);
-    var animTopSetUp = animTop(myScroll, body, header, skillsHome);
+    // skillsHome.data('top', skillsTop);
+    //var animTopSetUp = animTop(myScroll, body, header, skillsHome);
+
+    ////////////////////////////////////////////////
+    // Transitions in
+    ////////////////////////////////////////////////
+    if(body.hasClass('home')){
+        transiInHome();
+    }else if(body.hasClass('portfolio')){
+        transiInPortfolio();
+    }else if(body.hasClass('about')){
+
+    }
 
     ////////////////////////////////////////////////
     // Home functions
@@ -79,24 +92,29 @@ $(function(){
             skillsHome = $('#skillsHome');
             skillsTop = skillsHome.offset().top - 100;
             skillsHome.data('top', skillsTop);
+
+            // Anim top home
+            // if(!animTopSetUp){
+            //     animTopSetUp = animTop(myScroll, body, header, skillsHome);
+            // }
+            animTop(myScroll, body, header, skillsHome);
+
+            if(!isMobile.any){
+                animSkillsScroll(myScroll, body, header, skillsHome);
+            }
         },
         onEnterCompleted: function(){
             // The Transition has just finished.
 
-            var portfolioItems = $('#portfolio').find('.portfolio-item'),
-                video = $('#video');
-
-            // Anim top home
-            if(!animTopSetUp){
-                animTopSetUp = animTop(myScroll, body, header, skillsHome);
-            }
-
-            // Anim skills with header
-            if(!animSkillsSetUp){
-                animSkillsSetUp = animSkillsScroll(myScroll, body, header, skillsHome);
-            }
+            var portfolioItems = $('#portfolio').find('.portfolio-item');
 
             if(!isMobile.any){
+                // Anim skills with header
+                // if(!animSkillsSetUp){
+                //     animSkillsSetUp = animSkillsScroll(myScroll, body, header, skillsHome);
+                // }
+
+
                 // Anim Refs Home
                 portfolioItemsAnimation(myScroll, windowHeight, windowWidth, portfolioItems);
 
@@ -121,23 +139,22 @@ $(function(){
     // Portfolio functions
     ////////////////////////////////////////////////
 
-    var Portfolio = Barba.BaseView.extend({ namespace: 'portfolio',
-        onEnter: function(){
-            // The new Container is ready and attached to the DOM.
+    // var Portfolio = Barba.BaseView.extend({ namespace: 'portfolio',
+    //     onEnter: function(){
+    //         // The new Container is ready and attached to the DOM.
+    //     },
+    //     onEnterCompleted: function(){
+    //         // The Transition has just finished.
 
-        },
-        onEnterCompleted: function(){
-            // The Transition has just finished.
-
-        },
-        onLeave: function(){
-            // A new Transition toward a new page has just started.
-        },
-        onLeaveCompleted: function(){
-            // The Container has just been removed from the DOM.
-        }
-    });
-    Portfolio.init();
+    //     },
+    //     onLeave: function(){
+    //         // A new Transition toward a new page has just started.
+    //     },
+    //     onLeaveCompleted: function(){
+    //         // The Container has just been removed from the DOM.
+    //     }
+    // });
+    // Portfolio.init();
 
 
     ////////////////////////////////////////////////
@@ -150,7 +167,7 @@ $(function(){
         },
         onEnterCompleted: function(){
             // The Transition has just finished.
-            animYearAbout(myScroll, windowWidth);
+            animYearAbout(myScroll, windowWidth, body);
             animTextAbout();
             animTimelineAbout();
             checkIfInView();
@@ -185,21 +202,6 @@ $(function(){
         }
     });
     Contact.init();
-
-
-    ////////////////////////////////////////////////
-    // Transitions in
-    ////////////////////////////////////////////////
-    var transiInHome = require('./transiInHome.js');
-    var transiInPortfolio = require('./transiInPortfolio.js');
-
-    if(body.hasClass('home')){
-        transiInHome();
-    }else if(body.hasClass('portfolio')){
-        transiInPortfolio();
-    }else if(body.hasClass('about')){
-
-    }
 
 
     ////////////////////////////////////////////////

@@ -7,8 +7,8 @@ window.requestAnimFrame = require('./requestAnimFrame.js');
 module.exports = function(myScroll, body, header, skillsHome){
     //var animatingTop = false;
     var /*htmlBody = $('html, body'), blockTitle,*/ video;
-    var isHome = body.hasClass('home') ? true : false;
-    var videoIframe, player;
+    //var isHome = body.hasClass('home') ? true : false;
+    var player, playerDefined = false;
 
     /*function vimeoLoadingThumb(id){
         var url = "http://vimeo.com/api/v2/video/" + id + ".json?callback=showThumb";
@@ -21,16 +21,11 @@ module.exports = function(myScroll, body, header, skillsHome){
         $(id_img).before(script);
     }*/
 
-    if(isHome){
-        videoIframe = document.getElementById('videoIframe');
-        player = new Vimeo.Player(videoIframe);
-    }
-
-    function onScroll(){
+    (function onScroll(){
         //blockTitle = $('#blockTitle');
-        video = $('#video');
+
         //skillsHome = $('#skillsHome');
-        myScroll = $(document).scrollTop();
+
 
         /*if(skillsHome.is(':visible') && !isMobile.any){
             if(body.hasClass('home')){
@@ -66,37 +61,49 @@ module.exports = function(myScroll, body, header, skillsHome){
             }
         }*/
 
-        if(body.hasClass('home')){
-            if(myScroll > 50){
-                video.addClass('off');
-                header.addClass('scrolled');
-                //video.find('video').get(0).pause();
+        //if(!body.hasClass('home')) return;
+
+        playerDefined = $('#videoIframe').length ? true : false;
+        if(playerDefined){
+            player = new Vimeo.Player($('#videoIframe').get(0));
+        }
+
+        video = $('#video');
+        myScroll = $(document).scrollTop();
+
+        if(myScroll > 50){
+            video.addClass('off');
+            header.addClass('scrolled');
+            //video.find('video').get(0).pause();
+            if(playerDefined){
                 player.pause();
-            }else{
-                video.removeClass('off');
-                // if(video.hasClass('ready')){
-                //     video.find('video').get(0).play();
-                // }
-                player.play();
-                header.removeClass('scrolled');
             }
+        }else{
+            video.removeClass('off');
+            // if(video.hasClass('ready')){
+            //     video.find('video').get(0).play();
+            // }
+            if(playerDefined){
+                player.play();
+            }
+            header.removeClass('scrolled');
         }
 
         requestAnimFrame(onScroll);
-    }
+    })();
 
-    if(isHome){
-        onScroll();
+    // if(isHome){
+    //     onScroll();
 
-        /*if(!isMobile.any){
-            body.on('mousewheel', function(e){
-                if(animatingTop){
-                    e.preventDefault();
-                    e.stopPropagation();
-                }
-            });
-        }*/
-    }
+    //     if(!isMobile.any){
+    //         body.on('mousewheel', function(e){
+    //             if(animatingTop){
+    //                 e.preventDefault();
+    //                 e.stopPropagation();
+    //             }
+    //         });
+    //     }
+    // }
 
-    return isHome;
+    // return isHome;
 };
