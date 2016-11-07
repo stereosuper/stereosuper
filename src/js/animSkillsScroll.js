@@ -9,14 +9,15 @@ module.exports = function(myScroll, body, header, skillsHome){
     //var isHome = body.hasClass('home') ? true : false;
 
     (function scrollSkills(){
-        if(!body.hasClass('home')) return;
+        //if(!body.hasClass('home')) return;
+
+        skillsHome = $('#skillsHome');
+        if(!skillsHome.length) return;
 
         myScroll = $(document).scrollTop();
 
         if(myScroll !== lastScroll){
             scrollDir = detectScrollDir(myScroll, lastScroll);
-
-            skillsHome = $('#skillsHome');
 
             // synch with animHeader.js
             if(header.hasClass('scrolled') && myScroll > skillsHome.data('top') && skillsHome.is(':visible')){

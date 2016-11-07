@@ -8,7 +8,7 @@ module.exports = function(myScroll, body, header, skillsHome){
     //var animatingTop = false;
     var /*htmlBody = $('html, body'), blockTitle,*/ video;
     //var isHome = body.hasClass('home') ? true : false;
-    var player;
+    var player, playerDefined = false;
 
     /*function vimeoLoadingThumb(id){
         var url = "http://vimeo.com/api/v2/video/" + id + ".json?callback=showThumb";
@@ -61,9 +61,13 @@ module.exports = function(myScroll, body, header, skillsHome){
             }
         }*/
 
-        if(!body.hasClass('home')) return;
+        //if(!body.hasClass('home')) return;
 
-        player = new Vimeo.Player($('#videoIframe').get(0));
+        playerDefined = $('#videoIframe').length ? true : false;
+        if(playerDefined){
+            player = new Vimeo.Player($('#videoIframe').get(0));
+        }
+
         video = $('#video');
         myScroll = $(document).scrollTop();
 
@@ -71,13 +75,17 @@ module.exports = function(myScroll, body, header, skillsHome){
             video.addClass('off');
             header.addClass('scrolled');
             //video.find('video').get(0).pause();
-            player.pause();
+            if(playerDefined){
+                player.pause();
+            }
         }else{
             video.removeClass('off');
             // if(video.hasClass('ready')){
             //     video.find('video').get(0).play();
             // }
-            player.play();
+            if(playerDefined){
+                player.play();
+            }
             header.removeClass('scrolled');
         }
 

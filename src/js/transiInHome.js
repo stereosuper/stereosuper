@@ -5,7 +5,7 @@ var animSkillsIn = require('./animSkillsIn.js');
 
 module.exports = function(aze){
     var tableSkillsApparition = animSkillsIn();
-    var tlSkillsApparition = new TimelineMax({delay: 0.5, onComplete: function(){
+    var tlSkillsApparition = new TimelineMax({onComplete: function(){
     	if(aze !== undefined){
     	    aze.done();
     	}

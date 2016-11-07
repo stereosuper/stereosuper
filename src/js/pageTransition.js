@@ -41,7 +41,7 @@ module.exports = function(lastClickedLink, body){
             TweenMax.set($el, {visibility: 'visible', opacity: 0});
             $(this.oldContainer).hide();
             $(document).scrollTop(0);
-            TweenMax.to($el, 0.5, {opacity: 1});
+            TweenMax.to($el, 0.3, {opacity: 1});
 
             if(body.hasClass('portfolio')){
                 return transiInPortfolio(_this);

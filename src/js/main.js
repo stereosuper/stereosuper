@@ -92,11 +92,6 @@ $(function(){
             skillsHome = $('#skillsHome');
             skillsTop = skillsHome.offset().top - 100;
             skillsHome.data('top', skillsTop);
-        },
-        onEnterCompleted: function(){
-            // The Transition has just finished.
-
-            var portfolioItems = $('#portfolio').find('.portfolio-item');
 
             // Anim top home
             // if(!animTopSetUp){
@@ -105,11 +100,20 @@ $(function(){
             animTop(myScroll, body, header, skillsHome);
 
             if(!isMobile.any){
+                animSkillsScroll(myScroll, body, header, skillsHome);
+            }
+        },
+        onEnterCompleted: function(){
+            // The Transition has just finished.
+
+            var portfolioItems = $('#portfolio').find('.portfolio-item');
+
+            if(!isMobile.any){
                 // Anim skills with header
                 // if(!animSkillsSetUp){
                 //     animSkillsSetUp = animSkillsScroll(myScroll, body, header, skillsHome);
                 // }
-                animSkillsScroll(myScroll, body, header, skillsHome);
+
 
                 // Anim Refs Home
                 portfolioItemsAnimation(myScroll, windowHeight, windowWidth, portfolioItems);
