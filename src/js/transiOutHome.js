@@ -23,7 +23,7 @@ module.exports = function(lastClickedLink, oldContainer){
             }});
 
             tlFadeOut
-                .to($('.portfolio-item .bg-img'), 0, {opacity: 0, ease: Power4.easeOut})
+                .to($('.portfolio-item').find('.bg-img'), 0, {opacity: 0, ease: Power4.easeOut})
                 .set($(lastClickedLink).find('.bg'), {className: '+=transi'})
                 .set($(lastClickedLink).find('.bg-transition'), {left: -gapLeft+'px', right: -gapRight+'px', scaleX: 0, scaleY: 1})
                 .add([
