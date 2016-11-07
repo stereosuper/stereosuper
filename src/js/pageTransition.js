@@ -17,6 +17,8 @@ module.exports = function(lastClickedLink, body){
         },
 
         fadeOut: function(){
+            $(lastClickedLink).blur();
+
             if(body.hasClass('home')){
                 return transiOutHome(lastClickedLink, $(this.oldContainer));
             }else if(body.hasClass('portfolio')){

@@ -150,7 +150,7 @@ $(function(){
         },
         onEnterCompleted: function(){
             // The Transition has just finished.
-            animYearAbout(myScroll, windowWidth);
+            animYearAbout(myScroll, windowWidth, body);
             animTextAbout();
             animTimelineAbout();
             checkIfInView();
