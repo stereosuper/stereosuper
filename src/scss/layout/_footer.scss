@@ -21,6 +21,9 @@
         text-decoration: none;
         &:hover, &:focus{
             color: rgba(#fff, 0.7);
+            .bw &{
+                color: rgba(#000, 0.7);
+            }
         }
     }
     .footer-about{
