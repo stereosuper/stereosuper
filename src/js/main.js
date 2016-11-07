@@ -29,6 +29,9 @@ $(function(){
 
     var animHandMap = require('./map.js');
 
+    var transiInHome = require('./transiInHome.js');
+    var transiInPortfolio = require('./transiInPortfolio.js');
+
 
     var windowWidth = $(window).outerWidth(), windowHeight = $(window).height();
     var myScroll = $(document).scrollTop();
@@ -37,7 +40,7 @@ $(function(){
     var htmlTag = $('html');
     // var main = $('#main');
     var header = $('#header');
-    var skillsHome = $('#skillsHome');
+    var skillsHome = $('#skillsHome'), skillsTop = 0;
 
 
 
@@ -69,6 +72,17 @@ $(function(){
     //var animTopSetUp = animTop(myScroll, body, header, skillsHome);
 
     ////////////////////////////////////////////////
+    // Transitions in
+    ////////////////////////////////////////////////
+    if(body.hasClass('home')){
+        transiInHome();
+    }else if(body.hasClass('portfolio')){
+        transiInPortfolio();
+    }else if(body.hasClass('about')){
+
+    }
+
+    ////////////////////////////////////////////////
     // Home functions
     ////////////////////////////////////////////////
 
@@ -76,20 +90,19 @@ $(function(){
         onEnter: function(){
             // The new Container is ready and attached to the DOM.
             skillsHome = $('#skillsHome');
-            var skillsTop = skillsHome.offset().top - 100;
+            skillsTop = skillsHome.offset().top - 100;
             skillsHome.data('top', skillsTop);
         },
         onEnterCompleted: function(){
             // The Transition has just finished.
 
-            var portfolioItems = $('#portfolio').find('.portfolio-item'), video = $('#video');
+            var portfolioItems = $('#portfolio').find('.portfolio-item');
 
             // Anim top home
             // if(!animTopSetUp){
             //     animTopSetUp = animTop(myScroll, body, header, skillsHome);
             // }
             animTop(myScroll, body, header, skillsHome);
-
 
             if(!isMobile.any){
                 // Anim skills with header
@@ -185,21 +198,6 @@ $(function(){
         }
     });
     Contact.init();
-
-
-    ////////////////////////////////////////////////
-    // Transitions in
-    ////////////////////////////////////////////////
-    var transiInHome = require('./transiInHome.js');
-    var transiInPortfolio = require('./transiInPortfolio.js');
-
-    if(body.hasClass('home')){
-        transiInHome();
-    }else if(body.hasClass('portfolio')){
-        transiInPortfolio();
-    }else if(body.hasClass('about')){
-
-    }
 
 
     ////////////////////////////////////////////////
