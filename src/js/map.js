@@ -33,7 +33,7 @@ module.exports = function(){
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/stereosuper/ciuqyq3oc00so2jl8t50ltwwl',
-        center: coordinates,
+        center: [-10, 49.2],
         zoom: 5,
         bearing: 20
     });
@@ -66,7 +66,7 @@ module.exports = function(){
         handHeight = hand.height();
 
         setTimeout(function(){
-            map.easeTo({ duration: 7000, zoom: 12, bearing: 0 });
+            map.easeTo({ duration: 7000, zoom: 12, bearing: 0, center: coordinates });
         }, 800);
 
         map.on('moveend', function(){
