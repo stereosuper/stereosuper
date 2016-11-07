@@ -110,7 +110,7 @@
 		vertical-align: top;
 		padding: 2px 0 0 20px;
 	}
-	&:hover{
+	&:hover, &:focus{
 		color: #fff;
 		.icon{
 			fill: $blue;
@@ -118,6 +118,10 @@
 				fill: #fff;
 			}
 		}
+	}
+	&:active{
+		filter: contrast(0);
+		opacity: 0.7;
 	}
 }
 
@@ -141,17 +145,18 @@
 	vertical-align: top;
 	width: 50%;
 	margin: 0;
-	padding: 12px $gutter 22px;
+	padding: 12px 25px 22px;
 	border-right: 1px solid rgba(#fff, 0.3);
 	> li{
 		margin: 0 0 8px;
-		line-height: 1.1;
+		line-height: 1;
 		&:last-child{
 			margin-bottom: 0;
 		}
 	}
 	a{
 		display: inline-block;
+		padding: 2px 5px;
 		position: relative;
 		@include gotham-medium(1rem);
 		text-transform: uppercase;
@@ -168,6 +173,18 @@
 			background: #fff;
 			opacity: 0;
 			transition: $transition;
+		}
+		&.active{
+			background: #fff;
+			color: #000;
+			pointer-events: none;
+			opacity: 1;
+			span, &:before{
+				transform: translate3d(0, 0, 0);
+			}
+			&:before{
+				opacity: 1;
+			}
 		}
 		span{
 			display: block;
@@ -337,6 +354,10 @@
 			.m-icon{
 				width: 20px;
 				height: 30px;
+			}
+			&.active{
+				background: none;
+				color: #fff;
 			}
 			&:hover, &:focus{
 				opacity: 0.5;

@@ -8,7 +8,7 @@ var transiOutHome = require('./transiOutHome.js');
 var transiInPortfolio = require('./transiInPortfolio.js');
 var transiOutPortfolio = require('./transiOutPortfolio.js');
 
-module.exports = function(lastClickedLink, body){
+module.exports = function(lastClickedLink, body, menu){
     return Barba.BaseTransition.extend({
         start: function(){
             Promise
@@ -18,6 +18,10 @@ module.exports = function(lastClickedLink, body){
 
         fadeOut: function(){
             $(lastClickedLink).blur();
+            menu.find('a').removeClass('active');
+            if($(lastClickedLink).parents('.menu-header').length){
+                $(lastClickedLink).addClass('active');
+            }
 
             if(body.hasClass('home')){
                 return transiOutHome(lastClickedLink, $(this.oldContainer));

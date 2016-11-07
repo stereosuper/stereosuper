@@ -303,6 +303,15 @@
 	}
 }
 
+
+@media (max-width: 1050px){
+	.portfolio-item{
+		.souvenir{
+			display: none;
+		}
+	}
+}
+
 @media (max-width: 870px){
 	.portfolio-item{
 		padding: 0;

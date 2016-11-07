@@ -39,7 +39,7 @@ $(function(){
     var body = $('body');
     var htmlTag = $('html');
     // var main = $('#main');
-    var header = $('#header');
+    var header = $('#header'), menu = header.find('.menu-header');
     var skillsHome = $('#skillsHome'), skillsTop = 0;
 
 
@@ -164,6 +164,7 @@ $(function(){
     var About = Barba.BaseView.extend({ namespace: 'about',
         onEnter: function(){
             // The new Container is ready and attached to the DOM.
+            menu.find('li').eq(0).find('a').addClass('active');
         },
         onEnterCompleted: function(){
             // The Transition has just finished.
@@ -189,6 +190,7 @@ $(function(){
     var Contact = Barba.BaseView.extend({ namespace: 'contact',
         onEnter: function(){
             // The new Container is ready and attached to the DOM.
+            menu.find('li').eq(1).find('a').addClass('active');
         },
         onEnterCompleted: function(){
             // The Transition has just finished.
@@ -211,7 +213,7 @@ $(function(){
     Barba.Pjax.start();
     Barba.Dispatcher.on('linkClicked', function(e){
         Barba.Pjax.getTransition = function(){
-            return pageTransition(e, body);
+            return pageTransition(e, body, menu);
         };
     });
     // Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container){
