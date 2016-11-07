@@ -21,7 +21,7 @@ module.exports = function(aze){
         }});
     }
 
-    var tlFadeIn = new TimelineMax({onComplete: fadeInPartTwo}), tpsTransitionFadeIn = 0.3;
+    var tlFadeIn = new TimelineMax({onComplete: fadeInPartTwo});
 
     var twFadeIn1 = new TweenMax.to($('.bgPortfolio'), 0.5, {scaleY:1, ease: Power4.easeOut});
     var twFadeIn2 = new TweenMax.to($('.bgPagePortfolio'), 0.5, {scaleY:1, ease: Power4.easeOut});
