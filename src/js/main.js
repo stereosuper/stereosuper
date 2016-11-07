@@ -37,7 +37,7 @@ $(function(){
     var htmlTag = $('html');
     // var main = $('#main');
     var header = $('#header');
-    var skillsHome = $('#skillsHome'), skillsTop = skillsHome.length ? skillsHome.offset().top - 100 : 0;
+    var skillsHome = $('#skillsHome');
 
 
 
@@ -49,9 +49,8 @@ $(function(){
     // Background blend mode detection
     ////////////////////////////////////////////////
     if('CSS' in window && 'supports' in window.CSS) {
-        var support = window.CSS.supports('mix-blend-mode','soft-light');
-        support = support ? 'mix-blend-mode' : 'no-mix-blend-mode';
-        $('html').addClass(support);
+        var support = window.CSS.supports('mix-blend-mode', 'soft-light') ? 'mix-blend-mode' : 'no-mix-blend-mode';
+        htmlTag.addClass(support);
     }
 
     ////////////////////////////////////////////////
@@ -59,15 +58,15 @@ $(function(){
     ////////////////////////////////////////////////
 
     animHeaderScroll(myScroll, body, header, skillsHome);
-    var animSkillsSetUp = animSkillsScroll(myScroll, body, header, skillsHome);
+    //var animSkillsSetUp = animSkillsScroll(myScroll, body, header, skillsHome);
 
 
     ////////////////////////////////////////////////
     // Anim Top Home
     ////////////////////////////////////////////////
 
-    skillsHome.data('top', skillsTop);
-    var animTopSetUp = animTop(myScroll, body, header, skillsHome);
+    // skillsHome.data('top', skillsTop);
+    //var animTopSetUp = animTop(myScroll, body, header, skillsHome);
 
     ////////////////////////////////////////////////
     // Home functions
@@ -77,26 +76,28 @@ $(function(){
         onEnter: function(){
             // The new Container is ready and attached to the DOM.
             skillsHome = $('#skillsHome');
-            skillsTop = skillsHome.offset().top - 100;
+            var skillsTop = skillsHome.offset().top - 100;
             skillsHome.data('top', skillsTop);
         },
         onEnterCompleted: function(){
             // The Transition has just finished.
 
-            var portfolioItems = $('#portfolio').find('.portfolio-item'),
-                video = $('#video');
+            var portfolioItems = $('#portfolio').find('.portfolio-item'), video = $('#video');
 
             // Anim top home
-            if(!animTopSetUp){
-                animTopSetUp = animTop(myScroll, body, header, skillsHome);
-            }
+            // if(!animTopSetUp){
+            //     animTopSetUp = animTop(myScroll, body, header, skillsHome);
+            // }
+            animTop(myScroll, body, header, skillsHome);
 
-            // Anim skills with header
-            if(!animSkillsSetUp){
-                animSkillsSetUp = animSkillsScroll(myScroll, body, header, skillsHome);
-            }
 
             if(!isMobile.any){
+                // Anim skills with header
+                // if(!animSkillsSetUp){
+                //     animSkillsSetUp = animSkillsScroll(myScroll, body, header, skillsHome);
+                // }
+                animSkillsScroll(myScroll, body, header, skillsHome);
+
                 // Anim Refs Home
                 portfolioItemsAnimation(myScroll, windowHeight, windowWidth, portfolioItems);
 
@@ -121,23 +122,22 @@ $(function(){
     // Portfolio functions
     ////////////////////////////////////////////////
 
-    var Portfolio = Barba.BaseView.extend({ namespace: 'portfolio',
-        onEnter: function(){
-            // The new Container is ready and attached to the DOM.
+    // var Portfolio = Barba.BaseView.extend({ namespace: 'portfolio',
+    //     onEnter: function(){
+    //         // The new Container is ready and attached to the DOM.
+    //     },
+    //     onEnterCompleted: function(){
+    //         // The Transition has just finished.
 
-        },
-        onEnterCompleted: function(){
-            // The Transition has just finished.
-
-        },
-        onLeave: function(){
-            // A new Transition toward a new page has just started.
-        },
-        onLeaveCompleted: function(){
-            // The Container has just been removed from the DOM.
-        }
-    });
-    Portfolio.init();
+    //     },
+    //     onLeave: function(){
+    //         // A new Transition toward a new page has just started.
+    //     },
+    //     onLeaveCompleted: function(){
+    //         // The Container has just been removed from the DOM.
+    //     }
+    // });
+    // Portfolio.init();
 
 
     ////////////////////////////////////////////////

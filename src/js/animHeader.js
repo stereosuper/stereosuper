@@ -16,7 +16,7 @@ module.exports = function(myScroll, body, header, skillsHome){
             skillsHome = $('#skillsHome');
 
             // synch with animSkillsScroll.js (only on home)
-            if((header.hasClass('scrolled') && myScroll > skillsHome.data('top') + 200 && skillsHome.is(':visible')) || !body.hasClass('home')){
+            if(!body.hasClass('home') || (header.hasClass('scrolled') && myScroll > skillsHome.data('top') + 200 && skillsHome.is(':visible'))){
                 if(scrollDir > 0){
                     header.removeClass('off');
                 }else if(scrollDir < 0){
