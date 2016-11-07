@@ -110,14 +110,12 @@
 		position: relative;
 		margin: 0;
 		transform-origin: 50% 50%;
-
 		backface-visibility: hidden;
 		&:before{
 			display: none;
 		}
 		&:after{
 			content: '';
-			display: block;
 			position: absolute;
 			top: 0;
 			right: 0;
@@ -132,7 +130,6 @@
 			outline: 1px solid transparent;
 		}
 		.logo{
-			content: '';
 			max-width: 75%;
 			position: absolute;
 			bottom: 0;
@@ -141,21 +138,21 @@
 			transform: translate3d(0, -50%, 1px);
 			margin: 0;
 			z-index: 3;
-			background-repeat: no-repeat;
-			background-size: 100%;
-			background-position: 50% 50%;
-			//text-indent: -99em;
-			background: none!important;
+			// background-repeat: no-repeat;
+			// background-size: 100%;
+			// background-position: 50% 50%;
+			text-indent: -99em;
+			// background: none !important;
 			overflow: hidden;
 			.icon{
 				width: 100%;
 				height: 100%;
 				fill: #fff;
+				float: left;
 			}
 		}
 	}
 	.bg{
-		display: block;
 		height: auto;
 		position: absolute;
 		top: 0;
@@ -171,7 +168,6 @@
 		}
 	}
 	.wrapper-bg-img{
-		display: block;
 		height: auto;
 		position: absolute;
 		top: 0;
@@ -186,7 +182,6 @@
 		@include fixAnimation;
 	}
 	.bg-img{
-		display: block;
 		height: auto;
 		position: absolute;
 		top: 0;
@@ -203,7 +198,6 @@
 		@include fixAnimation;
 	}
 	.bg-transition{
-		display: block;
 		width: auto;
 		height: auto;
 		position: absolute;
@@ -272,7 +266,7 @@
     		.logo{
     			width: #{nth($portfolioWidths, $i)}px;
     			height: #{nth($portfolioHeights, $i)}px;
-    			background-image: url(../img/logo-#{$name}.png);
+    			// background-image: url(../img/logo-#{$name}.png);
     		}
     		.bg, .bg-transition{
     			background: nth($portfolioColors, $i);
