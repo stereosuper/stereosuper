@@ -1,4 +1,5 @@
 var $ = require('./libs/jquery/dist/jquery.slim.min.js');
+var mapboxgl = require('mapbox-gl');
 
 module.exports = function(){
     function transform(x, y, centerX, centerY, maxX, maxY){
