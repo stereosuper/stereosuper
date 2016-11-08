@@ -24,6 +24,9 @@ h1{
         display: block;
         line-height: 1.2;
     }
+    .js &{
+        opacity: 0;
+    }
 }
 
 .text-home{
@@ -36,6 +39,13 @@ h1{
     p{
         line-height: 1.4;
     }
+    p, .link-arrow{
+        .js &{
+            opacity: 0;
+            transform: translate3d(0, 40px, 0);
+        }
+    }
+
 }
 
 .wrapper-video-home{

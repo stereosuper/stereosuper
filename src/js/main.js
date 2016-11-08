@@ -43,8 +43,7 @@ $(function(){
     var skillsHome = $('#skillsHome'), skillsTop = 0;
 
 
-
-    htmlTag.removeClass('no-js').addClass('js');
+    console.log(htmlTag)
     isMobile.any ? htmlTag.addClass('is-mobile') : htmlTag.addClass('is-desktop');
 
 
