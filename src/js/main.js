@@ -43,7 +43,6 @@ $(function(){
     var skillsHome = $('#skillsHome'), skillsTop = 0;
 
 
-    console.log(htmlTag)
     isMobile.any ? htmlTag.addClass('is-mobile') : htmlTag.addClass('is-desktop');
 
 
@@ -88,6 +87,8 @@ $(function(){
     var Home = Barba.BaseView.extend({ namespace: 'home',
         onEnter: function(){
             // The new Container is ready and attached to the DOM.
+            var portfolioItems = $('#portfolio').find('.portfolio-item');
+
             skillsHome = $('#skillsHome');
             skillsTop = skillsHome.offset().top - 100;
             skillsHome.data('top', skillsTop);
@@ -100,19 +101,6 @@ $(function(){
 
             if(!isMobile.any){
                 animSkillsScroll(myScroll, body, header, skillsHome);
-            }
-        },
-        onEnterCompleted: function(){
-            // The Transition has just finished.
-
-            var portfolioItems = $('#portfolio').find('.portfolio-item');
-
-            if(!isMobile.any){
-                // Anim skills with header
-                // if(!animSkillsSetUp){
-                //     animSkillsSetUp = animSkillsScroll(myScroll, body, header, skillsHome);
-                // }
-
 
                 // Anim Refs Home
                 portfolioItemsAnimation(myScroll, windowHeight, windowWidth, portfolioItems);
@@ -120,6 +108,25 @@ $(function(){
                 // Anim skills hover
                 animSkillsHover(body, portfolioItems);
             }
+        },
+        onEnterCompleted: function(){
+            // The Transition has just finished.
+
+            // var portfolioItems = $('#portfolio').find('.portfolio-item');
+
+            // if(!isMobile.any){
+            //     // Anim skills with header
+            //     // if(!animSkillsSetUp){
+            //     //     animSkillsSetUp = animSkillsScroll(myScroll, body, header, skillsHome);
+            //     // }
+
+
+            //     // Anim Refs Home
+            //     portfolioItemsAnimation(myScroll, windowHeight, windowWidth, portfolioItems);
+
+            //     // Anim skills hover
+            //     animSkillsHover(body, portfolioItems);
+            // }
 
             // video.find('video').on('canplaythrough', function(){
             //     video.addClass('ready').find('video').get(0).play();
