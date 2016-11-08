@@ -4,9 +4,9 @@ var checkScrollSpeed = require('./checkScrollSpeed.js');
 window.requestAnimFrame = require('./requestAnimFrame.js');
 
 module.exports = function(){
-	var firstYearTop, centerFirstYearTop, containerTimelineHeight, posiDownScroll, posiUpScroll, wasGoingDown, isDoingAction = false,
+	var firstYearTop, centerFirstYearTop, containerTimelineHeight, posiDownScroll, posiUpScroll,
 		years = $('#year').find('.year'),
-		timeline = $('#timeline'), contentTimeline = $('#content-timeline'), tlDown = $('.tl.down'), tlUp = $('.tl.up'),
+		timeline = $('#timeline'), contentTimeline = $('#content-timeline'), tl = $('#tl'),
 		rCheck, scaleValue;
     
     firstYearTop = years.first().data('top');
@@ -19,40 +19,16 @@ module.exports = function(){
     (function onScroll(){
     	rCheck = checkScrollSpeed();
         scaleValue = Math.abs(rCheck[0]/100)*3;
-        console.log(scaleValue);
         if(rCheck[1] === true){
         	// downscroll
         	TweenMax.set(contentTimeline, {y: posiDownScroll+'px'});
-            TweenMax.to(tlDown, 1, {scaleY: scaleValue});
-            if(wasGoingDown == undefined){
-                TweenMax.set(tlDown, {opacity: 1});
-                TweenMax.set(tlUp, {opacity: 0});
-            }else if(!wasGoingDown && !isDoingAction){
-                isDoingAction == true;
-                TweenMax.set(tlDown, {opacity: 1});
-                TweenMax.to(tlUp, 2, {opacity: 0});
-                TweenMax.to(tlUp, 2, {scaleY: 0, onComplete: function(){
-                    isDoingAction == false;
-                }});
-            }
-            wasGoingDown = true;
+            TweenMax.set(tl, {transformOrigin: '0 100%'});
         }else{
     		// upscroll
     		TweenMax.set(contentTimeline, {y: posiUpScroll+'px'});
-            TweenMax.to(tlUp, 1, {scaleY: scaleValue});
-            if(wasGoingDown == undefined){
-                TweenMax.set(tlDown, {opacity: 0});
-                TweenMax.set(tlUp, {opacity: 1});
-            }else if(wasGoingDown && !isDoingAction){
-                isDoingAction == true;
-                TweenMax.set(tlUp, {opacity: 1});
-                TweenMax.to(tlDown, 2, {opacity: 0});
-                TweenMax.to(tlDown, 2, {scaleY: 0, onComplete: function(){
-                    isDoingAction == false;
-                }});
-            }
-            wasGoingDown = false;
+            TweenMax.set(tl, {transformOrigin: '0 0'});
         }
+        TweenMax.to(tl, 1, {scaleY: scaleValue});
         requestAnimFrame(onScroll);
     })();
 }
