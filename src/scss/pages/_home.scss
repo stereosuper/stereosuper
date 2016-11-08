@@ -58,7 +58,7 @@ h1{
         height: 100%;
         object-fit: cover;
     }
-    &.off{
+    &.off, .no-js &{
         opacity: 0;
     }
     iframe{

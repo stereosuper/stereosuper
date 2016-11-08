@@ -47,7 +47,7 @@
 	}
 	.home &{
 		background: none;
-		&.scrolled{
+		&.scrolled, .no-js &{
 			background: #000;
 		}
 	}

@@ -34,8 +34,10 @@
         color: #fff;
         background-repeat: no-repeat;
         background-size: 100%;
-        transform: translateY(-40px);
-        opacity: 0;
+        .js &{
+            transform: translateY(-40px);
+            opacity: 0;
+        }
     }
     #barba-wrapper{
         padding: 0;
@@ -127,7 +129,9 @@
     left: 0;
     z-index: 1;
     margin: 0 0 20px;
-    opacity: 0;
+    .js &{
+        opacity: 0;
+    }
 }
 .portfolio-cover-mb{
     display: none;
@@ -144,9 +148,10 @@
     margin: 0 0 0 50%;
     p{
         padding: 0 $gutter;
-
-        transform: translateY(-40px);
-        opacity: 0;
+        .js &{
+            transform: translateY(-40px);
+            opacity: 0;
+        }
     }
     .btn-close{
         position: absolute;
@@ -164,8 +169,10 @@
         margin: 0 0 0 50%;
     }
     p, a{
-        transform: translateY(-40px);
-        opacity: 0;
+        .js &{
+            transform: translateY(-40px);
+            opacity: 0;
+        }
     }
     a{
         display: inline-block;
