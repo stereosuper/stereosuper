@@ -24,8 +24,10 @@ h1{
         display: block;
         line-height: 1.2;
     }
-    .js &{
-        opacity: 0;
+    .home &{
+        .js &{
+            opacity: 0;
+        }
     }
 }
 
