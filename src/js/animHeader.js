@@ -30,7 +30,7 @@ module.exports = function(myScroll, body, header, skillsHome){
 
     var scrollHandler = throttle(function(){
         requestAnimFrame(scrollHeader);
-    }, 40);
+    }, 10);
 
     if(!isMobile.any){
         $(document).on('scroll', scrollHandler);
