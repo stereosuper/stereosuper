@@ -12,6 +12,7 @@ $(function(){
     // window.requestAnimFrame = require('./requestAnimFrame.js');
     // var getPosWithoutTranslate = require('./getPosWithoutTranslate.js');
     // var stringToArray = require('./stringToArray.js');
+    var throttle = require('./throttle.js');
 
     var pageTransition = require('./pageTransition.js');
     var animHeaderScroll = require('./animHeader.js');
@@ -87,7 +88,8 @@ $(function(){
     var Home = Barba.BaseView.extend({ namespace: 'home',
         onEnter: function(){
             // The new Container is ready and attached to the DOM.
-            var portfolioItems = $('#portfolio').find('.portfolio-item');
+            var portfolio = $('#portfolio');
+            var portfolioItems = portfolio.find('.portfolio-item');
 
             skillsHome = $('#skillsHome');
             skillsTop = skillsHome.offset().top - 100;
@@ -103,7 +105,7 @@ $(function(){
                 animSkillsScroll(myScroll, body, header, skillsHome);
 
                 // Anim Refs Home
-                portfolioItemsAnimation(myScroll, windowHeight, windowWidth, portfolioItems);
+                portfolioItemsAnimation(myScroll, windowHeight, windowWidth, portfolioItems, portfolio, body);
 
                 // Anim skills hover
                 animSkillsHover(body, portfolioItems);
@@ -228,12 +230,12 @@ $(function(){
     //     }
     // });
 
-    $(window).on('resize', function(){
+    $(window).on('resize', throttle(function(){
         if(skillsHome.length && !skillsHome.hasClass('fixed')){
             skillsTop = skillsHome.offset().top - 100;
             skillsHome.data('top', skillsTop);
         }
-	}).on('load', function(){
+	}, 60)).on('load', function(){
 
 	});
 
