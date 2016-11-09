@@ -2,13 +2,14 @@ var $ = require('./libs/jquery/dist/jquery.slim.min.js');
 //var TweenMax = require('./libs/gsap/src/uncompressed/TweenMax.js');
 //var isMobile = require('./isMobile.min.js');
 
+var throttle = require('./throttle.js');
 window.requestAnimFrame = require('./requestAnimFrame.js');
 
 module.exports = function(myScroll, body, header, skillsHome){
     //var animatingTop = false;
     var /*htmlBody = $('html, body'), blockTitle,*/ video;
     //var isHome = body.hasClass('home') ? true : false;
-    var player, playerDefined = false;
+    var player;
 
     /*function vimeoLoadingThumb(id){
         var url = "http://vimeo.com/api/v2/video/" + id + ".json?callback=showThumb";
@@ -21,7 +22,7 @@ module.exports = function(myScroll, body, header, skillsHome){
         $(id_img).before(script);
     }*/
 
-    (function onScroll(){
+    function onScroll(){
         //blockTitle = $('#blockTitle');
 
         //skillsHome = $('#skillsHome');
@@ -61,12 +62,9 @@ module.exports = function(myScroll, body, header, skillsHome){
             }
         }*/
 
-        //if(!body.hasClass('home')) return;
+        if(!body.hasClass('home')) return;
 
-        playerDefined = $('#videoIframe').length ? true : false;
-        if(playerDefined){
-            player = new Vimeo.Player($('#videoIframe').get(0));
-        }
+        player = new Vimeo.Player($('#videoIframe').get(0));
 
         video = $('#video');
         myScroll = $(document).scrollTop();
@@ -75,22 +73,22 @@ module.exports = function(myScroll, body, header, skillsHome){
             video.addClass('off');
             header.addClass('scrolled');
             //video.find('video').get(0).pause();
-            if(playerDefined){
-                player.pause();
-            }
+            player.pause();
         }else{
             video.removeClass('off');
             // if(video.hasClass('ready')){
             //     video.find('video').get(0).play();
             // }
-            if(playerDefined){
-                player.play();
-            }
+            player.play();
             header.removeClass('scrolled');
         }
+    }
 
+    var scrollHandler = throttle(function(){
         requestAnimFrame(onScroll);
-    })();
+    }, 40);
+
+    $(document).on('scroll', scrollHandler);
 
     // if(isHome){
     //     onScroll();
