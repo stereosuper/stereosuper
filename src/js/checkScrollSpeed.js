@@ -1,8 +1,8 @@
 var $ = require('./libs/jquery/dist/jquery.slim.min.js');
 
-module.exports = function(){
-	var delta, lastPos, timer = 0, newPos, downscroll;
+var delta, lastPos, timer = 0, newPos, downscroll;
 
+module.exports = function(){
 	function clear(){
 		lastPos = undefined;
 		delta = 0;
