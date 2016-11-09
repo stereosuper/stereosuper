@@ -384,6 +384,12 @@
 	}
 }
 
+@media (max-width: 1200px) and (max-height: 800px){
+	.portfolio-list{
+		padding-top: 100px;
+	}
+}
+
 @media (max-height: 767px){
 	.portfolio-item{
 		height: 130px;

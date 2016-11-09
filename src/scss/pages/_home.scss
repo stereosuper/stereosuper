@@ -165,6 +165,10 @@ h1{
     @media (max-height: 800px){
         .skills-home{
             position: static;
+            &.fixed{
+                position: static;
+                transform: none !important;
+            }
             .skills{
                 padding-top: 100px;
             }
