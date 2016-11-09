@@ -4,18 +4,20 @@ var checkScrollSpeed = require('./checkScrollSpeed.js');
 var throttle = require('./throttle.js');
 window.requestAnimFrame = require('./requestAnimFrame.js');
 
-module.exports = function(){
+module.exports = function(body){
 	var years = $('#year').find('.year'), timeline = $('#timeline'), contentTimeline = $('#content-timeline'), tl = $('#tl'),
 		rCheck, scaleValue;
 
     var firstYearTop = years.eq(0).data('top');
     var centerFirstYearTop = firstYearTop + (years.eq(0).outerHeight()/2);
-    var containerTimelineHeight = $('#content-timeline').outerHeight();
+    var containerTimelineHeight = contentTimeline.outerHeight();
     var posiDownScroll = -containerTimelineHeight + centerFirstYearTop;
     var posiUpScroll = centerFirstYearTop;
 
     function onScroll(){
-    	rCheck = checkScrollSpeed();
+        if(!body.hasClass('about')) return;
+
+        rCheck = checkScrollSpeed();
         scaleValue = Math.abs(rCheck[0]/100)*3;
         if(rCheck[1] === true){
         	// downscroll

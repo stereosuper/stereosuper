@@ -177,9 +177,9 @@ $(function(){
         onEnterCompleted: function(){
             // The Transition has just finished.
             animYearAbout(myScroll, windowWidth, body);
-            animTextAbout();
-            animTimelineAbout();
+            animTimelineAbout(body);
             checkIfInView();
+            animTextAbout();
         },
         onLeave: function(){
             // A new Transition toward a new page has just started.

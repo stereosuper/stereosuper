@@ -1,20 +1,16 @@
 var $ = require('./libs/jquery/dist/jquery.slim.min.js');
 
-var delta,
-	lastPos,
-	timer = 0,
-	newPos,
-	downscroll;
-
 module.exports = function(){
-	function clear() {
+	var delta, lastPos, timer = 0, newPos, downscroll;
+
+	function clear(){
 		lastPos = undefined;
 		delta = 0;
 	}
 	// newPos = window.scrollY;
 	newPos = $(document).scrollTop();
 
-	if (lastPos != undefined){
+	if(lastPos != undefined){
 		delta = newPos - lastPos;
 
 		if(delta > 0){
