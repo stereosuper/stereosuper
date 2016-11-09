@@ -1,22 +1,20 @@
 var $ = require('./libs/jquery/dist/jquery.slim.min.js');
-var checkScrollSpeed = require('./checkScrollSpeed.js');
 
+var checkScrollSpeed = require('./checkScrollSpeed.js');
+var throttle = require('./throttle.js');
 window.requestAnimFrame = require('./requestAnimFrame.js');
 
 module.exports = function(){
-	var firstYearTop, centerFirstYearTop, containerTimelineHeight, posiDownScroll, posiUpScroll,
-		years = $('#year').find('.year'),
-		timeline = $('#timeline'), contentTimeline = $('#content-timeline'), tl = $('#tl'),
+	var years = $('#year').find('.year'), timeline = $('#timeline'), contentTimeline = $('#content-timeline'), tl = $('#tl'),
 		rCheck, scaleValue;
-    
-    firstYearTop = years.first().data('top');
-    centerFirstYearTop = firstYearTop + (years.first().outerHeight()/2);
-    containerTimelineHeight = $('#content-timeline').outerHeight();
-    posiDownScroll = -containerTimelineHeight + centerFirstYearTop;
-    posiUpScroll = centerFirstYearTop;
 
+    var firstYearTop = years.eq(0).data('top');
+    var centerFirstYearTop = firstYearTop + (years.eq(0).outerHeight()/2);
+    var containerTimelineHeight = $('#content-timeline').outerHeight();
+    var posiDownScroll = -containerTimelineHeight + centerFirstYearTop;
+    var posiUpScroll = centerFirstYearTop;
 
-    (function onScroll(){
+    function onScroll(){
     	rCheck = checkScrollSpeed();
         scaleValue = Math.abs(rCheck[0]/100)*3;
         if(rCheck[1] === true){
@@ -29,6 +27,11 @@ module.exports = function(){
             TweenMax.set(tl, {transformOrigin: '0 0'});
         }
         TweenMax.to(tl, 1, {scaleY: scaleValue});
+    }
+
+    var scrollHandler = throttle(function(){
         requestAnimFrame(onScroll);
-    })();
+    }, 10);
+
+    $(document).on('scroll', scrollHandler);
 }
