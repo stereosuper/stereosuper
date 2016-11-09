@@ -65,7 +65,7 @@ module.exports = function(body, portfolioItems){
         portfolioItems.removeClass('off');
         symbolToAnimate = $(this).find('.hoverAnimation');
         TweenMax.to(symbolToAnimate, 0.3, {scaleX: 1, x: 0});
-        TweenMax.to([$('.portfolio-item .wrapper-bg-img'), $('.portfolio-item .bg')], 0.2, {opacity: 1});
+        TweenMax.to([portfolioItems.find('.wrapper-bg-img'), portfolioItems.find('.bg')], 0.2, {opacity: 1});
     });
 
     body.on('mouseenter', '.portfolio-item', function(){
