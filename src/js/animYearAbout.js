@@ -3,7 +3,8 @@ var TweenMax = require('./libs/gsap/src/uncompressed/TweenMax.js');
 var drawSVG = require('./libs/gsap/src/uncompressed/plugins/DrawSvgPlugin.js');
 // var isMobile = require('./isMobile.min.js');
 
-// window.requestAnimFrame = require('./requestAnimFrame.js');
+var throttle = require('./throttle.js');
+window.requestAnimFrame = require('./requestAnimFrame.js');
 // var detectScrollDir = require('./detectScrollDir.js');
 // var svgYearContent = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 102 102" class="svg-year-content"><path stroke-width="1" d="M50,0L50,0c27.6,0,50,22.4,50,50v0c0,27.6-22.4,50-50,50h0C22.4,100,0,77.6,0,50v0C0,22.4,22.4,0,50,0z"/></svg>';
 
@@ -110,21 +111,25 @@ module.exports = function(myScroll, windowWidth, body){
         TweenMax.set(svg.find('path'), {drawSVG: '0%'});
     }
 
+    var scrollHandler = throttle(function(){
+        requestAnimFrame(scrollProgression);
+        requestAnimFrame(zIndexContainerYearLandmark);
+    }, 40);
+
+    var resizeHandler = throttle(function(){
+        windowWidth = $(window).outerWidth();
+        setYearsPosition(scrollProgression);
+    }, 40);
+
     setYearsPosition();
 
     scrollProgression();
     zIndexContainerYearLandmark();
 
-    $(document).on('scroll', function(){
-        scrollProgression();
-        zIndexContainerYearLandmark();
-    });
+    $(document).on('scroll', scrollHandler);
 
     $(window).on('resize', function(){
-        windowWidth = $(window).outerWidth();
-        setYearsPosition();
-
-        scrollProgression();
-        zIndexContainerYearLandmark();
+        resizeHandler();
+        scrollHandler();
     });
 }
