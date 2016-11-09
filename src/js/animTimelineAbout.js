@@ -1,7 +1,7 @@
 var $ = require('./libs/jquery/dist/jquery.slim.min.js');
 
 var checkScrollSpeed = require('./checkScrollSpeed.js');
-var throttle = require('./throttle.js');
+// var throttle = require('./throttle.js');
 window.requestAnimFrame = require('./requestAnimFrame.js');
 
 module.exports = function(body){
@@ -14,7 +14,7 @@ module.exports = function(body){
     var posiDownScroll = -containerTimelineHeight + centerFirstYearTop;
     var posiUpScroll = centerFirstYearTop;
 
-    function onScroll(){
+    (function onScroll(){
         if(!body.hasClass('about')) return;
 
         rCheck = checkScrollSpeed();
@@ -29,11 +29,13 @@ module.exports = function(body){
             TweenMax.set(tl, {transformOrigin: '0 0'});
         }
         TweenMax.to(tl, 1, {scaleY: scaleValue});
-    }
 
-    var scrollHandler = throttle(function(){
         requestAnimFrame(onScroll);
-    }, 10);
+    })();
 
-    $(document).on('scroll', scrollHandler);
+    // var scrollHandler = throttle(function(){
+    //     requestAnimFrame(onScroll);
+    // }, 10);
+
+    // $(document).on('scroll', scrollHandler);
 }
