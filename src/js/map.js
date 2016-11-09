@@ -71,6 +71,8 @@ module.exports = function(){
         }, 800);
 
         map.on('moveend', function(){
+            if(!mapHtml.length) return;
+
             markerY = marker.offset().top + markerHeight;
             markerX = marker.offset().left + markerHalfWidth;
             hand.css({'left': markerX - handWidth + 'px', 'top': markerY - handHeight + 'px'}).addClass('on');
