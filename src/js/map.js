@@ -1,6 +1,8 @@
 var $ = require('./libs/jquery/dist/jquery.slim.min.js');
 var mapboxgl = require('mapbox-gl');
 
+var throttle = require('./throttle.js');
+
 module.exports = function(){
     function transform(x, y, centerX, centerY, maxX, maxY){
         var deltaX = centerX - x, deltaY = centerY - y,
@@ -96,10 +98,10 @@ module.exports = function(){
         });
     });
 
-    $(window).on('resize', function(){
+    $(window).on('resize', throttle(function(){
         coordinates = $(window).outerWidth() < 1100 ? [-1.59, 47.2] : [-1.62, 47.2];
         map.flyTo({center: coordinates});
-    });
+    }, 100));
 }
 
 
