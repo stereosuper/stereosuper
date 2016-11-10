@@ -168,6 +168,12 @@
 .portfolio-cover-mb{
     display: none;
     margin: 0 0 -10%;
+    img{
+        max-width: 1100px;
+        position: relative;
+        left: 47%;
+        transform: translate3d(-50%, 0, 0);
+    }
 }
 
 .portfolio-desc{
@@ -258,6 +264,14 @@
 
     .portfolio-role-content{
         padding-left: 0;
+    }
+}
+
+@media (max-width: 750px){
+    .portfolio-cover-mb{
+        img{
+            max-width: 145%;
+        }
     }
 }
 
