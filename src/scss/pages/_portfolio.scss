@@ -38,6 +38,15 @@
             transform: translateY(-40px);
             opacity: 0;
         }
+        &.iadvize{
+            margin-left: -13px;
+        }
+        &.akeneo, &.avignon, &.wisembly{
+            margin-left: -25px;
+        }
+        &.captain{
+            margin-left: -35px;
+        }
     }
     #barba-wrapper{
         padding: 0;
@@ -234,6 +243,11 @@
 }
 
 @media (max-width: 960px){
+    .portfolio{
+        h1{
+            margin-left: $gutter !important;
+        }
+    }
     .portfolio-text, .portfolio-role-content{
         width: 100%;
         margin: 0;
@@ -252,7 +266,7 @@
 @media (max-width: 870px){
     .portfolio{
         h1{
-            margin-left: 0;
+            margin-left: 0 !important;
         }
     }
 

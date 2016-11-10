@@ -15,7 +15,7 @@
             </div>
             <div class='container p-relative'>
                 <div class='portfolio-text'>
-                    <h1>{% block portfolio_title %}{% endblock %}</h1>
+                    <h1 class='{% block portfolio_slug %}{% endblock %}'>{% block portfolio_title %}{% endblock %}</h1>
                     {% block portfolio_text %}{% endblock %}
                     <a href='./' class='btn-close'>Fermer</a>
                 </div>
