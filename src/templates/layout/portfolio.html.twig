@@ -11,7 +11,7 @@
         <!--<div class='bgPortfolio'></div>-->
         <section class='portfolio-desc p-relative'>
             <div class='portfolio-cover {{ cover_class }}'>
-                <img src='img/cover-{% block portfolio_slug %}{% endblock %}.{{ cover_ext }}' alt=''>
+                <img src='img/portfolio/cover-{% block portfolio_slug %}{% endblock %}.{{ cover_ext }}' srcset='img/portfolio/cover-{% block portfolio_slug %}{% endblock %}@2.{{ cover_ext }} 2x' alt=''>
             </div>
             <div class='container p-relative'>
                 <div class='portfolio-text'>
@@ -20,8 +20,8 @@
                     <a href='./' class='btn-close'>Fermer</a>
                 </div>
             </div>
-            <!--<div class='portfolio-cover-mb'><img src='img/mb-cover-{% block portfolio_slug %}{% endblock %}.png' alt=''></div>-->
-            <div class='portfolio-cover-mb'><img src='img/mb-cover-wisembly.png' alt=''></div>
+            <!--<div class='portfolio-cover-mb'><img src='img/portfolio/mb-cover-{% block portfolio_slug %}{% endblock %}.png' alt=''></div>-->
+            <div class='portfolio-cover-mb'><img src='img/portfolio/mb-cover-wisembly.png' alt=''></div>
         </section>
 
         <section class='portfolio-role'>
