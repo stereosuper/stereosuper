@@ -324,6 +324,10 @@
             width: 0;
         }
     }
+    #timeline{
+        left: $gutter;
+        margin: 0;
+    }
     [data-year]{
         display: block;
         padding-top: 50px;
