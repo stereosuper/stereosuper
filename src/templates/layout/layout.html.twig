@@ -31,7 +31,7 @@
 
     <body {% block body_attr %}{% endblock %}>
 
-        <header id='header'>
+        <header id='header' role='banner'>
             <div class='container'>
                 <div class='header-left'>
                     <div class='wrapper-logo'>
@@ -54,7 +54,7 @@
                             </a>
                         </li>
                     </ul>
-                </div><div class='header-right'>
+                </div><nav class='header-right' role='navigation'>
                     <ul class='menu-header'>
                         <li>
                             <a href='about.html'><span>À propos</span></a>
@@ -90,15 +90,15 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+                </nav>
             </div>
         </header>
 
-        <main id='barba-wrapper'>
+        <main id='barba-wrapper' role='main'>
             {% block content %}{% endblock %}
         </main>
 
-        <footer id='footer'>
+        <footer id='footer' role='contentinfo'>
             <div class='container'>
                 <a href='about.html' class='link-arrow link-caps footer-about'>
                     <span>A propos</span>
