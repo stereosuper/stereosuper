@@ -12,6 +12,7 @@
 	//overflow: hidden;
 	backface-visibility: hidden;
 	ul{
+		padding: 0 0 20px;
 		margin: 0;
 	}
 }
@@ -340,12 +341,13 @@
 			top: 40px;
 		}
 		.title{
-			max-width: 60%;
+			max-width: 65%;
 			height: auto;
 			padding: 0;
 			position: absolute;
 			left: 10px;
-			top: 110px;
+			//top: 110px;
+			bottom: -90px;
 		}
 		time{
 			height: auto;

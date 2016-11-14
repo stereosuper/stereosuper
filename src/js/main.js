@@ -219,15 +219,17 @@ $(function(){
     ////////////////////////////////////////////////
 
     Barba.Pjax.start();
+    Barba.Pjax.getTransition = function(){
+        return pageTransition(body, menu);
+    };
     Barba.Dispatcher.on('linkClicked', function(e){
         Barba.Pjax.getTransition = function(){
-            return pageTransition(e, body, menu);
+            return pageTransition(body, menu, $(e));
         };
     });
+
     // Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container){
-    //     if(!animTopSetUp){
-    //         animTop(myScroll, body, header, skillsHome, skillsTop);
-    //     }
+    //     console.log(Barba.HistoryManager.currentStatus())
     // });
 
     $(window).on('resize', throttle(function(){

@@ -6,6 +6,8 @@ module.exports = function(){
     var textWrapper = $('#writting'), texts = stringToArray(textWrapper.data('text')), i = 0, currentText, j = 0;
 
     (function type(){
+        if(!textWrapper.length) return;
+
         currentText = texts[j].slice(0, i++);
         textWrapper.html(currentText);
 
@@ -16,5 +18,7 @@ module.exports = function(){
         }else{
             setTimeout(type, 70);
         }
+
+        console.log('yo')
     })();
 }

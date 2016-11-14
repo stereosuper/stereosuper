@@ -6,8 +6,8 @@ module.exports = function(lastClickedLink, oldContainer){
     var tlFadeOut;
 
     return new Promise( function(resolve, reject){
-        if($(lastClickedLink).parents('.portfolio-item').length){
-            $(lastClickedLink).find('h2').prepend('<span class="bg-transition"></span>');
+        if(lastClickedLink !== undefined && lastClickedLink.parents('.portfolio-item').length){
+            lastClickedLink.find('h2').prepend('<span class="bg-transition"></span>');
 
             var gapLeft = $(lastClickedLink).find('h2').offset().left;
             var gapRight = $(window).outerWidth() - gapLeft - $(lastClickedLink).find('h2').outerWidth();

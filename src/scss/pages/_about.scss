@@ -285,6 +285,7 @@
     }
 
     .text-img{
+        margin-right: 0;
         span{
             display: block;
             width: auto;
@@ -371,12 +372,24 @@
         display: none;
     }
 
+    .team{
+        img{
+            margin: 0 1.15%;
+        }
+    }
+
     .footer-page-about{
         .content-about{
             &:before{
                 display: none;
             }
         }
+    }
+}
+
+@media (max-width: 320px){
+    .fade-txt-wrapper{
+        display: none;
     }
 }
 
