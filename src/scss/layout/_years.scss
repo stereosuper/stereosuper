@@ -1,14 +1,16 @@
 /* Years (about page) */
 
-.container-year{
+.container-year, .container-timeline, .container-year-landmark{
     position: absolute;
     top: -170px;
     bottom: 0;
-    left: 0;
     right: 0;
-    //z-index: 1;
+    left: 0;
     z-index: 3;
     pointer-events: none;
+}
+
+.container-year{
     svg{
         width: 125px;
         height: 125px;
@@ -18,13 +20,6 @@
     }
 }
 .container-timeline{
-    position: absolute;
-    top: -170px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 3;
-    pointer-events: none;
     &:after{
         content: '';
         // border-right: 1px solid rgba($blue, 0.5);
@@ -37,8 +32,17 @@
         left: 30px;
     }
 }
+.container-year-landmark{
+    z-index: 2;
+    &.big-z-index{
+        z-index: 4;
+    }
+    .no-js &{
+        display: none;
+    }
+}
+
 #timeline{
-    display: block;
     width: 1px;
     height: auto;
     position: absolute;
@@ -50,13 +54,11 @@
     z-index: 2;
     margin-left: -1px;
     #content-timeline{
-        display: block;
         width: 1px;
         height: 100%;
         position: fixed;
         backface-visibility: hidden;
         #tl{
-            display: block;
             position: absolute;
             width: 100%;
             height: 100%;
@@ -67,21 +69,7 @@
         }
     }
 }
-.container-year-landmark{
-    position: absolute;
-    top: -170px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 2;
-    pointer-events: none;
-    &.big-z-index{
-        z-index: 4;
-    }
-    .no-js &{
-        display: none;
-    }
-}
+
 .year-landmark-wrapper{
     position: absolute;
     top: 0;
@@ -89,14 +77,18 @@
     left: $gutter;
     right: $gutter;
 }
-.year-landmark{
-    position: fixed;
+
+.year, .year-landmark{
     width: 125px;
     height: 125px;
     @include gotham-medium(1em);
+    line-height: 125px;
     text-transform: uppercase;
     text-align: center;
-    line-height: 125px;
+}
+.year-landmark{
+    position: fixed;
+    top: -100px;
     color: $blue;
     .border-svg{
         position: absolute;
@@ -118,13 +110,6 @@
     }
 }
 .year{
-    // width: 80px;
-    width: 125px;
-    height: 125px;
-    @include gotham-medium(1em);
-    text-transform: uppercase;
-    text-align: center;
-    line-height: 125px;
     border-radius: 50%;
     span{
         opacity: 0;
