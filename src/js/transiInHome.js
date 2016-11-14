@@ -15,7 +15,8 @@ module.exports = function(aze){
     var t1 = new TweenMax.to(blockTitle.find('h1'), 0.3, {opacity: 1, ease: Power4.easeOut, delay: 0.5});
     var t2 = new TweenMax.to(blockTitle.find('p'), 0.3, {y: 0, opacity: 1, ease: Power4.easeOut, delay: 1});
     var t3 = new TweenMax.to(blockTitle.find('.link-arrow'), 0.3, {y: 0, opacity: 1, ease: Power4.easeOut, delay: 0.8});
-    var t4 = new TweenMax.to($('.skills'), 0.5, {y: 0, opacity: 1, ease: Circ.easeOut, delay: 0.5});
+    var t4 = new TweenMax.to($('.skills'), 0.5, {y: 0, opacity: 1, ease: Circ.easeOut, delay: 0.4});
+    var t5 = new TweenMax.to($('#video'), 0.5, {opacity: 1, ease: Circ.easeOut, delay: 1.2});
 
     tlSkillsApparition.add([
         t1, t2, t3

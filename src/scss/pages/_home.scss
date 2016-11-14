@@ -56,6 +56,7 @@ h1{
     right: 0;
     bottom: 0;
     left: 0;
+    opacity: 0;
     background: url(../img/img-thumbnail.jpg) no-repeat 50% 50%;
     background-size: cover;
     transition: opacity 0.5s ease-in-out;
@@ -70,8 +71,8 @@ h1{
         height: 100%;
         object-fit: cover;
     }
-    &.off, .no-js &{
-        opacity: 0;
+    &.off{
+        opacity: 0 !important;
     }
     iframe{
         // Old browsers support
