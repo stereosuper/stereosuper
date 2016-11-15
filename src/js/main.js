@@ -181,7 +181,7 @@ $(function(){
             animYearAbout(myScroll, windowWidth, body);
             animTimelineAbout(body);
             checkIfInView(body);
-            animTextAbout();
+            animTextAbout(body);
         },
         onLeave: function(){
             // A new Transition toward a new page has just started.

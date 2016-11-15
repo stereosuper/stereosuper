@@ -2,11 +2,12 @@ var $ = require('./libs/jquery/dist/jquery.slim.min.js');
 
 var stringToArray = require('./stringToArray.js');
 
-module.exports = function(){
+module.exports = function(body){
     var textWrapper = $('#writting'), texts = stringToArray(textWrapper.data('text')), i = 0, currentText, j = 0;
+    var btnTxtAbout = $('#openTxtAbout');
 
     (function type(){
-        if(!textWrapper.length) return;
+        if(!body.hasClass('about')) return;
 
         currentText = texts[j].slice(0, i++);
         textWrapper.html(currentText);
@@ -18,7 +19,9 @@ module.exports = function(){
         }else{
             setTimeout(type, 70);
         }
-
-        console.log('yo')
     })();
+
+    btnTxtAbout.on('click', function(){
+        $(this).parents('.fade-txt-wrapper').addClass('off');
+    });
 }
