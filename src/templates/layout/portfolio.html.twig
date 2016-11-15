@@ -18,6 +18,21 @@
                     <h1 class='{% block portfolio_slug %}{% endblock %}'>{% block portfolio_title %}{% endblock %}</h1>
                     {% block portfolio_text %}{% endblock %}
                     <a href='./' class='btn-close'>Fermer</a>
+                    <ul class='previous-next-references'>
+                        <li class='previous-reference'>
+                            <a href='#'>
+                                <span class='arrow'>
+                                    <svg class='icon'><use xlink:href='#icon-big-arrow'/></svg>
+                                </span><span class='txt'><span>La Belle Boîte</span></span>
+                            </a>
+                        </li><li class='next-reference'>
+                            <a href='#'>
+                                <span class='txt'><span>CaptainTrain</span></span><span class='arrow'>
+                                    <svg class='icon'><use xlink:href='#icon-big-arrow'/></svg>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
             <!--<div class='portfolio-cover-mb'><img src='img/portfolio/mb-cover-{% block portfolio_slug %}{% endblock %}.png' alt=''></div>-->

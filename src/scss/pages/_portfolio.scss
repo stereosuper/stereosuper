@@ -193,6 +193,7 @@
     width: 50%;
     padding: 30px 0 85px;
     margin: 0 0 0 50%;
+    position: relative;
     p{
         padding: 0 $gutter;
         .js &{
@@ -206,6 +207,77 @@
         right: 20px;
         .js &{
             opacity: 0;
+        }
+    }
+    .previous-next-references{
+        display: block;
+        //width: 100%;
+        position: absolute;
+        top: -35px;
+        left: 30px;
+        margin: 0;
+        padding: 0;
+        > li{
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+            &:before{
+                display: none;
+            }
+            &.previous-reference{
+                margin-right: 12px;
+                .icon{
+                    transform: rotate(-180deg);
+                }
+                .txt{
+                    >span{
+                        padding-left: 12px;
+                    }
+                }
+            }
+            &.next-reference{
+                margin-left: 12px;
+                .txt{
+                    >span{
+                        padding-right: 12px;
+                    }
+                }
+            }
+        }
+        a{
+            @include gotham(1.3rem);
+            text-transform: uppercase;
+            text-decoration: none;
+            line-height: 1;
+            transition: none;
+            &:hover{
+                color: $white;
+                .txt{
+                    transform: scaleX(1);
+                }
+            }
+        }
+        .arrow{
+            display: inline-block;
+            vertical-align: top;
+            margin-top: -2px;
+        }
+        .icon{
+            width: 18px;
+            height: 7px;
+        }
+        .txt{
+            display: inline-block;
+            vertical-align: top;
+            position: absolute;
+            white-space: nowrap;
+
+            opacity: 0;
+            transition: opacity 0.15s ease-out, width 0.15s ease-out 0.15s;
+            &.visible{
+                opacity: 1;
+                transition: opacity 0.15s ease-out 0.15s, width 0.15s ease-out;
+            }
         }
     }
 }
