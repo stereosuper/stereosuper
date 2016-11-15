@@ -8,10 +8,20 @@ window.requestAnimFrame = require('./requestAnimFrame.js');
 module.exports = function(myScroll, body, header){
     var video, player;
 
+    function createVideo(){
+        var options = {
+            id: 189647536,
+            autoplay: true,
+            byline: false,
+            loop: true,
+            title: false
+        };
+        player = new Vimeo.Player('video', options);
+    }
+
     function onScroll(){
         if(!body.hasClass('home')) return;
 
-        player = new Vimeo.Player($('#videoIframe').get(0));
         video = $('#video');
 
         myScroll = $(document).scrollTop();
@@ -19,14 +29,13 @@ module.exports = function(myScroll, body, header){
         if(myScroll > 50){
             video.addClass('off');
             header.addClass('scrolled');
-            player.pause();
         }else{
             video.removeClass('off');
-            player.play();
             header.removeClass('scrolled');
         }
     }
 
+    createVideo();
     onScroll();
 
     $(document).on('scroll', throttle(function(){

@@ -99,7 +99,7 @@ $(function(){
             // if(!animTopSetUp){
             //     animTopSetUp = animTop(myScroll, body, header, skillsHome);
             // }
-            animTop(myScroll, body, header, skillsHome);
+            
 
             if(!isMobile.any){
                 animSkillsScroll(myScroll, body, header, skillsHome);
@@ -110,6 +110,8 @@ $(function(){
                 // Anim skills hover
                 animSkillsHover(body, portfolioItems);
             }
+
+            animTop(myScroll, body, header, skillsHome);
         },
         onEnterCompleted: function(){
             // The Transition has just finished.
