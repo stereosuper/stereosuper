@@ -29,7 +29,5 @@ module.exports = function(newContainer, aze){
         TweenMax.to($('#video'), 0.5, {opacity: 1, ease: Circ.easeOut})
     ]);
 
-    console.log(tableSkillsApparition)
-
     $('#header').removeClass('scrolled');
 };
