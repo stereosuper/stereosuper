@@ -18,8 +18,8 @@ module.exports = function(myScroll, body, header){
         };
         player = new Vimeo.Player('video', options);
         player.ready().then(function(){
-            var src = $('#video iframe').attr('src');
-            $('#video iframe').attr('src', src + "&background=1");
+            var src = $('#video').find('iframe').attr('src');
+            $('#video').find('iframe').attr('src', src + "&background=1");
         });
     }
 
@@ -39,8 +39,8 @@ module.exports = function(myScroll, body, header){
         }
     }
 
-    createVideo();
     onScroll();
+    createVideo();
 
     $(document).on('scroll', throttle(function(){
         requestAnimFrame(onScroll);

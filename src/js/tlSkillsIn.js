@@ -11,9 +11,10 @@ module.exports = function(isStagger, elemToAnim, thirdParameter){
             tlSkillsIn.staggerTo(elemToAnim, 0.35, {opacity: 1, scaleY: 1, ease:Back.easeOut.config(5)}, 0.06);
         }
     }else{
-        tlSkillsIn
-            .to(thirdParameter, 2, {width: '140%'})
-            .to(elemToAnim, 0.8, {scaleY: 1, ease:Back.easeOut.config(5)}, 0);
+        tlSkillsIn.add([
+            TweenMax.to(thirdParameter, 2, {width: '140%'}),
+            TweenMax.to(elemToAnim, 0.8, {scaleY: 1, ease:Back.easeOut.config(5)}, 0)
+        ]);
     }
 
     return tlSkillsIn;

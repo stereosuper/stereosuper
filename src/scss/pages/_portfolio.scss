@@ -1,30 +1,10 @@
 /* Portfolio single page specific style */
 
 .portfolio{
+    background: #000;
     #header{
         background: none;
     }
-    // .bgPortfolio{
-    //     position: absolute;
-    //     top: 0;
-    //     right: 0;
-    //     bottom: 0;
-    //     left: 0;
-    //     transform: scaleY(0);
-    //     transform-origin: 50% 50%;
-    // }
-    // .bgPagePortfolio{
-    //     position: absolute;
-    //     //top: 170px;
-    //     top: 0;
-    //     right: 0;
-    //     bottom: 0;
-    //     left: 0;
-    //     background: $white;
-
-    //     transform: scaleY(0);
-    //     transform-origin: 50% 100%;
-    // }
     h1{
         max-width: none;
         padding: 0;
@@ -35,7 +15,7 @@
         background-repeat: no-repeat;
         background-size: 100%;
         .js &{
-            transform: translateY(-40px);
+            transform: translateY(-10px);
             opacity: 0;
         }
         &.iadvize{
@@ -50,9 +30,9 @@
     }
     #barba-wrapper{
         padding: 0;
-        background: #fff;
     }
     #page{
+        min-height: 100vh;
         padding-top: 170px;
     }
     .link-arrow, .lang a, .social a, .menu-contact a{
@@ -91,12 +71,17 @@
         /*#header, #barba-wrapper, .portfolio-desc{
             background: nth($portfolioColors, $i);
         }*/
+        #barba-wrapper{
+            &.on{
+                background: nth($portfolioColors, $i);
+            }
+        }
         #header{
             &:before{
                 background: nth($portfolioColors, $i);
             }
         }
-        #page{
+        /*#page,*/ .bgPortfolio{
             background: nth($portfolioColors, $i);
         }
         h1{
@@ -129,6 +114,24 @@
             }
         }
     }
+}
+
+.bgPortfolio, .bgPagePortfolio{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: scaleY(0);
+}
+.bgPortfolio{
+    top: -170px;
+    z-index: -1;
+    transform-origin: 50% 100%;
+}
+.bgPagePortfolio{
+    top: 350px;
+    background: $white;
+    transform-origin: 50% 0;
 }
 
 .portfolio-cover{
@@ -172,6 +175,7 @@
     }
     .js &{
         opacity: 0;
+        transform: translate3d(-40px, 0, 0);
     }
 }
 .portfolio-cover-mb{
@@ -187,6 +191,7 @@
 
 .portfolio-desc{
     position: relative;
+    z-index: 1;
 }
 
 .portfolio-text{
@@ -196,7 +201,7 @@
     p{
         padding: 0 $gutter;
         .js &{
-            transform: translateY(-40px);
+            transform: translateY(-20px);
             opacity: 0;
         }
     }
@@ -211,8 +216,10 @@
 }
 
 .portfolio-role{
+    position: relative;
+    z-index: 1;
     color: #000;
-    background: #fff;
+    //background: #fff;
     &-content{
         width: 50%;
         padding: 100px 0 70px $gutter;

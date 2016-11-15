@@ -71,16 +71,6 @@ $(function(){
     // skillsHome.data('top', skillsTop);
     //var animTopSetUp = animTop(myScroll, body, header, skillsHome);
 
-    ////////////////////////////////////////////////
-    // Transitions in
-    ////////////////////////////////////////////////
-    if(body.hasClass('home')){
-        transiInHome();
-    }else if(body.hasClass('portfolio')){
-        transiInPortfolio();
-    }else if(body.hasClass('about')){
-
-    }
 
     ////////////////////////////////////////////////
     // Home functions
@@ -222,6 +212,15 @@ $(function(){
         }
 	}, 60)).on('load', function(){
 
+        ////////////////////////////////////////////////
+        // Transitions in
+        ////////////////////////////////////////////////
+
+        if(body.hasClass('home')){
+            transiInHome();
+        }else if(body.hasClass('portfolio')){
+            transiInPortfolio();
+        }
 	});
 
 });
