@@ -99,7 +99,7 @@ $(function(){
             // if(!animTopSetUp){
             //     animTopSetUp = animTop(myScroll, body, header, skillsHome);
             // }
-            
+
 
             if(!isMobile.any){
                 animSkillsScroll(myScroll, body, header, skillsHome);
@@ -174,7 +174,7 @@ $(function(){
     var About = Barba.BaseView.extend({ namespace: 'about',
         onEnter: function(){
             // The new Container is ready and attached to the DOM.
-            menu.find('li').eq(0).find('a').addClass('active');
+            menu.find('li').eq(0).find('a').addClass('active').parents('li').siblings().find('a').removeClass('active');
         },
         onEnterCompleted: function(){
             // The Transition has just finished.
@@ -200,7 +200,7 @@ $(function(){
     var Contact = Barba.BaseView.extend({ namespace: 'contact',
         onEnter: function(){
             // The new Container is ready and attached to the DOM.
-            menu.find('li').eq(1).find('a').addClass('active');
+            menu.find('li').eq(1).find('a').addClass('active').parents('li').siblings().find('a').removeClass('active');
         },
         onEnterCompleted: function(){
             // The Transition has just finished.
