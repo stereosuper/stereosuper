@@ -5,9 +5,9 @@ var TimelineMax = require('./libs/gsap/src/uncompressed/TimelineMax.js');
 var animSkillsIn = require('./animSkillsIn.js');
 var getUrlParam = require('./getUrlParam.js');
 
-module.exports = function(aze){
+module.exports = function(newContainer, aze){
     var blockTitle = $('.block-title');
-    var tableSkillsApparition = animSkillsIn();
+    var tableSkillsApparition = animSkillsIn(newContainer);
     var tlSkillsApparition = new TimelineMax({onComplete: function(){
     	if(aze !== undefined){
     	    aze.done();
@@ -28,6 +28,8 @@ module.exports = function(aze){
         TweenMax.to($('.skills'), 0.4, {y: 0, opacity: 1, ease: Circ.easeOut, delay: 0.1}),
         TweenMax.to($('#video'), 0.5, {opacity: 1, ease: Circ.easeOut})
     ]);
+
+    console.log(tableSkillsApparition)
 
     $('#header').removeClass('scrolled');
 };

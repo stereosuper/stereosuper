@@ -78,9 +78,9 @@ $(function(){
     ////////////////////////////////////////////////
 
     if(body.hasClass('home')){
-        transiInHome();
+        transiInHome($('#page'));
     }else if(body.hasClass('portfolio')){
-        transiInPortfolio();
+        transiInPortfolio($('#page'));
     }
 
 
