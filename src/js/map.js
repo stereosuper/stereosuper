@@ -38,10 +38,9 @@ module.exports = function(){
         style: 'mapbox://styles/stereosuper/ciuqyq3oc00so2jl8t50ltwwl',
         center: [-10, 49.2],
         zoom: 5,
-        bearing: 20
+        bearing: 20,
+        interactive: false
     });
-    map.scrollZoom.disable();
-    map.dragPan.disable();
 
     geojson.features.forEach(function(marker){
         var elMarker = document.createElement('div');

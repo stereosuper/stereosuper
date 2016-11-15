@@ -15,7 +15,7 @@ module.exports = function(aze){
         TweenMax.to([portfolioText.find('p')], 0.3, {y: 0, opacity: 1, ease: Power4.easeOut});
         TweenMax.staggerTo(portfolioRole.find('p'), 0.5, {y: 0, opacity: 1, ease: Circ.easeOut, delay: 0.2}, 0.1);
         TweenMax.to($('.skills'), 0.5, {y: 0, opacity: 1, ease: Circ.easeOut, delay: 0.5});
-        TweenMax.to([portfolioText.find('.btn-close')], 0.3, {opacity: 1, ease: Power4.easeOut, delay: 1.2});
+        TweenMax.to([portfolioText.find('.btn-close')], 0.1, {opacity: 1, ease: Power4.easeOut, delay: 1});
 
         tlSkillsApparition.add( tableSkillsApparition );
         TweenMax.to(portfolioRole.find('.btn'), 0.5, {y: 0, opacity: 1, ease: Circ.easeOut, delay: 0.6, onComplete: function(){

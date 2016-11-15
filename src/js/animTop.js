@@ -25,7 +25,7 @@ module.exports = function(myScroll, body, header){
 
     function onScroll(){
         if(!body.hasClass('home')) return;
-        
+
         video = $('#video');
 
         myScroll = $(document).scrollTop();
