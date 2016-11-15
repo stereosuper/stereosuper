@@ -17,7 +17,6 @@ module.exports = function(container){
     }
     if(dots.length){
         tableTl.push(createTl(true, dots, true));
-        console.log(dots)
     }
     if(wrapperWaves.length){
         tableTl.push(createTl(false, waves, wrapperWaves));
