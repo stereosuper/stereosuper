@@ -41,6 +41,7 @@ module.exports = function(){
         bearing: 20
     });
     map.scrollZoom.disable();
+    map.doubleClickZoom.disable();
     map.dragPan.disable();
 
     geojson.features.forEach(function(marker){
