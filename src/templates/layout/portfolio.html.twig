@@ -8,8 +8,7 @@
 {# Content #}
 {% block content %}
     <div id='page' class='barba-container' data-class='portfolio bw {% block portfolio_slug %}{% endblock %}-portfolio' data-namespace='portfolio'>
-        <!--<div class='bgPortfolio'></div>-->
-        <section class='portfolio-desc p-relative'>
+        <section class='portfolio-desc'>
             <div class='portfolio-cover {{ cover_class }}'>
                 <img src='img/portfolio/cover-{% block portfolio_slug %}{% endblock %}.{{ cover_ext }}' srcset='img/portfolio/cover-{% block portfolio_slug %}{% endblock %}@2.{{ cover_ext }} 2x' alt=''>
             </div>
@@ -17,7 +16,7 @@
                 <div class='portfolio-text'>
                     <h1 class='{% block portfolio_slug %}{% endblock %}'>{% block portfolio_title %}{% endblock %}</h1>
                     {% block portfolio_text %}{% endblock %}
-                    <a href='./' class='btn-close'>Fermer</a>
+                    <a href='./?portfolio={% block portfolio_slug %}{% endblock %}' class='btn-close'>Fermer</a>
                     <ul class='previous-next-references'>
                         <li class='previous-reference'>
                             <a href='#'>
@@ -37,10 +36,10 @@
             </div>
             <!--<div class='portfolio-cover-mb'><img src='img/portfolio/mb-cover-{% block portfolio_slug %}{% endblock %}.png' alt=''></div>-->
             <div class='portfolio-cover-mb'><img src='img/portfolio/mb-cover-wisembly.png' alt=''></div>
+            <div class='bgPortfolio'></div>
         </section>
 
         <section class='portfolio-role'>
-            <!--<div class='bgPagePortfolio'></div>-->
             <div class='container'>
                 <div class='portfolio-role-content'>
                     {% block portfolio_role %}{% endblock %}
@@ -108,5 +107,6 @@
                 </div>
             </div>
         </section>
+        <div class='bgPagePortfolio'></div>
     </div>
 {% endblock content %}

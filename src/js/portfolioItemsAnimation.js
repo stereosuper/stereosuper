@@ -56,6 +56,7 @@ module.exports = function(myScroll, windowHeight, windowWidth, portfolioItems, p
 
         // requestAnimFrame(portfolioItemsAnimation);
     }
+    portfolioItemsAnimation();
 
     var scrollHandler = throttle(function(){
         requestAnimFrame(portfolioItemsAnimation);

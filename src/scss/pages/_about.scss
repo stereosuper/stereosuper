@@ -195,6 +195,10 @@
             opacity: 0;
             pointer-events: none;
         }
+        .fade-txt{
+            opacity: 1;
+            pointer-events: auto;
+        }
     }
 }
 .open-txt-about{
@@ -212,10 +216,6 @@
     opacity: 0;
     pointer-events: none;
     transition: $transition;
-    &.on{
-        opacity: 1;
-        pointer-events: auto;
-    }
 }
 
 @media (max-width: 1480px){

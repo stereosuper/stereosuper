@@ -29,6 +29,7 @@ $(function(){
     var checkIfInView = require('./checkIfInView.js');
 
     var animHandMap = require('./map.js');
+    var headerContactScroll = require('./headerContactScroll.js');
 
     var transiInHome = require('./transiInHome.js');
     var transiInPortfolio = require('./transiInPortfolio.js');
@@ -72,16 +73,6 @@ $(function(){
     // skillsHome.data('top', skillsTop);
     //var animTopSetUp = animTop(myScroll, body, header, skillsHome);
 
-    ////////////////////////////////////////////////
-    // Transitions in
-    ////////////////////////////////////////////////
-    if(body.hasClass('home')){
-        transiInHome();
-    }else if(body.hasClass('portfolio')){
-        transiInPortfolio();
-    }else if(body.hasClass('about')){
-
-    }
 
     ////////////////////////////////////////////////
     // Home functions
@@ -101,7 +92,6 @@ $(function(){
             // if(!animTopSetUp){
             //     animTopSetUp = animTop(myScroll, body, header, skillsHome);
             // }
-            
 
             if(!isMobile.any){
                 animSkillsScroll(myScroll, body, header, skillsHome);
@@ -117,26 +107,6 @@ $(function(){
         },
         onEnterCompleted: function(){
             // The Transition has just finished.
-
-            // var portfolioItems = $('#portfolio').find('.portfolio-item');
-
-            // if(!isMobile.any){
-            //     // Anim skills with header
-            //     // if(!animSkillsSetUp){
-            //     //     animSkillsSetUp = animSkillsScroll(myScroll, body, header, skillsHome);
-            //     // }
-
-
-            //     // Anim Refs Home
-            //     portfolioItemsAnimation(myScroll, windowHeight, windowWidth, portfolioItems);
-
-            //     // Anim skills hover
-            //     animSkillsHover(body, portfolioItems);
-            // }
-
-            // video.find('video').on('canplaythrough', function(){
-            //     video.addClass('ready').find('video').get(0).play();
-            // });
         },
         onLeave: function(){
             // A new Transition toward a new page has just started.
@@ -177,14 +147,14 @@ $(function(){
     var About = Barba.BaseView.extend({ namespace: 'about',
         onEnter: function(){
             // The new Container is ready and attached to the DOM.
-            menu.find('li').eq(0).find('a').addClass('active');
+            menu.find('li').eq(0).find('a').addClass('active').parents('li').siblings().find('a').removeClass('active');
         },
         onEnterCompleted: function(){
             // The Transition has just finished.
             animYearAbout(myScroll, windowWidth, body);
             animTimelineAbout(body);
             checkIfInView(body);
-            animTextAbout();
+            animTextAbout(body);
         },
         onLeave: function(){
             // A new Transition toward a new page has just started.
@@ -203,11 +173,12 @@ $(function(){
     var Contact = Barba.BaseView.extend({ namespace: 'contact',
         onEnter: function(){
             // The new Container is ready and attached to the DOM.
-            menu.find('li').eq(1).find('a').addClass('active');
+            menu.find('li').eq(1).find('a').addClass('active').parents('li').siblings().find('a').removeClass('active');
         },
         onEnterCompleted: function(){
             // The Transition has just finished.
             animHandMap();
+            headerContactScroll(body);
         },
         onLeave: function(){
             // A new Transition toward a new page has just started.
@@ -244,6 +215,15 @@ $(function(){
         }
 	}, 60)).on('load', function(){
 
+        ////////////////////////////////////////////////
+        // Transitions in
+        ////////////////////////////////////////////////
+
+        if(body.hasClass('home')){
+            transiInHome();
+        }else if(body.hasClass('portfolio')){
+            transiInPortfolio();
+        }
 	});
 
 });
