@@ -100,7 +100,6 @@ $(function(){
             //     animTopSetUp = animTop(myScroll, body, header, skillsHome);
             // }
 
-
             if(!isMobile.any){
                 animSkillsScroll(myScroll, body, header, skillsHome);
 
@@ -115,26 +114,6 @@ $(function(){
         },
         onEnterCompleted: function(){
             // The Transition has just finished.
-
-            // var portfolioItems = $('#portfolio').find('.portfolio-item');
-
-            // if(!isMobile.any){
-            //     // Anim skills with header
-            //     // if(!animSkillsSetUp){
-            //     //     animSkillsSetUp = animSkillsScroll(myScroll, body, header, skillsHome);
-            //     // }
-
-
-            //     // Anim Refs Home
-            //     portfolioItemsAnimation(myScroll, windowHeight, windowWidth, portfolioItems);
-
-            //     // Anim skills hover
-            //     animSkillsHover(body, portfolioItems);
-            // }
-
-            // video.find('video').on('canplaythrough', function(){
-            //     video.addClass('ready').find('video').get(0).play();
-            // });
         },
         onLeave: function(){
             // A new Transition toward a new page has just started.

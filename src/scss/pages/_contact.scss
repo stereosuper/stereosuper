@@ -73,14 +73,15 @@
     opacity: 0.7;
 }
 .hand{
-    width: 328px;
-    height: 547px;
+    width: 998px;
+    height: 1134px;
     position: absolute;
     top: -250px;
     left: 250px;
     //right: 0;
     //margin: auto;
     background: url(../layoutImg/hand.png) no-repeat;
+    background-size: 100%;
     transform-origin: 100% 100%;
     opacity: 0;
     transition: opacity $transition;

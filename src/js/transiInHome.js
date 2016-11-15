@@ -3,6 +3,7 @@ var TweenMax = require('./libs/gsap/src/uncompressed/TweenMax.js');
 var TimelineMax = require('./libs/gsap/src/uncompressed/TimelineMax.js');
 
 var animSkillsIn = require('./animSkillsIn.js');
+var getUrlParam = require('./getUrlParam.js');
 
 module.exports = function(aze){
     var blockTitle = $('.block-title');
@@ -17,6 +18,12 @@ module.exports = function(aze){
     var t3 = new TweenMax.to(blockTitle.find('.link-arrow'), 0.3, {y: 0, opacity: 1, ease: Power4.easeOut, delay: 0.8});
     var t4 = new TweenMax.to($('.skills'), 0.5, {y: 0, opacity: 1, ease: Circ.easeOut, delay: 0.4});
     var t5 = new TweenMax.to($('#video'), 0.5, {opacity: 1, ease: Circ.easeOut, delay: 1.2});
+
+    var portfolioParam = getUrlParam('portfolio');
+
+    if($('#' + portfolioParam).length){
+        $(document).scrollTop($('#' + portfolioParam).offset().top - 250);
+    }
 
     tlSkillsApparition.add([
         t1, t2, t3
