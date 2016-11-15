@@ -29,6 +29,7 @@ $(function(){
     var checkIfInView = require('./checkIfInView.js');
 
     var animHandMap = require('./map.js');
+    var headerContactScroll = require('./headerContactScroll.js');
 
     var transiInHome = require('./transiInHome.js');
     var transiInPortfolio = require('./transiInPortfolio.js');
@@ -184,6 +185,7 @@ $(function(){
         onEnterCompleted: function(){
             // The Transition has just finished.
             animHandMap();
+            headerContactScroll(body);
         },
         onLeave: function(){
             // A new Transition toward a new page has just started.

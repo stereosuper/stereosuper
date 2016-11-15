@@ -3,6 +3,9 @@
 .contact{
     #header{
         background: none;
+        &.bgVisible{
+            background: #000;
+        }
     }
     #barba-wrapper{
         padding-bottom: 50px;

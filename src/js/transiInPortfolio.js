@@ -30,11 +30,12 @@ module.exports = function(aze){
     var twFadeIn1 = new TweenMax.to($('.bgPortfolio'), 0.5, {scaleY:1, ease: Power4.easeOut});
     var twFadeIn2 = new TweenMax.to($('.bgPagePortfolio'), 0.5, {scaleY:1, ease: Power4.easeOut});
     var twFadeIn3 = new TweenMax.to(portfolioText.find('h1'), 0.5, {y: 0, opacity: 1, ease: Circ.easeOut});
-    var twFadeIn4 = new TweenMax.to([$('.portfolio-cover')], 0.5, {x: 0, opacity: 1, ease: Power4.easeOut, delay: 0.3});
+    var twFadeIn4 = new TweenMax.set($('#header'), {className: '+= bgVisible'});
+    var twFadeIn5 = new TweenMax.to([$('.portfolio-cover')], 0.5, {x: 0, opacity: 1, ease: Power4.easeOut, delay: 0.3});
 
     tlFadeIn.add([
-        twFadeIn1, twFadeIn2, twFadeIn3, twFadeIn4
-    ]).set($('#header'), {className: '+= bgVisible'});
+        twFadeIn1, twFadeIn2, twFadeIn3, twFadeIn4, twFadeIn5
+    ]);
 
 
     /*
