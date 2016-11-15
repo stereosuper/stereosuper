@@ -34,6 +34,8 @@ $(function(){
     var transiInHome = require('./transiInHome.js');
     var transiInPortfolio = require('./transiInPortfolio.js');
 
+    var previousNextReferences = require('./previousNextReferences.js');
+
 
     var windowWidth = $(window).outerWidth(), windowHeight = $(window).height();
     var myScroll = $(document).scrollTop();
@@ -129,22 +131,23 @@ $(function(){
     // Portfolio functions
     ////////////////////////////////////////////////
 
-    // var Portfolio = Barba.BaseView.extend({ namespace: 'portfolio',
-    //     onEnter: function(){
-    //         // The new Container is ready and attached to the DOM.
-    //     },
-    //     onEnterCompleted: function(){
-    //         // The Transition has just finished.
+    var Portfolio = Barba.BaseView.extend({ namespace: 'portfolio',
+        onEnter: function(){
+            // The new Container is ready and attached to the DOM.
+            previousNextReferences();
+        },
+        onEnterCompleted: function(){
+            // The Transition has just finished.
 
-    //     },
-    //     onLeave: function(){
-    //         // A new Transition toward a new page has just started.
-    //     },
-    //     onLeaveCompleted: function(){
-    //         // The Container has just been removed from the DOM.
-    //     }
-    // });
-    // Portfolio.init();
+        },
+        onLeave: function(){
+            // A new Transition toward a new page has just started.
+        },
+        onLeaveCompleted: function(){
+            // The Container has just been removed from the DOM.
+        }
+    });
+    Portfolio.init();
 
 
     ////////////////////////////////////////////////
