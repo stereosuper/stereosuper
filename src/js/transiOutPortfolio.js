@@ -19,12 +19,13 @@ module.exports = function(oldContainer){
             TweenMax.to(portfolioText.find('h1'), 0.25, {y: -40, opacity: 0, ease: Circ.easeOut}),
             TweenMax.to(oldContainer.find('.portfolio-cover'), 0.25, {x: -40, opacity: 0, ease: Power4.easeOut})
         ]).add([
-            TweenMax.to(bgPortfolio, 0.25, {scaleY: 0, ease: Power4.easeOut}),
-            TweenMax.to(bgPagePortfolio, 0.25, {scaleY: 0, ease: Power4.easeOut}),
-            TweenMax.to(bgPortfolio, 0.1, {opacity: 0, delay: 0.1}),
-            TweenMax.to(bgPagePortfolio, 0.1, {opacity: 0, delay: 0.1})
+            TweenMax.set(bgPortfolio, {transformOrigin: '50% 0%'}),
+            TweenMax.set(bgPagePortfolio, {transformOrigin: '50% 100%'}),
+            TweenMax.to(bgPortfolio, 0.25, {scaleY: 0}),
+            TweenMax.to(bgPagePortfolio, 0.25, {scaleY: 0})
         ]);
 
+        TweenMax.to([portfolioText.find('.btn-close'), portfolioText.find('.previous-next-references')], 0.1, {opacity: 0, ease: Power4.easeOut});
         TweenMax.to(portfolioRole.find('a'), 0.25, {y: -80, opacity: 0, ease: Circ.easeOut});
         TweenMax.to(oldContainer.find('.skills'), 0.25, {y: -80, opacity: 0, ease: Circ.easeOut, delay: 0.1});
         TweenMax.to(portfolioRole.find('p'), 0.25, {y: -80, opacity: 0, ease: Circ.easeOut, delay: 0.25});
