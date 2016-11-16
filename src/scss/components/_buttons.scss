@@ -11,8 +11,8 @@
         transition: transform .25s ease-in-out;
     }
 	.icon{
-        width: 20px;
-        height: 9px;
+        width: 24px;
+        height: 11px;
         margin: -2px 0 0 9px;
         font-size: 1.8rem;
 	}
@@ -41,7 +41,7 @@
             opacity: 1;
         }
         span{
-            transform: translate3d(15px, 0, 0);
+            transform: translate3d(19px, 0, 0);
             transition-delay: .1s;
         }
     }
