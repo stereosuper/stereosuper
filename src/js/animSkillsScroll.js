@@ -20,7 +20,7 @@ module.exports = function(myScroll, body, header, skillsHome){
         // synch with animHeader.js
         if(header.hasClass('scrolled') && myScroll > skillsHome.data('top') && skillsHome.is(':visible')){
             skillsHome.addClass('fixed').removeClass('top');
-            if(scrollDir < 0 && header.hasClass('off')){
+            if(scrollDir <= 0 && header.hasClass('off')){
                 skillsHome.addClass('top').addClass('down');
             }
         }else{
