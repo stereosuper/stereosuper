@@ -35,6 +35,7 @@ $(function(){
     var transiInPortfolio = require('./transiInPortfolio.js');
 
     var previousNextReferences = require('./previousNextReferences.js');
+    var animSouvenir = require('./animSouvenir.js');
 
 
     var windowWidth = $(window).outerWidth(), windowHeight = $(window).height();
@@ -138,7 +139,7 @@ $(function(){
         },
         onEnterCompleted: function(){
             // The Transition has just finished.
-
+            animSouvenir();
         },
         onLeave: function(){
             // A new Transition toward a new page has just started.
