@@ -18,19 +18,32 @@
                     {% block portfolio_text %}{% endblock %}
                     <a href='./?portfolio={% block portfolio_slug %}{% endblock %}' class='btn-close'>Fermer</a>
                     <ul class='previous-next-references'>
-                        <li class='previous-reference'>
-                            <a href='#'>
-                                <span class='arrow'>
-                                    <svg class='icon'><use xlink:href='#icon-big-arrow'/></svg>
-                                </span><span class='txt'><span>La Belle Boîte</span></span>
-                            </a>
-                        </li><li class='next-reference'>
-                            <a href='#'>
-                                <span class='arrow'>
-                                    <svg class='icon'><use xlink:href='#icon-big-arrow'/></svg>
-                                </span><span class='txt'><span>CaptainTrain</span></span>
-                            </a>
-                        </li>
+                        {% if prev_ref_link == '' %}
+                            <li class='previous-reference inactive'>
+                                <span class='arrow'></span>
+                            </li>
+                        {% else %}
+                            <li class='previous-reference'>
+                                <a href='{{ prev_ref_link }}'>
+                                    <span class='arrow'>
+                                        <svg class='icon'><use xlink:href='#icon-big-arrow'/></svg>
+                                    </span><span class='txt'><span>{{ prev_ref_name }}</span></span>
+                                </a>
+                            </li>
+                        {% endif %}
+                        {% if next_ref_link == '' %}
+                            <li class='next-reference inactive'>
+                                <span class='arrow'></span>
+                            </li>
+                        {% else %}
+                            <li class='next-reference'>
+                                <a href='{{ next_ref_link }}'>
+                                    <span class='arrow'>
+                                        <svg class='icon'><use xlink:href='#icon-big-arrow'/></svg>
+                                    </span><span class='txt'><span>{{ next_ref_name }}</span></span>
+                                </a>
+                            </li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
