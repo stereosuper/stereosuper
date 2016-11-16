@@ -41,7 +41,7 @@ module.exports = function(newContainer, aze){
     tlFadeIn.add([
         TweenMax.to(newContainer.find('.bgPortfolio'), 1, {scaleY: 1, ease: Power4.easeOut}),
         TweenMax.to(newContainer.find('.bgPagePortfolio'), 1, {scaleY: 1, ease: Power4.easeOut}),
-        TweenMax.set($('#barba-wrapper'), {className: '+= on', delay: 1}),
+        TweenMax.set([$('#barba-wrapper'), $('body')], {className: '+= on', delay: 1}),
         TweenMax.to(portfolioText.find('h1'), 0.2, {y: 0, opacity: 1, ease: Circ.easeOut, delay: 0.5}),
         TweenMax.set($('#header'), {className: '+= bgVisible', delay: 0.5}),
         TweenMax.to(newContainer.find('.portfolio-cover'), 0.5, {x: 0, opacity: 1, ease: Power4.easeOut, delay: 0.5}),

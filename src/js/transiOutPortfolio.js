@@ -14,7 +14,7 @@ module.exports = function(oldContainer){
         }});
 
         tlFadeOut.set(
-            $('#barba-wrapper'), {className: '-= on'}
+            [$('#barba-wrapper'), $('body')], {className: '-= on'}
         ).add([
             TweenMax.to(portfolioText.find('h1'), 0.25, {y: -40, opacity: 0, ease: Circ.easeOut}),
             TweenMax.to(oldContainer.find('.portfolio-cover'), 0.25, {x: -40, opacity: 0, ease: Power4.easeOut})
