@@ -5,9 +5,9 @@ var TimelineMax = require('./libs/gsap/src/uncompressed/TimelineMax.js');
 var animSkillsIn = require('./animSkillsIn.js');
 var getUrlParam = require('./getUrlParam.js');
 
-module.exports = function(aze){
+module.exports = function(newContainer, aze){
     var blockTitle = $('.block-title');
-    var tableSkillsApparition = animSkillsIn();
+    var tableSkillsApparition = animSkillsIn(newContainer);
     var tlSkillsApparition = new TimelineMax({onComplete: function(){
     	if(aze !== undefined){
     	    aze.done();

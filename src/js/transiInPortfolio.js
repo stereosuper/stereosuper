@@ -4,11 +4,11 @@ var TimelineMax = require('./libs/gsap/src/uncompressed/TimelineMax.js');
 
 var animSkillsIn = require('./animSkillsIn.js');
 
-module.exports = function(aze){
+module.exports = function(newContainer, aze){
     var portfolioText = $('.portfolio-text');
 
     function fadeInPartTwo(){
-        var tableSkillsApparition = animSkillsIn();
+        var tableSkillsApparition = animSkillsIn(newContainer);
         var tlSkillsApparition = new TimelineMax();
         var portfolioRole = $('.portfolio-role');
 
@@ -17,8 +17,6 @@ module.exports = function(aze){
         TweenMax.to(portfolioText.find('.btn-close'), 0.1, {opacity: 1, ease: Power4.easeOut, delay: 0.9});
 
         tlSkillsApparition.add( tableSkillsApparition );
-
-        console.log(tableSkillsApparition);
 
         TweenMax.to(portfolioRole.find('.btn'), 0.3, {y: 0, opacity: 1, ease: Circ.easeOut, delay: 0.4, onComplete: function(){
             if(aze !== undefined){

@@ -1,28 +1,28 @@
 var $ = require('./libs/jquery/dist/jquery.slim.min.js');
 var createTl = require('./tlSkillsIn.js');
 
-module.exports = function(){
-    var dashes = $('.dashes').find('> span'),
-        wrapperWaves = $('.wrapper-waves'), waves = $('.waves'),
-        wrapperZigzags = $('.wrapper-zigzags'), zigzags = $('.zigzags'),
-        slashes = $('.slashes').find('>span'),
-        dots = $('.dots').find('>span'),
+module.exports = function(container){
+    var dashes = container.find('.dashes > span'),
+        slashes = container.find('.slashes > span'),
+        dots = container.find('.dots > span'),
+        wrapperWaves = container.find('.wrapper-waves'), waves = container.find('.waves'),
+        wrapperZigzags = container.find('.wrapper-zigzags'), zigzags = container.find('.zigzags'),
         tableTl = [];
 
     if(dashes.length){
-        tableTl.push(createTl(true, dashes, true).play());
-    }
-    if(wrapperWaves.length){
-        tableTl.push(createTl(false, waves, wrapperWaves).play());
-    }
-    if(wrapperZigzags.length){
-       tableTl.push(createTl(false, zigzags, wrapperZigzags).play());
+        tableTl.push(createTl(true, dashes, true));
     }
     if(slashes.length){
-        tableTl.push(createTl(true, slashes, false).play());
+        tableTl.push(createTl(true, slashes, false));
     }
     if(dots.length){
-        tableTl.push(createTl(true, dots, true).play());
+        tableTl.push(createTl(true, dots, true));
+    }
+    if(wrapperWaves.length){
+        tableTl.push(createTl(false, waves, wrapperWaves));
+    }
+    if(wrapperZigzags.length){
+       tableTl.push(createTl(false, zigzags, wrapperZigzags));
     }
 
     return tableTl;

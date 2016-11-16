@@ -51,9 +51,9 @@ module.exports = function(body, menu, lastClickedLink){
             TweenMax.to($el, 0.3, {opacity: 1});
 
             if(body.hasClass('portfolio')){
-                return transiInPortfolio(_this);
+                return transiInPortfolio($el, _this);
             }else if(body.hasClass('home')){
-                return transiInHome(_this);
+                return transiInHome($el, _this);
             }else{
                 _this.done();
             }
