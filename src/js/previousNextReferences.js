@@ -11,14 +11,17 @@ var previousNextButton = $('.previous-next-references >li a'),
 module.exports = function(){
 	widthPreviousButton = previousButton.outerWidth();
 	widthNextButton = nextButton.outerWidth();
-	TweenMax.set([previousButton, nextButton], {position: 'relative', width: '0'});
+	// TweenMax.set([previousButton, nextButton], {position: 'relative', width: '0'});
 	previousNextButton.on('mouseenter', function(){
 		if($(this).parents('li').hasClass('previous-reference')){
-			TweenMax.set(previousButton, {className: '+=visible', width: widthPreviousButton+'px'});
+			// TweenMax.set(previousButton, {className: '+=visible', width: widthPreviousButton+'px'});
+			TweenMax.set(previousButton, {className: '+=visible'});
 		}else if($(this).parents('li').hasClass('next-reference')){
-			TweenMax.set(nextButton, {className: '+=visible', width: widthNextButton+'px'});
+			// TweenMax.set(nextButton, {className: '+=visible', width: widthNextButton+'px'});
+			TweenMax.set(nextButton, {className: '+=visible'});
 		}
 	}).on('mouseleave', function(){
-		TweenMax.set([previousButton, nextButton], {className: '-=visible', width: '0'});
+		// TweenMax.set([previousButton, nextButton], {className: '-=visible', width: '0'});
+		TweenMax.set([previousButton, nextButton], {className: '-=visible'});
 	});
 }

@@ -236,7 +236,12 @@
                 }
                 .txt{
                     >span{
-                        padding-left: 12px;
+                        transform: translate3d(100%, 0, 0);
+                    }
+                    &.visible{
+                        >span{
+                            transform: translate3d(0, 0, 0);
+                        }
                     }
                 }
             }
@@ -244,7 +249,12 @@
                 margin-left: 12px;
                 .txt{
                     >span{
-                        padding-right: 12px;
+                        transform: translate3d(-100%, 0, 0);
+                    }
+                    &.visible{
+                        >span{
+                            transform: translate3d(0, 0, 0);
+                        }
                     }
                 }
             }
@@ -265,7 +275,8 @@
         .arrow{
             display: inline-block;
             vertical-align: top;
-            margin-top: -2px;
+            // margin-top: -2px;
+            margin-top: 2px;
         }
         .icon{
             width: 18px;
@@ -276,12 +287,19 @@
             vertical-align: top;
             position: absolute;
             white-space: nowrap;
+            top: 0;
+            left: 80px;
+            overflow: hidden;
 
-            opacity: 0;
+            // opacity: 0;
             transition: opacity 0.15s ease-out, width 0.15s ease-out 0.15s;
             &.visible{
                 opacity: 1;
                 transition: opacity 0.15s ease-out 0.15s, width 0.15s ease-out;
+            }
+            >span{
+                display: inline-block;
+                transition: transform 0.3s ease-out;
             }
         }
     }
