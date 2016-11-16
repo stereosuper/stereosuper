@@ -5,15 +5,15 @@ var TimelineMax = require('./libs/gsap/src/uncompressed/TimelineMax.js');
 var animSkillsIn = require('./animSkillsIn.js');
 
 module.exports = function(newContainer, aze){
-    var portfolioText = $('.portfolio-text');
+    var portfolioText = newContainer.find('.portfolio-text');
 
     function fadeInPartTwo(){
         var tableSkillsApparition = animSkillsIn(newContainer);
         var tlSkillsApparition = new TimelineMax();
-        var portfolioRole = $('.portfolio-role');
+        var portfolioRole = newContainer.find('.portfolio-role');
 
         TweenMax.to(portfolioRole.find('p'), 0.4, {y: 0, opacity: 1, ease: Circ.easeOut});
-        TweenMax.to($('.skills'), 0.4, {y: 0, opacity: 1, ease: Circ.easeOut, delay: 0.2});
+        TweenMax.to(newContainer.find('.skills'), 0.4, {y: 0, opacity: 1, ease: Circ.easeOut, delay: 0.2});
         TweenMax.to(portfolioText.find('.btn-close'), 0.1, {opacity: 1, ease: Power4.easeOut, delay: 0.9});
 
         tlSkillsApparition.add( tableSkillsApparition );
@@ -39,12 +39,12 @@ module.exports = function(newContainer, aze){
     // ]);
 
     tlFadeIn.add([
-        TweenMax.to($('.bgPortfolio'), 1, {scaleY: 1, ease: Power4.easeOut}),
-        TweenMax.to($('.bgPagePortfolio'), 1, {scaleY: 1, ease: Power4.easeOut}),
+        TweenMax.to(newContainer.find('.bgPortfolio'), 1, {scaleY: 1, ease: Power4.easeOut}),
+        TweenMax.to(newContainer.find('.bgPagePortfolio'), 1, {scaleY: 1, ease: Power4.easeOut}),
         TweenMax.set($('#barba-wrapper'), {className: '+= on', delay: 1}),
         TweenMax.to(portfolioText.find('h1'), 0.2, {y: 0, opacity: 1, ease: Circ.easeOut, delay: 0.5}),
         TweenMax.set($('#header'), {className: '+= bgVisible', delay: 0.5}),
-        TweenMax.to($('.portfolio-cover'), 0.5, {x: 0, opacity: 1, ease: Power4.easeOut, delay: 0.5}),
+        TweenMax.to(newContainer.find('.portfolio-cover'), 0.5, {x: 0, opacity: 1, ease: Power4.easeOut, delay: 0.5}),
         TweenMax.to(portfolioText.find('p'), 0.4, {y: 0, opacity: 1, ease: Power4.easeOut, delay: 0.6})
     ]);
 };

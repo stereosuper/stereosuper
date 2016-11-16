@@ -6,7 +6,7 @@ var animSkillsIn = require('./animSkillsIn.js');
 var getUrlParam = require('./getUrlParam.js');
 
 module.exports = function(newContainer, aze){
-    var blockTitle = $('.block-title');
+    var blockTitle = newContainer.find('.block-title');
     var tableSkillsApparition = animSkillsIn(newContainer);
     var tlSkillsApparition = new TimelineMax({onComplete: function(){
     	if(aze !== undefined){
@@ -24,7 +24,7 @@ module.exports = function(newContainer, aze){
         ]).add([
             tableSkillsApparition,
             TweenMax.set(newContainer.find('.skills'), {y: 0, opacity: 1}),
-            TweenMax.set($('#video'), {opacity: 1})
+            TweenMax.set(newContainer.find('#video'), {opacity: 1})
         ]);
     }else{
         tlSkillsApparition.add([
@@ -34,7 +34,7 @@ module.exports = function(newContainer, aze){
         ]).add([
             tableSkillsApparition,
             TweenMax.to(newContainer.find('.skills'), 0.4, {y: 0, opacity: 1, ease: Circ.easeOut, delay: 0.1}),
-            TweenMax.to($('#video'), 0.5, {opacity: 1, ease: Circ.easeOut})
+            TweenMax.to(newContainer.find('#video'), 0.5, {opacity: 1, ease: Circ.easeOut})
         ]);
     }
 
