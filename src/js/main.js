@@ -210,6 +210,7 @@ $(function(){
         return pageTransition(body, menu);
     };
     Barba.Dispatcher.on('linkClicked', function(e){
+        //console.log(Barba.Pjax.transitionProgress);
         Barba.Pjax.getTransition = function(){
             return pageTransition(body, menu, $(e));
         };

@@ -16,6 +16,8 @@ module.exports = function(lastClickedLink, oldContainer){
                 resolve(true);
             }});
 
+            $('#portfolio').off('mouseleave focusout');
+
             tlFadeOut
                 .set(lastClickedLink.find('.wrapper-bloc'), {css: {rotation: '0.01deg', z: 0.01, force3D: true}})
                 .set($('.portfolio-item').find('.bg-img'), {opacity: 0})
