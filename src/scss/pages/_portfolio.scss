@@ -1,5 +1,21 @@
 /* Portfolio single page specific style */
 
+#noise{
+    width: 850px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 14%;
+    bottom: 0;
+    opacity: 0;
+    mask-image: url(../img/portfolio/cover-captain@2-mask.png);
+    mask-position: 50% 50%;
+    mask-repeat: no-repeat;
+    mask-size: cover;
+    background: url(../layoutImg/noise.gif);
+    transform: translateX(-50%);
+}
+
 .portfolio{
     background: #000;
     &.on{
@@ -37,6 +53,7 @@
     #page{
         min-height: 100vh;
         padding-top: 170px;
+        position: relative;
     }
     .link-arrow, .lang a, .social a, .menu-contact a{
         color: #fff;

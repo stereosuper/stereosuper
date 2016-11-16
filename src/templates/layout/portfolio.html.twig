@@ -11,6 +11,9 @@
         <section class='portfolio-desc'>
             <div class='portfolio-cover {{ cover_class }}'>
                 <img src='img/portfolio/cover-{% block portfolio_slug %}{% endblock %}.{{ cover_ext }}' srcset='img/portfolio/cover-{% block portfolio_slug %}{% endblock %}@2.{{ cover_ext }} 2x' alt=''>
+                {% if souvenir == true %}
+                    <div id='noise'></div>
+                {% endif %}
             </div>
             <div class='container p-relative'>
                 <div class='portfolio-text'>
