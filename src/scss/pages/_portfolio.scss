@@ -2,6 +2,9 @@
 
 .portfolio{
     background: #000;
+    &.on{
+        background: #fff;
+    }
     #header{
         background: none;
     }

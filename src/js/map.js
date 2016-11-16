@@ -6,8 +6,8 @@ var throttle = require('./throttle.js');
 module.exports = function(){
     function transform(x, y, centerX, centerY, maxX, maxY){
         var deltaX = centerX - x, deltaY = centerY - y,
-            angle = 200 - Math.atan2(deltaX, deltaY) * 180 / Math.PI,
-            tX = deltaX < maxX ? deltaX : maxX, tY = deltaY > maxY ? deltaY : maxY;
+            tX = deltaX < maxX ? deltaX : maxX, tY = deltaY > maxY ? deltaY : maxY,
+            angle = 200 - Math.atan2(tX, tY) * 180 / Math.PI;
 
         return 'translate3d(' + tX + 'px, ' + tY + 'px, 0) rotate(' + angle + 'deg)';
     }
@@ -92,7 +92,7 @@ module.exports = function(){
             hand.css({
                 'left': markerX - handWidth + 'px',
                 'top': markerY - handHeight + 'px',
-                'transform': transform(mouseX, mouseY, markerX, markerY, (mapHtml.width() - marker.offset().left - handWidth/2), -(marker.offset().top/2))
+                'transform': transform(mouseX, mouseY, markerX, markerY, (mapHtml.width() - marker.offset().left - handWidth/4), -(marker.offset().top/2))
             });
         });
     });

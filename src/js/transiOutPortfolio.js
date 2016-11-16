@@ -4,8 +4,9 @@ var TimelineMax = require('./libs/gsap/src/uncompressed/TimelineMax.js');
 
 var animSkillsIn = require('./animSkillsIn.js');
 
-module.exports = function(){
-    var portfolioText = $('.portfolio-text'), portfolioRole = $('.portfolio-role');
+module.exports = function(oldContainer){
+    var portfolioText = oldContainer.find('.portfolio-text'), portfolioRole = oldContainer.find('.portfolio-role'),
+        bgPortfolio = oldContainer.find('.bgPortfolio'), bgPagePortfolio = oldContainer.find('.bgPagePortfolio');
 
     return new Promise( function(resolve, reject) {
         var tlFadeOut = new TimelineMax({paused: true, onComplete: function(){
@@ -13,19 +14,19 @@ module.exports = function(){
         }});
 
         tlFadeOut.set(
-            $('#barba-wrapper'), {className: '-= on'}
+            [$('#barba-wrapper'), $('body')], {className: '-= on'}
         ).add([
             TweenMax.to(portfolioText.find('h1'), 0.25, {y: -40, opacity: 0, ease: Circ.easeOut}),
-            TweenMax.to($('.portfolio-cover'), 0.25, {x: -40, opacity: 0, ease: Power4.easeOut})
+            TweenMax.to(oldContainer.find('.portfolio-cover'), 0.25, {x: -40, opacity: 0, ease: Power4.easeOut})
         ]).add([
-            TweenMax.to($('.bgPortfolio'), 0.25, {scaleY: 0, ease: Power4.easeOut}),
-            TweenMax.to($('.bgPagePortfolio'), 0.25, {scaleY: 0, ease: Power4.easeOut}),
-            TweenMax.to($('.bgPortfolio'), 0.1, {opacity: 0, delay: 0.1}),
-            TweenMax.to($('.bgPagePortfolio'), 0.1, {opacity: 0, delay: 0.1})
+            TweenMax.to(bgPortfolio, 0.25, {scaleY: 0, ease: Power4.easeOut}),
+            TweenMax.to(bgPagePortfolio, 0.25, {scaleY: 0, ease: Power4.easeOut}),
+            TweenMax.to(bgPortfolio, 0.1, {opacity: 0, delay: 0.1}),
+            TweenMax.to(bgPagePortfolio, 0.1, {opacity: 0, delay: 0.1})
         ]);
 
         TweenMax.to(portfolioRole.find('a'), 0.25, {y: -80, opacity: 0, ease: Circ.easeOut});
-        TweenMax.to($('.skills'), 0.25, {y: -80, opacity: 0, ease: Circ.easeOut, delay: 0.1});
+        TweenMax.to(oldContainer.find('.skills'), 0.25, {y: -80, opacity: 0, ease: Circ.easeOut, delay: 0.1});
         TweenMax.to(portfolioRole.find('p'), 0.25, {y: -80, opacity: 0, ease: Circ.easeOut, delay: 0.25});
         TweenMax.to(portfolioText.find('p'), 0.15, {y: -80, opacity: 0, ease: Power4.easeOut, delay: 0.3, onComplete: function(){
             $('#header').removeClass('bgVisible');

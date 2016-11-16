@@ -1,6 +1,7 @@
 var $ = require('./libs/jquery/dist/jquery.slim.min.js');
 //var TweenMax = require('./libs/gsap/src/uncompressed/TweenMax.js');
-//var isMobile = require('./isMobile.min.js');
+
+var isMobile = require('./isMobile.min.js');
 
 var throttle = require('./throttle.js');
 window.requestAnimFrame = require('./requestAnimFrame.js');
@@ -40,7 +41,9 @@ module.exports = function(myScroll, body, header){
     }
 
     onScroll();
-    createVideo();
+    if(!isMobile.any){
+        createVideo();
+    }
 
     $(document).on('scroll', throttle(function(){
         requestAnimFrame(onScroll);
