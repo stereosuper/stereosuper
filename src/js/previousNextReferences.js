@@ -2,19 +2,19 @@ var $ = require('./libs/jquery/dist/jquery.slim.min.js');
 var TweenMax = require('./libs/gsap/src/uncompressed/TweenMax.js');
 var TimelineMax = require('./libs/gsap/src/uncompressed/TimelineMax.js');
 
-var previousNextButton = $('.previous-next-references >li a'),
-	previousButton = $('.previous-reference .txt'),
-	nextButton = $('.next-reference .txt'),
-	previousButtonSpan = previousButton.find('>span');
-	nextButtonSpan = nextButton.find('>span'),
-	previousArrow = $('.previous-reference .icon'),
-	nextArrow = $('.next-reference .icon'),
-	easeButton = Power3.easeOut,
-	tpsAnimIn = 0.2,
-	tpsAnimInTxt = 0.3,
-	tpsAnimOut = 0.1;
-
 module.exports = function(){
+	var previousNextButton = $('.previous-next-references >li a'),
+		previousButton = $('.previous-reference .txt'),
+		nextButton = $('.next-reference .txt'),
+		previousButtonSpan = previousButton.find('>span');
+		nextButtonSpan = nextButton.find('>span'),
+		previousArrow = $('.previous-reference .icon'),
+		nextArrow = $('.next-reference .icon'),
+		easeButton = Power3.easeOut,
+		tpsAnimIn = 0.2,
+		tpsAnimInTxt = 0.3,
+		tpsAnimOut = 0.1;
+
 	previousNextButton.on('mouseenter', function(){
 		if($(this).parents('li').hasClass('previous-reference')){
 			TweenMax.to(previousButtonSpan, tpsAnimInTxt, {x: 0, opacity: 1, ease: easeButton});

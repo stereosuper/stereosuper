@@ -14,7 +14,7 @@ module.exports = function(newContainer, aze){
 
         TweenMax.to(portfolioRole.find('p'), 0.4, {y: 0, opacity: 1, ease: Circ.easeOut});
         TweenMax.to(newContainer.find('.skills'), 0.4, {y: 0, opacity: 1, ease: Circ.easeOut, delay: 0.2});
-        TweenMax.to(portfolioText.find('.btn-close'), 0.1, {opacity: 1, ease: Power4.easeOut, delay: 0.9});
+        TweenMax.to([portfolioText.find('.btn-close'), portfolioText.find('.previous-next-references')], 0.1, {opacity: 1, ease: Power4.easeOut, delay: 0.9});
 
         tlSkillsApparition.add( tableSkillsApparition );
 
