@@ -17,17 +17,26 @@ module.exports = function(newContainer, aze){
 
     if($('#' + portfolioParam).length){
         $(document).scrollTop($('#' + portfolioParam).offset().top - 250);
+        tlSkillsApparition.add([
+            TweenMax.set(blockTitle.find('h1'), {opacity: 1}),
+            TweenMax.set(blockTitle.find('p'), {y: 0, opacity: 1}),
+            TweenMax.set(blockTitle.find('.link-arrow'), {y: 0, opacity: 1})
+        ]).add([
+            tableSkillsApparition,
+            TweenMax.set(newContainer.find('.skills'), {y: 0, opacity: 1}),
+            TweenMax.set($('#video'), {opacity: 1})
+        ]);
+    }else{
+        tlSkillsApparition.add([
+            TweenMax.to(blockTitle.find('h1'), 0.3, {opacity: 1, ease: Power4.easeOut, delay: 0.5}),
+            TweenMax.to(blockTitle.find('p'), 0.4, {y: 0, opacity: 1, ease: Power4.easeOut, delay: 1}),
+            TweenMax.to(blockTitle.find('.link-arrow'), 0.4, {y: 0, opacity: 1, ease: Power4.easeOut, delay: 1})
+        ]).add([
+            tableSkillsApparition,
+            TweenMax.to(newContainer.find('.skills'), 0.4, {y: 0, opacity: 1, ease: Circ.easeOut, delay: 0.1}),
+            TweenMax.to($('#video'), 0.5, {opacity: 1, ease: Circ.easeOut})
+        ]);
     }
-
-    tlSkillsApparition.add([
-        TweenMax.to(blockTitle.find('h1'), 0.3, {opacity: 1, ease: Power4.easeOut, delay: 0.5}),
-        TweenMax.to(blockTitle.find('p'), 0.4, {y: 0, opacity: 1, ease: Power4.easeOut, delay: 1}),
-        TweenMax.to(blockTitle.find('.link-arrow'), 0.4, {y: 0, opacity: 1, ease: Power4.easeOut, delay: 1})
-    ]).add([
-        tableSkillsApparition,
-        TweenMax.to($('.skills'), 0.4, {y: 0, opacity: 1, ease: Circ.easeOut, delay: 0.1}),
-        TweenMax.to($('#video'), 0.5, {opacity: 1, ease: Circ.easeOut})
-    ]);
 
     $('#header').removeClass('scrolled');
 };
