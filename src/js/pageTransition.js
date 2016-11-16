@@ -29,7 +29,7 @@ module.exports = function(body, menu, lastClickedLink){
             if(body.hasClass('home')){
                 return transiOutHome(lastClickedLink, $(this.oldContainer));
             }else if(body.hasClass('portfolio')){
-                return transiOutPortfolio();
+                return transiOutPortfolio($(this.oldContainer));
             }else{
                 return new Promise( function(resolve, reject){
                     TweenMax.to($(this.oldContainer), 0.5, {opacity: 0, onComplete: function(){
