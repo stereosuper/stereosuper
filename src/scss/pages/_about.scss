@@ -183,10 +183,14 @@
         border: 1px dashed $blue;
         position: absolute;
         //top: 25px;
-        top: 34px;
+        //top: 33px;
+        bottom: -39px;
         left: $gutter;
         font-size: 1.4rem;
         color: $blue;
+        &:after{
+            background: rgba($blue, 0.5);
+        }
     }
 }
 
