@@ -2,15 +2,15 @@
 
 ## Adding a portfolio item
 
-# SLUG
+### SLUG
 Choisissez pour l'item une version simple et sans charactères spéciaux de son nom, qui servira un peu partout, et que j'appellerai [SLUG] ensuite.
 
-# IMAGES
+### IMAGES
 - Dans le dossier /img/ ajouter l'image qui servira dans l'accueil, nom: bg-[SLUG].png, width: 960
 - Dans le dossier /portfolio/ ajouter l'image desktop retina, nom: cover-[SLUG]@2.png (ou .jpg), width: 2000; l'image desktop non retina, nom: cover-[SLUG].png (ou .jpg), width: 1000; l'image responsive, nom: mb-cover-[SLUG].png (ou .jpg), width: 1400
 - Générer le logo avec icomoon, l'importer en svg dans le projet, puis cliquer sur "generate svg & more", "download", et copier le < symbol > correspondant dans le fichier symbol.defs.svg
 
-# HTML - Index
+### HTML - Index
 Dans /templates/layout/layout.html.twig, ajouter dans le svg sous le footer le symbol svg du logo précédemment généré avec icomoon, et relever son id.
 Puis dans templates/index.html.twig:
 - Ajouter un nouveau < li > en première position dans le ul class='portfolio-items'
@@ -19,7 +19,7 @@ Puis dans templates/index.html.twig:
 - Compléter avec les skills voulues, virgule entre chaque, sans espaces (strategy,identity,design,animation,dev)
 - Mettre l'url dans le href, le nom entier dans le .logo et le .title, l'id de l'icone svg dans le use xlink:href, la date dans le time (et dans l'attribut datetime), ajouter l'icone souvenir si nécessaire
 
-# HTML - Page portfolio
+### HTML - Page portfolio
 - Créer un nouveau fichier twig appelé [URL_NAME].html.twig dans le dossier /templates/
 - Remplir le block "portfolio_slug" avec le [SLUG]
 - Remplir les block "portfolio_title" et "description" correspondent aux balises title et meta description
@@ -30,7 +30,7 @@ Puis dans templates/index.html.twig:
 - Remplir la variable "website" avec true pour afficher un bouton menant vers un lien que l'on remplit dans le block "portfolio_url"
 - Remplir les variables "prev_ref_link" et "next_ref_link" avec les liens des items de portfolio suivants et précédents et "prev_ref_name" et "next_ref_name" avec leurs noms (affichés dans le lien)
 
-# SASS
+### SASS
 A chaque ajout d'un item il faut compléter plusieurs variables dans le fichier /abstracts/_variables.scss:
 - $portfolio: ajouter en première position le [SLUG]
 - $portfolioNb: ajouter 1 (nombre total d'items)
