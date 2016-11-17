@@ -59,13 +59,8 @@ h1{
     opacity: 0;
     background: url(../img/img-thumbnail.jpg) no-repeat 50% 50%;
     background-size: cover;
+    pointer-events: none;
     transition: opacity 0.5s ease-in-out;
-    &.pageTransition{
-        video, iframe{
-            transition: $transitionOpacityPage;
-            opacity: 0;
-        }
-    }
     video{
         width: 100%;
         height: 100%;
@@ -89,6 +84,7 @@ h1{
         left: 50%;
         transform: translate(-50%, -50%);
         border: none;
+        pointer-events: none;
         pointer-events: none;
     }
 }
