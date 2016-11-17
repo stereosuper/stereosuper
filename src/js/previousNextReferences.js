@@ -13,7 +13,7 @@ module.exports = function(){
 		easeButton = Power3.easeOut,
 		tpsAnimIn = 0.2,
 		tpsAnimInTxt = 0.3,
-		tpsAnimOut = 0.1;
+		tpsAnimOut = 0.3;
 
 	previousNextButton.on('mouseenter', function(){
 		if($(this).parents('li').hasClass('previous-reference')){
