@@ -23,8 +23,7 @@ module.exports = function(newContainer, aze){
             TweenMax.set(blockTitle.find('.link-arrow'), {y: 0, opacity: 1})
         ]).add([
             tableSkillsApparition,
-            TweenMax.set(newContainer.find('.skills'), {y: 0, opacity: 1}),
-            TweenMax.set(newContainer.find('#video'), {opacity: 1})
+            TweenMax.set(newContainer.find('.skills'), {y: 0, opacity: 1})
         ]);
     }else{
         tlSkillsApparition.add([

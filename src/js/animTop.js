@@ -7,20 +7,20 @@ var throttle = require('./throttle.js');
 window.requestAnimFrame = require('./requestAnimFrame.js');
 
 module.exports = function(myScroll, body, header){
-    var video, player;
+    var video = $('#video'), player;
 
     function createVideo(){
         var options = {
             id: 189647536,
             byline: false,
-            autoplay: true,
             loop: true,
             title: false
         };
         player = new Vimeo.Player('video', options);
         player.ready().then(function(){
-            var src = $('#video').find('iframe').attr('src');
-            $('#video').find('iframe').attr('src', src + "&background=1");
+            var src = video.find('iframe').attr('src');
+            video.find('iframe').attr('src', src + "&background=1");
+            TweenMax.set(video, {opacity: 1, delay: 0.5});
         });
     }
 
