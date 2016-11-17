@@ -15,10 +15,8 @@
                     <div id='noise'></div>
                 {% endif %}
             </div>
-            <div class='container p-relative'>
-                <div class='portfolio-text'>
-                    <h1 class='{% block portfolio_slug %}{% endblock %}'>{% block portfolio_title %}{% endblock %}</h1>
-                    {% block portfolio_text %}{% endblock %}
+            <div class='container p-relative wrapper-portfolio-header'>
+                <div class='portfolio-header'>
                     <a href='./?portfolio={% block portfolio_slug %}{% endblock %}' class='btn-close'>Fermer</a>
                     <ul class='previous-next-references'>
                         {% if prev_ref_link == '' %}
@@ -48,6 +46,12 @@
                             </li>
                         {% endif %}
                     </ul>
+                </div>
+            </div>
+            <div class='container p-relative'>
+                <div class='portfolio-text'>
+                    <h1 class='{% block portfolio_slug %}{% endblock %}'>{% block portfolio_title %}{% endblock %}</h1>
+                    {% block portfolio_text %}{% endblock %}
                 </div>
             </div>
             <!--<div class='portfolio-cover-mb'><img src='img/portfolio/mb-cover-{% block portfolio_slug %}{% endblock %}.png' alt=''></div>-->

@@ -5,7 +5,8 @@ var TimelineMax = require('./libs/gsap/src/uncompressed/TimelineMax.js');
 var animSkillsIn = require('./animSkillsIn.js');
 
 module.exports = function(newContainer, aze){
-    var portfolioText = newContainer.find('.portfolio-text');
+    var portfolioText = newContainer.find('.portfolio-text')
+        portfolioHeader = newContainer.find('.portfolio-header');
 
     function fadeInPartTwo(){
         var tableSkillsApparition = animSkillsIn(newContainer);
@@ -14,7 +15,7 @@ module.exports = function(newContainer, aze){
 
         TweenMax.to(portfolioRole.find('p'), 0.4, {y: 0, opacity: 1, ease: Circ.easeOut});
         TweenMax.to(newContainer.find('.skills'), 0.4, {y: 0, opacity: 1, ease: Circ.easeOut, delay: 0.2});
-        TweenMax.to([portfolioText.find('.btn-close'), portfolioText.find('.previous-next-references')], 0.1, {opacity: 1, ease: Power4.easeOut, delay: 0.9});
+        TweenMax.to([portfolioHeader.find('.btn-close'), portfolioHeader.find('.previous-next-references')], 0.1, {opacity: 1, ease: Power4.easeOut, delay: 0.9});
 
         tlSkillsApparition.add( tableSkillsApparition );
 

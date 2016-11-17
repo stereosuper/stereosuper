@@ -5,7 +5,7 @@ var TimelineMax = require('./libs/gsap/src/uncompressed/TimelineMax.js');
 var animSkillsIn = require('./animSkillsIn.js');
 
 module.exports = function(oldContainer){
-    var portfolioText = oldContainer.find('.portfolio-text'), portfolioRole = oldContainer.find('.portfolio-role'),
+    var portfolioText = oldContainer.find('.portfolio-text'), portfolioRole = oldContainer.find('.portfolio-role'), portfolioHeader = oldContainer.find('.portfolio-header'),
         bgPortfolio = oldContainer.find('.bgPortfolio'), bgPagePortfolio = oldContainer.find('.bgPagePortfolio');
 
     return new Promise( function(resolve, reject) {
@@ -25,7 +25,7 @@ module.exports = function(oldContainer){
             TweenMax.to(bgPagePortfolio, 0.25, {scaleY: 0})
         ]);
 
-        TweenMax.to([portfolioText.find('.btn-close'), portfolioText.find('.previous-next-references')], 0.1, {opacity: 0, ease: Power4.easeOut});
+        TweenMax.to([portfolioHeader.find('.btn-close'), portfolioHeader.find('.previous-next-references')], 0.1, {opacity: 0, ease: Power4.easeOut});
         TweenMax.to(portfolioRole.find('a'), 0.25, {y: -80, opacity: 0, ease: Circ.easeOut});
         TweenMax.to(oldContainer.find('.skills'), 0.25, {y: -80, opacity: 0, ease: Circ.easeOut, delay: 0.1});
         TweenMax.to(portfolioRole.find('p'), 0.25, {y: -80, opacity: 0, ease: Circ.easeOut, delay: 0.25});
