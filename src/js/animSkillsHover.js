@@ -114,9 +114,9 @@ module.exports = function(body, portfolioItems){
     });
 
     body.on('mouseenter', '.portfolio-item', function(){
-        portfolioItems.removeClass('off');
+        $(this).removeClass('off');
         skills.removeClass('off');
-        TweenMax.to([portfolioItems.find('.wrapper-bg-img'), portfolioItems.find('.bg')], 0.2, {opacity: 1});
+        TweenMax.to([$(this).find('.wrapper-bg-img'), $(this).find('.bg')], 0.2, {opacity: 1});
 
         theseDatas = stringToArray($(this).data('skill'));
         skills.each(function(){
