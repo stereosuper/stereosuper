@@ -5,7 +5,9 @@ var createTlHover = require('./tlSkillsHover.js');
 
 module.exports = function(body, portfolioItems){
     var thisData, theseDatas;
-    var skills = $('.skill');
+    var skills = $('.skill'),
+        parentSkills = $('.skills'),
+        parentSkillsData;
 
     var dashes = $('.dashes >span'), tlHoverDashes,
         wrapperWaves = $('.wrapper-waves'), waves = $('.waves'), tlHoverWaves,
@@ -51,6 +53,15 @@ module.exports = function(body, portfolioItems){
     }
 
     body.on('mouseenter', '.skill', function(){
+        ///////////////////////////////////////
+        // masquer les projets déjà selected //
+        if(parentSkills.hasClass('selected')){
+            skills.removeClass('off');
+            portfolioItems.removeClass('off');
+            TweenMax.to([portfolioItems.find('.wrapper-bg-img'), portfolioItems.find('.bg')], 0.2, {opacity: 1});
+        }
+        ///////////////////////////////////////
+
         thisData = $(this).data('skill');
         switchSkills(thisData);
 
@@ -62,13 +73,51 @@ module.exports = function(body, portfolioItems){
             }
         });
     }).on('mouseleave', '.skill', function(){
-        portfolioItems.removeClass('off');
-        symbolToAnimate = $(this).find('.hoverAnimation');
-        TweenMax.to(symbolToAnimate, 0.3, {scaleX: 1, x: 0});
-        TweenMax.to([portfolioItems.find('.wrapper-bg-img'), portfolioItems.find('.bg')], 0.2, {opacity: 1});
+        if(parentSkills.hasClass('selected')){
+            thisData = $(this).data('skill');
+            parentSkillsData = parentSkills.data('skill-selected');
+            if(thisData != parentSkillsData){
+                // On ferme le courant
+                portfolioItems.removeClass('off');
+                symbolToAnimate = $(this).find('.hoverAnimation');
+                TweenMax.to(symbolToAnimate, 0.3, {scaleX: 1, x: 0});
+                TweenMax.to([portfolioItems.find('.wrapper-bg-img'), portfolioItems.find('.bg')], 0.2, {opacity: 1});
+
+                // On remet l'ancien
+                $('.skill[data-skill="'+parentSkillsData+'"]').siblings().addClass('off');
+                portfolioItems.each(function(){
+                    theseDatas = stringToArray($(this).data('skill'));
+                    if(theseDatas.indexOf(parentSkillsData) < 0){
+                        $(this).addClass('off');
+                        TweenMax.to([$(this).find('.wrapper-bg-img'), $(this).find('.bg')], 0.2, {opacity: 0});
+                    }
+                });
+            }
+        }else{
+            portfolioItems.removeClass('off');
+            symbolToAnimate = $(this).find('.hoverAnimation');
+            TweenMax.to(symbolToAnimate, 0.3, {scaleX: 1, x: 0});
+            TweenMax.to([portfolioItems.find('.wrapper-bg-img'), portfolioItems.find('.bg')], 0.2, {opacity: 1});
+        }
+    }).on('click', '.skill', function(){
+        thisData = $(this).data('skill');
+        parentSkillsData = parentSkills.data('skill-selected');
+        switchSkills(thisData);
+        if(parentSkills.hasClass('selected') && (thisData === parentSkillsData)){
+            parentSkills.removeClass('selected');
+            parentSkills.data('skill-selected', '');
+            skills.removeClass('off');
+        }else{
+            $(this).siblings().addClass('off');
+            parentSkills.addClass('selected').data('skill-selected', thisData);
+        }
     });
 
     body.on('mouseenter', '.portfolio-item', function(){
+        portfolioItems.removeClass('off');
+        skills.removeClass('off');
+        TweenMax.to([portfolioItems.find('.wrapper-bg-img'), portfolioItems.find('.bg')], 0.2, {opacity: 1});
+
         theseDatas = stringToArray($(this).data('skill'));
         skills.each(function(){
             thisData = $(this).data('skill');
@@ -78,5 +127,18 @@ module.exports = function(body, portfolioItems){
         skills.removeClass('off');
         symbolToAnimate = $('.skill').find('.hoverAnimation');
         TweenMax.set(symbolToAnimate, {scaleX: 1, x: 0});
+
+        if(parentSkills.hasClass('selected')){
+            // On remet l'ancien
+            parentSkillsData = parentSkills.data('skill-selected');
+            $('.skill[data-skill="'+parentSkillsData+'"]').siblings().addClass('off');
+            portfolioItems.each(function(){
+                theseDatas = stringToArray($(this).data('skill'));
+                if(theseDatas.indexOf(parentSkillsData) < 0){
+                    $(this).addClass('off');
+                    TweenMax.to([$(this).find('.wrapper-bg-img'), $(this).find('.bg')], 0.2, {opacity: 0});
+                }
+            });
+        }
     });
 }
