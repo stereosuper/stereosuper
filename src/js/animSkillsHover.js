@@ -74,7 +74,7 @@ module.exports = function(body, portfolioItems){
                 }
             });
         }
-    }).on('mouseleave', '.home .skill', function(){
+    }).on('mouseleave', '.skill', function(){
         if($(this).parents('body').hasClass('home')){
             if(parentSkills.hasClass('selected')){
                 thisData = $(this).data('skill');
