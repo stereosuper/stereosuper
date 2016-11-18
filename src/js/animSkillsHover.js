@@ -53,63 +53,69 @@ module.exports = function(body, portfolioItems){
     }
 
     body.on('mouseenter', '.skill', function(){
-        ///////////////////////////////////////
-        // masquer les projets déjà selected //
-        if(parentSkills.hasClass('selected')){
-            skills.removeClass('off');
-            portfolioItems.removeClass('off');
-            TweenMax.to([portfolioItems.find('.wrapper-bg-img'), portfolioItems.find('.bg')], 0.2, {opacity: 1});
-        }
-        ///////////////////////////////////////
-
-        thisData = $(this).data('skill');
-        switchSkills(thisData);
-
-        portfolioItems.each(function(){
-            theseDatas = stringToArray($(this).data('skill'));
-            if(theseDatas.indexOf(thisData) < 0){
-                $(this).addClass('off');
-                TweenMax.to([$(this).find('.wrapper-bg-img'), $(this).find('.bg')], 0.2, {opacity: 0});
+        if($(this).parents('body').hasClass('home')){
+            ///////////////////////////////////////
+            // masquer les projets déjà selected //
+            if(parentSkills.hasClass('selected')){
+                skills.removeClass('off');
+                portfolioItems.removeClass('off');
+                TweenMax.to([portfolioItems.find('.wrapper-bg-img'), portfolioItems.find('.bg')], 0.2, {opacity: 1});
             }
-        });
-    }).on('mouseleave', '.skill', function(){
-        if(parentSkills.hasClass('selected')){
+            ///////////////////////////////////////
+
             thisData = $(this).data('skill');
-            parentSkillsData = parentSkills.data('skill-selected');
-            if(thisData != parentSkillsData){
-                // On ferme le courant
+            switchSkills(thisData);
+
+            portfolioItems.each(function(){
+                theseDatas = stringToArray($(this).data('skill'));
+                if(theseDatas.indexOf(thisData) < 0){
+                    $(this).addClass('off');
+                    TweenMax.to([$(this).find('.wrapper-bg-img'), $(this).find('.bg')], 0.2, {opacity: 0});
+                }
+            });
+        }
+    }).on('mouseleave', '.home .skill', function(){
+        if($(this).parents('body').hasClass('home')){
+            if(parentSkills.hasClass('selected')){
+                thisData = $(this).data('skill');
+                parentSkillsData = parentSkills.data('skill-selected');
+                if(thisData != parentSkillsData){
+                    // On ferme le courant
+                    portfolioItems.removeClass('off');
+                    symbolToAnimate = $(this).find('.hoverAnimation');
+                    TweenMax.to(symbolToAnimate, 0.3, {scaleX: 1, x: 0});
+                    TweenMax.to([portfolioItems.find('.wrapper-bg-img'), portfolioItems.find('.bg')], 0.2, {opacity: 1});
+
+                    // On remet l'ancien
+                    $('.skill[data-skill="'+parentSkillsData+'"]').siblings().removeClass('off').addClass('off');
+                    portfolioItems.each(function(){
+                        theseDatas = stringToArray($(this).data('skill'));
+                        if(theseDatas.indexOf(parentSkillsData) < 0){
+                            $(this).addClass('off');
+                            TweenMax.to([$(this).find('.wrapper-bg-img'), $(this).find('.bg')], 0.2, {opacity: 0});
+                        }
+                    });
+                }
+            }else{
                 portfolioItems.removeClass('off');
                 symbolToAnimate = $(this).find('.hoverAnimation');
                 TweenMax.to(symbolToAnimate, 0.3, {scaleX: 1, x: 0});
                 TweenMax.to([portfolioItems.find('.wrapper-bg-img'), portfolioItems.find('.bg')], 0.2, {opacity: 1});
-
-                // On remet l'ancien
-                $('.skill[data-skill="'+parentSkillsData+'"]').siblings().addClass('off');
-                portfolioItems.each(function(){
-                    theseDatas = stringToArray($(this).data('skill'));
-                    if(theseDatas.indexOf(parentSkillsData) < 0){
-                        $(this).addClass('off');
-                        TweenMax.to([$(this).find('.wrapper-bg-img'), $(this).find('.bg')], 0.2, {opacity: 0});
-                    }
-                });
             }
-        }else{
-            portfolioItems.removeClass('off');
-            symbolToAnimate = $(this).find('.hoverAnimation');
-            TweenMax.to(symbolToAnimate, 0.3, {scaleX: 1, x: 0});
-            TweenMax.to([portfolioItems.find('.wrapper-bg-img'), portfolioItems.find('.bg')], 0.2, {opacity: 1});
         }
     }).on('click', '.skill', function(){
-        thisData = $(this).data('skill');
-        parentSkillsData = parentSkills.data('skill-selected');
-        switchSkills(thisData);
-        if(parentSkills.hasClass('selected') && (thisData === parentSkillsData)){
-            parentSkills.removeClass('selected');
-            parentSkills.data('skill-selected', '');
-            skills.removeClass('off');
-        }else{
-            $(this).siblings().addClass('off');
-            parentSkills.addClass('selected').data('skill-selected', thisData);
+        if($(this).parents('body').hasClass('home')){
+            thisData = $(this).data('skill');
+            parentSkillsData = parentSkills.data('skill-selected');
+            switchSkills(thisData);
+            if(parentSkills.hasClass('selected') && (thisData === parentSkillsData)){
+                parentSkills.removeClass('selected');
+                parentSkills.data('skill-selected', '');
+                skills.removeClass('off');
+            }else{
+                $(this).siblings().addClass('off');
+                parentSkills.addClass('selected').data('skill-selected', thisData);
+            }
         }
     });
 
