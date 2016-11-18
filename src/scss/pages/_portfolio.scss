@@ -370,10 +370,38 @@
     }
 }
 
+@media (max-width: 1250px){
+    .portfolio-text, .portfolio-role-content, .portfolio-header{
+        width: 55%;
+        margin-left: 45%;
+    }
+    .portfolio-cover{
+        width: 40%;
+    }
+}
 
 @media (max-width: 1200px){
     .portfolio-cover{
-        width: 47%;
+        // width: 47%;
+        width: 42%;
+    }
+}
+
+@media (max-width: 1100px){
+    .portfolio-text, .portfolio-role-content, .portfolio-header{
+        width: 65%;
+        margin-left: 35%;
+    }
+    .portfolio-cover{
+        width: 32%;
+        &.left{
+            img{
+                max-width: 670px;
+            }
+        }
+        &.top{
+            top: -160px;
+        }
     }
 }
 
