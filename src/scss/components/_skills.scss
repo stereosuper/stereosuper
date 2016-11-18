@@ -19,6 +19,9 @@
     }
     &.off{
         opacity: 0.3;
+        .portfolio &{
+            opacity: 1;
+        }
     }
     .js &{
         cursor: pointer;
