@@ -12,13 +12,7 @@ module.exports = function(body){
         myScroll = $(document).scrollTop();
         header = $('#header');
 
-        if(myScroll > $('#map').height() - header.height()){
-            header.addClass('bgVisible');
-        }else{
-            header.removeClass('bgVisible');
-        }
-
-        console.log(myScroll)
+        myScroll > $('#map').height() - header.height() ?  header.addClass('bgVisible') : header.removeClass('bgVisible');
     }
     onScroll();
 
