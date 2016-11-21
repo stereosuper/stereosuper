@@ -185,7 +185,8 @@
         //top: 25px;
         //top: 33px;
         bottom: -39px;
-        left: $gutter;
+        // left: $gutter;
+        left: calc(11.9% - #{$gutter});
         font-size: 1.4rem;
         color: $blue;
         &:after{
@@ -317,6 +318,7 @@
     .year-wrapper{
         left: $gutter;
         right: $gutter;
+        width: auto;
         &:after{
             right: auto;
             left: 0;
@@ -359,6 +361,10 @@
         .year{
             border: 0;
             z-index: 2;
+            padding: 0;
+            bottom: auto;
+            top: 36px;
+            left: 60px;
         }
         .content-about{
             &:before{
@@ -384,6 +390,9 @@
     }
 
     .footer-page-about{
+        .year{
+            left: 30px;
+        }
         .content-about{
             &:before{
                 display: none;

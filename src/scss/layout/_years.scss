@@ -74,7 +74,11 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    left: $gutter;
+    //left: $gutter;
+    width: 88.1%;
+    // left: 11.9%;
+    left: calc(11.9% - #{$gutter});
+
     right: $gutter;
 }
 
@@ -149,7 +153,13 @@
     }
 }
 .year-wrapper{
-    width: 23.8%;
+    // width: 23.8%;
+    // left: 0;
+    width: 11.9%;
+    width: calc(11.9% + #{$gutter*2});
+    left: 11.9%;
+    left: calc(11.9% - #{$gutter});
+
     position: absolute;
     top: 0;
     bottom: -50px;

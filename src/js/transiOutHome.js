@@ -6,6 +6,9 @@ module.exports = function(lastClickedLink, oldContainer){
     var tlFadeOut;
 
     return new Promise( function(resolve, reject){
+        $('.skill.off').removeClass('off');
+        $('.skills.selected').removeClass('selected');
+        $('.skills').data('skill-selected', '');
         if(lastClickedLink !== undefined && lastClickedLink.parents('.portfolio-item').length){
             lastClickedLink.find('h2').prepend('<span class="bg-transition"></span>');
 
