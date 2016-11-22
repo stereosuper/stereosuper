@@ -201,13 +201,17 @@
 }
 .portfolio-cover-mb{
     display: none;
-    margin: 0 0 -10%;
+    margin: -30% 0 0;
     overflow: hidden;
     img{
         max-width: 1100px;
         position: relative;
         left: 47%;
         transform: translate3d(-50%, 0, 0);
+    }
+    .js &{
+        opacity: 0;
+        transform: translate3d(0, 40px, 0);
     }
 }
 
@@ -409,6 +413,7 @@
     .portfolio{
         #page{
             padding-top: 120px;
+            min-height: calc(100vh - 78px); //footer height
         }
         h1{
             margin-left: $gutter !important;
@@ -426,6 +431,9 @@
     }
     .portfolio-cover-mb{
         display: block;
+    }
+    .portfolio-desc{
+        padding: 0 0 30%;
     }
 }
 

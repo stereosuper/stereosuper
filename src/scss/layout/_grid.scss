@@ -32,6 +32,12 @@
     }
 }
 
+@media (max-width: 960px){
+    #barba-wrapper{
+        min-height: calc(100vh - 156px); // footer height
+    }
+}
+
 @media (max-width: 870px){
     .container-small{
         padding: 0;

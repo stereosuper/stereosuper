@@ -15,7 +15,7 @@ module.exports = function(newContainer, aze){
 
         TweenMax.to(portfolioRole.find('p'), 0.4, {y: 0, opacity: 1, ease: Circ.easeOut});
         TweenMax.to(newContainer.find('.skills'), 0.4, {y: 0, opacity: 1, ease: Circ.easeOut, delay: 0.2});
-        TweenMax.to([portfolioHeader.find('.btn-close'), portfolioHeader.find('.previous-next-references')], 0.1, {opacity: 1, ease: Power4.easeOut, delay: 0.9});
+        TweenMax.to([portfolioHeader.find('.btn-close'), portfolioHeader.find('#navSingle')], 0.1, {opacity: 1, ease: Power4.easeOut, delay: 0.9});
 
         tlSkillsApparition.add( tableSkillsApparition );
 
@@ -45,7 +45,7 @@ module.exports = function(newContainer, aze){
         TweenMax.set([$('#barba-wrapper'), $('body')], {className: '+= on', delay: 1}),
         TweenMax.to(portfolioText.find('h1'), 0.2, {y: 0, opacity: 1, ease: Circ.easeOut, delay: 0.5}),
         TweenMax.set($('#header'), {className: '+= bgVisible', delay: 0.5}),
-        TweenMax.to(newContainer.find('.portfolio-cover'), 0.5, {x: 0, opacity: 1, ease: Power4.easeOut, delay: 0.5}),
+        TweenMax.to([newContainer.find('.portfolio-cover'), newContainer.find('.portfolio-cover-mb')], 0.5, {x: 0, y: 0, opacity: 1, ease: Power4.easeOut, delay: 0.5}),
         TweenMax.to(portfolioText.find('p'), 0.4, {y: 0, opacity: 1, ease: Power4.easeOut, delay: 0.6})
     ]);
 };
