@@ -42,6 +42,22 @@
     }
 }
 
+#counter{
+    position: fixed;
+    bottom: 0;
+    background: #111118;
+    left: 0;
+    right: 0;
+    padding: 20px 100px;
+    z-index: 2;
+    font-family: 'Courier New', Courier, monospace;
+    transform: translate3d(0, 100%, 0);
+    transition: $transition;
+    &.on{
+        transform: translate3d(0, 0, 0);
+    }
+}
+
 #stereo{
     &.logo-1, .no-js &{
         background-image: url(../layoutImg/stereo-1.jpg);
