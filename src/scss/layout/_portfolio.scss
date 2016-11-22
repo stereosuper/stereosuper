@@ -170,6 +170,7 @@
 	.bg{
 		z-index: 2;
 		mix-blend-mode: multiply;
+		outline: 1px solid transparent;
 		&.transi{
 			mix-blend-mode: normal;
 		}
