@@ -24,7 +24,7 @@
 	position: relative;
 	margin: 40px 0;
 	clear: both;
-	transition: opacity $transition;
+	// transition: opacity $transition;
 	&:nth-child(10n+1){
 		.wrapper-bloc{
 			transform: rotate(0);

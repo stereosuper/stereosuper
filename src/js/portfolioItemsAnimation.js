@@ -72,17 +72,21 @@ module.exports = function(myScroll, windowHeight, windowWidth, portfolioItems, p
     ////////////////////////////////////////////////
 
     portfolio.on('mouseenter focusin', '.portfolio-item', function(){
-        opacityItemHover = $(this).hasClass('lbb-item') ? 0.75 : 0.3;
+        if(!$(this).hasClass('off')){
+            opacityItemHover = $(this).hasClass('lbb-item') ? 0.75 : 0.3;
 
-        TweenMax.set($(this).find('.wrapper-bloc'), {css: {rotation: '0.01deg', z: 0.01, force3D: true}});
-        TweenMax.to([$(this).find('.bg'), $(this).find('.wrapper-bg-img')], 0.3, {css: {scale: 1.05, rotation: '0.01deg', z: 0.01, force3D: true}, ease: Power1.easeInOut});
-        TweenMax.to($(this).find('.bg-img'), 0.3, {css: {opacity: opacityItemHover, scale: 1, rotation: '0.01deg', z: 0.01, force3D: true}, ease: Power1.easeInOut});
+            TweenMax.set($(this).find('.wrapper-bloc'), {css: {rotation: '0.01deg', z: 0.01, force3D: true}});
+            TweenMax.to([$(this).find('.bg'), $(this).find('.wrapper-bg-img')], 0.3, {css: {scale: 1.05, rotation: '0.01deg', z: 0.01, force3D: true}, ease: Power1.easeInOut});
+            TweenMax.to($(this).find('.bg-img'), 0.3, {css: {opacity: opacityItemHover, scale: 1, rotation: '0.01deg', z: 0.01, force3D: true}, ease: Power1.easeInOut});
+        }
     }).on('mouseleave focusout', '.portfolio-item', function(){
-        opacityItemLeave = $(this).hasClass('lbb-item') ? 0.6 : 0.15;
+        if(!$(this).hasClass('off')){
+            opacityItemLeave = $(this).hasClass('lbb-item') ? 0.6 : 0.15;
 
-        TweenMax.set($(this).find('.wrapper-bloc'), {css: {clearProps: 'rotation', force3D: true}});
-        TweenMax.to([$(this).find('.bg'), $(this).find('.wrapper-bg-img')], 0.25, {css: {scale: 1, rotation: '0.01deg', z: 0.01, force3D: true}, ease: Power1.easeInOut});
-        TweenMax.to($(this).find('.bg-img'), 0.25, {css: {opacity: opacityItemLeave, scale: 1.05, rotation:  '0.01deg', z: 0.01, force3D: true}, ease: Power1.easeInOut});
+            TweenMax.set($(this).find('.wrapper-bloc'), {css: {clearProps: 'rotation', force3D: true}});
+            TweenMax.to([$(this).find('.bg'), $(this).find('.wrapper-bg-img')], 0.25, {css: {scale: 1, rotation: '0.01deg', z: 0.01, force3D: true}, ease: Power1.easeInOut});
+            TweenMax.to($(this).find('.bg-img'), 0.25, {css: {opacity: opacityItemLeave, scale: 1.05, rotation:  '0.01deg', z: 0.01, force3D: true}, ease: Power1.easeInOut});
+        }
     });
 
 }
