@@ -57,8 +57,10 @@ module.exports = function(body, portfolioItems){
     
     body.on('mouseenter', '.skill', function(){
         if($(this).parents('body').hasClass('home')){
-            thisData = $(this).data('skill');
-            switchSkills(thisData);
+            if(!$(this).hasClass('off')){
+                thisData = $(this).data('skill');
+                switchSkills(thisData);
+            }
         }else{
             skills.removeClass('off');
             $('.skills.selected').removeClass('selected');
