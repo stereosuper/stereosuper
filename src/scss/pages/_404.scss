@@ -1,0 +1,10 @@
+.e404{
+    h1{
+        max-width: 40%;
+        margin-bottom: 0;
+        line-height: 1;
+        + p{
+            margin: 10px 0;
+        }
+    }
+}

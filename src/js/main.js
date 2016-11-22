@@ -202,6 +202,33 @@ $(function(){
 
 
     ////////////////////////////////////////////////
+    // Mentions functions
+    ////////////////////////////////////////////////
+
+    var Mentions = Barba.BaseView.extend({ namespace: 'mentions',
+        onEnter: function(){
+        },
+        onEnterCompleted: function(){
+            var stupid = $('#stupidGif');
+
+            if(!isMobile.any){
+                $('.stupid-gif').on('mouseenter', function(){
+                    stupid.addClass('on').find('#' + $(this).data('gif')).addClass('on');
+                }).on('mouseleave', function(){
+                    stupid.removeClass('on').find('img').removeClass('on');
+                });
+            }
+        },
+        onLeave: function(){
+            // A new Transition toward a new page has just started.
+        },
+        onLeaveCompleted: function(){
+            // The Container has just been removed from the DOM.
+        }
+    });
+    Mentions.init();
+
+    ////////////////////////////////////////////////
     // Load Page
     ////////////////////////////////////////////////
 

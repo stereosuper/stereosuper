@@ -7,7 +7,7 @@ module.exports = function(){
     function transform(x, y, centerX, centerY, maxX, maxY){
         var deltaX = centerX - x, deltaY = centerY - y,
             tX = deltaX < maxX ? deltaX : maxX, tY = deltaY > maxY ? deltaY : maxY,
-            angle = 200 - Math.atan2(tX, tY) * 180 / Math.PI;
+            angle = 220 - Math.atan2(tX, tY) * 180 / Math.PI;
 
         return 'translate3d(' + tX + 'px, ' + tY + 'px, 0) rotate(' + angle + 'deg)';
     }

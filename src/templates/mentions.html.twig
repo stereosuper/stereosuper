@@ -8,7 +8,7 @@
 
 {# Content #}
 {% block content %}
-    <div id='page' class='barba-container' data-class='bw'>
+    <div id='page' class='barba-container' data-class='bw' data-namespace='mentions'>
         <div class='container'>
             <div class='container-small'>
                 <div class='title'>
@@ -38,12 +38,12 @@
                     Contact : <strong><a href='mailto:contact@stereosuper.fr' title='Envoyer un e-mail'>contact@stereosuper.fr</a></strong></p>
 
                     <p>Conception et production : <strong>l’incroyable équipe Stéréosuper</strong><br>
-                    Directeur de la publication : <strong>Jean-François Perrault</strong><br>
-                    Webmaster : <strong>Boris Forconi</strong><br>
-                    Swag : <strong>Adrien le Menthéour</strong><br>
-                    Dab : <strong>Guillaume Caillet</strong><br>
-                    Touche bretonne : <strong>Vincent Aribart</strong><br>
-                    Métal : <strong>Elisabeth Hamel</strong><br>
+                    Directeur de la publication : <strong class='stupid-gif' data-gif=''>Jean-François Perrault</strong><br>
+                    Webmaster : <strong class='stupid-gif' data-gif='webmaster'>Boris Forconi</strong><br>
+                    Swag : <strong class='stupid-gif' data-gif='swag'>Adrien le Menthéour</strong><br>
+                    Dab : <strong class='stupid-gif' data-gif='dab'>Guillaume Caillet</strong><br>
+                    Touche bretonne : <strong class='stupid-gif' data-gif=''>Vincent Aribart</strong><br>
+                    Métal : <strong class='stupid-gif' data-gif='metal'>Elisabeth Hamel</strong><br>
                     Traduction : <strong>Nicolas Grégoire</strong></p>
 
                     <p>Photos et vidéos : <b>©Jean-François Perrault, épaulé de Vincent Aribart</b></p>
@@ -60,7 +60,7 @@
                     <b><a href='mailto:bisou@stereosuper.fr' title='Envoyer un e-mail'>bisou@stereosuper.fr</a></b></p>
 
                     <h2>Droits d’auteur</h2>
-                    <p>Les photographies, textes, slogans, dessins, images, vidéos, séquences animées sonores ou non ainsi que toutes œuvres intégrées dans le site sont la propriété de Stéréosuper ou de tiers ayant autorisé Stéréosuper à les utiliser.</p>
+                    <p>Les photographies, textes, slogans, dessins, images, vidéos, séquences animées sonores ou non sont la propriété de Stéréosuper ou de tiers.</p>
 
                     <p>Les logos, icônes et puces graphiques représentés sur le site sont protégés au titre des droits d'auteur et des articles L.511.1 et suivants du Code de la Propriété Intellectuelle relatifs à la protection des modèles déposés.</p>
 
@@ -72,6 +72,12 @@
                     <p>Aucun gant, mitaine ou moufle n’a subi de maltraitance au cours de la réalisation de ce site web.</p>
                 </div>
             </div>
+        </div>
+        <div id='stupidGif'>
+            <img src='img/webmaster.gif' alt='' id='webmaster'>
+            <img src='img/swag.gif' alt='' id='swag'>
+            <img src='img/dab.gif' alt='' id='dab'>
+            <img src='img/metal.gif' alt='' id='metal'>
         </div>
     </div>
 {% endblock content %}
