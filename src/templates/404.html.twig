@@ -8,16 +8,22 @@
 
 {# Content #}
 {% block content %}
-    <div id='page' class='barba-container' data-class='e404'>
+    <div id='page' class='barba-container' data-class='e404' data-namespace='404'>
 
         <div class='container'>
-            <h1>Erreur 404</h1>
-            <p>La page que vous cherchez n'existe pas ou plus. <br>Pour vous consoler, parcourez donc nos dernières réalisations!</p>
-            <a href='./' class='link-arrow link-caps'>
-                <span>Voir nos références</span>
-                <svg class='icon i1'><use xlink:href='#icon-big-arrow'/></svg>
-                <svg class='icon i2'><use xlink:href='#icon-big-arrow'/></svg>
-            </a>
+            <div class='text-404'>
+                <h1>Erreur 404</h1>
+                <p>La page que vous cherchez n'existe pas ou plus. <br>Pour vous consoler, parcourez donc nos dernières réalisations!</p>
+                <a href='./' class='link-arrow link-caps'>
+                    <span>Voir nos références</span>
+                    <svg class='icon i1'><use xlink:href='#icon-big-arrow'/></svg>
+                    <svg class='icon i2'><use xlink:href='#icon-big-arrow'/></svg>
+                </a>
+            </div>
+            <div class='logo-404' id='logo404'>
+                <div id='stereo'></div>
+                <div id='super'></div>
+            </div>
         </div>
 
     </div>

@@ -409,6 +409,7 @@
     .portfolio{
         #page{
             padding-top: 120px;
+            min-height: calc(100vh - 78px); //footer height
         }
         h1{
             margin-left: $gutter !important;

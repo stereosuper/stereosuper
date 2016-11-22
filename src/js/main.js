@@ -228,6 +228,45 @@ $(function(){
     });
     Mentions.init();
 
+
+    ////////////////////////////////////////////////
+    // Mentions functions
+    ////////////////////////////////////////////////
+
+    var P404 = Barba.BaseView.extend({ namespace: '404',
+        onEnter: function(){
+        },
+        onEnterCompleted: function(){
+            var nbImg = 15, timer;
+
+            function addRandomLogo(container){
+                var random = Math.floor(Math.random() * nbImg) + 1;
+                container.removeClass().addClass('logo-' + random);
+            }
+
+            function changeLogo(){
+                addRandomLogo($('#stereo'));
+                addRandomLogo($('#super'));
+
+                timer = setTimeout(changeLogo, 1000);
+            }
+            changeLogo();
+
+            $('#logo404').on('mouseenter', function(){
+                clearTimeout(timer);
+            }).on('mouseleave', changeLogo);
+
+        },
+        onLeave: function(){
+            // A new Transition toward a new page has just started.
+        },
+        onLeaveCompleted: function(){
+            // The Container has just been removed from the DOM.
+        }
+    });
+    P404.init();
+
+
     ////////////////////////////////////////////////
     // Load Page
     ////////////////////////////////////////////////
