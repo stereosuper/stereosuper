@@ -82,7 +82,7 @@ module.exports = function(body, portfolioItems){
                     // TweenMax.to(symbolToAnimate, 0.3, {scaleX: 1, x: 0});
                     TweenMax.to([portfolioItems.find('.wrapper-bg-img'), portfolioItems.find('.bg')], 0.2, {opacity: 1});
                     TweenMax.set(portfolioItems, {opacity: 1});
-                    TweenMax.to([portfolioItems.find('time'), portfolioItems.find('.title')], 0.2, {x: 0, opacity: 1});
+                    TweenMax.to([portfolioItems.find('time'), portfolioItems.find('.title'), $(this).find('.souvenir')], 0.2, {x: 0, opacity: 1});
                     TweenMax.to(portfolioItems.find('.border-left'), 0.2, {scaleY: 1});
                     TweenMax.to(portfolioItems.find('.border-middle'), 0.2, {scaleX: 1});
                 }else{
@@ -100,7 +100,7 @@ module.exports = function(body, portfolioItems){
                         TweenMax.set($(this), {opacity: portfolioItemOpacity});
 
                         // Disparition de l'année et titre du projet
-                        TweenMax.to([$(this).find('time'), $(this).find('.title')], 0.2, {x: 20, opacity: 0});
+                        TweenMax.to([$(this).find('time'), $(this).find('.title'), $(this).find('.souvenir')], 0.2, {x: 20, opacity: 0});
                         TweenMax.to($(this).find('.border-left'), 0.2, {scaleY: 0});
                         TweenMax.to($(this).find('.border-middle'), 0.2, {scaleX: 0});
                     });
@@ -114,7 +114,7 @@ module.exports = function(body, portfolioItems){
                                 TweenMax.set($(this), {opacity: 1});
 
                                 // Réapparition de l'année et titre du projet
-                                TweenMax.to([$(this).find('time'), $(this).find('.title')], 0.2, {x: 0, opacity: 1});
+                                TweenMax.to([$(this).find('time'), $(this).find('.title'), $(this).find('.souvenir')], 0.2, {x: 0, opacity: 1});
                                 TweenMax.to($(this).find('.border-left'), 0.2, {scaleY: 1});
                                 TweenMax.to($(this).find('.border-middle'), 0.2, {scaleX: 1});
                             }
@@ -130,12 +130,12 @@ module.exports = function(body, portfolioItems){
                 // Dans un 1er temps, tous les items sont inactives
                 portfolioItems.each(function(){
                     $(this).addClass('off');
-                    TweenMax.to([$(this).find('.wrapper-bg-img'), $(this).find('.bg')], 0.2, {opacity: 0});
+                    TweenMax.to([$(this).find('.wrapper-bg-img'), $(this).find('.bg'), $(this).find('.souvenir')], 0.2, {opacity: 0});
                     portfolioItemOpacity = $(this).data('opacity');
                     TweenMax.set($(this), {opacity: portfolioItemOpacity});
 
                     // Disparition de l'année et titre du projet
-                    TweenMax.to([$(this).find('time'), $(this).find('.title')], 0.2, {x: 20, opacity: 0});
+                    TweenMax.to([$(this).find('time'), $(this).find('.title'), $(this).find('.souvenir')], 0.2, {x: 20, opacity: 0});
                     TweenMax.to($(this).find('.border-left'), 0.2, {scaleY: 0});
                     TweenMax.to($(this).find('.border-middle'), 0.2, {scaleX: 0});
                 });
@@ -145,11 +145,11 @@ module.exports = function(body, portfolioItems){
                         theseDatas = stringToArray($(this).data('skill'));
                         if(theseDatas.indexOf(thisData) >= 0){
                             $(this).removeClass('off');
-                            TweenMax.to([$(this).find('.wrapper-bg-img'), $(this).find('.bg')], 0.2, {opacity: 1});
+                            TweenMax.to([$(this).find('.wrapper-bg-img'), $(this).find('.bg'), $(this).find('.souvenir')], 0.2, {opacity: 1});
                             TweenMax.set($(this), {opacity: 1});
 
                             // Réapparition de l'année et titre du projet
-                            TweenMax.to([$(this).find('time'), $(this).find('.title')], 0.2, {x: 0, opacity: 1});
+                            TweenMax.to([$(this).find('time'), $(this).find('.title'), $(this).find('.souvenir')], 0.2, {x: 0, opacity: 1});
                             TweenMax.to($(this).find('.border-left'), 0.2, {scaleY: 1});
                             TweenMax.to($(this).find('.border-middle'), 0.2, {scaleX: 1});
                         }
