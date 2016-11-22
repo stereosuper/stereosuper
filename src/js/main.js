@@ -37,6 +37,8 @@ $(function(){
     var previousNextReferences = require('./previousNextReferences.js');
     var animSouvenir = require('./animSouvenir.js');
 
+    var anim404 = require('./404.js');
+
 
     var windowWidth = $(window).outerWidth(), windowHeight = $(window).height();
     var myScroll = $(document).scrollTop();
@@ -237,24 +239,7 @@ $(function(){
         onEnter: function(){
         },
         onEnterCompleted: function(){
-            var nbImg = 15, timer;
-
-            function addRandomLogo(container){
-                var random = Math.floor(Math.random() * nbImg) + 1;
-                container.removeClass().addClass('logo-' + random);
-            }
-
-            function changeLogo(){
-                addRandomLogo($('#stereo'));
-                addRandomLogo($('#super'));
-
-                timer = setTimeout(changeLogo, 1000);
-            }
-            changeLogo();
-
-            $('#logo404').on('mouseenter', function(){
-                clearTimeout(timer);
-            }).on('mouseleave', changeLogo);
+            anim404();
 
         },
         onLeave: function(){
