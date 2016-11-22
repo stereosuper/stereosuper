@@ -19,7 +19,7 @@ module.exports = function(){
         addRandomLogo($('#stereo'));
         addRandomLogo($('#super'));
 
-        timer = setTimeout(changeLogo, 750);
+        timer = setTimeout(changeLogo, 200);
     }
 
     for(j; j<nbImg; j++){

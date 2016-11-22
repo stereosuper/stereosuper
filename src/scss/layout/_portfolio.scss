@@ -80,6 +80,12 @@
 		/*.wrapper-bg-img{
 			opacity: 0;
 		}*/
+		a{
+			cursor: default;
+			&:hover{
+				//cursor: default;
+			}
+		}
 	}
 	&:nth-of-type(even){
 		float: right;
