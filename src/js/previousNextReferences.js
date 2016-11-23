@@ -9,8 +9,6 @@ module.exports = function(){
 		nextArrow = navSingle.find('.next-reference').find('.icon'),
 		easeButton = Power3.easeOut, tpsAnimIn = 0.2, tpsAnimInTxt = 0.3, tpsAnimOut = 0.3;
 
-	console.log(navSingle)
-
 	navSingle.on('mouseenter focusin', 'a', function(){
 		TweenMax.to($(this).find('.txt').find('> span'), tpsAnimInTxt, {x: 0, opacity: 1, ease: easeButton});
 		if($(this).parents('li').hasClass('previous-reference')){
