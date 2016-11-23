@@ -143,11 +143,20 @@
     img{
         max-width: 15.3%;
         margin: 0 0.4%;
+        &:nth-child(1){
+            margin-top: 15px;
+        }
         &:nth-child(2){
-            margin-top: 70px;
+            margin-top: 45px;
         }
         &:nth-child(3){
-            margin-top: 40px;
+            margin-top: 70px;
+        }
+        &:nth-child(4){
+            margin-top: 35px;
+        }
+        &:nth-child(6){
+            margin-top: 100px;
         }
     }
 }
