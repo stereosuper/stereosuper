@@ -1,21 +1,5 @@
 /* Portfolio single page specific style */
 
-#noise{
-    width: 850px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 14%;
-    bottom: 0;
-    opacity: 0;
-    mask-image: url(../img/portfolio/cover-captain@2-mask.png);
-    mask-position: 50% 50%;
-    mask-repeat: no-repeat;
-    mask-size: cover;
-    background: url(../layoutImg/noise.gif);
-    transform: translateX(-50%);
-}
-
 .portfolio{
     background: #000;
     &.on{
@@ -154,6 +138,19 @@
     transform-origin: 50% 0;
 }
 
+#noise{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    //mask-image: url(../img/portfolio/cover-captain-mask.svg);
+    mask-position: 50% 50%;
+    mask-repeat: no-repeat;
+    mask-size: cover;
+    background: url(../layoutImg/noise.gif);
+    transform: translateX(-50%);
+}
 .portfolio-cover{
     width: 45%;
     position: absolute;
@@ -193,6 +190,10 @@
             max-width: 850px;
             left: 14%;
         }
+        #noise{
+            width: 850px;
+            left: 14%;
+        }
     }
     .js &{
         opacity: 0;
@@ -212,6 +213,13 @@
     .js &{
         opacity: 0;
         transform: translate3d(0, 40px, 0);
+    }
+}
+
+@for $i from 1 through $portfolioSouvenirNb{
+    $name: nth($portfolioSouvenir, $i);
+    .noise-#{$name}{
+        mask-image: url(../img/portfolio/cover-#{$name}-mask.svg);
     }
 }
 
@@ -401,6 +409,9 @@
         &.left{
             img{
                 max-width: 670px;
+            }
+            #noise{
+                width: 670px;
             }
         }
         &.top{
