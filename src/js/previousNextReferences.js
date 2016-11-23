@@ -2,12 +2,14 @@ var $ = require('./libs/jquery/dist/jquery.slim.min.js');
 var TweenMax = require('./libs/gsap/src/uncompressed/TweenMax.js');
 
 module.exports = function(){
-	var navSingle = $('#navSingle'),
+	var navSingle = $('.previous-next-references'),
 		previousButtonSpan = navSingle.find('.previous-reference').find('.txt').find('>span');
 		nextButtonSpan = navSingle.find('.next-reference').find('.txt').find('>span'),
 		previousArrow = navSingle.find('.previous-reference').find('.icon'),
 		nextArrow = navSingle.find('.next-reference').find('.icon'),
 		easeButton = Power3.easeOut, tpsAnimIn = 0.2, tpsAnimInTxt = 0.3, tpsAnimOut = 0.3;
+
+	console.log(navSingle)
 
 	navSingle.on('mouseenter focusin', 'a', function(){
 		TweenMax.to($(this).find('.txt').find('> span'), tpsAnimInTxt, {x: 0, opacity: 1, ease: easeButton});
