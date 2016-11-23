@@ -12,7 +12,7 @@
             <div class='portfolio-cover {{ cover_class }}'>
                 <img src='img/portfolio/cover-{% block portfolio_slug %}{% endblock %}.{{ cover_ext }}' srcset='img/portfolio/cover-{% block portfolio_slug %}{% endblock %}@2.{{ cover_ext }} 2x' alt=''>
                 {% if souvenir == true %}
-                    <div id='noise'></div>
+                    <div id='noise' class='noise-{% block portfolio_slug %}{% endblock %}'></div>
                 {% endif %}
             </div>
             <div class='container p-relative wrapper-portfolio-header'>
