@@ -277,7 +277,7 @@
     		background: nth($portfolioColors, $i);
     	}
     	.bg-img{
-    		background-image: url(../img/bg-#{$name}.png);
+    		background-image: url(../img/bg-#{$name}.#{nth($portfolioExt, $i)});
     	}
     }
     @if $name == 'lbb'{
