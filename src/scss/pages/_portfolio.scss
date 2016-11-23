@@ -139,11 +139,13 @@
 }
 
 #noise{
+    width: 1000px;
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     opacity: 0;
+    left: 48%;
     //mask-image: url(../img/portfolio/cover-captain-mask.svg);
     mask-position: 50% 50%;
     mask-repeat: no-repeat;
@@ -178,6 +180,11 @@
             max-width: 100%;
             position: static;
             transform: none;
+        }
+        #noise{
+            width: 100%;
+            transform: none;
+            left: 0;
         }
     }
     &.top{
