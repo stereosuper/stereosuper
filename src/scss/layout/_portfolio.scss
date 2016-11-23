@@ -243,63 +243,66 @@
 	}
 }
 
+@each $name, $map in $portfolio{
+  	$color: map-get($map, color);
+  	$logoWidth: map-get($map, logoWidth);
+  	$logoHeight: map-get($map, logoHeight);
+  	$bgExt: map-get($map, bgExt);
 
-@for $i from 1 through $portfolioNb{
-	$name: nth($portfolio, $i);
-    .#{$name}-item{
-    	h2{
-	        &:after{
-	            border-color: nth($portfolioColors, $i);
-	        }
-    	}
-    	&.off{
-    		h2{
-    			&:after{
-    				opacity: 1;
-    			}
-    		}
-    		.icon{
-    			fill: nth($portfolioColors, $i);
-    		}
-    		.wrapper-desc{
-    			color: nth($portfolioColors, $i);
-    		}
-    		.border-left, .border-middle{
-    			border-color: nth($portfolioColors, $i);
-    		}
-    	}
-    	.logo{
-    		width: #{nth($portfolioWidths, $i)}px;
-    		height: #{nth($portfolioHeights, $i)}px;
-    		// background-image: url(../img/logo-#{$name}.png);
-    	}
-    	.bg, .bg-transition{
-    		background: nth($portfolioColors, $i);
-    	}
-    	.bg-img{
-    		background-image: url(../img/bg-#{$name}.#{nth($portfolioExt, $i)});
-    	}
-    }
-    @if $name == 'lbb'{
-    	.#{$name}-item{
-    		.bg{
-    			mix-blend-mode: normal;
-    		}
-    		.wrapper-bg-img{
-				z-index: 2;
-    		}
-    		.bg-img{
-    			opacity: 0.6;
-    		}
-    		a{
-    			&:hover, &:focus{
-    				.bg-img{
-    					opacity: 1;
-    				}
-    			}
-    		}
-    	}
-    }
+  	.#{$name}-item{
+  	    h2{
+  		    &:after{
+  		        border-color: $color;
+  		    }
+  	    }
+  	    &.off{
+  	    	h2{
+  	    		&:after{
+  	    			opacity: 1;
+  	    		}
+  	    	}
+  	    	.icon{
+  	    		fill: $color;
+  	    	}
+  	    	.wrapper-desc{
+  	    		color: $color;
+  	    	}
+  	    	.border-left, .border-middle{
+  	    		border-color: $color;
+  	    	}
+  	    }
+  	    .logo{
+  	    	width: #{$logoWidth}px;
+  	    	height: #{$logoHeight}px;
+  	    	// background-image: url(../img/logo-#{$name}.png);
+  	    }
+  	    .bg, .bg-transition{
+  	    	background: $color;
+  	    }
+  	    .bg-img{
+  	    	background-image: url(../img/bg-#{$name}.#{$bgExt});
+  	    }
+  	}
+  	@if $name == 'lbb'{
+  	   	.#{$name}-item{
+  	    	.bg{
+  	    		mix-blend-mode: normal;
+  	    	}
+  	    	.wrapper-bg-img{
+  				z-index: 2;
+  	    	}
+  	    	.bg-img{
+  	    		opacity: 0.6;
+  	    	}
+  	    	a{
+  	    		&:hover, &:focus{
+  	    			.bg-img{
+  	    				opacity: 1;
+  	    			}
+  	    		}
+  	    	}
+  	    }
+  	}
 }
 
 

@@ -68,51 +68,39 @@
         }
     }
 }
-@for $i from 1 through $portfolioNb{
-    $name: nth($portfolio, $i);
+
+@each $name, $map in $portfolio{
+    $color: map-get($map, color);
+    $logoWidth: map-get($map, logoWidth);
+    $logoHeight: map-get($map, logoHeight);
+
     .#{$name}-portfolio{
         //background: nth($portfolioColors, $i);
         /*#header, #barba-wrapper, .portfolio-desc{
             background: nth($portfolioColors, $i);
         }*/
-        #barba-wrapper{
-            &.on{
-                background: nth($portfolioColors, $i);
-            }
-        }
-        #header{
-            &:before{
-                background: nth($portfolioColors, $i);
-            }
-        }
-        /*#page,*/ .bgPortfolio{
-            background: nth($portfolioColors, $i);
+        #barba-wrapper.on, #header:before, .bgPortfolio, .btn{
+            background: $color;
         }
         h1{
-            width: #{nth($portfolioWidths, $i)}px;
-            height: #{nth($portfolioHeights, $i)}px;
+            width: #{$logoWidth}px;
+            height: #{$logoHeight}px;
             background-image: url(../img/logo-#{$name}.png);
-        }
-        .btn{
-            background: nth($portfolioColors, $i);
         }
         .skill{
             .list-symbols{
-                >span{
-                    background: nth($portfolioColors, $i);
+                > span{
+                    background: $color;
                 }
             }
-            .waves{
-                fill: nth($portfolioColors, $i);
-            }
-            .zigzags{
-                fill: nth($portfolioColors, $i);
+            .waves, .zigzags{
+                fill: $color;
             }
             .slashes{
-                >span{
+                > span{
                     background: none;
                     &:after{
-                        background: nth($portfolioColors, $i);
+                        background: $color;
                     }
                 }
             }
@@ -226,8 +214,7 @@
     }
 }
 
-@for $i from 1 through $portfolioSouvenirNb{
-    $name: nth($portfolioSouvenir, $i);
+@each $name, $map in $portfolioSouvenir{
     .noise-#{$name}{
         mask-image: url(../img/portfolio/cover-#{$name}-mask.svg);
     }
