@@ -39,7 +39,7 @@ h1{
     margin: 0 -0.08em 0.25em;
     font-size: 10.5vw;
     letter-spacing: -0.08em;
-    line-height: 0.8;
+    line-height: 0.85;
     sup{
         top: -1.05em;
         left: -0.3em;
@@ -48,6 +48,7 @@ h1{
     .home &{
         max-width: 75%;
         padding: 0.12em $gutter 0;
+        line-height: 0.8;
     }
 }
 
@@ -253,7 +254,7 @@ a{
 .subtitle{
     position: absolute;
     left: 35vw;
-    bottom: -30px;
+    bottom: -20px;
     opacity: 0.25;
     a{
         display: block;
