@@ -152,6 +152,9 @@
     mask-size: cover;
     background: url(../layoutImg/noise.gif);
     transform: translateX(-50%);
+    .no-mask &{
+        display: none;
+    }
 }
 .portfolio-cover{
     width: 45%;
