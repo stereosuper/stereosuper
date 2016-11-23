@@ -10,6 +10,8 @@ Choisissez pour l'item une version simple et sans charactères spéciaux de son 
 - Dans le dossier /portfolio/ ajouter l'image desktop retina, nom: cover-[SLUG]@2.png (ou .jpg), width: 2000; l'image desktop non retina, nom: cover-[SLUG].png (ou .jpg), width: 1000; l'image responsive, nom: mb-cover-[SLUG].png, width: 1100
 - Générer le logo avec icomoon, l'importer en svg dans le projet, puis cliquer sur "generate svg & more", "download", et copier le < symbol > correspondant dans le fichier symbol.defs.svg
 
+- Si "souvenir", créer la silhouette de l'image cover, en noir, meme dimensions (avec du vide à la place des ombres), dans /img/portfolio/, nom: bg-[SLUG]-mask.svg
+
 ### HTML - Index
 Dans /templates/layout/layout.html.twig, ajouter dans le svg sous le footer le symbol svg du logo précédemment généré avec icomoon, et relever son id.
 Puis dans templates/index.html.twig:
@@ -37,3 +39,4 @@ A chaque ajout d'un item il faut compléter plusieurs variables dans le fichier 
 - $portfolioColors: en première position, ajouter la couleur du nouvel item
 - $portfolioWidths: en première position, largeur affichée du logo
 - $portfolioHeights: en première position, hauteur affichée du logo
+- si "souvenir", $portfolioSouvenir: 1ere position, [SLUG], et $portfolioSouvenirNb
