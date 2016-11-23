@@ -97,17 +97,13 @@ $(function(){
             var portfolio = $('#portfolio');
             var portfolioItems = portfolio.find('.portfolio-item');
 
-            skillsHome = $('#skillsHome');
-            skillsTop = skillsHome.offset().top - 100;
-            skillsHome.data('top', skillsTop);
-
             // Anim top home
             // if(!animTopSetUp){
             //     animTopSetUp = animTop(myScroll, body, header, skillsHome);
             // }
 
             if(!isMobile.any){
-                animSkillsScroll(myScroll, body, header, skillsHome);
+                // animSkillsScroll(myScroll, body, header, skillsHome);
 
                 // Anim Refs Home
                 portfolioItemsAnimation(myScroll, windowHeight, windowWidth, portfolioItems, portfolio, body);
@@ -120,6 +116,14 @@ $(function(){
         },
         onEnterCompleted: function(){
             // The Transition has just finished.
+
+            skillsHome = $('#skillsHome');
+            skillsTop = skillsHome.offset().top - 100;
+            skillsHome.data('top', skillsTop);
+
+            if(!isMobile.any){
+                animSkillsScroll(myScroll, body, header, skillsHome);
+            }
         },
         onLeave: function(){
             // A new Transition toward a new page has just started.
