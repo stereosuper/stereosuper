@@ -2,7 +2,7 @@ var $ = require('./libs/jquery/dist/jquery.slim.min.js');
 var TweenMax = require('./libs/gsap/src/uncompressed/TweenMax.js');
 
 module.exports = function(){
-	var navSingle = $('#navSingle'),
+	var navSingle = $('.previous-next-references'),
 		previousButtonSpan = navSingle.find('.previous-reference').find('.txt').find('>span');
 		nextButtonSpan = navSingle.find('.next-reference').find('.txt').find('>span'),
 		previousArrow = navSingle.find('.previous-reference').find('.icon'),

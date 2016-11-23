@@ -20,13 +20,14 @@
 .text-404{
     display: inline-block;
     max-width: 40%;
+    padding: 0 0 0 $gutter;
     position: relative;
     z-index: 1;
 }
 
 .logo-404{
     width: 55%;
-    height: 700px;
+    height: 750px;
     //max-width: 580px;
     position: absolute;
     bottom: 0;
@@ -35,10 +36,17 @@
     > div{
         display: inline-block;
         width: 50%;
-        height: 700px;
-        background-size: 125%;
+        height: 750px;
+        background-size: 135%;
         background-repeat: no-repeat;
         background-position: 50% 100%;
+    }
+    .js &{
+        opacity: 0;
+        transition: opacity $transition;
+        &.on{
+            opacity: 1;
+        }
     }
 }
 
@@ -48,13 +56,20 @@
     background: #111118;
     left: 0;
     right: 0;
-    padding: 20px 100px;
+    padding: 20px $gutter*2;
     z-index: 2;
     font-family: 'Courier New', Courier, monospace;
     transform: translate3d(0, 100%, 0);
     transition: $transition;
     &.on{
         transform: translate3d(0, 0, 0);
+    }
+    i{
+        display: inline-block;
+        font-size: 1.4rem;
+        font-family: 'Courier New', Courier, monospace;
+        font-style: italic;
+        margin: 0 0 0 $gutter;
     }
 }
 
@@ -112,12 +127,23 @@
 
     .logo-404{
         width: 100%;
+        max-width: 800px;
         height: auto;
         position: static;
-        margin: 50px 0 0;
+        margin: 50px auto 0;
         > div{
             height: 0;
             padding: 0 0 70%;
         }
+    }
+}
+
+@media (max-width: 870px){
+    .text-404{
+        padding: 0;
+    }
+
+    #counter{
+        padding: 20px $gutter;
     }
 }
