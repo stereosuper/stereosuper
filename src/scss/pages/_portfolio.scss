@@ -167,12 +167,13 @@
     }
     &.centered{
         top: auto;
-        bottom: -60%;
+        bottom: -53%;
         overflow: visible;
     }
     &.portrait{
         max-width: 30%;
-        left: 5%;
+        left: 10%;
+        top:-5%;
         img{
             max-width: 100%;
             position: static;
@@ -192,11 +193,41 @@
         overflow: visible;
         img{
             max-width: 850px;
-            left: 14%;
+            left: 30%;
         }
         #noise{
             width: 850px;
-            left: 14%;
+            left: 30%;
+        }
+    }
+    &.ct{
+        img{
+            max-width: 1000px;
+            margin-top: -15%;
+        }
+        #noise{
+            width: 1000px;
+            margin-top: -15%;
+        }
+    }
+    &.fioul{
+        img{
+            max-width: 1000px;
+            margin-top: -5%;
+        }
+        #noise{
+            width: 1000px;
+            margin-top: -5%;
+        }
+    }
+    &.cp{
+        img{
+            max-width: 1000px;
+            margin-top: 7%;
+        }
+        #noise{
+            width: 1000px;
+            margin-top: 7%;
         }
     }
     .js &{
@@ -330,7 +361,7 @@
     width: 50%;
     margin: 0 0 0 50%;
     // padding: 30px 0 85px;
-    padding: 0 0 85px;
+    padding: 0 0 70px;
     position: relative;
     backface-visibility: hidden;
     p{
@@ -349,7 +380,7 @@
     //background: #fff;
     &-content{
         width: 50%;
-        padding: 100px 0 70px $gutter;
+        padding: 50px 0 70px $gutter;
         margin: 0 0 0 50%;
     }
     p, a{
@@ -381,6 +412,14 @@
     }
     .portfolio-cover{
         width: 40%;
+        &.left{
+            img{
+                left:15%;
+            }
+            #noise{
+                left:15%;
+            }
+        }
     }
 }
 
@@ -388,6 +427,14 @@
     .portfolio-cover{
         // width: 47%;
         width: 42%;
+        &.left{
+            img{
+                left:5%;
+            }
+            #noise{
+                left:5%;
+            }
+        }
     }
 }
 
@@ -408,6 +455,10 @@
         }
         &.top{
             top: -160px;
+        }
+        &.portrait{
+            left: 4%;
+            top:0;
         }
     }
 }
@@ -466,6 +517,11 @@
     .portfolio-cover-mb{
         img{
             max-width: 145%;
+        }
+    }
+    .portfolio-role-content, .portfolio-text {
+        br {
+           display: none;
         }
     }
 }
