@@ -144,6 +144,12 @@
         display: none;
     }
 }
+@each $name, $map in $portfolioSouvenir{
+    .noise-#{$name}{
+        mask-image: url(../img/portfolio/cover-#{$name}-mask.svg);
+    }
+}
+
 .portfolio-cover{
     width: 45%;
     position: absolute;
@@ -214,12 +220,6 @@
     }
 }
 
-@each $name, $map in $portfolioSouvenir{
-    .noise-#{$name}{
-        mask-image: url(../img/portfolio/cover-#{$name}-mask.svg);
-    }
-}
-
 .portfolio-desc{
     position: relative;
     z-index: 1;
@@ -252,8 +252,7 @@
         }
         > li{
             display: inline-block;
-            margin: 0;
-            padding: 0;
+            vertical-align: top;
             &:before{
                 display: none;
             }
@@ -265,7 +264,7 @@
                     transform: rotate(-180deg);
                 }
                 .txt{
-                    >span{
+                    > span{
                         transform: translate3d(20px, 0, 0);
                     }
                 }
@@ -275,7 +274,7 @@
                     padding-left: 8px;
                 }
                 .txt{
-                    >span{
+                    > span{
                         transform: translate3d(-20px, 0, 0);
                     }
                 }
@@ -287,16 +286,14 @@
                         display: block;
                         width: 18px;
                         height: 1px;
-                        background-color: $white;
+                        background: rgba($white, 0.2);
                         margin: 13px 0;
-                        opacity: 0.2;
                     }
                 }
             }
         }
         a{
             display: inline-block;
-
             transition: none;
             &:hover, &:focus{
                 color: $white;
@@ -312,25 +309,23 @@
             height: 11px;
         }
         .txt{
-            display: inline-block;
-            vertical-align: top;
             position: absolute;
+            top: 15px;
+            left: 100px;
             @include gotham(1.3rem);
             text-transform: uppercase;
             text-decoration: none;
             line-height: 1;
             white-space: nowrap;
-            top: 15px;
-            left: 100px;
             pointer-events: none;
-            >span{
+            > span{
                 display: inline-block;
-
                 opacity: 0;
             }
         }
     }
 }
+
 .portfolio-text{
     width: 50%;
     margin: 0 0 0 50%;
