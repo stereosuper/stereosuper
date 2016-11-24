@@ -3,6 +3,7 @@
 .about{
     #barba-wrapper{
         padding-bottom: 0;
+        position: relative; // ie11 header shaking
     }
     h2{
         line-height: 1;
