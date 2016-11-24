@@ -36,8 +36,8 @@ module.exports = function(body){
             tlTop = contentTimeline.offset().top;
         }
         TweenMax.to(tl, 1, {scaleY: scaleValue});
-        
-        console.log('tlTop : '+tlTop+' / timelineBottom + 20 : '+(timelineBottom+20));
+
+        // console.log('tlTop : '+tlTop+' / timelineBottom + 20 : '+(timelineBottom+20));
         if(tlTop >= timelineBottom + 20){
             TweenMax.set(contentTimeline, {opacity: 0});
         }

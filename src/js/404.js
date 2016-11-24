@@ -5,7 +5,7 @@ module.exports = function(){
     var stereoSrc = [], superSrc = [], j = 0, imgLoaded = 0;
     var logo404 = $('#logo404'), stereoDiv = logo404.find('#stereo'), superDiv = logo404.find('#super');
     var counterHtml = logo404.find('#counter');
-    var siteUrl = document.location.origin;
+    var url = document.location.href, siteUrl = url.substring(0, url.lastIndexOf('/') + 1);
 
     // var test = 0;
 
@@ -29,7 +29,7 @@ module.exports = function(){
     function checkImgLoaded(){
         imgLoaded ++;
 
-        if(imgLoaded === nbImg*2){
+        if(imgLoaded === (nbImg+1)*2){
             changeLogo();
             logo404.addClass('on');
         }
@@ -37,8 +37,9 @@ module.exports = function(){
 
     function preload(name, nb){
         var img = new Image();
-        img.src = siteUrl + '/layoutImg/' + name + '-' + nb + '.jpg';
         img.onload = checkImgLoaded;
+        img.src = siteUrl + '/layoutImg/' + name + '-' + nb + '.jpg';
+
         return img;
     }
 
@@ -63,7 +64,7 @@ module.exports = function(){
         }
     }
 
-    for(j; j<nbImg; j++){
+    for(j; j<nbImg+1; j++){
         stereoSrc[j] = preload('stereo', (j+1));
         superSrc[j] = preload('super', (j+1));
     }
