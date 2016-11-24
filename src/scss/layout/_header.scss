@@ -10,7 +10,7 @@
 	background: #000;
 	z-index: 5;
 	transition: transform $transition;
-	backface-visibility: hidden;
+	// backface-visibility: hidden;
 	line-height: 1.2;
 	&.bgVisible{
 		&:before{
