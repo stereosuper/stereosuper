@@ -49,6 +49,8 @@ $(function(){
     var header = $('#header'), menu = header.find('.menu-header');
     var skillsHome = $('#skillsHome'), skillsTop = 0;
 
+    var support;
+
 
     isMobile.any ? htmlTag.addClass('is-mobile') : htmlTag.addClass('is-desktop');
 
@@ -57,9 +59,13 @@ $(function(){
     // Background blend mode detection
     ////////////////////////////////////////////////
     if('CSS' in window && 'supports' in window.CSS) {
-        var support = window.CSS.supports('mix-blend-mode', 'soft-light') ? 'mix-blend-mode' : 'no-mix-blend-mode';
-        htmlTag.addClass(support);
+        support = window.CSS.supports('mix-blend-mode', 'soft-light') ? 'mix-blend-mode' : 'no-mix-blend-mode';
+        support += window.CSS.supports('-webkit-mask-size', 'cover') ? ' mask' : ' no-mask';
+    }else{
+        support = 'no-mix-blend-mode no-mask';
     }
+
+    htmlTag.addClass(support);
 
     ////////////////////////////////////////////////
     // Header Scroll Animation
