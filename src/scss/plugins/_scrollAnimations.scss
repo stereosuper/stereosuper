@@ -27,6 +27,14 @@
             transform: translate3d(20px, -100px, 0) rotate(5deg);
         }
     }
+    &.img-clefs{
+        &.under-view{
+            transform: translate3d(20px, 100px, 0) rotate(-25deg);
+        }
+        &.above-view{
+            transform: translate3d(20px, -100px, 0) rotate(15deg);
+        }
+    }
     &.img-cp{
         &.under-view{
             transform: translate3d(20px, 100px, 0) rotate(-5deg);
@@ -35,12 +43,28 @@
             transform: translate3d(20px, -100px, 0) rotate(5deg);
         }
     }
-    &.img-sac{
+    &.img-tasse{
         &.under-view{
-            transform: translate3d(-20px, 100px, 0) rotate(-10deg);
+            transform: translate3d(30px, 80px, 0) rotate(-5deg);
         }
         &.above-view{
-            transform: translate3d(-20px, -100px, 0) rotate(15deg);
+            transform: translate3d(30px, -80px, 0) rotate(10deg);
+        }
+    }
+    &.img-sac{
+        &.under-view{
+            transform: translate3d(-20px, 0, 0) rotate(3deg);
+        }
+        &.above-view{
+            transform: translate3d(-20px, 0, 0) rotate(3deg);
+        }
+    }
+    &.img-peluche{
+        &.under-view{
+            transform: translate3d(40px, 60px, 0) rotate(-20deg);
+        }
+        &.above-view{
+            transform: translate3d(40px, -60px, 0) rotate(25deg);
         }
     }
     &.pola-team-1{
