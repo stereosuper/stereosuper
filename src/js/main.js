@@ -225,9 +225,7 @@ $(function(){
 
             if(!isMobile.any){
                 $('.stupid-gif').on('mouseenter', function(){
-                    stupid.addClass('on');
-                    $('#' + $(this).data('gif')).addClass('on');
-                    console.log('#' + $(this).data('gif'))
+                    stupid.addClass('on').find('#' + $(this).data('gif')).addClass('on');
                 }).on('mouseleave', function(){
                     stupid.removeClass('on').find('img').removeClass('on');
                 });
