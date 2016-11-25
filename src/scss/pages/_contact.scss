@@ -46,7 +46,7 @@
 
 #map{
     height: 80vh;
-    min-height: 500px;
+    min-height: 550px;
     max-height: 700px;
     position: absolute;
     top: 0;
@@ -107,6 +107,7 @@
     #map{
         height: 72vh;
         max-height: 600px;
+        min-height: 520px;
     }
 }
 

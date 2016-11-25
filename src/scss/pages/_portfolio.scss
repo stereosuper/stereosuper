@@ -38,6 +38,7 @@
         min-height: 100vh;
         padding-top: 170px;
         position: relative;
+        overflow: hidden;
     }
     .link-arrow, .lang a, .social a, .menu-contact a{
         color: #fff;
@@ -105,6 +106,9 @@
                 }
             }
         }
+        .portfolio-souvenir{
+            fill: $color;
+        }
     }
 }
 
@@ -113,7 +117,9 @@
     right: 0;
     bottom: 0;
     left: 0;
-    transform: scaleY(0);
+    .js &{
+        transform: scaleY(0);
+    }
 }
 .bgPortfolio{
     top: -170px;
@@ -148,6 +154,9 @@
     .noise-#{$name}{
         mask-image: url(../img/portfolio/cover-#{$name}-mask.svg);
     }
+    .noise-mb-#{$name}{
+        mask-image: url(../img/portfolio/mb-cover-#{$name}-mask.svg);
+    }
 }
 
 .portfolio-cover{
@@ -167,8 +176,11 @@
     }
     &.centered{
         top: auto;
-        bottom: -53%;
+        bottom: -47%;
         overflow: visible;
+    }
+    &.avignon{
+        bottom: -53%;
     }
     &.portrait{
         max-width: 30%;
@@ -235,8 +247,26 @@
         transform: translate3d(-40px, 0, 0);
     }
 }
+#noise-mb{
+    width: 1100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    left: 47%;
+    bottom: 0;
+    transform: translate3d(-50%, 0, 0);
+    mask-position: 50% 50%;
+    mask-repeat: no-repeat;
+    mask-size: cover;
+    background: url(../layoutImg/noise.gif);
+    opacity: 0;
+    .no-mask &{
+        display: none;
+    }
+}
 .portfolio-cover-mb{
     display: none;
+    position: relative;
     margin: -30% 0 0;
     overflow: hidden;
     img{
@@ -253,7 +283,7 @@
 
 .portfolio-desc{
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 .wrapper-portfolio-header{
     z-index: 2;
@@ -371,6 +401,11 @@
             opacity: 0;
         }
     }
+    a{
+        &:hover, &:focus{
+            color: #000;
+        }
+    }
 }
 
 .portfolio-role{
@@ -405,6 +440,17 @@
     }
 }
 
+.portfolio-souvenir{
+    width: 5em;
+    height: 2em;
+    position: absolute;
+    bottom: -15px;
+    left: 30px;
+    .js &{
+        opacity: 0;
+    }
+}
+
 @media (max-width: 1250px){
     .portfolio-text, .portfolio-role-content, .portfolio-header{
         width: 55%;
@@ -413,11 +459,8 @@
     .portfolio-cover{
         width: 40%;
         &.left{
-            img{
-                left:15%;
-            }
-            #noise{
-                left:15%;
+            img, #noise{
+                left: 15%;
             }
         }
     }
@@ -427,12 +470,14 @@
     .portfolio-cover{
         // width: 47%;
         width: 42%;
-        &.left{
+        &.centered{
             img{
-                left:5%;
+                left: 44%;
             }
-            #noise{
-                left:5%;
+        }
+        &.left{
+            img, #noise{
+                left: 5%;
             }
         }
     }
@@ -445,6 +490,11 @@
     }
     .portfolio-cover{
         width: 32%;
+        &.centered{
+            img{
+                left: 25%;
+            }
+        }
         &.left{
             img{
                 max-width: 670px;
@@ -458,7 +508,7 @@
         }
         &.portrait{
             left: 4%;
-            top:0;
+            top: 0;
         }
     }
 }
@@ -488,6 +538,11 @@
     }
     .portfolio-desc{
         padding: 0 0 30%;
+        z-index: 1;
+    }
+    .portfolio-souvenir{
+        position: static;
+        margin: 0 0 0 30px;
     }
 }
 
@@ -510,6 +565,10 @@
 
     .portfolio-role-content{
         padding-left: 0;
+    }
+
+    .portfolio-souvenir{
+        margin: 0;
     }
 }
 

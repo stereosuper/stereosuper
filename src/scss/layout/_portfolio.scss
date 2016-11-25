@@ -98,6 +98,13 @@
 		display: block;
 		position: relative;
 		color: #fff;
+		.no-js &{
+			&:hover, &:focus{
+				.bg-img{
+					opacity: 0.5;
+				}
+			}
+		}
 	}
 	.wrapper-bloc{
 		width: 91%;
@@ -188,6 +195,9 @@
 		background-size: 100%;
 		transform: scale(1.05) rotate(0.01deg) translate3d(0, 0, 0.01px);
 		transform-origin: 50% 50%;
+		.no-js &{
+			transition: $transition;
+		}
 	}
 	.bg-transition{
 		//transform: scaleX(0) scaleY(1) rotate(0.01deg) translate3d(0, 0, 0.01px);

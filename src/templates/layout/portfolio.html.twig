@@ -17,7 +17,7 @@
             </div>
             <div class='container p-relative wrapper-portfolio-header'>
                 <div class='portfolio-header'>
-                    <a href='./?portfolio={% block portfolio_slug %}{% endblock %}' class='btn-close'>Fermer</a>
+                    <a href='./?portfolio={% block portfolio_slug %}{% endblock %}' class='btn-close' title="Retour à l'accueil">Fermer</a>
                     <ul class='previous-next-references' id='navSingle'>
                         {% if prev_ref_link == '' %}
                             <li class='previous-reference inactive'>
@@ -25,7 +25,7 @@
                             </li>
                         {% else %}
                             <li class='previous-reference'>
-                                <a href='{{ prev_ref_link }}'>
+                                <a href='{{ prev_ref_link }}' title='Référence précédente'>
                                     <span class='arrow'>
                                         <svg class='icon'><use xlink:href='#icon-big-arrow'/></svg>
                                     </span><span class='txt'><span>{{ prev_ref_name }}</span></span>
@@ -38,7 +38,7 @@
                             </li>
                         {% else %}
                             <li class='next-reference'>
-                                <a href='{{ next_ref_link }}'>
+                                <a href='{{ next_ref_link }}' title='Référence suivante'>
                                     <span class='arrow'>
                                         <svg class='icon'><use xlink:href='#icon-big-arrow'/></svg>
                                     </span><span class='txt'><span>{{ next_ref_name }}</span></span>
@@ -52,14 +52,21 @@
                 <div class='portfolio-text'>
                     <h1 class='{% block portfolio_slug %}{% endblock %}'>{% block portfolio_title %}{% endblock %}</h1>
                     {% block portfolio_text %}{% endblock %}
+
+                    {% if souvenir == true %}
+                        <svg class='icon portfolio-souvenir'><use xlink:href='#icon-souvenir-portfolio'/></svg>
+                    {% endif %}
                 </div>
             </div>
             <div class='bgPortfolio'></div>
         </section>
 
         <section class='portfolio-role'>
-            <div class='portfolio-cover-mb'>
+            <div class='portfolio-cover-mb {% if souvenir == true %} souvenir {% endif %}'>
                 <img src='img/portfolio/mb-cover-{% block portfolio_slug %}{% endblock %}.png' alt=''>
+                {% if souvenir == true %}
+                    <div id='noise-mb' class='noise-mb-{% block portfolio_slug %}{% endblock %}'></div>
+                {% endif %}
             </div>
             <div class='container'>
                 <div class='portfolio-role-content'>
@@ -119,7 +126,7 @@
                     </ul>
 
                     {% if website == true %}
-                        <a href='{% block portfolio_url %}{% endblock %}' class='btn' target='_blank'>
+                        <a href='{% block portfolio_url %}{% endblock %}' class='btn' title="Ouvrir le site de {% block portfolio_title %}{% endblock %}" target='_blank'>
                             Voir le site
                             <svg class='icon i1'><use xlink:href='#icon-arrow'/></svg>
                             <svg class='icon i2'><use xlink:href='#icon-arrow'/></svg>
