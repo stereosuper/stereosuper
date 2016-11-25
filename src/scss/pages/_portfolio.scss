@@ -151,6 +151,9 @@
     .noise-#{$name}{
         mask-image: url(../img/portfolio/cover-#{$name}-mask.svg);
     }
+    .noise-mb-#{$name}{
+        mask-image: url(../img/portfolio/mb-cover-#{$name}-mask.svg);
+    }
 }
 
 .portfolio-cover{
@@ -238,8 +241,26 @@
         transform: translate3d(-40px, 0, 0);
     }
 }
+#noise-mb{
+    width: 1100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    left: 47%;
+    bottom: 0;
+    transform: translate3d(-50%, 0, 0);
+    mask-position: 50% 50%;
+    mask-repeat: no-repeat;
+    mask-size: cover;
+    background: url(../layoutImg/noise.gif);
+    opacity: 0;
+    .no-mask &{
+        display: none;
+    }
+}
 .portfolio-cover-mb{
     display: none;
+    position: relative;
     margin: -30% 0 0;
     overflow: hidden;
     img{
@@ -419,6 +440,9 @@
     position: absolute;
     bottom: -15px;
     left: 30px;
+    .js &{
+        opacity: 0;
+    }
 }
 
 @media (max-width: 1250px){

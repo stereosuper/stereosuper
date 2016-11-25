@@ -62,8 +62,11 @@
         </section>
 
         <section class='portfolio-role'>
-            <div class='portfolio-cover-mb'>
+            <div class='portfolio-cover-mb {% if souvenir == true %} souvenir {% endif %}'>
                 <img src='img/portfolio/mb-cover-{% block portfolio_slug %}{% endblock %}.png' alt=''>
+                {% if souvenir == true %}
+                    <div id='noise-mb' class='noise-mb-{% block portfolio_slug %}{% endblock %}'></div>
+                {% endif %}
             </div>
             <div class='container'>
                 <div class='portfolio-role-content'>

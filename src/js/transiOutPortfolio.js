@@ -30,7 +30,8 @@ module.exports = function(oldContainer){
         TweenMax.to(portfolioRole.find('a'), 0.25, {y: -80, opacity: 0, ease: Circ.easeOut});
         TweenMax.to(oldContainer.find('.skills'), 0.25, {y: -80, opacity: 0, ease: Circ.easeOut, delay: 0.1});
         TweenMax.to(portfolioRole.find('p'), 0.25, {y: -80, opacity: 0, ease: Circ.easeOut, delay: 0.25});
-        TweenMax.to(portfolioText.find('p'), 0.15, {y: -80, opacity: 0, ease: Power4.easeOut, delay: 0.3, onComplete: function(){
+        TweenMax.to(oldContainer.find('.portfolio-souvenir'), 0.15, {opacity: 0, ease: Circ.easeOut, delay: 0.3});
+        TweenMax.to(portfolioText.find('p'), 0.15, {y: -80, opacity: 0, ease: Power4.easeOut, delay: 0.35, onComplete: function(){
             $('#header').removeClass('bgVisible');
             tlFadeOut.play();
         }});
