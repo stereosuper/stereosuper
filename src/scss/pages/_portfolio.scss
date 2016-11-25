@@ -116,7 +116,9 @@
     right: 0;
     bottom: 0;
     left: 0;
-    transform: scaleY(0);
+    .js &{
+        transform: scaleY(0);
+    }
 }
 .bgPortfolio{
     top: -170px;

@@ -74,17 +74,17 @@
 }
 
 #stereo{
-    &.logo-1, .no-js &{
-        background-image: url(../layoutImg/stereo-1.jpg);
+    .no-js &{
+        background-image: url(../layoutImg/stereo-3.jpg);
     }
 }
 #super{
-    &.logo-1, .no-js &{
-        background-image: url(../layoutImg/super-1.jpg);
+    .no-js &{
+        background-image: url(../layoutImg/super-11.jpg);
     }
 }
 
-@for $i from 2 through 15{
+@for $i from 1 through 15{
     #stereo{
         &.logo-#{$i}{
             background-image: url(../layoutImg/stereo-#{$i}.jpg);
