@@ -105,6 +105,9 @@
                 }
             }
         }
+        .portfolio-souvenir{
+            fill: $color;
+        }
     }
 }
 
@@ -253,7 +256,7 @@
 
 .portfolio-desc{
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 .wrapper-portfolio-header{
     z-index: 2;
@@ -410,6 +413,14 @@
     }
 }
 
+.portfolio-souvenir{
+    width: 5em;
+    height: 2em;
+    position: absolute;
+    bottom: -15px;
+    left: 30px;
+}
+
 @media (max-width: 1250px){
     .portfolio-text, .portfolio-role-content, .portfolio-header{
         width: 55%;
@@ -493,6 +504,11 @@
     }
     .portfolio-desc{
         padding: 0 0 30%;
+        z-index: 1;
+    }
+    .portfolio-souvenir{
+        position: static;
+        margin: 0 0 0 30px;
     }
 }
 
@@ -515,6 +531,10 @@
 
     .portfolio-role-content{
         padding-left: 0;
+    }
+
+    .portfolio-souvenir{
+        margin: 0;
     }
 }
 
