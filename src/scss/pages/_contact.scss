@@ -106,8 +106,13 @@
 
     #map{
         height: 72vh;
+        min-height: 620px;
+    }
+}
+
+@media (max-width: 1200px){
+    #map{
         max-height: 600px;
-        min-height: 520px;
     }
 }
 
