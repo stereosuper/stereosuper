@@ -36,19 +36,14 @@ module.exports = function(){
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/stereosuper/ciuqyq3oc00so2jl8t50ltwwl',
-        center: [-10, 49.2],
-        zoom: 5,
-        bearing: 20,
+        center: coordinates,
+        zoom: 12,
         interactive: false
     });
 
     geojson.features.forEach(function(marker){
         var elMarker = document.createElement('div');
         elMarker.className = 'marker';
-
-        // el.addEventListener('click', function(){
-        //     window.alert(marker.properties.message);
-        // });
 
         new mapboxgl.Marker(elMarker, {offset: [-marker.properties.iconSize[0] / 2, -marker.properties.iconSize[1] / 2]})
             .setLngLat(marker.geometry.coordinates)
@@ -66,18 +61,9 @@ module.exports = function(){
         hand = mapHtml.find('.hand');
         handWidth = hand.width();
         handHeight = hand.height();
-
-        setTimeout(function(){
-            map.easeTo({ duration: 7000, zoom: 12, bearing: 0, center: coordinates });
-        }, 800);
-
-        map.on('moveend', function(){
-            if(!mapHtml.length) return;
-
-            markerY = marker.offset().top + markerHeight;
-            markerX = marker.offset().left + markerHalfWidth;
-            hand.css({'left': markerX - handWidth + 'px', 'top': markerY - handHeight + 'px'}).addClass('on');
-        });
+        markerY = marker.offset().top + markerHeight;
+        markerX = marker.offset().left + markerHalfWidth;
+        hand.css({'left': markerX - handWidth - 50 + 'px', 'top': markerY - handHeight - 50 + 'px'}).addClass('on');
 
         mapHtml.on('mousemove resize', function(e){
             markerY = marker.offset().top + markerHeight;
