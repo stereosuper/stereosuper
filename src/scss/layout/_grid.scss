@@ -2,8 +2,9 @@
 
 #barba-wrapper{
     padding: 170px 0;
-    background: #000;
     min-height: 100vh;
+    overflow: hidden;
+    background: #000;
     .portfolio &{
     	position: relative;
     }

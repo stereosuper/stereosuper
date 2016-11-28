@@ -122,8 +122,8 @@
         .col{
             width: 50%;
             &:first-child{
-                width: 100%;
-                margin: 0 0 50px;
+                position: absolute;
+                bottom: 0;
             }
         }
     }
