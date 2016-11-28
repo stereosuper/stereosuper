@@ -43,6 +43,8 @@ module.exports = function(newContainer, aze){
     //     twFadeIn1, twFadeIn2, twFadeIn3, twFadeIn4, twFadeIn5, twFadeIn6
     // ]);
 
+    $('#header').removeClass('off');
+
     tlFadeIn.add([
         TweenMax.to(newContainer.find('.bgPortfolio'), 1, {scaleY: 1, ease: Power4.easeOut}),
         TweenMax.to(newContainer.find('.bgPagePortfolio'), 1, {scaleY: 1, ease: Power4.easeOut}),
