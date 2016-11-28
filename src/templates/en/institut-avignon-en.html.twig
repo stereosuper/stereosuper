@@ -1,0 +1,35 @@
+{% extends 'layout/portfolio.html.twig' %}
+
+{# The portfolio_slug should be the same used in sass variable and to name all the images #}
+{% block portfolio_slug %}avignon{% endblock %}
+
+{# Meta #}
+{% block portfolio_title %}Institut d'Avignon &bull; Portfolio de Stéréosuper &bull; Agence web des plus grands{% endblock %}
+{% block description %}En 2015, Stéréosuper a refondu le site Internet de l'Institut d'Avignon, un cursus d’été en littérature, histoire et théâtre dépendant d'une université américaine.{% endblock %}
+
+{# Content #}
+{% block portfolio_text %}
+    <p>L'Institut d'Avignon is a summer course in French literature, history and drama. An extension of Bryn Mawr College, PA, it caters primarily to Americans.</p>
+{% endblock %}
+
+{% block portfolio_role %}
+    <p>In 2015, we redesigned their website.</p>
+{% endblock %}
+
+
+{% set cover_ext = 'png' %}
+{% set cover_class = 'centered avignon' %}
+
+{% set strategy = false %}
+{% set identity = false %}
+{% set design = true %}
+{% set animation = true %}
+{% set dev = true %}
+
+{% set website = true %}
+{% block portfolio_url %}http://www.institutdavignon.fr/{% endblock %}
+
+{% set prev_ref_link = 'architecture-aujourdhui-en.html' %}
+{% set prev_ref_name = "L'Architecture d'Aujourd'hui" %}
+{% set next_ref_link = 'wisembly-en.html' %}
+{% set next_ref_name = 'Wisembly' %}

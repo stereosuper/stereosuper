@@ -1,0 +1,40 @@
+{% extends 'layout/portfolio.html.twig' %}
+
+{# The portfolio_slug should be the same used in sass variable and to name all the images #}
+{% block portfolio_slug %}iadvize{% endblock %}
+
+{# Meta #}
+{% block portfolio_title %}iAdvize &bull; Portfolio de Stéréosuper &bull; Agence web formidable{% endblock %}
+{% block description %}En 2013, Stéréosuper a refondu le site d'iAdvize, une start-up en très forte croissante spécialisée dans la e-relation client.{% endblock %}
+
+{# Content #}
+{% block portfolio_text %}
+    <p>iAdvize is a CRM that allows merchants to interact with their prospects on their sites or through social networks.&nbsp;<br>In 2014, the skyrocketing Nantes startup raised €14m.</p>
+{% endblock %}
+
+{% block portfolio_role %}
+    <p>In 2013, we redesigned their website.</p>
+{% endblock %}
+
+
+{% set cover_ext = 'png' %}
+{% set cover_class = 'portrait souvenir' %}
+
+{% set strategy = false %}
+{% set identity = false %}
+{% set design = true %}
+{% set animation = false %}
+{% set dev = true %}
+
+{% set website = false %}
+
+{% set souvenir = true %}
+
+{# {% set prev_ref_link = 'proximis.html' %}
+{% set prev_ref_name = 'Proximis' %}
+{% set next_ref_link = 'kiubi.html' %}
+{% set next_ref_name = 'Kiubi' %} #}
+{% set prev_ref_link = 'chauffeur-prive-en.html' %}
+{% set prev_ref_name = 'Chauffeur Privé' %}
+{% set next_ref_link = 'drivy-en.html' %}
+{% set next_ref_name = 'Drivy' %}

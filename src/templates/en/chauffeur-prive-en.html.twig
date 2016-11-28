@@ -1,0 +1,38 @@
+{% extends 'layout/portfolio.html.twig' %}
+
+{# The portfolio_slug should be the same used in sass variable and to name all the images #}
+{% block portfolio_slug %}chauffeur{% endblock %}
+
+{# Meta #}
+{% block portfolio_title %}Chauffeur-Privé &bull; Portfolio de Stéréosuper &bull; Agence web des hipsters{% endblock %}
+{% block description %}De 2012 à 2015, Stéréosuper a accompagné Chauffeur-Privé dans le design de l'application, leur site Internet et l'ensemble de leurs opérations de communication.{% endblock %}
+
+{# Content #}
+{% block portfolio_text %}
+    <p>Chauffeur Privé is the French Uber. It had the second largest growth among French startups this year. Chauffeur has been valued at 25 million euros in 2015 and raised €5m.</p>
+{% endblock %}
+
+{% block portfolio_role %}
+    <p>Between 2012 and 2015, we helped them create their brand (the famous red tie), their application and their site, and we did all their campaigns.</p>
+{% endblock %}
+
+
+{% set cover_ext = 'png' %}
+{% set cover_class = 'left souvenir cp' %}
+
+{% set strategy = true %}
+{% set identity = true %}
+{% set design = true %}
+{% set animation = true %}
+{% set dev = true %}
+
+{% set website = false %}
+
+{% set souvenir = true %}
+
+{% set prev_ref_link = 'fioulreduc-en.html' %}
+{% set prev_ref_name = 'FioulReduc' %}
+{# {% set next_ref_link = 'proximis.html' %} #}
+{# {% set next_ref_name = 'Proximis' %} #}
+{% set next_ref_link = 'iadvize-en.html' %}
+{% set next_ref_name = 'iAdvize' %}

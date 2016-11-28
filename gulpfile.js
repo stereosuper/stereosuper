@@ -75,13 +75,13 @@ gulp.task('layoutImg', function() {
 gulp.task('img-svg', function() {
     return gulp.src('src/img/**/*.svg')
         .pipe(gulp.dest('dest/img'))
-        .pipe($.size({ title: 'img' }));
+        .pipe($.size({ title: 'img-svg' }));
 });
 
 gulp.task('layoutImg-svg', function() {
     return gulp.src('src/layoutImg/**/*.svg')
         .pipe(gulp.dest('dest/layoutImg'))
-        .pipe($.size({ title: 'layoutImg' }));
+        .pipe($.size({ title: 'layoutImg-svg' }));
 });
 
 gulp.task('js', function () {
@@ -104,6 +104,15 @@ gulp.task('templates', function() {
         .pipe(gulp.dest('dest'))
         .pipe($.size({title: 'template'}));
 });
+gulp.task('templates-en', function() {
+   return gulp.src('src/templates/en/*.html.twig')
+        .pipe($.twig())
+        .pipe($.extReplace('.html', '.html.html'))
+        //.pipe($.prettify({ indent_size: 4 }))
+        .pipe($.htmlmin({collapseWhitespace: true}))
+        .pipe(gulp.dest('dest'))
+        .pipe($.size({title: 'template-en'}));
+});
 
 
 gulp.task('watch', function () {
@@ -117,6 +126,7 @@ gulp.task('watch', function () {
     });
     watch('src/templates/**/*', function(){
         gulp.start(['templates'], reload);
+        gulp.start(['templates-en'], reload);
     });
     watch('src/fonts/**/*', function(){
         gulp.start(['fonts'], reload);
@@ -144,4 +154,4 @@ gulp.task('watch', function () {
     });
 });
 
-gulp.task('start', ['styles', 'templates', 'fonts', 'img', 'layoutImg', 'img-svg', 'layoutImg-svg', 'js', 'bower']);
+gulp.task('start', ['styles', 'templates', 'templates-en', 'fonts', 'img', 'layoutImg', 'img-svg', 'layoutImg-svg', 'js', 'bower']);

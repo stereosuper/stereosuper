@@ -1,0 +1,56 @@
+{% extends 'layout/layout.html.twig' %}
+
+{% block body_attr %}class='contact bw'{% endblock %}
+
+{# Meta #}
+{% block title %}Prendre contact avec Stéréosuper &bull; l'agence web qu'il vous faut{% endblock %}
+{% block description %}Vous êtes décidés ! Pour travailler votre image, votre communication et votre site Internet, vous aller contacter Stéréosuper. Et vous avez bien raison.{% endblock %}
+
+{# Content #}
+{% block content %}
+    <div id='page' class='barba-container' data-class='contact bw' data-namespace='contact'>
+        <div class='contact-container'>
+            <div class='container'>
+                <div class='title'>
+                    <h1>Find <br>us<sup>*</sup></h1>
+                    <p>Until we track our dream space in the City, our only address is in Nantes.</p>
+                </div>
+            </div>
+
+            <div class='content'>
+                <div class='container'>
+                    <div class='grid'>
+                        <b class='col'>
+                            * Our coffee is so good. <br>Seriously, try it next time.
+                        </b><ul class='col'>
+                            <li>
+                                <a href='mailto:bisou@stereosuper.fr' title='Send us an email' class='link-arrow'>
+                                    <span>bisou@stereosuper.fr</span>
+                                    <svg class='icon i1'><use xlink:href='#icon-big-arrow'/></svg>
+                                    <svg class='icon i2'><use xlink:href='#icon-big-arrow'/></svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href='tel:+33951248536' title='Call us'>
+                                    <strong>+33 9 51 24 85 36</strong>
+                                </a>
+                            </li>
+                        </ul><ul class='col'>
+                            <li><strong>92 Quai de la Fosse - 44100 NANTES</strong></li>
+                            <li>
+                                <a href='https://www.google.fr/maps/place/St%C3%A9r%C3%A9osuper/@47.2082126,-1.5728455,17z/data=!3m1!4b1!4m5!3m4!1s0x4805ec71a9670acd:0x10ec4e5d2650ddf0!8m2!3d47.208209!4d-1.5706515' target='_blank' class='link-arrow'>
+                                    <span>See on Google Maps</span>
+                                    <svg class='icon i1'><use xlink:href='#icon-big-arrow'/></svg>
+                                    <svg class='icon i2'><use xlink:href='#icon-big-arrow'/></svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id='map'></div>
+
+    </div>
+{% endblock content %}

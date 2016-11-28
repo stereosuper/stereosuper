@@ -1,0 +1,140 @@
+{% extends 'layout.html.twig' %}
+
+{% block body_attr %}class='portfolio bw {% block portfolio_slug %}{% endblock %}-portfolio'{% endblock %}
+
+{# Meta #}
+{% block title %}{% block portfolio_title %}{% endblock %} &bull; Stéréosuper{% endblock %}
+
+{# Content #}
+{% block content %}
+    <div id='page' class='barba-container' data-class='portfolio bw {% block portfolio_slug %}{% endblock %}-portfolio' data-namespace='portfolio'>
+        <section class='portfolio-desc'>
+            <div class='portfolio-cover {{ cover_class }}'>
+                <img src='img/portfolio/cover-{% block portfolio_slug %}{% endblock %}.{{ cover_ext }}' srcset='img/portfolio/cover-{% block portfolio_slug %}{% endblock %}@2.{{ cover_ext }} 2x' alt=''>
+                {% if souvenir == true %}
+                    <div id='noise' class='noise-{% block portfolio_slug %}{% endblock %}'></div>
+                {% endif %}
+            </div>
+            <div class='container p-relative wrapper-portfolio-header'>
+                <div class='portfolio-header'>
+                    <a href='home.html?portfolio={% block portfolio_slug %}{% endblock %}' class='btn-close' title="Back to home">Close</a>
+                    <ul class='previous-next-references' id='navSingle'>
+                        {% if prev_ref_link == '' %}
+                            <li class='previous-reference inactive'>
+                                <span class='arrow'></span>
+                            </li>
+                        {% else %}
+                            <li class='previous-reference'>
+                                <a href='{{ prev_ref_link }}' title='Previous client'>
+                                    <span class='arrow'>
+                                        <svg class='icon'><use xlink:href='#icon-big-arrow'/></svg>
+                                    </span><span class='txt'><span>{{ prev_ref_name }}</span></span>
+                                </a>
+                            </li>
+                        {% endif %}
+                        {% if next_ref_link == '' %}
+                            <li class='next-reference inactive'>
+                                <span class='arrow'></span>
+                            </li>
+                        {% else %}
+                            <li class='next-reference'>
+                                <a href='{{ next_ref_link }}' title='Next client'>
+                                    <span class='arrow'>
+                                        <svg class='icon'><use xlink:href='#icon-big-arrow'/></svg>
+                                    </span><span class='txt'><span>{{ next_ref_name }}</span></span>
+                                </a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+            <div class='container p-relative'>
+                <div class='portfolio-text'>
+                    <h1 class='{% block portfolio_slug %}{% endblock %}'>{% block portfolio_title %}{% endblock %}</h1>
+                    {% block portfolio_text %}{% endblock %}
+
+                    {% if souvenir == true %}
+                        <svg class='icon portfolio-souvenir'><use xlink:href='#icon-souvenir-portfolio'/></svg>
+                    {% endif %}
+                </div>
+            </div>
+            <div class='bgPortfolio'></div>
+        </section>
+
+        <section class='portfolio-role'>
+            <div class='portfolio-cover-mb {% if souvenir == true %} souvenir {% endif %}'>
+                <img src='img/portfolio/mb-cover-{% block portfolio_slug %}{% endblock %}.png' alt=''>
+                {% if souvenir == true %}
+                    <div id='noise-mb' class='noise-mb-{% block portfolio_slug %}{% endblock %}'></div>
+                {% endif %}
+            </div>
+            <div class='container'>
+                <div class='portfolio-role-content'>
+                    {% block portfolio_role %}{% endblock %}
+
+                    <ul class='skills'>
+                        {% if strategy == true %}
+                            <li class='skill' data-skill='strategy'>
+                                <div class='symbol'>
+                                    <div class='list-symbols dashes hoverAnimation'>
+                                        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                                    </div>
+                                </div>
+                                Branding
+                            </li>
+                        {% endif %}
+                        {% if identity == true %}
+                            <li class='skill' data-skill='identity'>
+                                <div class='symbol'>
+                                    <div class='wrapper-waves hoverAnimation'>
+                                        <svg class='icon waves'><use xlink:href='#icon-waves'/></svg>
+                                    </div>
+                                </div>
+                                Visual identity
+                            </li>
+                        {% endif %}
+                        {% if design == true %}
+                            <li class='skill' data-skill='design'>
+                                <div class='symbol'>
+                                    <div class='wrapper-zigzags hoverAnimation'>
+                                        <svg class='icon zigzags'><use xlink:href='#icon-zigzags'/></svg>
+                                    </div>
+                                </div>
+                                Design
+                            </li>
+                        {% endif %}
+                        {% if animation == true %}
+                            <li class='skill' data-skill='animation'>
+                                <div class='symbol'>
+                                    <div class='list-symbols slashes hoverAnimation'>
+                                        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                                    </div>
+                                </div>
+                                Animation
+                            </li>
+                        {% endif %}
+                        {% if dev == true %}
+                            <li class='skill' data-skill='dev'>
+                                <div class='symbol'>
+                                    <div class='list-symbols dots hoverAnimation'>
+                                        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                                    </div>
+                                </div>
+                                Development
+                            </li>
+                        {% endif %}
+                    </ul>
+
+                    {% if website == true %}
+                        <a href='{% block portfolio_url %}{% endblock %}' class='btn' title="Open the website" target='_blank'>
+                            View it live
+                            <svg class='icon i1'><use xlink:href='#icon-arrow'/></svg>
+                            <svg class='icon i2'><use xlink:href='#icon-arrow'/></svg>
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+        <div class='bgPagePortfolio'></div>
+    </div>
+{% endblock content %}

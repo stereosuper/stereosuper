@@ -1,0 +1,33 @@
+{% extends 'layout/portfolio.html.twig' %}
+
+{# The portfolio_slug should be the same used in sass variable and to name all the images #}
+{% block portfolio_slug %}wisembly{% endblock %}
+
+{# Meta #}
+{% block portfolio_title %}Wisembly &bull; Portfolio de Stéréosuper &bull; Agence web efficace{% endblock %}
+{% block description %}En 2015, Stéréosuper a refondu le site Internet de Wisembly, une start-up qui rend les réunions plus interactives et dynamiques.{% endblock %}
+
+{# Content #}
+{% block portfolio_text %}
+    <p>Wisembly is a tool that makes events and meetings more interactive.&nbsp;<br>Founded in 2010, the The startup raised €1.4m in 2014.</p>
+{% endblock %}
+
+{% block portfolio_role %}
+    <p>In 2015, we redesigned their website.</p>
+{% endblock %}
+
+{% set cover_ext = 'jpg' %}
+
+{% set strategy = false %}
+{% set identity = false %}
+{% set design = true %}
+{% set animation = false %}
+{% set dev = true %}
+
+{% set website = true %}
+{% block portfolio_url %}https://wisembly.com/en/{% endblock %}
+
+{% set prev_ref_link = 'institut-avignon-en.html' %}
+{% set prev_ref_name = "Institut d'Avignon" %}
+{% set next_ref_link = 'fioulreduc-en.html' %}
+{% set next_ref_name = 'FioulReduc' %}

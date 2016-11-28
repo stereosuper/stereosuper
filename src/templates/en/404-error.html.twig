@@ -1,0 +1,31 @@
+{% extends 'layout/layout.html.twig' %}
+
+{% block body_attr %}class='e404'{% endblock %}
+
+{# Meta #}
+{% block title %}404 &bull; Stéréosuper &bull; Agence web pleine de Swag{% endblock %}
+{% block description %}Si vous arrivez sur cette page, c'est que vous êtes paumés. Profitez-en pour jouer à chifoumi avec notre logo.{% endblock %}
+
+{# Content #}
+{% block content %}
+    <div id='page' class='barba-container' data-class='e404' data-namespace='404'>
+
+        <div class='container'>
+            <div class='text-404'>
+                <h1>404 error</h1>
+                <p>The page you're looking for doesn't exist anymore. <br>To comfort you, we offer you to play to find matching pairs&nbsp;! You "just" have to hover the animation at the right time…</p>
+                <a href='./' class='link-arrow link-caps'>
+                    <span>Back to home</span>
+                    <svg class='icon i1'><use xlink:href='#icon-big-arrow'/></svg>
+                    <svg class='icon i2'><use xlink:href='#icon-big-arrow'/></svg>
+                </a>
+            </div>
+            <div class='logo-404' id='logo404'>
+                <div id='stereo'></div>
+                <div id='super'></div>
+                <span id='counter'><span></span><i></i></span>
+            </div>
+        </div>
+
+    </div>
+{% endblock content %}

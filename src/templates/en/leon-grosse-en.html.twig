@@ -1,0 +1,33 @@
+{% extends 'layout/portfolio.html.twig' %}
+
+{# The portfolio_slug should be the same used in sass variable and to name all the images #}
+{% block portfolio_slug %}leon{% endblock %}
+
+{# Meta #}
+{% block portfolio_title %}Léon Grosse &bull; Portfolio de Stéréosuper &bull; Agence web sans peurs{% endblock %}
+{% block description %}En 2016, Stéréosuper a refondu le site Internet de Léon Grosse, cinquième entreprise française de bâtiment et travaux publics (BTP).{% endblock %}
+
+{# Content #}
+{% block portfolio_text %}
+    <p>Léon Grosse is a French building and public works giant.&nbsp;<br>With sales of 720 M€ in 2014 and 2300 employees, Léon Grosse is the fifth French construction and public works company.</p>
+{% endblock %}
+
+{% block portfolio_role %}
+    <p>In 2016, we redesigned their website. And now we’re working on their intranet’s user experience and design.</p>
+{% endblock %}
+
+{% set cover_ext = 'jpg' %}
+
+{% set strategy = false %}
+{% set identity = false %}
+{% set design = true %}
+{% set animation = true %}
+{% set dev = true %}
+
+{% set website = true %}
+{% block portfolio_url %}http://www.leongrosse.fr/{% endblock %}
+
+{% set prev_ref_link = '' %}
+{% set prev_ref_name = '' %}
+{% set next_ref_link = 'myforum-en.html' %}
+{% set next_ref_name = 'myForum' %}

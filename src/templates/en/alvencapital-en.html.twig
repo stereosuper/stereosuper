@@ -1,0 +1,35 @@
+{% extends 'layout/portfolio.html.twig' %}
+
+{# The portfolio_slug should be the same used in sass variable and to name all the images #}
+{% block portfolio_slug %}alven{% endblock %}
+
+{# Meta #}
+{% block portfolio_title %}Alven Capital &bull; Portfolio de Stéréosuper &bull; Agence web du futur{% endblock %}
+{% block description %}En 2016, Stéréosuper a refondu leur site Internet d'Alven Capital, l'un des fonds d'investissement indépendants français les plus reconnus.{% endblock %}
+
+{# Content #}
+{% block portfolio_text %}
+    <p>Alven Capital is one of the most prestigious independent French investment funds. You’ll find many Stéréosuper references in their portfolio: <a href='drivy-en.html' title='Our work for Drivy'>Drivy</a>, <a href='iadvize-en.html' title='Our work for iAdvize'>iAdvize</a>, <a href='wisembly-en.html' title='Our work for Wisembly'>Wisembly</a>, <a href='captain-train-en.html' title='Our work for Captain Train'>Captain Train</a> et <a href='akeneo-en.html' title='Our work for Akeneo'>Akeneo</a>.</p>
+{% endblock %}
+
+{% block portfolio_role %}
+    <p>In 2016, we redesigned their website.</p>
+{% endblock %}
+
+
+{% set cover_ext = 'png' %}
+{% set cover_class = 'centered' %}
+
+{% set strategy = false %}
+{% set identity = false %}
+{% set design = true %}
+{% set animation = true %}
+{% set dev = true %}
+
+{% set website = true %}
+{% block portfolio_url %}http://www.alvencapital.com{% endblock %}
+
+{% set prev_ref_link = 'myforum-en.html' %}
+{% set prev_ref_name = 'myForum' %}
+{% set next_ref_link = 'la-belle-boite-en.html' %}
+{% set next_ref_name = 'La Belle Boîte' %}

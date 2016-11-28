@@ -1,0 +1,35 @@
+{% extends 'layout/portfolio.html.twig' %}
+
+{# The portfolio_slug should be the same used in sass variable and to name all the images #}
+{% block portfolio_slug %}fioulreduc{% endblock %}
+
+{# Meta #}
+{% block portfolio_title %}Fioulreduc &bull; Portfolio de Stéréosuper &bull; Agence web mais pas que{% endblock %}
+{% block description %}Depuis 2012, Stéréosuper a accompagné à plusieurs reprises Fioulreduc dans la création de son site Internet et l'optimisation de sa conversion.{% endblock %}
+
+{# Content #}
+{% block portfolio_text %}
+    <p>Fioulreduc is France’s first domestic fuel online sale service. In 2016, the startup raised €3m.</p>
+{% endblock %}
+
+{% block portfolio_role %}
+    <p>In 2012, we redesigned their website and their image.&nbsp;<br>In 2014, we got to work again to improve the conversion.&nbsp;<br>We also accompanied them for various ad hoc marketing campaigns.</p>
+{% endblock %}
+
+
+{% set cover_ext = 'png' %}
+{% set cover_class = 'left fioul' %}
+
+{% set strategy = false %}
+{% set identity = true %}
+{% set design = true %}
+{% set animation = true %}
+{% set dev = true %}
+
+{% set website = true %}
+{% block portfolio_url %}https://www.fioulreduc.com/{% endblock %}
+
+{% set prev_ref_link = 'wisembly-en.html' %}
+{% set prev_ref_name = 'Wisembly' %}
+{% set next_ref_link = 'chauffeur-prive-en.html' %}
+{% set next_ref_name = 'Chauffeur-Privé' %}

@@ -1,0 +1,35 @@
+{% extends 'layout/portfolio.html.twig' %}
+
+{# The portfolio_slug should be the same used in sass variable and to name all the images #}
+{% block portfolio_slug %}akeneo{% endblock %}
+
+{# Meta #}
+{% block portfolio_title %}Akeneo &bull; Portfolio de Stéréosuper &bull; Agence web culottée{% endblock %}
+{% block description %}En 2016, Stéréosuper a refondu leur site Internet d'Akeneo, une start-up nantaise qui s'occupe de gestion de catalogue produit (PIM).{% endblock %}
+
+{# Content #}
+{% block portfolio_text %}
+    <p>Akeneo is a product catalog management solution tailored to many markets and media. Their platform is used by Vuitton, Auchan, Made.com, Pimkie and many other retail giants.&nbsp;<br>In 2014, the Nantes based startup raised €1.6m.</p>
+{% endblock %}
+
+{% block portfolio_role %}
+    <p>In 2016, we redesigned their website.</p>
+{% endblock %}
+
+
+{% set cover_ext = 'png' %}
+{% set cover_class = 'centered' %}
+
+{% set strategy = false %}
+{% set identity = false %}
+{% set design = true %}
+{% set animation = true %}
+{% set dev = true %}
+
+{% set website = true %}
+{% block portfolio_url %}https://www.akeneo.com{% endblock %}
+
+{% set prev_ref_link = 'la-belle-boite-en.html' %}
+{% set prev_ref_name = 'La Belle Boîte' %}
+{% set next_ref_link = 'captain-train-en.html' %}
+{% set next_ref_name = 'Captain Train' %}

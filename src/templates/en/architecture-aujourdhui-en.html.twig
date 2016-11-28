@@ -1,0 +1,33 @@
+{% extends 'layout/portfolio.html.twig' %}
+
+{# The portfolio_slug should be the same used in sass variable and to name all the images #}
+{% block portfolio_slug %}aa{% endblock %}
+
+{# Meta #}
+{% block portfolio_title %}L'Architecture d'Aujourd'hui &bull; Portfolio de Stéréosuper &bull; Agence web dans le vent{% endblock %}
+{% block description %}En 2015, Stéréosuper a refondu leur site Internet de l'Architecture d'Aujourd'hui, une revue française d'architecture crée en 1930.{% endblock %}
+
+{# Content #}
+{% block portfolio_text %}
+    <p>L'Architecture d'aujourd'hui (AA) is France’s legendary modernist architecture magazine.&nbsp;<br>It’s been delighting architects from all over the world since 1930.</p>
+{% endblock %}
+
+{% block portfolio_role %}
+    <p>In 2015, we redesigned their website.</p>
+{% endblock %}
+
+{% set cover_ext = 'jpg' %}
+
+{% set strategy = false %}
+{% set identity = false %}
+{% set design = true %}
+{% set animation = false %}
+{% set dev = true %}
+
+{% set website = true %}
+{% block portfolio_url %}http://www.larchitecturedaujourdhui.fr/?lang=en{% endblock %}
+
+{% set prev_ref_link = 'captain-train-en.html' %}
+{% set prev_ref_name = 'Captain Train' %}
+{% set next_ref_link = 'institut-avignon-en.html' %}
+{% set next_ref_name = "Institut d'Avignon" %}
