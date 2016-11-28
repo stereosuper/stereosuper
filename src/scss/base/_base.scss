@@ -254,8 +254,9 @@ a{
 .subtitle{
     position: absolute;
     left: 35vw;
-    bottom: -20px;
+    bottom: -10px;
     opacity: 0.25;
+    font-size: 1.5rem;
     a{
         display: block;
         text-decoration: none;
@@ -282,6 +283,19 @@ a{
 
 
 
+@media (max-width: 1600px){
+    .subtitle{
+        bottom: -20px;
+    }
+}
+@media (max-width: 1300px){
+    .subtitle{
+        .legal &{
+            bottom: -30px;
+        }
+    }
+}
+
 @media (min-width: 1200px){
     @media (max-height: 870px){
         h1{
@@ -289,10 +303,7 @@ a{
         }
 
         .subtitle{
-            position: static;
-            a{
-                display: inline-block;
-            }
+            display: none;
         }
     }
 
@@ -309,9 +320,8 @@ a{
 
 @media (max-width: 1200px){
     .subtitle{
-        position: static;
-        a{
-            display: inline-block;
+        .legal &{
+            display: none;
         }
     }
 }

@@ -308,6 +308,12 @@
             font-size: 7vw;
         }
     }
+
+    .subtitle{
+        .about &{
+            left: 60vw;
+        }
+    }
 }
 
 @media (max-width: 1150px){
@@ -338,6 +344,12 @@
             .footer-about{
                 display: none;
             }
+        }
+    }
+
+    .subtitle{
+        .about &{
+            display: none;
         }
     }
 }
