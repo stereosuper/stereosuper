@@ -96,6 +96,7 @@
     }
 }
 
+
 @media (max-width: 1500px){
     .contact{
         .grid{
@@ -106,8 +107,13 @@
 
     #map{
         height: 72vh;
+        min-height: 620px;
+    }
+}
+
+@media (max-width: 1200px){
+    #map{
         max-height: 600px;
-        min-height: 520px;
     }
 }
 
@@ -154,5 +160,18 @@
 @media (max-width: 500px){
     .mapboxgl-canvas-container{
         display: none;
+    }
+}
+
+@media (max-height: 670px){
+    .contact{
+        .title{
+            margin: 0 0 2em;
+        }
+    }
+
+    #map{
+        height: 75vh;
+        min-height: 500px;
     }
 }
