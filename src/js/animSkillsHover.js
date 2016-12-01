@@ -55,7 +55,7 @@ module.exports = function(body, portfolioItems){
 
 
     
-    body.on('mouseenter', '.skill', function(){
+    /*body.on('mouseenter', '.skill', function(){
         if($(this).parents('body').hasClass('home')){
             if(!$(this).hasClass('off')){
                 thisData = $(this).data('skill');
@@ -161,7 +161,7 @@ module.exports = function(body, portfolioItems){
             $('.skills.selected').removeClass('selected');
             parentSkills.data('skill-selected', '');
         }
-    });
+    });*/
 
     body.on('mouseenter', '.portfolio-item', function(){
         if($(this).parents('body').hasClass('home')){
