@@ -36,13 +36,13 @@ module.exports = function(){
         }
     }
 
-    function preload(name, nb){
-        var img = new Image();
-        img.onload = checkImgLoaded;
-        img.src = siteUrl + '/layoutImg/' + name + '-' + nb + '.jpg';
+    // function preload(name, nb){
+    //     var img = new Image();
+    //     img.onload = checkImgLoaded;
+    //     img.src = siteUrl + '/layoutImg/' + name + '-' + nb + '.jpg';
 
-        return img;
-    }
+    //     return img;
+    // }
 
     function updateCounter(nb){
         if(pairs.indexOf(nb) > -1 || reallyDone) return;
@@ -75,10 +75,14 @@ module.exports = function(){
         secondWin = "BRAVO! You're awesome! Envoyez-nous donc une capture d’écran avec vos coordonnées !";
     }
 
-    for(j; j<nbImg+1; j++){
-        stereoSrc[j] = preload('stereo', (j+1));
-        superSrc[j] = preload('super', (j+1));
-    }
+    logo404.find('.to-load').on('load', checkImgLoaded).each(function(){
+        if(this.complete) $(this).trigger('load');
+    });
+
+    // for(j; j<nbImg+1; j++){
+    //     stereoSrc[j] = preload('stereo', (j+1));
+    //     superSrc[j] = preload('super', (j+1));
+    // }
 
     logo404.one('mouseenter', function(){
         counterHtml.addClass('on').find('span').html(hello);

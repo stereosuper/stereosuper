@@ -27,8 +27,8 @@
 
 .logo-404{
     width: 55%;
-    height: 750px;
-    //max-width: 580px;
+    height: 730px;
+    max-width: 940px;
     position: absolute;
     bottom: 0;
     right: 0;
@@ -37,9 +37,21 @@
         display: inline-block;
         width: 50%;
         height: 750px;
-        background-size: 135%;
-        background-repeat: no-repeat;
-        background-position: 50% 100%;
+        position: relative;
+        // background-size: 135%;
+        // background-repeat: no-repeat;
+        // background-position: 50% 100%;
+        background: none !important;
+        overflow: hidden;
+        img{
+            display: none;
+            width: 135%;
+            max-width: none;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate3d(-50%, 0, 0);
+        }
     }
     .js &{
         opacity: 0;
@@ -75,24 +87,39 @@
 
 #stereo{
     .no-js &{
-        background-image: url(../layoutImg/stereo-3.jpg);
+        // background-image: url(../layoutImg/stereo-3.jpg);
+        > img:nth-child(1){
+            display: block;
+        }
     }
+    // background-image: url(../layoutImg/super.png);
 }
 #super{
     .no-js &{
-        background-image: url(../layoutImg/super-11.jpg);
+        //     background-image: url(../layoutImg/super-11.jpg);
+        > img:nth-child(1){
+            display: block;
+        }
     }
 }
 
 @for $i from 1 through 15{
     #stereo{
         &.logo-#{$i}{
-            background-image: url(../layoutImg/stereo-#{$i}.jpg);
+            // background-image: url(../layoutImg/stereo-#{$i}.jpg);
+            // background-position: 50% #{$i*-((957*135)/100)*1px};
+            // background-position: 50% #{$i*(100/14.085)*1%};
+            > img:nth-child(#{$i}){
+                display: block;
+            }
         }
     }
     #super{
         &.logo-#{$i}{
-            background-image: url(../layoutImg/super-#{$i}.jpg);
+            // background-image: url(../layoutImg/super-#{$i}.jpg);
+            > img:nth-child(#{$i}){
+                display: block;
+            }
         }
     }
 }
