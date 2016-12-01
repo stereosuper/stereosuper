@@ -6,7 +6,7 @@
 Choisissez pour l'item une version simple et sans charactères spéciaux de son nom, qui servira un peu partout, et que j'appellerai [SLUG] ensuite.
 
 ### IMAGES
-- Dans le dossier /img/ ajouter l'image qui servira dans l'accueil, nom: bg-[SLUG].png (ou .jpg), width: 960
+- Dans le dossier /img/ ajouter l'image qui servira dans l'accueil, nom: bg-[SLUG].png (ou .jpg), width: 960, height: 150
 - Dans le dossier /portfolio/ ajouter l'image desktop retina, nom: cover-[SLUG]@2.png (ou .jpg), width: 2000; l'image desktop non retina, nom: cover-[SLUG].png (ou .jpg), width: 1000; l'image responsive, nom: mb-cover-[SLUG].png, width: 1100
 - Générer le logo avec icomoon, l'importer en svg dans le projet, puis cliquer sur "generate svg & more", "download", et copier le < symbol > correspondant dans le fichier symbol.defs.svg
 
