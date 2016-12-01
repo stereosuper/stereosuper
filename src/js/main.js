@@ -58,7 +58,7 @@ $(function(){
     ////////////////////////////////////////////////
     // Background blend mode detection
     ////////////////////////////////////////////////
-    if('CSS' in window && 'supports' in window.CSS) {
+    if('CSS' in window && 'supports' in window.CSS){
         support = window.CSS.supports('mix-blend-mode', 'soft-light') ? 'mix-blend-mode' : 'no-mix-blend-mode';
         support += window.CSS.supports('-webkit-mask-size', 'cover') ? ' mask' : ' no-mask';
     }else{

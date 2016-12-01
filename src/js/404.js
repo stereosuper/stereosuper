@@ -6,6 +6,7 @@ module.exports = function(){
     var logo404 = $('#logo404'), stereoDiv = logo404.find('#stereo'), superDiv = logo404.find('#super');
     var counterHtml = logo404.find('#counter');
     var url = document.location.href, siteUrl = url.substring(0, url.lastIndexOf('/') + 1);
+    var hello, firstWin, secondWin;
 
     // var test = 0;
 
@@ -53,15 +54,25 @@ module.exports = function(){
         if(pairs.length !== nbImg) return;
 
         if(done){
-            counterHtml.find('span').html("Congrats! You're awesome! Take a screenshot and send it to us :)");
+            counterHtml.find('span').html(secondWin);
             reallyDone = true;
         }else{
-            counterHtml.find('span').addClass('done').html("Incredible! You've unlocked the oven glove!");
+            counterHtml.find('span').addClass('done').html(firstWin);
             done = true;
             nbImg ++;
             // pairs = [];
             // counter = false;
         }
+    }
+
+    if($('#page').data('lang') === '404.html'){
+        hello = 'Hi there! Wanna play?';
+        firstWin = "INCRRDIBLE! You've unlocked the oven glove!";
+        secondWin = "CONGRATS! You're awesome! Take a screenshot and send it to us :)";
+    }else{
+        hello = 'Bonjour! Vous voulez jouer?';
+        firstWin = "INCROYABLE! Vous avez débloqué des manique!";
+        secondWin = "BRAVO! You're awesome! Envoyez-nous donc une capture d’écran avec vos coordonnées !";
     }
 
     for(j; j<nbImg+1; j++){
@@ -70,7 +81,7 @@ module.exports = function(){
     }
 
     logo404.one('mouseenter', function(){
-        counterHtml.addClass('on').find('span').html('Hi there! Wanna play?');
+        counterHtml.addClass('on').find('span').html(hello);
     }).one('mouseleave', function(){
         counterHtml.prepend('Score: ').find('span').html('0/' + nbImg);
     }).on('mouseenter', function(){
