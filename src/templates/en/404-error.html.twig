@@ -6,9 +6,12 @@
 {% block title %}404 &bull; Stéréosuper &bull; Uncommon digital agency{% endblock %}
 {% block description %}Oh snap, you're here. That means you are lost. Oh wait, you want to play with our matching glove game?{% endblock %}
 
+{# Multilingue #}
+{% set url_fr = '404.html' %}
+
 {# Content #}
 {% block content %}
-    <div id='page' class='barba-container' data-class='e404' data-namespace='404'>
+    <div id='page' class='barba-container' data-class='e404' data-namespace='404' data-lang='{{ url_fr }}'>
 
         <div class='container'>
             <div class='text-404'>

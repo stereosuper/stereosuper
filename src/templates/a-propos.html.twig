@@ -6,9 +6,12 @@
 {% block title %}À propos &bull; Stéréosuper &bull; Agence web avec des convictions{% endblock %}
 {% block description %}Cette page raconte la merveilleuse histoire de Stéréosuper. Il n'y a pas autant de péripéties que dans un James Bond, mais c'est prenant quand même.{% endblock %}
 
+{# Multilingue #}
+{% set url_en = 'about.html' %}
+
 {# Content #}
 {% block content %}
-    <div id='page' class='barba-container' data-class='about' data-namespace='about'>
+    <div id='page' class='barba-container' data-class='about' data-namespace='about' data-lang='{{ url_en }}'>
         <div class='container-relative'>
             <div class='container container-title'>
                 <div class='title'>

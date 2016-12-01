@@ -6,9 +6,12 @@
 {% block title %}Mentions légales &bull; Stéréosuper &bull; Agence web super chouette{% endblock %}
 {% block description %}Vous avez bien évidemment une forte envie de lire toutes les informations juridiques liées au site de Stéréosuper. Et vous avez bien raison.{% endblock %}
 
+{# Multilingue #}
+{% set url_en = 'mentions-en.html' %}
+
 {# Content #}
 {% block content %}
-    <div id='page' class='barba-container' data-class='bw' data-namespace='mentions' data-class='bw legal'>
+    <div id='page' class='barba-container' data-class='bw' data-namespace='mentions' data-class='bw legal' data-lang='{{ url_en }}'>
         <div class='container'>
             <div class='container-small'>
                 <div class='title'>

@@ -130,12 +130,6 @@ $(function(){
             if(!isMobile.any){
                 animSkillsScroll(myScroll, body, header, skillsHome);
             }
-        },
-        onLeave: function(){
-            // A new Transition toward a new page has just started.
-        },
-        onLeaveCompleted: function(){
-            // The Container has just been removed from the DOM.
         }
     });
     Home.init();
@@ -152,12 +146,6 @@ $(function(){
         onEnterCompleted: function(){
             // The Transition has just finished.
             animSouvenir();
-        },
-        onLeave: function(){
-            // A new Transition toward a new page has just started.
-        },
-        onLeaveCompleted: function(){
-            // The Container has just been removed from the DOM.
         }
     });
     Portfolio.init();
@@ -178,12 +166,6 @@ $(function(){
             animTimelineAbout(body);
             checkIfInView(body);
             animTextAbout(body);
-        },
-        onLeave: function(){
-            // A new Transition toward a new page has just started.
-        },
-        onLeaveCompleted: function(){
-            // The Container has just been removed from the DOM.
         }
     });
     About.init();
@@ -202,12 +184,6 @@ $(function(){
             // The Transition has just finished.
             animHandMap();
             headerContactScroll(body);
-        },
-        onLeave: function(){
-            // A new Transition toward a new page has just started.
-        },
-        onLeaveCompleted: function(){
-            // The Container has just been removed from the DOM.
         }
     });
     Contact.init();
@@ -218,8 +194,6 @@ $(function(){
     ////////////////////////////////////////////////
 
     var Mentions = Barba.BaseView.extend({ namespace: 'mentions',
-        onEnter: function(){
-        },
         onEnterCompleted: function(){
             var stupid = $('#stupidGif');
 
@@ -230,12 +204,6 @@ $(function(){
                     stupid.removeClass('on').find('img').removeClass('on');
                 });
             }
-        },
-        onLeave: function(){
-            // A new Transition toward a new page has just started.
-        },
-        onLeaveCompleted: function(){
-            // The Container has just been removed from the DOM.
         }
     });
     Mentions.init();
@@ -246,17 +214,8 @@ $(function(){
     ////////////////////////////////////////////////
 
     var P404 = Barba.BaseView.extend({ namespace: '404',
-        onEnter: function(){
-        },
         onEnterCompleted: function(){
             anim404();
-
-        },
-        onLeave: function(){
-            // A new Transition toward a new page has just started.
-        },
-        onLeaveCompleted: function(){
-            // The Container has just been removed from the DOM.
         }
     });
     P404.init();

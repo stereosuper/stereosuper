@@ -6,9 +6,12 @@
 {% block title %}Finis, les sites mononuls &bull; Stéréosuper &bull; Agence de communication web{% endblock %}
 {% block description %}Stéréosuper c’est une agence de communication web passionnée et très engagée! Nous adorons rendre nos clients meilleurs sur Internet.{% endblock %}
 
+{# Multilingue #}
+{% set url_en = 'home.html' %}
+
 {# Content #}
 {% block content %}
-	<div id='page' class='barba-container' data-class='home' data-namespace='home'>
+	<div id='page' class='barba-container' data-class='home' data-namespace='home' data-lang='{{ url_en }}'>
         <div class='wrapper-video-home' id='video'></div>
 
         <header class='container block-title' id='blockTitle'>

@@ -6,9 +6,12 @@
 {% block title %}Legal notice &bull; Stéréosuper &bull; Great digital agency{% endblock %}
 {% block description %}You really want to go through legal stuff? Even though this is the boring part of our website, there may or may not be some easter eggs in here!{% endblock %}
 
+{# Multilingue #}
+{% set url_fr = 'mentions.html' %}
+
 {# Content #}
 {% block content %}
-    <div id='page' class='barba-container' data-class='bw' data-namespace='mentions' data-class='bw legal'>
+    <div id='page' class='barba-container' data-class='bw' data-namespace='mentions' data-class='bw legal' data-lang='{{ url_fr }}'>
         <div class='container'>
             <div class='container-small'>
                 <div class='title'>

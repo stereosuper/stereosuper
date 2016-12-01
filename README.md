@@ -25,6 +25,7 @@ Puis dans templates/index.html.twig:
 - Créer un nouveau fichier twig appelé [URL_NAME].html.twig dans le dossier /templates/
 - Remplir le block "portfolio_slug" avec le [SLUG]
 - Remplir les block "portfolio_title" et "description" correspondent aux balises title et meta description
+- Remplir la variable url_en (si fr) ou url_fr (si en) avec l'url correspondante
 - Remplir les block "portfolio_text" et "portfolio_role" qui correspondent aux textes du contenu (ne pas ajouter d'images ici, elles seront automatiquement ajoutées)
 - Remplir la variable "cover_ext" avec l'extension de l'image détail desktop
 - Remplir la variable "cover_class" selon le placement souhaité de l'image (pas besoin pour les images non détourées): centered (ordi avec bras sur les cotés), portrait (exemple: iadvize), top (venant du haut), left (venant de la gauche), souvenir; si ces classes ne sont pas suffisantes, vous pouvez en ajouter une custom puis l'utliser dans /pages/_portfolio.scss (vers la ligne 157)

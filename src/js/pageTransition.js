@@ -44,6 +44,7 @@ module.exports = function(body, menu, lastClickedLink){
             var $el = $(this.newContainer);
 
             body.removeClass($(this.oldContainer).data('class')).addClass($el.data('class'));
+            $('.lang').find('.no-barba').attr('href', $el.data('lang'));
 
             TweenMax.set($el, {visibility: 'visible', opacity: 0});
             $(this.oldContainer).hide();

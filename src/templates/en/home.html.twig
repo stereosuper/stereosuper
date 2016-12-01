@@ -6,9 +6,12 @@
 {% block title %}No more lame websites &bull; Stéréosuper &bull; Digital web agency{% endblock %}
 {% block description %}At Stéréosuper, we love helping our clients meet their goals through creative online communication. We are opening an office in Brooklyn!{% endblock %}
 
+{# Multilingue #}
+{% set url_fr = './' %}
+
 {# Content #}
 {% block content %}
-	<div id='page' class='barba-container' data-class='home' data-namespace='home'>
+	<div id='page' class='barba-container' data-class='home' data-namespace='home' data-lang='{{ url_fr }}'>
         <div class='wrapper-video-home' id='video'></div>
 
         <header class='container block-title' id='blockTitle'>
