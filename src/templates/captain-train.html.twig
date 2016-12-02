@@ -4,13 +4,16 @@
 {% block portfolio_slug %}captain{% endblock %}
 
 {# Meta #}
-{% block portfolio_title %}Captain Train &bull; Portfolio de Stéréosuper &bull; Agence web des start-ups stylées{% endblock %}
+{% block title %}Captain Train &bull; Portfolio de Stéréosuper &bull; Agence web des start-ups stylées{% endblock %}
 {% block description %}En 2015, Stéréosuper a accompagné les équipes de Captain Train dans leurs réflexions sur leur image et leur nouveau logo.{% endblock %}
+{% set og_url = 'captain-train.html' %}
 
 {# Multilingue #}
-{% set url_en = 'captain-train-en.html' %}
+{% set url_en = 'http://stereosuper.fr/captain-train-en.html' %}
 
 {# Content #}
+{% block portfolio_title %}Captain Train{% endblock %} {# Text in h1, doesn't appear but still important #}
+
 {% block portfolio_text %}
     <p>Captain Train permet de réserver son billet de train en France et dans plus de 20 pays européens. Concurrente de voyages-sncf, la société a été vendue à Trainline pour près de 160 millions d'Euros en 2016.</p>
 {% endblock %}

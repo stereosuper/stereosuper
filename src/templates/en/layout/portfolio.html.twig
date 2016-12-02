@@ -3,7 +3,7 @@
 {% block body_attr %}class='portfolio bw {% block portfolio_slug %}{% endblock %}-portfolio'{% endblock %}
 
 {# Meta #}
-{% block title %}{% block portfolio_title %}{% endblock %}{% endblock %}
+{% block og_img %}img/portfolio/cover-{% block portfolio_slug %}{% endblock %}@2.{{ cover_ext }}{% endblock %}
 
 {# Content #}
 {% block content %}

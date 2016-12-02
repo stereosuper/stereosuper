@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang='en-US' class='no-js'>
     <head>
         <meta charset='utf-8'>
@@ -19,13 +18,22 @@
         <meta name='application-name' content='Stéréosuper'>
         <meta name='theme-color' content='#000'>
 
+        <meta property='og:title' content="{% block title %}{% endblock %}">
+        <meta property='og:description' content="{% block description %}{% endblock %}">
+        <meta property='og:url' content='http://stereosuper.fr/{{ og_url }}'>
+        <meta property='og:image' content="http://stereosuper.fr/{% block og_img %}{% endblock %}">
+        <meta property='og:type' content='website'>
+        <meta name='twitter:card' content='summary_large_image'>
+
+        <link rel='alternate' hreflang='fr-FR' href='{{ url_fr }}'>
+
         {% block stylesheets %}
             <link rel='stylesheet' type='text/css' href='css/main.css'>
             <link rel='stylesheet' type='text/css' href='https://cloud.typography.com/719316/609682/css/fonts.css'>
         {% endblock stylesheets %}
 
         {% block javascript_top %}
-            <script async>document.getElementsByTagName('html')[0].className = 'js';</script>
+            <script>document.getElementsByTagName('html')[0].className = 'js';</script>
         {% endblock %}
     </head>
 
@@ -353,7 +361,6 @@
             </script>
 
             <script src='https://player.vimeo.com/api/player.js' defer></script>
-            <script src='js/libs/objectFitPolyfill.min.js' defer></script>
             <script src='js/main.js' defer></script>
         {% endblock %}
     </body>

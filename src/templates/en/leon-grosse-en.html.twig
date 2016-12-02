@@ -4,13 +4,16 @@
 {% block portfolio_slug %}leon{% endblock %}
 
 {# Meta #}
-{% block portfolio_title %}Léon Grosse &bull; Stéréosuper portfolio &bull; Fearless digital agency{% endblock %}
+{% block title %}Léon Grosse &bull; Stéréosuper portfolio &bull; Fearless digital agency{% endblock %}
 {% block description %}2016: Stéréosuper redesigned Léon Grosse website. Léon Grosse is a French building and public works giant.{% endblock %}
+{% set og_url = 'leon-grosse-en.html' %}
 
 {# Multilingue #}
-{% set url_fr = 'leon-grosse.html' %}
+{% set url_fr = 'http://stereosuper.fr/leon-grosse.html' %}
 
 {# Content #}
+{% block portfolio_title %}Léon Grosse{% endblock %} {# Text in h1, doesn't appear but still important #}
+
 {% block portfolio_text %}
     <p>Léon Grosse is a French building and public works giant. With sales of 720 M€ in 2014 and 2300 employees, Léon Grosse is the fifth French construction and public works company.</p>
 {% endblock %}

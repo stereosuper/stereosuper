@@ -4,10 +4,16 @@
 {% block portfolio_slug %}aa{% endblock %}
 
 {# Meta #}
-{% block portfolio_title %}L'Architecture d'Aujourd'hui &bull; Stéréosuper portfolio &bull; Top-notch digital agency{% endblock %}
+{% block title %}L'Architecture d'Aujourd'hui &bull; Stéréosuper portfolio &bull; Top-notch digital agency{% endblock %}
 {% block description %}2015: Stéréosuper redesigned the l'Architecture d'Aujourd'hui website. L'Architecture d'aujourd'hui is France’s legendary modernist architecture magazine.{% endblock %}
+{% set og_url = 'architecture-aujourdhui-en.html' %}
+
+{# Multilingue #}
+{% set url_fr = 'http://stereosuper.fr/architecture-aujourdhui.html' %}
 
 {# Content #}
+{% block portfolio_title %}L'Architecture d'Aujourd'hui{% endblock %} {# Text in h1, doesn't appear but still important #}
+
 {% block portfolio_text %}
     <p>L'Architecture d'aujourd'hui (AA) is France’s legendary modernist architecture magazine.&nbsp; It’s been delighting architects from all over the world since 1930.</p>
 {% endblock %}

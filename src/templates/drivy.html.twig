@@ -4,13 +4,16 @@
 {% block portfolio_slug %}drivy{% endblock %}
 
 {# Meta #}
-{% block portfolio_title %}Drivy &bull; Portfolio de Stéréosuper &bull; Agence web des connaisseurs{% endblock %}
+{% block title %}Drivy &bull; Portfolio de Stéréosuper &bull; Agence web des connaisseurs{% endblock %}
 {% block description %}De 2012, Stéréosuper a travaillé sur le design du site Internet de Drivy, imaginé leur précédente mascotte et réalisé un motion de présentation du service.{% endblock %}
+{% set og_url = 'drivy.html' %}
 
 {# Multilingue #}
-{% set url_en = 'drivy-en.html' %}
+{% set url_en = 'http://stereosuper.fr/drivy-en.html' %}
 
 {# Content #}
+{% block portfolio_title %}Drivy{% endblock %} {# Text in h1, doesn't appear but still important #}
+
 {% block portfolio_text %}
     <p>Drivy permet aux particuliers de louer leur voiture. Depuis sa création, la start-up a permis la réservation de 1,4 million de journées de location.&nbsp;<br>En 2016, elle lève 31 millions d'Euros.</p>
 {% endblock %}

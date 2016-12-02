@@ -4,13 +4,16 @@
 {% block portfolio_slug %}avignon{% endblock %}
 
 {# Meta #}
-{% block portfolio_title %}Institut d'Avignon &bull; Portfolio de Stéréosuper &bull; Agence web des plus grands{% endblock %}
+{% block title %}Institut d'Avignon &bull; Portfolio de Stéréosuper &bull; Agence web des plus grands{% endblock %}
 {% block description %}En 2015, Stéréosuper a refondu le site Internet de l'Institut d'Avignon, un cursus d’été en littérature, histoire et théâtre dépendant d'une université américaine.{% endblock %}
+{% set og_url = 'institut-avignon.html' %}
 
 {# Multilingue #}
-{% set url_en = 'institut-avignon-en.html' %}
+{% set url_en = 'http://stereosuper.fr/institut-avignon-en.html' %}
 
 {# Content #}
+{% block portfolio_title %}L'Institut d'Avignon{% endblock %} {# Text in h1, doesn't appear but still important #}
+
 {% block portfolio_text %}
     <p>L'Institut d'Avignon est un cursus d’été en littérature française, histoire et théâtre. Il s'adresse avant tout aux américains, puisqu'il dépend du Bryn Mawr College, en Pennsylvanie.</p>
 {% endblock %}

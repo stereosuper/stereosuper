@@ -4,13 +4,16 @@
 {% block portfolio_slug %}lbb{% endblock %}
 
 {# Meta #}
-{% block portfolio_title %}La Belle Boîte &bull; Portfolio de Stéréosuper &bull; Agence web qui pèse{% endblock %}
+{% block title %}La Belle Boîte &bull; Portfolio de Stéréosuper &bull; Agence web qui pèse{% endblock %}
 {% block description %}En 2016, Stéréosuper a réalisé le site Internet et le logo de la Belle Boîte, spécialiste de l'improvisation en entreprise.{% endblock %}
+{% set og_url = 'la-belle-boite.html' %}
 
 {# Multilingue #}
-{% set url_en = './' %}
+{% set url_en = 'http://stereosuper.fr/home.html' %}
 
 {# Content #}
+{% block portfolio_title %}La Belle Boîte{% endblock %} {# Text in h1, doesn't appear but still important #}
+
 {% block portfolio_text %}
     <p>Les joyeux trublions de la Belle Boîte conçoivent et animent des ateliers, formations et spectacles en entreprise.</p>
 {% endblock %}

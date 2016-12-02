@@ -4,13 +4,16 @@
 {% block portfolio_slug %}drivy{% endblock %}
 
 {# Meta #}
-{% block portfolio_title %}Drivy &bull; Stéréosuper portfolio &bull; Smart digital agency{% endblock %}
+{% block title %}Drivy &bull; Stéréosuper portfolio &bull; Smart digital agency{% endblock %}
 {% block description %}2012: Stéréosuper designed Drivy website, created its mascot and created an animated presentation of the service. Drivy allows everyone to rent out their car.{% endblock %}
+{% set og_url = 'drivy-en.html' %}
 
 {# Multilingue #}
-{% set url_fr = 'drivy.html' %}
+{% set url_fr = 'http://stereosuper.fr/drivy.html' %}
 
 {# Content #}
+{% block portfolio_title %}Drivy{% endblock %} {# Text in h1, doesn't appear but still important #}
+
 {% block portfolio_text %}
     <p>Drivy allows everyone to rent out their car. Since its founding, the startup has allowed for 1.4 million days of car rental. In 2016, it raised €31m.</p>
 {% endblock %}
