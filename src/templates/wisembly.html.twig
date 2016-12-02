@@ -4,13 +4,16 @@
 {% block portfolio_slug %}wisembly{% endblock %}
 
 {# Meta #}
-{% block portfolio_title %}Wisembly &bull; Portfolio de Stéréosuper &bull; Agence web efficace{% endblock %}
+{% block title %}Wisembly &bull; Portfolio de Stéréosuper &bull; Agence web efficace{% endblock %}
 {% block description %}En 2015, Stéréosuper a refondu le site Internet de Wisembly, une start-up qui rend les réunions plus interactives et dynamiques.{% endblock %}
+{% set og_url = 'wisembly.html' %}
 
 {# Multilingue #}
 {% set url_en = 'wisembly-en.html' %}
 
 {# Content #}
+{% block portfolio_title %}Wisembly{% endblock %} {# Text in h1, doesn't appear but still important #}
+
 {% block portfolio_text %}
     <p>Wisembly est un outil permettant de rendre plus interactives et dynamique les prises de paroles en groupe&nbsp;: conférences, séminaires, réunions, etc.&nbsp;<br>La start-up, fondée en 2010, a levé 1,4 millions d'Euros en 2014.</p>
 {% endblock %}
@@ -18,6 +21,7 @@
 {% block portfolio_role %}
     <p>En 2015, nous avons refondu leur site Internet.</p>
 {% endblock %}
+
 
 {% set cover_ext = 'jpg' %}
 

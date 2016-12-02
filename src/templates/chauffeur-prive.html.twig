@@ -4,13 +4,16 @@
 {% block portfolio_slug %}chauffeur{% endblock %}
 
 {# Meta #}
-{% block portfolio_title %}Chauffeur-Privé &bull; Portfolio de Stéréosuper &bull; Agence web des hipsters{% endblock %}
+{% block title %}Chauffeur-Privé &bull; Portfolio de Stéréosuper &bull; Agence web des hipsters{% endblock %}
 {% block description %}De 2012 à 2015, Stéréosuper a accompagné Chauffeur-Privé dans le design de l'application, leur site Internet et l'ensemble de leurs opérations de communication.{% endblock %}
+{% set og_url = 'chauffeur-prive.html' %}
 
 {# Multilingue #}
 {% set url_en = 'chauffeur-prive-en.html' %}
 
 {# Content #}
+{% block portfolio_title %}Chauffeur Privé{% endblock %} {# Text in h1, doesn't appear but still important #}
+
 {% block portfolio_text %}
     <p>Concurrent de Uber, Chauffeur-Privé est le leader français des VTC. La start-up a été valorisée en 2015 à 25 millions d'Euros et a réalisé une levée de fonds de 5 millions d'Euros.</p>
 {% endblock %}

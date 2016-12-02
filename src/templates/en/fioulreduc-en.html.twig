@@ -4,13 +4,16 @@
 {% block portfolio_slug %}fioulreduc{% endblock %}
 
 {# Meta #}
-{% block portfolio_title %}Fioulreduc &bull; Stéréosuper portfolio &bull; Infamous digital agency{% endblock %}
+{% block title %}Fioulreduc &bull; Stéréosuper portfolio &bull; Infamous digital agency{% endblock %}
 {% block description %}2014: Stéréosuper redesigned Fioulreduc website and image. Fioulreduc is France’s first domestic fuel online sale service.{% endblock %}
+{% set og_url = 'fioulreduc-en.html' %}
 
 {# Multilingue #}
 {% set url_fr = 'fioulreduc.html' %}
 
 {# Content #}
+{% block portfolio_title %}Fioulreduc{% endblock %} {# Text in h1, doesn't appear but still important #}
+
 {% block portfolio_text %}
     <p>Fioulreduc is France’s first domestic fuel online sale service. In 2016, the startup raised €3m.</p>
 {% endblock %}

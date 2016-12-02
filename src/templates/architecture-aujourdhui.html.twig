@@ -4,13 +4,16 @@
 {% block portfolio_slug %}aa{% endblock %}
 
 {# Meta #}
-{% block portfolio_title %}L'Architecture d'Aujourd'hui &bull; Portfolio de Stéréosuper &bull; Agence web dans le vent{% endblock %}
+{% block title %}L'Architecture d'Aujourd'hui &bull; Portfolio de Stéréosuper &bull; Agence web dans le vent{% endblock %}
 {% block description %}En 2015, Stéréosuper a refondu leur site Internet de l'Architecture d'Aujourd'hui, une revue française d'architecture crée en 1930.{% endblock %}
+{% set og_url = 'architecture-aujourdhui.html' %}
 
 {# Multilingue #}
 {% set url_en = 'architecture-aujourdhui-en.html' %}
 
 {# Content #}
+{% block portfolio_title %}L'Architecture d'Aujourd'hui{% endblock %} {# Text in h1, doesn't appear but still important #}
+
 {% block portfolio_text %}
     <p>L'Architecture d'Aujourd'hui (AA) est une revue française d'architecture emblématique du Mouvement moderne.&nbsp;<br>Elle ravit les architectes du monde entier depuis 1930.</p>
 {% endblock %}

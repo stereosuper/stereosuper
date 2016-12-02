@@ -4,13 +4,16 @@
 {% block portfolio_slug %}akeneo{% endblock %}
 
 {# Meta #}
-{% block portfolio_title %}Akeneo &bull; Stéréosuper portfolio &bull; Magic digital agency{% endblock %}
+{% block title %}Akeneo &bull; Stéréosuper portfolio &bull; Magic digital agency{% endblock %}
 {% block description %}2016: Stéréosuper redesigned the Akeneo website. Akeneo is a french based startup that raised €1.6m in 2014.{% endblock %}
+{% set og_url = 'akeneo-en.html' %}
 
 {# Multilingue #}
 {% set url_fr = 'akeneo.html' %}
 
 {# Content #}
+{% block portfolio_title %}Akeneo{% endblock %} {# Text in h1, doesn't appear but still important #}
+
 {% block portfolio_text %}
     <p>Akeneo is a product catalog management solution tailored to many markets and media. Their platform is used by Vuitton, Auchan, Made.com, Pimkie and many other retail giants. In 2014, the Nantes based startup raised €1.6m.</p>
 {% endblock %}

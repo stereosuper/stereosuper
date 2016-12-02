@@ -4,13 +4,16 @@
 {% block portfolio_slug %}captain{% endblock %}
 
 {# Meta #}
-{% block portfolio_title %}Captain Train &bull; Stéréosuper portfolio &bull; Amazing digital agency{% endblock %}
+{% block title %}Captain Train &bull; Stéréosuper portfolio &bull; Amazing digital agency{% endblock %}
 {% block description %}2015: Stéréosuper helped Captain Train with their image and new logo. Captain Train revolutionized buying train tickets in Europe. Then it and was acquired for $190m in 2016.{% endblock %}
+{% set og_url = 'captain-train-en.html' %}
 
 {# Multilingue #}
 {% set url_fr = 'captain-train.html' %}
 
 {# Content #}
+{% block portfolio_title %}Captain Train{% endblock %} {# Text in h1, doesn't appear but still important #}
+
 {% block portfolio_text %}
     <p>Captain Train revolutionized buying train tickets in France and more than 20 European countries. The company was acquired by Trainline for $190m in 2016.</p>
 {% endblock %}
