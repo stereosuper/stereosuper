@@ -1,8 +1,10 @@
+var Barba = require('./libs/barba.min.js');
 var $ = require('./libs/jquery/dist/jquery.slim.min.js');
 var TweenMax = require('./libs/gsap/src/uncompressed/TweenMax.js');
 
 module.exports = function(){
 	var navSingle = $('.previous-next-references'),
+		previousButton = navSingle.find('.previous-reference'), nextButton = navSingle.find('.next-reference'), previousButtonLink = previousButton.find('a'), nextButtonLink = nextButton.find('a'), hrefButton,
 		previousButtonSpan = navSingle.find('.previous-reference').find('.txt').find('>span');
 		nextButtonSpan = navSingle.find('.next-reference').find('.txt').find('>span'),
 		previousArrow = navSingle.find('.previous-reference').find('.icon'),
@@ -22,5 +24,28 @@ module.exports = function(){
 		TweenMax.to(previousButtonSpan, tpsAnimOut, {x: 20, opacity: 0, ease: easeButton});
 		TweenMax.to(nextButtonSpan, tpsAnimOut, {x: -20, opacity: 0, ease: easeButton});
 		TweenMax.to([previousArrow, nextArrow], tpsAnimOut, {x: 0, opacity: 1, ease: easeButton});
+	});
+
+	$(document).on('keydown', function(e) {
+	    switch(e.which) {
+	        case 37:
+	        	if(previousButtonLink.length){
+	        		hrefButton = previousButtonLink.attr('href');
+	        		console.log(hrefButton);
+	        		Barba.Pjax.goTo(hrefButton);
+	        	}
+	        break;
+
+	        case 39:
+		        if(nextButtonLink.length){
+		        	hrefButton = nextButtonLink.attr('href');
+		        	console.log(hrefButton);
+		        	Barba.Pjax.goTo(hrefButton);
+		        }
+	        break;
+
+	        default: return;
+	    }
+	    e.preventDefault();
 	});
 }
