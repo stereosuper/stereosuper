@@ -4,10 +4,10 @@ var throttle = require('./throttle.js');
 window.requestAnimFrame = require('./requestAnimFrame.js');
 
 module.exports = function(body){
-    var animationElts = $('.animateOnScroll');
+    var animationElts = $('.wrapperAnimateOnScroll'), elt, eltContent;
     var windowHeight, windowTopPosition, windowBottomPosition;
     var eltToAnimate, eltHeight, eltTopPosition, eltBottomPosition;
-    var launchGap = 100;
+    var launchGapIn = 100, launchGapOut = 250;
 
     function checkIfInView(){
         if(!body.hasClass('about') || !animationElts.length) return;
@@ -21,13 +21,15 @@ module.exports = function(body){
             eltHeight = elt.outerHeight();
             eltTopPosition = elt.offset().top;
             eltBottomPosition = (eltTopPosition + eltHeight);
-
-            if((eltBottomPosition - launchGap >= windowTopPosition) && (eltTopPosition + launchGap <= windowBottomPosition)){
-			    elt.removeClass('above-view').removeClass('under-view').addClass('in-view');
-            }else if(eltBottomPosition - launchGap < windowTopPosition){
-        	    elt.addClass('above-view').removeClass('under-view').removeClass('in-view');
-            }else{
-        	    elt.removeClass('above-view').addClass('under-view').removeClass('in-view');
+            eltContent = elt.find('.animateOnScroll');
+            if(eltContent.length){
+                if((eltBottomPosition - launchGapOut >= windowTopPosition) && (eltTopPosition + launchGapIn <= windowBottomPosition)){
+                    eltContent.removeClass('above-view').removeClass('under-view').addClass('in-view');
+                }else if(eltBottomPosition - launchGapOut < windowTopPosition){
+                    eltContent.addClass('above-view').removeClass('under-view').removeClass('in-view');
+                }else{
+                    eltContent.removeClass('above-view').addClass('under-view').removeClass('in-view');
+                }
             }
         });
     }
