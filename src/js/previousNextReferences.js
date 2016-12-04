@@ -1,14 +1,17 @@
 var Barba = require('./libs/barba.min.js');
 var $ = require('./libs/jquery/dist/jquery.slim.min.js');
 var TweenMax = require('./libs/gsap/src/uncompressed/TweenMax.js');
+var Hammer = require('./libs/hammerjs/hammer.min.js');
 
 module.exports = function(){
 	var navSingle = $('.previous-next-references'),
-		previousButton = navSingle.find('.previous-reference'), nextButton = navSingle.find('.next-reference'), previousButtonLink = previousButton.find('a'), nextButtonLink = nextButton.find('a'), hrefButton,
+		previousButton = navSingle.find('.previous-reference'), nextButton = navSingle.find('.next-reference'),
+		previousButtonLink = $('.previous-reference a'), nextButtonLink = $('.next-reference a'), hrefButton,
 		previousButtonSpan = navSingle.find('.previous-reference').find('.txt').find('>span');
 		nextButtonSpan = navSingle.find('.next-reference').find('.txt').find('>span'),
 		previousArrow = navSingle.find('.previous-reference').find('.icon'),
 		nextArrow = navSingle.find('.next-reference').find('.icon'),
+		portfolioDesc = $('.portfolio-desc'),
 		easeButton = Power3.easeOut, tpsAnimIn = 0.2, tpsAnimInTxt = 0.3, tpsAnimOut = 0.3;
 
 	navSingle.on('mouseenter focusin', 'a', function(){
@@ -27,11 +30,11 @@ module.exports = function(){
 	});
 
 	$(document).on('keydown', function(e) {
+		e.preventDefault();
 	    switch(e.which) {
 	        case 37:
 	        	if(previousButtonLink.length){
 	        		hrefButton = previousButtonLink.attr('href');
-	        		console.log(hrefButton);
 	        		Barba.Pjax.goTo(hrefButton);
 	        	}
 	        break;
@@ -39,13 +42,27 @@ module.exports = function(){
 	        case 39:
 		        if(nextButtonLink.length){
 		        	hrefButton = nextButtonLink.attr('href');
-		        	console.log(hrefButton);
 		        	Barba.Pjax.goTo(hrefButton);
 		        }
 	        break;
 
 	        default: return;
 	    }
-	    e.preventDefault();
+	});
+
+	portfolioDesc.each(function(){
+	    var hammertime = new Hammer(this);
+	    hammertime.on('swipeleft', function(){
+	    	if(nextButtonLink.length){
+	    		hrefButton = nextButtonLink.attr('href');
+	    		Barba.Pjax.goTo(hrefButton);
+	    	}
+	    });
+	    hammertime.on('swiperight', function(){
+	       if(previousButtonLink.length){
+	       	hrefButton = previousButtonLink.attr('href');
+	       	Barba.Pjax.goTo(hrefButton);
+	       }
+	    });
 	});
 }

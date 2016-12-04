@@ -91,7 +91,7 @@ $(function(){
     }else if(body.hasClass('portfolio')){
         transiInPortfolio($('#page'));
     }
-
+    
 
     ////////////////////////////////////////////////
     // Home functions
