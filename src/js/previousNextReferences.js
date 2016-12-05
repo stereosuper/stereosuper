@@ -35,6 +35,7 @@ module.exports = function(){
 	        case 37:
 	        	if(previousButtonLink.length){
 	        		hrefButton = previousButtonLink.attr('href');
+	        		$(document).off('keydown');
 	        		Barba.Pjax.goTo(hrefButton);
 	        	}
 	        break;
@@ -42,6 +43,7 @@ module.exports = function(){
 	        case 39:
 		        if(nextButtonLink.length){
 		        	hrefButton = nextButtonLink.attr('href');
+		        	$(document).off('keydown');
 		        	Barba.Pjax.goTo(hrefButton);
 		        }
 	        break;
@@ -50,19 +52,18 @@ module.exports = function(){
 	    }
 	});
 
-	portfolioDesc.each(function(){
-	    var hammertime = new Hammer(this);
-	    hammertime.on('swipeleft', function(){
-	    	if(nextButtonLink.length){
-	    		hrefButton = nextButtonLink.attr('href');
-	    		Barba.Pjax.goTo(hrefButton);
-	    	}
-	    });
-	    hammertime.on('swiperight', function(){
-	       if(previousButtonLink.length){
-	       	hrefButton = previousButtonLink.attr('href');
-	       	Barba.Pjax.goTo(hrefButton);
-	       }
-	    });
-	});
+    var hammertime = new Hammer(portfolioDesc.get(0));
+    hammertime.on('swipeleft', function(){
+    	if(nextButtonLink.length){
+    		hrefButton = nextButtonLink.attr('href');
+    		hammertime.off('swipeleft');
+    		Barba.Pjax.goTo(hrefButton);
+    	}
+    }).on('swiperight', function(){
+       if(previousButtonLink.length){
+       	hrefButton = previousButtonLink.attr('href');
+       	hammertime.off('swiperight');
+       	Barba.Pjax.goTo(hrefButton);
+       }
+    });
 }

@@ -141,11 +141,12 @@ $(function(){
     var Portfolio = Barba.BaseView.extend({ namespace: 'portfolio',
         onEnter: function(){
             // The new Container is ready and attached to the DOM.
-            previousNextReferences();
+            
         },
         onEnterCompleted: function(){
             // The Transition has just finished.
             animSouvenir();
+            previousNextReferences();
         }
     });
     Portfolio.init();
