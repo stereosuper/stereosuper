@@ -141,7 +141,6 @@ $(function(){
     var Portfolio = Barba.BaseView.extend({ namespace: 'portfolio',
         onEnter: function(){
             // The new Container is ready and attached to the DOM.
-            
         },
         onEnterCompleted: function(){
             // The Transition has just finished.
