@@ -127,3 +127,21 @@
         }
     }
 }
+
+@media (max-width: 340px){
+    #footer{
+        .container{
+            padding: 0 20px;
+        }
+    }
+
+    .footer-bottom{
+        .lang{
+            padding-right: 15px;
+        }
+    }
+
+    .mentions{
+        padding: 0 15px;
+    }
+}
