@@ -39,6 +39,9 @@
     padding: 0 20px;
     font-size: 1.3rem;
     opacity: 0.4;
+    .portfolio &{
+        display: none;
+    }
     a{
         color: inherit;
     }
@@ -115,6 +118,11 @@
             display: block;
         }
         .lang, .social{
+            display: inline-block;
+        }
+    }
+    .mentions{
+        .portfolio &{
             display: inline-block;
         }
     }
