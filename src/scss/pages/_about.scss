@@ -2,7 +2,7 @@
 
 .about{
     #barba-wrapper{
-        padding-bottom: 0;
+        padding: 0;
         position: relative; // ie11 header shaking
     }
     h2{
@@ -30,6 +30,7 @@
 }
 
 .container-title{
+    padding-top: 170px;
     position: relative;
     z-index: 3;
     background: #000;
