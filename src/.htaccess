@@ -6,6 +6,8 @@ AddType image/x-icon .ico
 FileETag none
 ServerSignature Off
 
+RedirectPermanent /valid http://www.stereosuper.io
+
 ErrorDocument 404 /404.html
 
 <ifModule mod_gzip.c>
