@@ -20,6 +20,7 @@ module.exports = function(myScroll, body, header){
         player.ready().then(function(){
             var src = video.find('iframe').attr('src');
             video.find('iframe').attr('src', src + "&background=1");
+            player.play();
             TweenMax.set(video, {opacity: 1, delay: 0.5});
         });
     }
