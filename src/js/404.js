@@ -71,7 +71,7 @@ module.exports = function(){
         secondWin = "CONGRATS! You're awesome! Take a screenshot and send it to us :)";
     }else{
         hello = 'Bonjour! Vous voulez jouer?';
-        firstWin = "INCROYABLE! Vous avez débloqué des manique!";
+        firstWin = "INCROYABLE! Vous avez débloqué des maniques!";
         secondWin = "BRAVO! You're awesome! Envoyez-nous donc une capture d’écran avec vos coordonnées !";
     }
 
