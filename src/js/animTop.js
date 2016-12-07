@@ -41,11 +41,7 @@ module.exports = function(myScroll, body, header){
     }
 
     onScroll();
-    if(!isMobile.apple.device){
-        createVideo();
-    }else{
-        wrapperVideo.addClass('noVideo');
-    }
+    !isMobile ? createVideo() : wrapperVideo.addClass('noVideo');
 
     $(document).on('scroll', throttle(function(){
         requestAnimFrame(onScroll);
