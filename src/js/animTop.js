@@ -7,7 +7,7 @@ var throttle = require('./throttle.js');
 window.requestAnimFrame = require('./requestAnimFrame.js');
 
 module.exports = function(myScroll, body, header){
-    var video = $('#video'), player;
+    var video = $('#video'), player, wrapperVideo = $('.wrapper-video-home');
 
     function createVideo(){
         var options = {
@@ -41,8 +41,10 @@ module.exports = function(myScroll, body, header){
     }
 
     onScroll();
-    if(!isMobile.any){
+    if(!isMobile.apple.device){
         createVideo();
+    }else{
+        wrapperVideo.addClass('noVideo');
     }
 
     $(document).on('scroll', throttle(function(){
