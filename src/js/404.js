@@ -1,4 +1,5 @@
 var $ = require('./libs/jquery/dist/jquery.slim.min.js');
+var isMobile = require('./isMobile.min.js');
 
 module.exports = function(){
     var nbImg = 14, timer, timerSuccess, counter = 0, pairs = [], done = false, reallyDone = false;
@@ -65,7 +66,7 @@ module.exports = function(){
         }
     }
 
-    if($('#page').data('lang') === '404.html'){
+    if($('#page').data('lang') === 'http://stereosuper.fr/404.html'){
         hello = 'Hi there! Wanna play?';
         firstWin = "INCRRDIBLE! You've unlocked the oven glove!";
         secondWin = "CONGRATS! You're awesome! Take a screenshot and send it to us :)";
@@ -84,33 +85,35 @@ module.exports = function(){
     //     superSrc[j] = preload('super', (j+1));
     // }
 
-    logo404.one('mouseenter', function(){
-        counterHtml.addClass('on').find('span').html(hello);
-    }).one('mouseleave', function(){
-        counterHtml.prepend('Score: ').find('span').html('0/' + nbImg);
-    }).on('mouseenter', function(){
-        clearTimeout(timer);
+    if(!isMobile.any){
+        logo404.one('mouseenter', function(){
+            counterHtml.addClass('on').find('span').html(hello);
+        }).one('mouseleave', function(){
+            counterHtml.prepend('Score: ').find('span').html('0/' + nbImg);
+        }).on('mouseenter', function(){
+            clearTimeout(timer);
 
-        if(stereoDiv.data('nb') === superDiv.data('nb')){
-            timerSuccess = setTimeout(function(){
-                updateCounter(stereoDiv.data('nb'));
-            }, 500);
-        }/*else{
-            if(counterHtml.find('span').html() !== ''){
-                counterHtml.find('i').html('Ooooh, so close...');
+            if(stereoDiv.data('nb') === superDiv.data('nb')){
+                timerSuccess = setTimeout(function(){
+                    updateCounter(stereoDiv.data('nb'));
+                }, 500);
+            }/*else{
+                if(counterHtml.find('span').html() !== ''){
+                    counterHtml.find('i').html('Ooooh, so close...');
+                }
+            }*/
+        }).on('mouseleave', function(){
+            if(counterHtml.find('span').hasClass('done')){
+                counterHtml.find('span').removeClass('done').html(nbImg-1 + '/' + nbImg);
             }
-        }*/
-    }).on('mouseleave', function(){
-        if(counterHtml.find('span').hasClass('done')){
-            counterHtml.find('span').removeClass('done').html(nbImg-1 + '/' + nbImg);
-        }
 
-        // counterHtml.find('i').html('');
+            // counterHtml.find('i').html('');
 
-        changeLogo();
+            changeLogo();
 
-        if(timerSuccess !== undefined){
-            clearTimeout(timerSuccess);
-        }
-    });
+            if(timerSuccess !== undefined){
+                clearTimeout(timerSuccess);
+            }
+        });
+    }
 }
