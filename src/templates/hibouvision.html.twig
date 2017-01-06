@@ -1,0 +1,40 @@
+{% extends 'layout/portfolio.html.twig' %}
+
+{# The portfolio_slug should be the same used in sass variable and to name all the images #}
+{% block portfolio_slug %}hibouvision{% endblock %}
+
+{# Meta #}
+{% block title %}Hibouvision &bull; Portfolio de Stéréosuper &bull; Agence web légendaire{% endblock %}
+{% block description %}En 2016, Stéréosuper a crée le site Internet d'Hibouvision, un outil de supervision de Systèmes Informatiques (SI).{% endblock %}
+{% set og_url = 'hibouvision.com' %}
+
+{# Multilingue #}
+{% set url_en = 'http://stereosuper.fr/home.html' %}
+
+{# Content #}
+{% block portfolio_title %}Hibouvision{% endblock %} {# Text in h1, doesn't appear but still important #}
+
+{% block portfolio_text %}
+    <p>Hibouvision est l'outil de supervision de Systèmes Informatiques (SI) en mode Saas de Sensor Factory.</p>
+{% endblock %}
+
+{% block portfolio_role %}
+    <p>En 2016, nous avons travaillé l'identité visuelle du produit et crée son site Internet.</p>
+{% endblock %}
+
+
+{% set cover_ext = 'jpg' %}
+
+{% set strategy = false %}
+{% set identity = true %}
+{% set design = true %}
+{% set animation = true %}
+{% set dev = true %}
+
+{% set website = true %}
+{% block portfolio_url %}http://www.hibouvision.com{% endblock %}
+
+{% set prev_ref_link = 'captain-train.html' %}
+{% set prev_ref_name = 'Captain Train' %}
+{% set next_ref_link = 'architecture-aujourdhui.html' %}
+{% set next_ref_name = 'L’architecture d’aujourd’hui' %}
