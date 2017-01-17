@@ -1,0 +1,39 @@
+{% extends 'layout/portfolio.html.twig' %}
+
+{# The portfolio_slug should be the same used in sass variable and to name all the images #}
+{% block portfolio_slug %}thinkovery{% endblock %}
+
+{# Meta #}
+{% block title %}Thinkovery &bull; Portfolio de Stéréosuper &bull; Agence web qui dabbe{% endblock %}
+{% block description %}En 2017, Stéréosuper a travaillé sur l'image et le nouveau site Internet de Thinkovery, une très chouette agence de digital learning qui jongle avec des MOOCs et des SPOCS.{% endblock %}
+{% set og_url = 'thinkovery.html' %}
+
+{# Multilingue #}
+{% set url_en = 'http://stereosuper.fr/home.html' %}
+
+{# Content #}
+{% block portfolio_title %}Thinkovery{% endblock %} {# Text in h1, doesn't appear but still important #}
+
+{% block portfolio_text %}
+    <p>Thinkovery est une agence qui fabrique des parcours de formation.&nbsp;<br>Si vous ne savez pas ce qu'est un MOOC ou un SPOC, c'est le moment de le découvrir&nbsp;!</p>
+{% endblock %}
+
+{% block portfolio_role %}
+    <p>En 2017, nous avons travaillé sur leur image, et refondu leur site Internet.</p>
+{% endblock %}
+
+{% set cover_ext = 'jpg' %}
+
+{% set strategy = true %}
+{% set identity = true %}
+{% set design = true %}
+{% set animation = true %}
+{% set dev = true %}
+
+{% set website = true %}
+{% block portfolio_url %}http://www.thinkovery.com/{% endblock %}
+
+{% set prev_ref_link = '' %}
+{% set prev_ref_name = '' %}
+{% set next_ref_link = 'leon-grosse.html' %}
+{% set next_ref_name = 'Léon Grosse' %}
