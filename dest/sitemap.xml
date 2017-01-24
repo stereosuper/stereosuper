@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url>
+  <loc>http://www.stereosuper.fr/</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="http://www.stereosuper.fr/home.html" />
+</url>
+<url>
+  <loc>http://www.stereosuper.fr/a-propos.html</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="http://www.stereosuper.fr/about.html" />
+</url>
+<url>
+  <loc>http://www.stereosuper.fr/contact.html</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="http://www.stereosuper.fr/contact-us.html" />
+</url>
+<url>
+  <loc>http://www.stereosuper.fr/thinkovery.html</loc>
+</url>
+<url>
+  <loc>http://www.stereosuper.fr/leon-grosse.html</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="http://www.stereosuper.fr/leon-grosse-en.html" />
+</url>
+<url>
+  <loc>http://www.stereosuper.fr/myforum.html</loc>
+</url>
+<url>
+  <loc>http://www.stereosuper.fr/alvencapital.html</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="http://www.stereosuper.fr/alvencapital.html" />
+</url>
+<url>
+  <loc>http://www.stereosuper.fr/la-belle-boite.html</loc>
+</url>
+<url>
+  <loc>http://www.stereosuper.fr/akeneo.html</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="http://www.stereosuper.fr/akeneo-en.html" />
+</url>
+<url>
+  <loc>http://www.stereosuper.fr/captain-train.html</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="http://www.stereosuper.fr/captain-train-en.html" />
+</url>
+<url>
+  <loc>http://www.stereosuper.fr/hibouvision.html</loc>
+</url>
+<url>
+  <loc>http://www.stereosuper.fr/architecture-aujourdhui.html</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="http://www.stereosuper.fr/architecture-aujourdhui-en.html" />
+</url>
+<url>
+  <loc>http://www.stereosuper.fr/institut-avignon.html</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="http://www.stereosuper.fr/institut-avignon-en.html" />
+</url>
+<url>
+  <loc>http://www.stereosuper.fr/wisembly.html</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="http://www.stereosuper.fr/wisembly-en.html" />
+</url>
+<url>
+  <loc>http://www.stereosuper.fr/fioulreduc.html</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="http://www.stereosuper.fr/fioulreduc-en.html" />
+</url>
+<url>
+  <loc>http://www.stereosuper.fr/chauffeur-prive.html</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="http://www.stereosuper.fr/chauffeur-prive-en.html" />
+</url>
+<url>
+  <loc>http://www.stereosuper.fr/iadvize.html</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="http://www.stereosuper.fr/iadvize-en.html" />
+</url>
+<url>
+  <loc>http://www.stereosuper.fr/drivy.html</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="http://www.stereosuper.fr/drivy-en.html" />
+</url>
+<url>
+  <loc>http://www.stereosuper.fr/mentions.html</loc>
+  <xhtml:link rel="alternate" hreflang="en" href="http://www.stereosuper.fr/legal.html" />
+</url>
+</urlset>
