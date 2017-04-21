@@ -68,7 +68,7 @@ module.exports = function(){
 
     if($('#page').data('lang') === 'http://stereosuper.fr/404.html'){
         hello = 'Hi there! Wanna play?';
-        firstWin = "INCRRDIBLE! You've unlocked the oven glove!";
+        firstWin = "INCRREDIBLE! You've unlocked the oven glove!";
         secondWin = "CONGRATS! You're awesome! Take a screenshot and send it to us :)";
     }else{
         hello = 'Bonjour! Vous voulez jouer?';
@@ -83,14 +83,15 @@ module.exports = function(){
     // for(j; j<nbImg+1; j++){
     //     stereoSrc[j] = preload('stereo', (j+1));
     //     superSrc[j] = preload('super', (j+1));
-    // }
+    // }o
 
     if(!isMobile.any){
-        logo404.one('mouseenter', function(){
+        logo404.one('mouseenter touchstart', function(){
             counterHtml.addClass('on').find('span').html(hello);
-        }).one('mouseleave', function(){
+        }).one('mouseleave touchend', function(){
             counterHtml.prepend('Score: ').find('span').html('0/' + nbImg);
-        }).on('mouseenter', function(){
+        }).on('mouseenter touchstart', function(){
+
             clearTimeout(timer);
 
             if(stereoDiv.data('nb') === superDiv.data('nb')){
@@ -102,7 +103,7 @@ module.exports = function(){
                     counterHtml.find('i').html('Ooooh, so close...');
                 }
             }*/
-        }).on('mouseleave', function(){
+        }).on('mouseleave touchend', function(){
             if(counterHtml.find('span').hasClass('done')){
                 counterHtml.find('span').removeClass('done').html(nbImg-1 + '/' + nbImg);
             }
