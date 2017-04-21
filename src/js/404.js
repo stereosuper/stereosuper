@@ -85,7 +85,7 @@ module.exports = function(){
     //     superSrc[j] = preload('super', (j+1));
     // }o
 
-    if(!isMobile.any){
+    //if(!isMobile.any){
         logo404.one('mouseenter touchstart', function(){
             counterHtml.addClass('on').find('span').html(hello);
         }).one('mouseleave touchend', function(){
@@ -116,5 +116,5 @@ module.exports = function(){
                 clearTimeout(timerSuccess);
             }
         });
-    }
+   //}
 }
