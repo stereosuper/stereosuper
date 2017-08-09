@@ -1,0 +1,40 @@
+{% extends 'layout/portfolio.html.twig' %}
+
+{# The portfolio_slug should be the same used in sass variable and to name all the images #}
+{% block portfolio_slug %}beezup{% endblock %}
+
+{# Meta #}
+{% block title %}Beezup &bull; Stéréosuper portfolio &bull; Finger-in-the-nose digital agency{% endblock %}
+{% block description %}2017: Stéréosuper redesigned the Beezup website.{% endblock %}
+{% set og_url = 'beezup-en.html' %}
+
+{# Multilingue #}
+{% set url_en = 'http://stereosuper.fr/beezup-en.html' %}
+
+{# Content #}
+{% block portfolio_title %}Beezup{% endblock %} {# Text in h1, doesn't appear but still important #}
+
+{% block portfolio_text %}
+    <p>BeezUP is an IT company. It designs and develops a cloud based portal to enable e-merchants to publish and manage their products.&nbsp;<br></p>
+{% endblock %}
+
+{% block portfolio_role %}
+    <p>In 2017, we redesigned their website.</p>
+{% endblock %}
+
+
+{% set cover_ext = 'jpg' %}
+
+{% set strategy = false %}
+{% set identity = false %}
+{% set design = true %}
+{% set animation = true %}
+{% set dev = true %}
+
+{% set website = true %}
+{% block portfolio_url %}https://www.beezup.com/en/{% endblock %}
+
+{% set prev_ref_link = '' %}
+{% set prev_ref_name = '' %}
+{% set next_ref_link = 'akeneo-en.html' %}
+{% set next_ref_name = 'Akeneo' %}
