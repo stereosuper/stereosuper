@@ -419,13 +419,13 @@
         padding: 50px 0 70px $gutter;
         margin: 0 0 0 50%;
     }
-    p, a{
+    p, .btn{
         .js &{
             transform: translateY(-40px);
             opacity: 0;
         }
     }
-    a{
+    .btn{
         display: inline-block;
     }
     .skills{
