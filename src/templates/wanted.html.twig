@@ -1,0 +1,148 @@
+{% extends 'layout/layout.html.twig' %}
+
+{% block body_attr %}class='about'{% endblock %}
+
+{# Meta #}
+{% block title %}Wanted : dev front-end &bull; Stéréosuper &bull; Agence web qui recrute{% endblock %}
+{% block description %}Cette page raconte la merveilleuse histoire de Stéréosuper. Il n'y a pas autant de péripéties que dans un James Bond, mais c'est prenant quand même.{% endblock %}
+{% block og_img %}img/stereosuper-team.jpg{% endblock %}
+{% set og_url = 'wanted.html' %}
+
+{# Multilingue #}
+{% set url_en = 'http://stereosuper.fr/about.html' %}
+
+{# Content #}
+{% block content %}
+    <div id='page' class='barba-container' data-class='wanted' data-namespace='wanted' data-lang='{{ url_en }}'>
+        <div class='container-relative'>
+            <div class='container container-title'>
+                <div class='title'>
+                    <h1>Wanted&nbsp;: <br>dev front&#8209;end</h1>
+                </div>
+
+                <header class='content-about'>
+                    <p>Elisabeth, notre Wonder Woman du code, part se promener quelques mois autour du monde.</p>
+                    <p>Il va falloir la remplacer ! <strong>Nous proposons donc un CDD à partir du début 2018 jusqu’à Novembre. Et plus si affinités.</strong></p>
+                    <p>Ah, et on ne manque pas de travail :<br/>
+                    <strong>si tu cherches un stage ou une alternance, on prend aussi.</strong></p>
+                </header>
+            </div>
+            <div class='container container-year-landmark'>
+                <div class='year-landmark-wrapper'>
+                    <div class='year-landmark'>
+                        <span></span>
+                        <div class='border-svg'>
+                            <svg xmlns='http://www.w3.org/2000/svg' viewBox='-1 -1 102 102' id='yearSvg'>
+                               <path stroke-width='1' d='M50,0L50,0c27.6,0,50,22.4,50,50v0c0,27.6-22.4,50-50,50h0C22.4,100,0,77.6,0,50v0C0,22.4,22.4,0,50,0z'/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class='content-white container-txt-about'>
+                <div class='container'>
+                    <section class='content-about'>
+                        <div class='intro-imgs'>
+                            <div class='intro-img wrapperAnimateOnScroll'>
+                                <img class='animateOnScroll pola-1' src='img/casquette.png' srcset='img/casquette.png 1x, img/casquette@2x.png 2x' alt='Casquette'>
+                            </div>
+                            <div class='intro-img wrapperAnimateOnScroll'>
+                                <a href='https://vimeo.com/27150543' target='_blank' title='Voir la vidéo "Kimono" sur Vimeo'><img class='animateOnScroll pola-2' src='img/kimono.png' srcset='img/kimono.png 1x, img/kimono@2x.png 2x' alt='Kimono'></a>
+                            </div>
+                            <div class='intro-img wrapperAnimateOnScroll'>
+                                <a href='https://vimeo.com/25092097' target='_blank' title='Voir la vidéo "Adoptez-nous" sur Vimeo'><img class='animateOnScroll pola-3' src='img/masques.png' srcset='img/masques.png 1x, img/masques@2x.png 2x' alt='Masques'></a>
+                            </div>
+                        </div>
+                        <h2>Madame la candidate, <br/>Monsieur le candidat,</h2>
+                        <p>Au minimum, on aimerait que tu démerdes plutôt bien en :</p>
+                        <ul>
+                            <li><strong>HTML, CSS, SASS</strong></li>
+                            <li><strong>Javascript et jQuery</strong></li>
+                            <li><strong>Effets d'animation d'interface</strong></li>
+                        </ul>
+                        <p>On sera encore plus copains si tu touches aussi en :</p>
+                        <ul>
+                            <li>Twig</li>
+                            <li>GSAP</li>
+                        </ul>
+                        <p>Dans nos rêves les plus fous, tu as aussi des skills en :</p>
+                        <ul>
+                            <li>PHP et WordPress</li>
+                        </ul>
+                        <p>Méga bonus :</p>
+                        <ul>
+                            <li>REACT, Angular</li>
+                            <li>Baby-foot, CurveFever</li>
+                            <li>Tolérance importante pour la musique pourrie le vendredi</li>
+                        </ul>
+                        <p>Tu veux en savoir plus sur notre stack ? Il est dispo sur GitHub. 
+                        On l’a appelé <a href='https://github.com/stereosuper/generator-stereobase' target='_blank' title='Stéréobase'>Stéréobase</a>. C’est basé sur <a href='http://yeoman.io/' target='_blank' title='Yeoman'>Yeoman</a>.
+                        On aimerait bien le faire évoluer avec toi.</p>
+                    </section>
+
+                    <section class='content-about big-margin-top'>
+                        <p class='subtitle-about'>Chez Stéréosuper, on cherche avant tout</p>
+                        <h2>des gens créatifs</h2>
+                        <p class='subtitle-about'>qui aiment les jolis sites. Et les gifs sur Slack.</p>
+                        <p>On aime les contraintes imposées par les autres (clients exigeants, barjots du seo, cinglés de la créa, cintrés au dév. back, etc.)<br>
+                        <strong>Tous ensemble, on sera encore plus innovants&nbsp;!</strong></p>
+                        <ul>
+                            <li>On ne se prend pas trop au sérieux, même si on aime les sites très bien finis.</li>
+                            <li>On n’est pas à cheval sur les horaires, même si on compte les heures sup’.</li>
+                            <li>On aime pas trop les outils de gestion de temps, même si on bosse en sprints.</li>
+                            <li>On aime être tous ensemble, même si on bosse en remote quand on veut.</li>
+                        </ul>
+                        <p>On adorerait découvrir ton univers, tes travaux, tes passions. 
+                        Et grandir avec toi.</p>
+                        <div class='team'>
+                            <div class='wrapperAnimateOnScroll'>
+                                <img class='animateOnScroll pola-team-1' src='img/adrien.png' srcset='img/adrien.png 1x, img/adrien@2x.png 2x' alt='Adrien'>
+                            </div><div class='wrapperAnimateOnScroll'>
+                                <img class='animateOnScroll pola-team-2' src='img/elisabeth.png' srcset='img/elisabeth.png 1x, img/elisabeth@2x.png 2x' alt='Elisabeth'>
+                            </div><div class='wrapperAnimateOnScroll'>
+                                <img class='animateOnScroll pola-team-3' src='img/boris.png' srcset='img/boris.png 1x, img/boris@2x.png 2x' alt='Boris'>
+                            </div><div class='wrapperAnimateOnScroll'>
+                                <img class='animateOnScroll pola-team-4' src='img/clement.png' srcset='img/clement.png 1x, img/clement@2x.png 2x' alt='Clément'>
+                            </div><div class='wrapperAnimateOnScroll'>
+                                <img class='animateOnScroll pola-team-5' src='img/vincent.png' srcset='img/vincent.png 1x, img/vincent@2x.png 2x' alt='Vincent'>
+                            </div><div class='wrapperAnimateOnScroll'>
+                                <img class='animateOnScroll pola-team-6' src='img/jf.png' srcset='img/jf.png 1x, img/jf@2x.png 2x' alt='Jean-François'>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class='content-about'>
+                        <p>
+                            On adorerait découvrir ton univers, tes travaux, tes passions.<br>
+                            Et grandir avec toi.
+                        </p>
+                    </section>
+                </div>
+            </div>
+
+            <div class='container container-year'>
+                <div class='year-wrapper' id='year'></div>
+            </div>
+
+            <div class='container container-timeline'>
+                <div id='timeline'>
+                    <div id='content-timeline'>
+                        <div id='tl'></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class='content-white hide-footer'>
+            <div class='container'>
+                <h2 class='title-about'>Et si on travaillait ensemble, en stéréo&nbsp;?</span></h2>
+                <a href='contact.html' class='link-arrow' title='Nos informations de contact'>
+                    <span>Contactons-nous</span>
+                    <svg class='icon i1'><use xlink:href='#icon-big-arrow'/></svg>
+                    <svg class='icon i2'><use xlink:href='#icon-big-arrow'/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
