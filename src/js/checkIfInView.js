@@ -10,7 +10,7 @@ module.exports = function(body){
     var launchGapIn = 100, launchGapOut = 250;
 
     function checkIfInView(){
-        if(!body.hasClass('about') || !animationElts.length) return;
+        if( (!body.hasClass('about') && !body.hasClass('job')) || !animationElts.length ) return;
 
         windowHeight = $(window).height();
         windowTopPosition = $(window).scrollTop();

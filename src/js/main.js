@@ -166,8 +166,8 @@ $(function(){
             // The Transition has just finished.
             animYearAbout(myScroll, windowWidth, body);
             animTimelineAbout(body);
-            checkIfInView(body);
             animTextAbout(body);
+            checkIfInView(body);
         }
     });
     About.init();
@@ -183,10 +183,8 @@ $(function(){
         },
         onEnterCompleted: function(){
             // The Transition has just finished.
-            //animYearAbout(myScroll, windowWidth, body);
             animScrollIndicJob(body);
             checkIfInView(body);
-            //animTextAbout(body);
         }
     });
     Job.init();
