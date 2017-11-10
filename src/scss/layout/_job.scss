@@ -32,13 +32,6 @@
             }
         }
     }
-    #footer{
-        position: relative;
-        left: 0;
-        bottom: 0;
-        z-index: 1;
-        background: #fff;
-    }
 }
 
 .job-footer{
@@ -52,6 +45,18 @@
     .job{
         .content-about {
             margin-right: 12.5%;
+        }
+    }
+}
+
+@media (max-width: 960px){
+    .job{
+        #footer{
+            position: relative;
+            left: 0;
+            bottom: 0;
+            z-index: 1;
+            background: #fff;
         }
     }
 }
