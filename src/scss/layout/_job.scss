@@ -1,0 +1,61 @@
+.job{
+    #barba-wrapper{
+        padding-bottom: 0;
+    }
+    h2{
+        line-height: 1;
+        &:before{
+            display: none;
+        }
+    }
+    .title{
+        margin: 0;
+    }
+    .content-about{
+        padding: 5px 30px 0;
+        margin: 0 25% 50px 25%;
+        p + ul:not(.list-margin){
+            margin-top: -1.4em;
+        }
+        li{
+            position: relative;
+            &:before{
+                width: 50px;
+                height: 1px;
+                position: absolute;
+                top: 3px;
+                left: -72px;
+                background: $blue-flash;
+            }
+        }
+    }
+}
+
+.job-footer{
+    margin-top: 0;
+}
+
+
+@media (max-width: 1150px){
+    .job{
+        .content-about {
+            margin-right: 12.5%;
+        }
+    }
+}
+
+@media (max-width: 860px){
+    .job{
+        .content-about {
+            padding-right: 0;
+        }
+    }
+}
+
+@media (max-width: 767px){
+    .job{
+        .content-about {
+            margin: 40px 0 0;
+        }
+    }
+}

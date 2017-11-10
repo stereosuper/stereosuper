@@ -1,6 +1,6 @@
 {% extends 'layout/layout.html.twig' %}
 
-{% block body_attr %}class='about'{% endblock %}
+{% block body_attr %}class='job'{% endblock %}
 
 {# Meta #}
 {% block title %}Wanted : dev front-end &bull; Stéréosuper &bull; Agence web qui recrute{% endblock %}
@@ -26,18 +26,6 @@
                     <p>Ah, et on ne manque pas de travail :<br/>
                     <strong>si tu cherches un stage ou une alternance, on prend aussi.</strong></p>
                 </header>
-            </div>
-            <div class='container container-year-landmark'>
-                <div class='year-landmark-wrapper'>
-                    <div class='year-landmark'>
-                        <span></span>
-                        <div class='border-svg'>
-                            <svg xmlns='http://www.w3.org/2000/svg' viewBox='-1 -1 102 102' id='yearSvg'>
-                               <path stroke-width='1' d='M50,0L50,0c27.6,0,50,22.4,50,50v0c0,27.6-22.4,50-50,50h0C22.4,100,0,77.6,0,50v0C0,22.4,22.4,0,50,0z'/>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <div class='content-white container-txt-about'>
@@ -76,9 +64,8 @@
                             <li>Baby-foot, CurveFever</li>
                             <li>Tolérance importante pour la musique pourrie le vendredi</li>
                         </ul>
-                        <p>Tu veux en savoir plus sur notre stack ? Il est dispo sur GitHub. 
-                        On l’a appelé <a href='https://github.com/stereosuper/generator-stereobase' target='_blank' title='Stéréobase'>Stéréobase</a>. C’est basé sur <a href='http://yeoman.io/' target='_blank' title='Yeoman'>Yeoman</a>.
-                        On aimerait bien le faire évoluer avec toi.</p>
+                        <p>Tu veux en savoir plus sur notre stack ? Il est dispo sur GitHub. <br>On l’a appelé <a href='https://github.com/stereosuper/generator-stereobase' target='_blank' title='Stéréobase'>Stéréobase</a>. C’est basé sur <a href='http://yeoman.io/' target='_blank' title='Yeoman'>Yeoman</a>.
+                        <br>On aimerait bien le faire évoluer avec toi.</p>
                     </section>
 
                     <section class='content-about big-margin-top'>
@@ -87,7 +74,7 @@
                         <p class='subtitle-about'>qui aiment les jolis sites. Et les gifs sur Slack.</p>
                         <p>On aime les contraintes imposées par les autres (clients exigeants, barjots du SEO, cinglés de la créa, cintrés au dév. back, etc.)<br>
                         <strong>Tous ensemble, on sera encore plus innovants&nbsp;!</strong></p>
-                        <ul>
+                        <ul class='list-margin'>
                             <li>On ne se prend pas trop au sérieux, même si on aime les sites très bien finis.</li>
                             <li>On n’est pas à cheval sur les horaires, même si on compte les heures sup’.</li>
                             <li>On aime pas trop les outils de gestion de temps, même si on bosse en sprints.</li>
@@ -132,7 +119,7 @@
             </div>
         </div>
 
-        <div class='content-white hide-footer'>
+        <div class='content-white job-footer'>
             <div class='container'>
                 <h2 class='title-about'>Et si on travaillait ensemble, en stéréo&nbsp;?</span></h2>
                 <a href='contact.html' class='link-arrow' title='Nos informations de contact'>
