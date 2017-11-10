@@ -8,6 +8,9 @@
             display: none;
         }
     }
+    .container-title{
+        padding-top: 0;
+    }
     .title{
         margin: 0;
     }
@@ -29,10 +32,19 @@
             }
         }
     }
+    #footer{
+        position: relative;
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+        background: #fff;
+    }
 }
 
 .job-footer{
+    position: relative;
     margin-top: 0;
+    z-index: 1;
 }
 
 

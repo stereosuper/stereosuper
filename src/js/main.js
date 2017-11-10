@@ -26,6 +26,8 @@ $(function(){
     var animTextAbout = require('./animTextABout.js');
     var animTimelineAbout = require('./animTimelineAbout.js');
 
+    var animScrollIndicJob = require('./animScrollIndicJob.js');
+
     var checkIfInView = require('./checkIfInView.js');
 
     var animHandMap = require('./map.js');
@@ -170,6 +172,24 @@ $(function(){
     });
     About.init();
 
+
+    ////////////////////////////////////////////////
+    // Job functions
+    ////////////////////////////////////////////////
+
+    var Job = Barba.BaseView.extend({ namespace: 'job',
+        onEnter: function(){
+
+        },
+        onEnterCompleted: function(){
+            // The Transition has just finished.
+            //animYearAbout(myScroll, windowWidth, body);
+            animScrollIndicJob(body);
+            checkIfInView(body);
+            //animTextAbout(body);
+        }
+    });
+    Job.init();
 
     ////////////////////////////////////////////////
     // Contact functions

@@ -1,6 +1,6 @@
 {% extends 'layout/layout.html.twig' %}
 
-{% block body_attr %}class='job'{% endblock %}
+{% block body_attr %}class='job bw'{% endblock %}
 
 {# Meta #}
 {% block title %}Wanted : dev front-end &bull; Stéréosuper &bull; Agence web qui recrute{% endblock %}
@@ -13,7 +13,7 @@
 
 {# Content #}
 {% block content %}
-    <div id='page' class='barba-container' data-class='wanted' data-namespace='wanted' data-lang='{{ url_en }}'>
+    <div id='page' class='barba-container' data-class='job bw' data-namespace='job' data-lang='{{ url_en }}'>
         <div class='container-relative'>
             <div class='container container-title'>
                 <div class='title'>
@@ -104,10 +104,6 @@
                         </p>
                     </section>
                 </div>
-            </div>
-
-            <div class='container container-year'>
-                <div class='year-wrapper' id='year'></div>
             </div>
 
             <div class='container container-timeline'>
