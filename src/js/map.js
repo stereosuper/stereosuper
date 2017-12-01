@@ -12,7 +12,7 @@ module.exports = function(){
         return 'translate3d(' + tX + 'px, ' + tY + 'px, 0) rotate(' + angle + 'deg)';
     }
 
-    var coordinates = $(window).outerWidth() < 1100 ? [-1.59, 47.2] : [-1.62, 47.2];
+    var coordinates = $(window).outerWidth() < 1100 ? [-1.59, 47.23] : [-1.62, 47.23];
 
     var geojson = {
         "type": "FeatureCollection",
@@ -25,7 +25,7 @@ module.exports = function(){
                 },
                 "geometry": {
                     "type": "Point",
-                    "coordinates": [-1.5728402, 47.2082126]
+                    "coordinates": [-1.556806, 47.225944]
                 }
             }
         ]
@@ -84,7 +84,7 @@ module.exports = function(){
     });
 
     $(window).on('resize', throttle(function(){
-        coordinates = $(window).outerWidth() < 1100 ? [-1.59, 47.2] : [-1.62, 47.2];
+        coordinates = $(window).outerWidth() < 1100 ? [-1.59, 47.23] : [-1.62, 47.23];
         map.flyTo({center: coordinates});
     }, 100));
 }
