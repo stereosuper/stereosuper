@@ -1,0 +1,40 @@
+{% extends 'layout/portfolio.html.twig' %}
+
+{# The portfolio_slug should be the same used in sass variable and to name all the images #}
+{% block portfolio_slug %}heyteam{% endblock %}
+
+{# Meta #}
+{% block title %}Heyteam &bull; Portfolio de Stéréosuper &bull; Agence web aux devs créatifs{% endblock %}
+{% block description %}Depuis 2017, Stéréosuper travaille régulièrement sur le découpage HTML/CSS de l'application d'onboarding HeyTeam.{% endblock %}
+{% set og_url = 'heyteam.html' %}
+
+{# Multilingue #}
+{% set url_en = 'http://stereosuper.fr/home.html' %}
+
+{# Content #}
+{% block portfolio_title %}Heyteam{% endblock %} {# Text in h1, doesn't appear but still important #}
+
+{% block portfolio_text %}
+    <p>Heyteam a crée un super outil pour aider les entreprises à mieux accueillir leurs nouveaux collaborateurs.</p>
+{% endblock %}
+
+{% block portfolio_role %}
+    <p>Depuis 2017, nous travaillons au découpage HTML/CSS créatif de leur application.</p>
+{% endblock %}
+
+{% set cover_ext = 'png' %}
+{% set cover_class = 'centered' %}
+
+{% set strategy = false %}
+{% set identity = false %}
+{% set design = false %}
+{% set animation = false %}
+{% set dev = true %}
+
+{% set website = true %}
+{% block portfolio_url %}http://www.heyteam.fr/{% endblock %}
+
+{% set prev_ref_link = 'ector.html' %}
+{% set prev_ref_name = 'Ector' %}
+{% set next_ref_link = 'beezup.html' %}
+{% set next_ref_name = 'Beezup' %}

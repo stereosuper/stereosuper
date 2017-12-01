@@ -1,0 +1,39 @@
+{% extends 'layout/portfolio.html.twig' %}
+
+{# The portfolio_slug should be the same used in sass variable and to name all the images #}
+{% block portfolio_slug %}heycaptain{% endblock %}
+
+{# Meta #}
+{% block title %}Hey Captain &bull; Portfolio de Stéréosuper &bull; Agence web qui a le vent en poupe{% endblock %}
+{% block description %}En 2016, Stéréosuper a imaginé le parcours utilisateur du site Internet, ainsi que l'identité visuelle de Hey Captain.{% endblock %}
+{% set og_url = 'hey-captain.html' %}
+
+{# Multilingue #}
+{% set url_en = 'http://stereosuper.fr/home.html' %}
+
+{# Content #}
+{% block portfolio_title %}Hey Captain{% endblock %} {# Text in h1, doesn't appear but still important #}
+
+{% block portfolio_text %}
+    <p>Hey Captain permet de réserver en ligne bateaux et autres engins nautiques. En 2016, la startup lève 500k€.</p>
+{% endblock %}
+
+{% block portfolio_role %}
+    <p>Après avoir crée leur identité visuelle en 2014, nous avons designé le parcours utilisateur du site Internet en 2016.</p>
+{% endblock %}
+
+{% set cover_ext = 'jpg' %}
+
+{% set strategy = false %}
+{% set identity = true %}
+{% set design = true %}
+{% set animation = false %}
+{% set dev = false %}
+
+{% set website = true %}
+{% block portfolio_url %}http://www.hey-captain.fr/{% endblock %}
+
+{% set prev_ref_link = 'la-belle-boite.html' %}
+{% set prev_ref_name = 'La Belle Boîte' %}
+{% set next_ref_link = 'architecture-aujourdhui.html' %}
+{% set next_ref_name = "L'Architecture d'Aujourd'hui"%}

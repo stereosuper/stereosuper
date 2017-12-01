@@ -1,0 +1,40 @@
+{% extends 'layout/portfolio.html.twig' %}
+
+{# The portfolio_slug should be the same used in sass variable and to name all the images #}
+{% block portfolio_slug %}ector{% endblock %}
+
+{# Meta #}
+{% block title %}Ector &bull; Stéréosuper portfolio &bull; Infamous digital agency{% endblock %}
+{% block description %}Since 2017, Stéréosuper helped Ector, a French Valet service, to create its brand, its application and its website, and did almost all its campaigns.{% endblock %}
+{% set og_url = 'ector.html' %}
+
+{# Multilingue #}
+{% set url_en = 'http://stereosuper.fr/ector-en.html' %}
+
+{# Content #}
+{% block portfolio_title %}Ector{% endblock %} {# Text in h1, doesn't appear but still important #}
+
+{% block portfolio_text %}
+    <p>Ector is a French valet service. In 2017, the startup raised €2m.&nbsp;<br></p>
+{% endblock %}
+
+{% block portfolio_role %}
+    <p>Since 2017, we help them design their application and their website, and we work on most of their campaigns (on et offline).</p>
+{% endblock %}
+
+
+{% set cover_ext = 'jpg' %}
+
+{% set strategy = true %}
+{% set identity = false %}
+{% set design = true %}
+{% set animation = true %}
+{% set dev = false %}
+
+{% set website = true %}
+{% block portfolio_url %}https://www.ectorparking.com/{% endblock %}
+
+{% set prev_ref_link = '' %}
+{% set prev_ref_name = '' %}
+{% set next_ref_link = 'beezup-en.html' %}
+{% set next_ref_name = 'Beezup' %}

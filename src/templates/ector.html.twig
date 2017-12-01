@@ -1,0 +1,40 @@
+{% extends 'layout/portfolio.html.twig' %}
+
+{# The portfolio_slug should be the same used in sass variable and to name all the images #}
+{% block portfolio_slug %}ector{% endblock %}
+
+{# Meta #}
+{% block title %}Ector &bull; Portfolio de Stéréosuper &bull; Agence web enviée par Elon Musk{% endblock %}
+{% block description %}Depuis 2017, Stéréosuper accompagne la startup Ector parking dans son UI, UX et ses opérations de communication.{% endblock %}
+{% set og_url = 'ector.html' %}
+
+{# Multilingue #}
+{% set url_en = 'http://stereosuper.fr/ector-en.html' %}
+
+{# Content #}
+{% block portfolio_title %}Ector{% endblock %} {# Text in h1, doesn't appear but still important #}
+
+{% block portfolio_text %}
+    <p>Ector est un service de voituriers qui se chargent de stationner vos véhicules dans les gares et aéroports. En 2017, la startup a levé 2 millions d'euros.&nbsp;<br></p>
+{% endblock %}
+
+{% block portfolio_role %}
+    <p>Depuis mi-2017, nous les accompagnons dans leurs opérations de communication (affichage, réseaux sociaux, mailings, etc.), leurs designs d'interface et de site Internet.</p>
+{% endblock %}
+
+
+{% set cover_ext = 'jpg' %}
+
+{% set strategy = true %}
+{% set identity = false %}
+{% set design = true %}
+{% set animation = true %}
+{% set dev = false %}
+
+{% set website = true %}
+{% block portfolio_url %}https://www.ectorparking.com/{% endblock %}
+
+{% set prev_ref_link = '' %}
+{% set prev_ref_name = '' %}
+{% set next_ref_link = 'heyteam.html' %}
+{% set next_ref_name = 'HeyTeam' %}
