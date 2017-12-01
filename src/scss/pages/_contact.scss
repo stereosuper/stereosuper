@@ -27,14 +27,17 @@
         }
     }
     .grid{
-        width: 75%;
-        padding: 0 0 0 $gutter;
+        width: 80%;
+        padding: 0;
     }
     .col{
         display: inline-block;
-        width: 33.333%;
+        width: 30%;
         vertical-align: top;
         margin: 0;
+        &:nth-child(3) {
+            width: 40%;
+        }
     }
 }
 
@@ -102,7 +105,7 @@
     .contact{
         .grid{
             width: 100%;
-            padding-right: $gutter;
+            padding-right: 0;
         }
     }
 
