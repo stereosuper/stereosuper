@@ -249,6 +249,11 @@ a{
     padding-left: 30px;
     position: relative;
     margin: 0 0 7em;
+    &.line-through{
+        text-decoration: line-through;
+        color: $black;
+        font-size: 10.5vw;
+    }
 }
 
 .subtitle{
