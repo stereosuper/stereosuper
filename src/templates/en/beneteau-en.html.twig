@@ -1,0 +1,40 @@
+{% extends 'layout/portfolio.html.twig' %}
+
+{# The portfolio_slug should be the same used in sass variable and to name all the images #}
+{% block portfolio_slug %}beneteau{% endblock %}
+
+{# Meta #}
+{% block title %}Beneteau &bull; Stéréosuper portfolio &bull; Floss-dancing digital agency{% endblock %}
+{% block description %}2017: Stéréosuper designed Beneteau Group website. Beneteau Group designs, manufactures, and sells boats and mobile homes.{% endblock %}
+{% set og_url = 'beneteau.html' %}
+
+{# Multilingue #}
+{% set url_en = 'https://www.stereosuper.fr/beneteau-en.html' %}
+
+{# Content #}
+{% block portfolio_title %}Groupe Beneteau{% endblock %} {# Text in h1, doesn't appear but still important #}
+
+{% block portfolio_text %}
+    <p>Beneteau Group designs, manufactures, and sells boats and mobile homes. The group has reached 1.2 billion in sales in 2017.<br></p>
+{% endblock %}
+
+{% block portfolio_role %}
+    <p>In 2017, we redesigned their website with <a href="http://www.antigel.agency/" target="_blank">Antigel agency.</a></p>
+{% endblock %}
+
+
+{% set cover_ext = 'jpg' %}
+
+{% set strategy = false %}
+{% set identity = false %}
+{% set design = true %}
+{% set animation = true %}
+{% set dev = true %}
+
+{% set website = true %}
+{% block portfolio_url %}https://www.beneteau-group.com/{% endblock %}
+
+{% set prev_ref_link = '' %}
+{% set prev_ref_name = '' %}
+{% set next_ref_link = 'ector-en.html' %}
+{% set next_ref_name = 'Ector' %}
