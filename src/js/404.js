@@ -66,7 +66,7 @@ module.exports = function(){
         }
     }
 
-    if($('#page').data('lang') === 'http://stereosuper.fr/404.html'){
+    if($('#page').data('lang') === 'https://stereosuper.fr/404.html'){
         hello = 'Hi there! Wanna play?';
         firstWin = "INCRREDIBLE! You've unlocked the oven glove!";
         secondWin = "CONGRATS! You're awesome! Take a screenshot and send it to us :)";
