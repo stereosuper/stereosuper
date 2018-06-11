@@ -1,0 +1,40 @@
+{% extends 'layout/portfolio.html.twig' %}
+
+{# The portfolio_slug should be the same used in sass variable and to name all the images #}
+{% block portfolio_slug %}precogs{% endblock %}
+
+{# Meta #}
+{% block title %}Precogs &bull; Stéréosuper portfolio &bull; Your mom's favorite digital agency{% endblock %}
+{% block description %}2018: Stéréosuper redesigned Precogs website and image. Precogs is a French start-up company specializing in data analytics for electronics, and especially for electronic components. {% endblock %}
+{% set og_url = 'beneteau.html' %}
+
+{# Multilingue #}
+{% set url_fr = 'https://www.stereosuper.fr/precogs.html' %}
+
+{# Content #}
+{% block portfolio_title %}Precogs{% endblock %} {# Text in h1, doesn't appear but still important #}
+
+{% block portfolio_text %}
+    <p>Precogs fully automates industrial procurement of electronic components while taking advantage of market opportunities.<br></p>
+{% endblock %}
+
+{% block portfolio_role %}
+    <p>In 2018, we redesigned their website and their image.</p>
+{% endblock %}
+
+
+{% set cover_ext = 'jpg' %}
+
+{% set strategy = false %}
+{% set identity = true %}
+{% set design = true %}
+{% set animation = true %}
+{% set dev = true %}
+
+{% set website = true %}
+{% block portfolio_url %}https://www.precogs.com/{% endblock %}
+
+{% set prev_ref_link = '' %}
+{% set prev_ref_name = '' %}
+{% set next_ref_link = 'beneteau-en.html' %}
+{% set next_ref_name = 'Beneteau' %}
