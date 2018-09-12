@@ -50,6 +50,7 @@
 .footer-bottom{
     position: relative;
     clear: both;
+    overflow-x:hidden;
     &:before{
         content: '';
         display: none;
