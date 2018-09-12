@@ -51,7 +51,6 @@ module.exports = function(myScroll, body, header){
         rotateText.pause();
     }
     function textUSA(){
-         //if(!body.hasClass('home')) return;
          rotateText = new TweenMax.to('.stereosuper-usa', 70, {rotation:"360", ease:Linear.easeNone, repeat:-1});
          $('.stereosuper-usa').on('mouseenter', function(){
               stopUSA();

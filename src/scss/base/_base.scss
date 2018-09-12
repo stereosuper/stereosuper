@@ -86,6 +86,9 @@ h6{
 
 p{
     margin: 1.5em 0;
+    &.no-margin-top {
+        margin: 0 0 1.5em 0;
+    }
 }
 
 b, strong{
