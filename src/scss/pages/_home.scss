@@ -37,7 +37,7 @@ h1{
         .js &{
             opacity: 0;
             span.strikethrough {
-                clip-path: polygon(0% 0%, 0% 130%, 0 53%, 130% 53%, 130% 60%, 0 60%, 0 130%, 130% 130%, 130% 0%);
+                clip-path: polygon(-30% 0%, -30% 130%, -30% 53%, 130% 53%, 130% 60%, -30% 60%, -30% 130%, 130% 130%, 130% 0%);
             }
         }
     }
@@ -65,6 +65,63 @@ h1{
     padding-top: 1.65em;
     left: auto;
     right: 0;
+}
+
+a.frenchies {
+    display: block;
+    width: 220px;
+    height: 220px;
+    position: absolute;
+    bottom:-20px;
+    right: 70px;
+    .inner {
+        display: block;
+        width:100%;
+        height:100%;
+        position:absolute;
+        background: url(../img/frog.png) no-repeat 50% 50%;
+        transition: transform 0.1s ease-in-out;
+    }
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        left:50%;
+        top:50%;
+        margin-left:-72px;
+        margin-top:-72px;
+        background: #FFA48C;
+        border-radius:100%;
+        width:144px;
+        height:144px;
+        transition: all 0.5s ease-in-out;
+    }
+    .stereosuper-usa {
+        fill: #FFA48C;
+        width:100%;
+        height:100%;
+        margin-top:-1px; /* wtf? */
+        margin-left:-1px; /* wtf? */
+        transition: fill 0.5s ease-in-out;
+    }
+    &:hover, &:focus {
+        .stereosuper-usa {
+            fill: #b1f1cb;
+            transition: fill 0.1s ease-in-out;
+        }
+        .inner {
+           transform: scale(0.95); 
+        }
+        &:before {
+            background: #b1f1cb;
+            transform: scale(1.05);
+            transition: all 0.1s ease-in-out;
+        }
+    }
+    .js & {
+        opacity: 0;
+        transform: translate3d(0, 40px, 0);
+    }
 }
 
 .wrapper-video-home{
@@ -173,7 +230,7 @@ h1{
         transform: translate3d(0, -50%, 0);
     }
 
-    .text-home{
+    .text-home {
         width: 100%;
         padding: 50px $gutter 0;
         position: static;
@@ -200,20 +257,51 @@ h1{
             margin: 0;
         }
     }
+    a.frenchies {
+        bottom: auto;
+        top: 210px;
+    }
+}
+
+
+@media (max-width: 1000px){
+    a.frenchies {
+        bottom: auto;
+        top: 210px;
+        .inner {
+            transform: scale(0.8);
+        }
+        &:before {
+            width: 116px;
+            height: 116px;
+            margin-left: -58px;
+            margin-top: -58px;
+        }
+        &:hover, &:focus {
+            .inner {
+               transform: scale(0.77); 
+            }
+        }
+    }
 }
 
 @media (max-width: 870px){
-    .home h1, .text-home{
+    .home h1, .text-home {
         padding-left: 0;
         padding-right: 0;
     }
-
     /*.skills-home{
         .skills{
             padding-left: 0;
             padding-right: 0;
         }
     }*/
+}
+
+@media (max-width: 749px){
+    a.frenchies {
+        display: none;
+    }
 }
 
 @media (max-width: 960px){

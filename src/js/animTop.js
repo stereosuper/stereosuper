@@ -8,6 +8,7 @@ window.requestAnimFrame = require('./requestAnimFrame.js');
 
 module.exports = function(myScroll, body, header){
     var video = $('#video'), player, wrapperVideo = $('.wrapper-video-home');
+    var rotateText;
 
     function createVideo(){
         var options = {
@@ -40,8 +41,26 @@ module.exports = function(myScroll, body, header){
             header.removeClass('scrolled');
         }
     }
-
     onScroll();
+
+
+    function startUSA() {
+        rotateText.play();
+    }
+    function stopUSA() {
+        rotateText.pause();
+    }
+    function textUSA(){
+         //if(!body.hasClass('home')) return;
+         rotateText = new TweenMax.to('.stereosuper-usa', 70, {rotation:"360", ease:Linear.easeNone, repeat:-1});
+         $('.stereosuper-usa').on('mouseenter', function(){
+              stopUSA();
+         }).on('mouseleave', function(){
+              startUSA();
+         });
+    }
+    textUSA(); 
+    
     !isMobile.any ? createVideo() : wrapperVideo.addClass('noVideo');
     
     $(document).on('scroll', throttle(function(){
