@@ -28,6 +28,9 @@ $gutter: 30px;
 
 // Portfolio
 $portfolio:(
+    'concord':(
+        color: #0059F8, logoWidth: 86, logoHeight: 28, bgExt: 'png'
+    ),
     'thinkovery':(
         color: #02bbff, logoWidth: 176, logoHeight: 34, bgExt: 'png'
     ),

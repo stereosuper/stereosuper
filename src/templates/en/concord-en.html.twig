@@ -1,0 +1,40 @@
+{% extends 'layout/portfolio.html.twig' %}
+
+{# The portfolio_slug should be the same used in sass variable and to name all the images #}
+{% block portfolio_slug %}concord{% endblock %}
+
+{# Meta #}
+{% block title %}Concord &bull; Stéréosuper portfolio &bull; flippin' sexy digital agency{% endblock %}
+{% block description %}2018: Stéréosuper designed Concord website. Concord automates the last manual process in the enterprise—contracts.{% endblock %}
+{% set og_url = 'concord.html' %}
+
+{# Multilingue #}
+{% set url_fr = 'https://www.stereosuper.fr/' %}
+
+{# Content #}
+{% block portfolio_title %}Concord{% endblock %} {# Text in h1, doesn't appear but still important #}
+
+{% block portfolio_text %}
+    <p>Concord is a leading contract management platform headquartered in San Francisco. In 2018, it raised $10m.<br></p>
+{% endblock %}
+
+{% block portfolio_role %}
+    <p>In 2018, we redesigned their website.</a></p>
+{% endblock %}
+
+
+{% set cover_ext = 'jpg' %}
+
+{% set strategy = false %}
+{% set identity = false %}
+{% set design = true %}
+{% set animation = true %}
+{% set dev = true %}
+
+{% set website = true %}
+{% block portfolio_url %}https://www.concordnow.com/{% endblock %}
+
+{% set prev_ref_link = '' %}
+{% set prev_ref_name = '' %}
+{% set next_ref_link = 'precogs-en.html' %}
+{% set next_ref_name = 'Precogs' %}
