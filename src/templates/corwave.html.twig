@@ -1,0 +1,40 @@
+{% extends 'layout/portfolio.html.twig' %}
+
+{# The portfolio_slug should be the same used in sass variable and to name all the images #}
+{% block portfolio_slug %}corwave{% endblock %}
+
+{# Meta #}
+{% block title %}Corwave &bull; Portfolio de Stéréosuper &bull; l'agence web secrète de ta sœur{% endblock %}
+{% block description %}Début 2018, Stéréosuper a refondu l'identité visuelle et le site Internet de Corwave.{% endblock %}
+{% set og_url = 'corwave.html' %}
+
+{# Multilingue #}
+{% set url_en = 'https://www.stereosuper.fr/corwave-en.html' %}
+
+{# Content #}
+{% block portfolio_title %}Corwave{% endblock %} {# Text in h1, doesn't appear but still important #}
+
+{% block portfolio_text %}
+    <p>CorWave développe des pompes cardiaques implantables innovantes. La startup a levé plus de 15 millions d'Euros.<br></p>
+{% endblock %}
+
+{% block portfolio_role %}
+    <p>En 2018, nous avons refondu leur site Internet.</p>
+{% endblock %}
+
+
+{% set cover_ext = 'jpg' %}
+
+{% set strategy = false %}
+{% set identity = false %}
+{% set design = true %}
+{% set animation = true %}
+{% set dev = true %}
+
+{% set website = true %}
+{% block portfolio_url %}https://www.corwave.com/{% endblock %}
+
+{% set prev_ref_link = '' %}
+{% set prev_ref_name = '' %}
+{% set next_ref_link = 'precogs.html' %}
+{% set next_ref_name = 'Precogs' %}
