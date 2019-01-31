@@ -1,0 +1,40 @@
+{% extends 'layout/portfolio.html.twig' %}
+
+{# The portfolio_slug should be the same used in sass variable and to name all the images #}
+{% block portfolio_slug %}clustree{% endblock %}
+
+{# Meta #}
+{% block title %}Clustree &bull; Portfolio de Stéréosuper &bull; l'agence web que ta femme choisirait{% endblock %}
+{% block description %}2018, Stéréosuper a refondu le site Internet de Clustree.{% endblock %}
+{% set og_url = 'clustree.html' %}
+
+{# Multilingue #}
+{% set url_en = 'https://www.stereosuper.fr/clustree-en.html' %}
+
+{# Content #}
+{% block portfolio_title %}Clustree{% endblock %} {# Text in h1, doesn't appear but still important #}
+
+{% block portfolio_text %}
+    <p>Clustree utilise l'intelligence artificielle pour accompagner dans la gestion de carrières. La startup a levé 7 millions d'Euros.<br></p>
+{% endblock %}
+
+{% block portfolio_role %}
+    <p>En 2018, nous avons refondu leur site Internet.</p>
+{% endblock %}
+
+
+{% set cover_ext = 'jpg' %}
+
+{% set strategy = false %}
+{% set identity = false %}
+{% set design = true %}
+{% set animation = true %}
+{% set dev = true %}
+
+{% set website = true %}
+{% block portfolio_url %}https://www.clustree.com/{% endblock %}
+
+{% set prev_ref_link = '' %}
+{% set prev_ref_name = '' %}
+{% set next_ref_link = 'corwave.html' %}
+{% set next_ref_name = 'Corwave' %}
