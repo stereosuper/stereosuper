@@ -1,0 +1,40 @@
+{% extends 'layout/portfolio.html.twig' %}
+
+{# The portfolio_slug should be the same used in sass variable and to name all the images #}
+{% block portfolio_slug %}trustfolio{% endblock %}
+
+{# Meta #}
+{% block title %}Trustfolio &bull; Portfolio de Stéréosuper &bull; l'agence web qui fait du ballon sauteur{% endblock %}
+{% block description %}Début 2019, Stéréosuper a repensé l'image de Trustfolio.{% endblock %}
+{% set og_url = 'trustfolio.html' %}
+
+{# Multilingue #}
+{% set url_en = '' %}
+
+{# Content #}
+{% block portfolio_title %}Trustfolio{% endblock %} {# Text in h1, doesn't appear but still important #}
+
+{% block portfolio_text %}
+    <p>Trustfolio centralise les témoignages vérifiés entre entreprises.</p>
+{% endblock %}
+
+{% block portfolio_role %}
+    <p>Début 2019, nous avons repensé leur image et leur identité visuelle. Puis designé et développé la page <i>fiche entreprise.</i></p>
+{% endblock %}
+
+
+{% set cover_ext = 'jpg' %}
+
+{% set strategy = true %}
+{% set identity = true %}
+{% set design = true %}
+{% set animation = true %}
+{% set dev = true %}
+
+{% set website = true %}
+{% block portfolio_url %}https://trustfolio.co/profil/stereosuper-0YkoajNwQ7/{% endblock %}
+
+{% set prev_ref_link = '' %}
+{% set prev_ref_name = '' %}
+{% set next_ref_link = 'clustree.html' %}
+{% set next_ref_name = 'Clustree' %}
