@@ -28,7 +28,7 @@ module.exports = function(body, portfolioItems){
             case 'design':
                 tlHoverZigzags.progress(0).tweenTo(tlHoverZigzags.duration());
                 break;
-            case 'animation':
+            case 'ux':
                 tlHoverSlashes.progress(0).tweenTo(tlHoverSlashes.duration());
                 break;
             case 'dev':

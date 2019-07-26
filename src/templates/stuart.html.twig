@@ -1,0 +1,40 @@
+{% extends 'layout/portfolio.html.twig' %}
+
+{# The portfolio_slug should be the same used in sass variable and to name all the images #}
+{% block portfolio_slug %}stuart{% endblock %}
+
+{# Meta #}
+{% block title %}Stuart &bull; Portfolio de Stéréosuper &bull; l'agence qui aime le trampoline{% endblock %}
+{% block description %}En 2019, Stéréosuper a développé le site de Stuart.{% endblock %}
+{% set og_url = 'stuart.html' %}
+
+{# Multilingue #}
+{% set url_en = '' %}
+
+{# Content #}
+{% block portfolio_title %}Stuart{% endblock %} {# Text in h1, doesn't appear but still important #}
+
+{% block portfolio_text %}
+    <p>Stuart réinvente les livraisons urbaines express.</p>
+{% endblock %}
+
+{% block portfolio_role %}
+    <p>Depuis 2019, nous nous occupons de développer et animer leur site Internet.</p>
+{% endblock %}
+
+
+{% set cover_ext = 'jpg' %}
+
+{% set strategy = false %}
+{% set identity = false %}
+{% set design = false %}
+{% set ux = false %}
+{% set dev = true %}
+
+{% set website = true %}
+{% block portfolio_url %}https://stuart.com{% endblock %}
+
+{% set prev_ref_link = '' %}
+{% set prev_ref_name = '' %}
+{% set next_ref_link = 'klepierre.html' %}
+{% set next_ref_name = 'Klepierre' %}

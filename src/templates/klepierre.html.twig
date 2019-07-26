@@ -1,0 +1,40 @@
+{% extends 'layout/portfolio.html.twig' %}
+
+{# The portfolio_slug should be the same used in sass variable and to name all the images #}
+{% block portfolio_slug %}klepierre{% endblock %}
+
+{# Meta #}
+{% block title %}Klepierre &bull; Portfolio de Stéréosuper &bull; l'agence où ta sœur rêve de faire un stage{% endblock %}
+{% block description %}2019 : Stéréosuper a réalisé le mini-site de Klepierre : Bricks and Clicks.{% endblock %}
+{% set og_url = 'klepierre.html' %}
+
+{# Multilingue #}
+{% set url_en = '' %}
+
+{# Content #}
+{% block portfolio_title %}Klepierre{% endblock %} {# Text in h1, doesn't appear but still important #}
+
+{% block portfolio_text %}
+    <p>Klepierre est le leader européen de l’immobilier de centres commerciaux.</p>
+{% endblock %}
+
+{% block portfolio_role %}
+    <p>En 2019, Stéréosuper a réalisé le mini-site de Klepierre : Bricks and Clicks</p>
+{% endblock %}
+
+
+{% set cover_ext = 'jpg' %}
+
+{% set strategy = false %}
+{% set identity = false %}
+{% set design = true %}
+{% set ux = false %}
+{% set dev = true %}
+
+{% set website = true %}
+{% block portfolio_url %}https://www.klepierre.com/bricks-and-clicks/{% endblock %}
+
+{% set prev_ref_link = 'stuart.html' %}
+{% set prev_ref_name = 'Stuart' %}
+{% set next_ref_link = 'trustfolio.html' %}
+{% set next_ref_name = 'Trustfolio' %}
