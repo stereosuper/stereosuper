@@ -1,0 +1,40 @@
+{% extends 'layout/portfolio.html.twig' %}
+
+{# The portfolio_slug should be the same used in sass variable and to name all the images #}
+{% block portfolio_slug %}proximis{% endblock %}
+
+{# Meta #}
+{% block title %}Proximis &bull; Stéréosuper portfolio &bull; astonishing digital agency{% endblock %}
+{% block description %}2019: Stéréosuper designed and developped Proximis website. Proximis is a start-up company specializing in Unified Commerce.{% endblock %}
+{% set og_url = 'proximis-en.html' %}
+
+{# Multilingue #}
+{% set url_fr = 'https://www.stereosuper.fr/proximis.html' %}
+
+{# Content #}
+{% block portfolio_title %}Proximis{% endblock %} {# Text in h1, doesn't appear but still important #}
+
+{% block portfolio_text %}
+    <p>Proximis is a start-up company specializing in Unified Commerce. In 2017, it raised €5m</p>
+{% endblock %}
+
+{% block portfolio_role %}
+    <p>In 2019, we redesigned their website and their image.</p>
+{% endblock %}
+
+
+{% set cover_ext = 'jpg' %}
+
+{% set strategy = false %}
+{% set identity = true %}
+{% set design = true %}
+{% set ux = false %}
+{% set dev = true %}
+
+{% set website = true %}
+{% block portfolio_url %}https://proximis.com{% endblock %}
+
+{% set prev_ref_link = '' %}
+{% set prev_ref_name = '' %}
+{% set next_ref_link = 'stuart-en.html' %}
+{% set next_ref_name = 'Stuart' %}
