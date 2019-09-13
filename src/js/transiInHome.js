@@ -23,7 +23,7 @@ module.exports = function(newContainer, aze){
         ]).add([
             tableSkillsApparition,
             TweenMax.set(newContainer.find('.skills'), {y: 0, opacity: 1}),
-            TweenMax.set(blockTitle.find('.frenchies'), {y: 0, opacity: 1, delay: 2})
+          //  TweenMax.set(blockTitle.find('.frenchies'), {y: 0, opacity: 1, delay: 2})
         ]);
     }else{
         tlSkillsApparition.add([
@@ -34,7 +34,7 @@ module.exports = function(newContainer, aze){
             tableSkillsApparition,
             TweenMax.to(newContainer.find('.skills'), 0.4, {y: 0, opacity: 1, ease: Circ.easeOut, delay: 0.1}),
             TweenMax.to(newContainer.find('#video'), 0.5, {opacity: 1, ease: Circ.easeOut}),
-            TweenMax.to(blockTitle.find('.frenchies'), 0.4, {y: 0, opacity: 1, ease: Circ.easeOut, delay: 2})
+          //  TweenMax.to(blockTitle.find('.frenchies'), 0.4, {y: 0, opacity: 1, ease: Circ.easeOut, delay: 2})
         ]);
     }
 
