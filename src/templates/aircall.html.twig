@@ -1,0 +1,39 @@
+{% extends 'layout/portfolio.html.twig' %}
+
+{# The portfolio_slug should be the same used in sass variable and to name all the images #}
+{% block portfolio_slug %}aircall{% endblock %}
+
+{# Meta #}
+{% block title %}Aircall &bull; Portfolio de Stéréosuper &bull; l'agence où on est tous des princesses{% endblock %}
+{% block description %}Depuis 2019, Stéréosuper des développements du site d'Aircall.{% endblock %}
+{% set og_url = 'aircall.html' %}
+
+{# Multilingue #}
+{% set url_en = 'https://www.stereosuper.fr/aircall-en.html' %}
+
+{# Content #}
+{% block portfolio_title %}Aircall{% endblock %} {# Text in h1, doesn't appear but still important #}
+
+{% block portfolio_text %}
+    <p>Aircall réinvente la téléphonie d'entreprise. En 2018, la start-up lève de fonds de 25 millions d'€.</p>
+{% endblock %}
+
+{% block portfolio_role %}
+    <p>Depuis 2019, nous les accompagnons sur les développements de leur site Internet.</p>
+{% endblock %}
+
+{% set cover_ext = 'jpg' %}
+
+{% set strategy = false %}
+{% set identity = false %}
+{% set design = false %}
+{% set ux = false %}
+{% set dev = true %}
+
+{% set website = true %}
+{% block portfolio_url %}https://aircall.io{% endblock %}
+
+{% set prev_ref_link = '' %}
+{% set prev_ref_name = '' %}
+{% set next_ref_link = 'proximis.html' %}
+{% set next_ref_name = 'Proximis' %}
