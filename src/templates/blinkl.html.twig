@@ -1,0 +1,39 @@
+{% extends 'layout/portfolio.html.twig' %}
+
+{# The portfolio_slug should be the same used in sass variable and to name all the images #}
+{% block portfolio_slug %}blinkl{% endblock %}
+
+{# Meta #}
+{% block title %}Thinkovery &bull; Portfolio de Stéréosuper &bull; Agence web qui vit bien le confinement{% endblock %}
+{% block description %}En 2020, Stéréosuper a travaillé sur le nouveau site Internet de Blinkl, une agence qui imagine des expériences interactives augmentées sur smartphone sans application.{% endblock %}
+{% set og_url = 'blinkl.html' %}
+
+{# Multilingue #}
+{% set url_en = 'https://www.stereosuper.fr/blinkl-en.html' %}
+
+{# Content #}
+{% block portfolio_title %}Blinkl{% endblock %} {# Text in h1, doesn't appear but still important #}
+
+{% block portfolio_text %}
+    <p>Chez Blinkl, on imagine des expériences interactives augmentées sur smartphone sans application.</p>
+{% endblock %}
+
+{% block portfolio_role %}
+    <p>En 2020, nous avons refondu leur site Internet.</p>
+{% endblock %}
+
+{% set cover_ext = 'jpg' %}
+
+{% set strategy = false %}
+{% set identity = false %}
+{% set design = true %}
+{% set ux = false %}
+{% set dev = true %}
+
+{% set website = true %}
+{% block portfolio_url %}https://www.blinkl.com/{% endblock %}
+
+{% set prev_ref_link = '' %}
+{% set prev_ref_name = '' %}
+{% set next_ref_link = 'aircall.html' %}
+{% set next_ref_name = 'Aircall' %}
