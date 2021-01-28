@@ -4,15 +4,18 @@
   "main": "gulpfile.js",
   "dependencies": {
     "@vimeo/player": "^2.2.1",
+    "brace-expansion": "^2.0.0",
+    "browser-sync": "^2.26.14",
     "gulp-cache": "^0.4.5",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-watchify": "^0.6.0",
     "mapbox-gl": "^0.26.0",
-    "watchify": "^3.7.0"
+    "natives": "^1.1.6",
+    "vinyl-buffer": "^1.0.1",
+    "watchify": "^3.11.1"
   },
   "devDependencies": {
     "barba.js": "^1.0.0",
-    "browser-sync": "^2.16.0",
     "browserify": "^13.1.0",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
@@ -30,7 +33,6 @@
     "gulp-uglify": "^2.0.0",
     "gulp-watch": "^4.3.9",
     "path": "^0.12.7",
-    "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   },
   "scripts": {
