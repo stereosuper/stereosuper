@@ -1,6 +1,6 @@
 {% extends 'layout/layout.html.twig' %}
 
-{% block body_attr %}class='home'{% endblock %}
+{% block body_attr %}class='bye'{% endblock %}
 
 {# Meta #}
 {% block title %}Bisou bisou ! &bull; Stéréosuper &bull; Agence de communication web{% endblock %}
@@ -8,438 +8,180 @@
 {% block og_img %}img/stereosuper-website.jpg{% endblock %}
 
 {# Multilingue #}
-{% set url_en = 'https://www.stereosuper.fr/home.html' %}
+{% set url_en = 'https://www.stereosuper.fr/bye.html' %}
 
 {# Content #}
 {% block content %}
-	<div id='page' class='barba-container' data-class='home' data-namespace='home' data-lang='{{ url_en }}'>
-        <div class='wrapper-video-home' id='video'></div>
-
-        <header class='container block-title' id='blockTitle'>
-            <h1><span class='strikethrough'>Mono&nbsp;&amp;</span><br /> <span class='strikethrough'>Nul,&nbsp;<br /></span>Stéréo&nbsp;&amp;<br/>Super.</h1>
-            <div class='text-home text-home-en'>
-                <p>Branding&nbsp;&<br />Communication&nbsp;&<br />UX&nbsp;&<br />Design&nbsp;&<br />Développement créatif</p>
-                <a href='a-propos.html' class='link-arrow link-caps' title='A propos de nous'>
-                    <span>En savoir plus</span>
-                    <svg class='icon i1'><use xlink:href='#icon-big-arrow'/></svg>
-                    <svg class='icon i2'><use xlink:href='#icon-big-arrow'/></svg>
-                </a>
+	<div id='page' class='barba-container' data-class='bye' data-namespace='bye' data-lang='{{ url_en }}'>
+        <div class='container'>
+            <div class='container-small'>
+                <p>
+                    Après plus de 10 ans à 1/ mettre notre créativité au service de tout un tas de projets formidables et 2/ réinventer les manières de travailler d'une agence.
+                </p>
+                <p>
+                    Nous avons décidé de <strong>clore le chapitre Stéréosuper</strong>.
+                </p>
             </div>
-            <!--<a href="https://frenchies.stereosuper.fr" class="frenchies" target="_blank" aria-label="work with frenchies #stereosuperUSA">
-                <div class="inner">
-                    <svg class='stereosuper-usa'><use xlink:href='#icon-text-usa'/></svg>
+            
+            <h1>Stéréorevoir</h1>
+
+            <div class='container-small'>
+                <p>
+                    Dedans, il y a eu tous les ingrédients d’une aventure exceptionnelle : 
+                    des fous rires ; des défis ; des moments difficiles ; de vertigineux succès ; des dabs ringards ; un vrai escroc ; des journées déguisées ; des mèmes ; des clients pénibles ; des clients incroyables ; une maman insistante ; des déceptions ; de gros câlins ; des festivals ; des rushs d’adrénaline…
+                </p>
+ 
+                <p>Et comme toutes les grandes aventures, elle devait avoir une fin 😘</p>
+
+                <p><strong>La plupart d’entre nous sont disponibles pour des projets freelance : </strong></p>
+            </div>
+
+            <ul class='team-bye'>
+                <li class='wrapperAnimateOnScroll'>
+                    <img class='animateOnScroll' src='img/team/boris.png' alt='Boris Forconi'>
+                    <p>
+                        <strong>Boris Forconi</strong>
+                        <span>Ex-dirigeant</span>
+                        <span class="status">En poste</span>
+                        <a href="#" target="_blank" rel="noopener noreferrer">borisforconi.net</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">linkedIn</a>
+                    </p>
+                </li>
+                <li class='wrapperAnimateOnScroll'>
+                    <img class='animateOnScroll' src='img/team/jf.png' alt='Jean-François Perrrault'>
+                    <p>
+                        <strong>Jean-François Perrrault</strong>
+                        <span>Ex-dirigeant</span>
+                        <span class="status">Freelance</span>
+                        <a href="#" target="_blank" rel="noopener noreferrer">jf.cool</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">linkedIn</a>
+                    </p>
+                </li>
+                <li class='wrapperAnimateOnScroll'>
+                    <img class='animateOnScroll' src='img/team/adrien.png' alt='Adrien Le Menthéour'>
+                    <p>
+                        <strong>Adrien Le Menthéour</strong>
+                        <span>Ex-lead développeur front-end</span>
+                        <span class="status">Freelance</span>
+                        <a href="#" target="_blank" rel="noopener noreferrer">menthe.tech</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">linkedIn</a>
+                    </p>
+                </li>
+                <li class='wrapperAnimateOnScroll'>
+                    <img class='animateOnScroll' src='img/team/elisabeth.png' alt='Elisabeth Hamel'>
+                    <p>
+                        <strong>Elisabeth</strong>
+                        <span>Ex-développeuse front-end</span>
+                        <span class="status">Freelance</span>
+                        <a href="#" target="_blank" rel="noopener noreferrer">www.e-hamel.com</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">linkedIn</a>
+                    </p>
+                </li>
+                <li class='wrapperAnimateOnScroll'>
+                    <img class='animateOnScroll' src='img/team/vincent.png' alt='Vincent Aribart'>
+                    <p>
+                        <strong>Vincent Aribart</strong>
+                        <span>Ex-directeur artistique</span>
+                        <span class="status">Freelance</span>
+                        <a href="#" target="_blank" rel="noopener noreferrer">vincentaribart.fr</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">linkedIn</a>
+                    </p>
+                </li>
+                <li class='wrapperAnimateOnScroll'>
+                    <img class='animateOnScroll' src='img/team/clement.png' alt='Clément Lemoine'>
+                    <p>
+                        <strong>Clément Lemoine</strong>
+                        <span>Ex-développeur front-end</span>
+                        <span class="status">Freelance</span>
+                        <a href="#" target="_blank" rel="noopener noreferrer">linkedIn</a>
+                    </p>
+                </li>
+                <li class='wrapperAnimateOnScroll'>
+                    <img class='animateOnScroll' src='img/team/julie.png' alt='Julie Duchêne'>
+                    <p>
+                        <strong>Julie Duchêne</strong>
+                        <span>Ex-office manager</span>
+                        <span class="status">Freelance</span>
+                        <a href="#" target="_blank" rel="noopener noreferrer">linkedIn</a>
+                    </p>
+                </li>
+                <li class='wrapperAnimateOnScroll'>
+                    <img class='animateOnScroll' src='img/team/alban.png' alt='Alban'>
+                    <p>
+                        <strong>Alban Mezino</strong>
+                        <span>Ex-développeur front-end</span>
+                        <span class="status">Freelance</span>
+                        <a href="#" target="_blank" rel="noopener noreferrer">albanmezino.fr</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">linkedIn</a>
+                    </p>
+                </li>
+                <li class='wrapperAnimateOnScroll'>
+                    <img class='animateOnScroll' src='img/team/raphael.png' alt='Raphaël Mucha'>
+                    <p>
+                        <strong>Raphaël Mucha</strong>
+                        <span>Ex-UX designer</span>
+                        <span class="status">Freelance</span>
+                        <a href="#" target="_blank" rel="noopener noreferrer">linkedIn</a>
+                    </p>
+                </li>
+                <li class='wrapperAnimateOnScroll'>
+                    <img class='animateOnScroll' src='img/team/celia.png' alt='Célia Frémondière'>
+                    <p>
+                        <strong>Célia Frémondière</strong>
+                        <span>Ex-SX designer</span>
+                        <span class="status">En poste</span>
+                        <a href="#" target="_blank" rel="noopener noreferrer">linkedIn</a>
+                    </p>
+                </li>
+            </ul>
+
+            <div class='container-small'>
+                <h2>
+                    Et pour vos projets globaux, on recommande <a href="#" target="_blank" rel="noopener noreferrer">Les Indiens</a>
+                </h2>
+                <p>
+                    Nous avons énormément travaillé avec eux ces dernières années. 
+                </p>
+
+                <p>
+                    Pour les nostalgiques, quelques projets marquants par Stéréosuper :
+                </p>
+                <div>
+                    <p>
+                        <a href="#" target="_blank" rel="noopener noreferrer">Antilop</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">Gens de Confiance</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">Blinkl</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">Aircall</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">Proximis</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">Thinkovery</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">Stuart</a>
+                    </p>
+                    <p>
+                        <a href="#" target="_blank" rel="noopener noreferrer">Trustfolio</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">Clustree</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">Precogs</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">Corwave</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">Groupe Beneteau</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">Ector</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">Beezup</a>
+                    </p>
+                    <p>
+                        <a href="#" target="_blank" rel="noopener noreferrer">Akeneo</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">Alven Capital</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">Oyst</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">Captain Train</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">Chauffeur-Privé</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">iAdvize</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">Drivy</a>
+                    </p>
                 </div>
-            </a>-->
-        </header>
 
-        <div class='container skills-home' id='skillsHome'>
-            <ul class='skills' data-skill-selected=''>
-                <li class='skill' data-skill='strategy'>
-                    <div class='symbol'>
-                        <div class='list-symbols dashes hoverAnimation'>
-                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-                        </div>
-                    </div>
-                    Stratégie d'image
-                </li><li class='skill' data-skill='identity'>
-                    <div class='symbol'>
-                        <div class='wrapper-waves hoverAnimation'>
-                            <svg class='icon waves'><use xlink:href='#icon-waves'/></svg>
-                        </div>
-                    </div>
-                    Identité visuelle
-                </li><li class='skill' data-skill='ux'>
-                    <div class='symbol'>
-                        <div class='list-symbols slashes hoverAnimation'>
-                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-                        </div>
-                    </div>
-                    UX
-                </li><li class='skill' data-skill='design'>
-                    <div class='symbol'>
-                        <div class='wrapper-zigzags hoverAnimation'>
-                            <svg class='icon zigzags'><use xlink:href='#icon-zigzags'/></svg>
-                        </div>
-                    </div>
-                    Design
-                </li><li class='skill' data-skill='dev'>
-                    <div class='symbol'>
-                        <div class='list-symbols dots hoverAnimation'>
-                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-                        </div>
-                    </div>
-                    Développement
-                </li>
-            </ul>
+                <h2>Merci</h2>
+                <p>
+                    Adeline, Adrien, Agathe, Agnes, Alain, Alban, Alexandre, Alexis, Alice, Alix, Aloÿs, Alvin, Amandine, Amaury, Amelie, Ana, Anaïs, Andoni, Anita, Anne, Anne-Lise, Anne-Sophie, Anthony, Antoine, Antonio, Arnaud, Aude, Audrey, Aurelie, Aurélien, Aurore, Axel, Axelle, Baptiste, Bastien, Benjamin, Benoit, Bertille, Bertrand, Betka, Bilkher, Camille, Capucine, Carole, Caroline, Catherine, Cedric, Celine, Charles, Charlotte, Christèle, Christine, Christophe, Claire, Claire-Anne, Clement, Cyril, Damien, David, Déborah, Delphine, Denis, Dominique, Dorian, Dorine, Edgar, Eliott, Elisabeth, Elise, Elizabeth, Elsa, Émilie, Emmanuel, Enguerrand, Eric, Étienne, Evan, Fabien, Fabrice, Fanny, Florent, Florian, François, Fred, Frederic, Gaël, Gaëtan, Ghislain, Gilbert, Gilles, Godefroy, Gregoire, Grégory, Guillaume, Hanh, Helena, Hervé, Isabelle, Isaure, Jacky, Jean, Jean-Daniel, Jean-François, Jean-Pierre, Jeremie, Jérémie, Jérémy, Jérôme, Jessy, Joeffrey, Johan, Jordan, Jules, Julie, Julien, Juliette, Justine, Kaelig, Karim, Kevin, Laetitia, Lamia, Laure, Laureline, Laurent, Lauriane, Loïc, Louise, Lucille, Maela, Maeva, Manoël, Manon, Manuel, Marc, Marc-Antoine, Marie, Marie-Capucine, Marie-Françoise, Marielle, Marine, Martin, Maryline, Mathias, Mathieu, Matthieu, Maud, Maxime, Meline, Michael, Mickael, Mirna, Misagh, Moïse, Morgan, Morgane, Nathalie, Nathaniel, Nicolas, Noah, Nolwenn, Oceane, Olivier, Omar, Ombeline, Othmane, Oualid, Pascal, Pascale, Patrice, Patrick, Paul, Paulin, Philippe, Phillipe, Philppe, Pierre, Pierre-Emmanuel, Raphaël, Regis, Renaud, Reynald, Richard, Robin, Romain, Ronan, Samuel, Sandrine, Sébastien, Séraphie, Serge, Servane, Simon, Stacy, Stéphane, Thaïs, Thelma, Théo, Thibaut, Thomas, Timothée, Tristan, Ulric, Valentin, Valérie, Victor, Vincent, Violaine, Xavier, Yan, Yannig, Yassine, Yoann, Yseult, Yves… Et tous ceux qu’on a involontairement oublié.
+                    Bisous 😘
+                </p>
+            </div>
         </div>
-
-        <section class='container portfolio-list' id='portfolio'>
-            <ul class='portfolio-items'>
-                <li class='portfolio-item blinkl-item' data-skill='design,dev' data-opacity='0.7' id='blinkl'>
-                    <a href='blinkl.html' title='Stéréosuper a travaillé pour Blinkl'>
-                        <div class='wrapper-bloc'>
-                            <h2>
-                                <span class='logo'>
-                                    Blinkl
-                                    <svg class='icon'><use xlink:href='#icon-blinkl'/></svg>
-                                </span>
-                                <span class='bg'></span><span class='wrapper-bg-img'>
-                                    <span class='bg-img'></span>
-                                </span>
-                            </h2>
-                        </div>
-                        <div class='wrapper-desc'>
-                            <span class='border-left'></span><span class='border-middle'></span>
-                            <time datetime='2019'>2020</time>
-                            <span class='title'>Blinkl</span>
-                        </div>
-                    </a>
-                </li>
-                <li class='portfolio-item aircall-item' data-skill='dev' data-opacity='0.7' id='aircall'>
-                    <a href='aircall.html' title='Stéréosuper a travaillé pour Aircall'>
-                        <div class='wrapper-bloc'>
-                            <h2>
-                                <span class='logo'>
-                                    Aircall
-                                    <svg class='icon'><use xlink:href='#icon-aircall'/></svg>
-                                </span>
-                                <span class='bg'></span><span class='wrapper-bg-img'>
-                                    <span class='bg-img'></span>
-                                </span>
-                            </h2>
-                        </div>
-                        <div class='wrapper-desc'>
-                            <span class='border-left'></span><span class='border-middle'></span>
-                            <time datetime='2019'>2019</time>
-                            <span class='title'>Aircall</span>
-                        </div>
-                    </a>
-                </li>
-                <li class='portfolio-item proximis-item' data-skill='identity,design,dev' data-opacity='0.7' id='proximis'>
-                    <a href='proximis.html' title='Stéréosuper a travaillé pour Proximis'>
-                        <div class='wrapper-bloc'>
-                            <h2>
-                                <span class='logo'>
-                                    Proximis
-                                    <svg class='icon'><use xlink:href='#icon-proximis'/></svg>
-                                </span>
-                                <span class='bg'></span><span class='wrapper-bg-img'>
-                                    <span class='bg-img'></span>
-                                </span>
-                            </h2>
-                        </div>
-                        <div class='wrapper-desc'>
-                            <span class='border-left'></span><span class='border-middle'></span>
-                            <time datetime='2019'>2019</time>
-                            <span class='title'>Proximis</span>
-                        </div>
-                    </a>
-                </li>
-                <li class='portfolio-item thinkovery-item' data-skill='strategy,identity,design,dev' data-opacity='0.7' id='thinkovery'>
-                    <a href='thinkovery.html' title='Stéréosuper a travaillé pour Thinkovery'>
-                        <div class='wrapper-bloc'>
-                            <h2>
-                                <span class='logo'>
-                                    Thinkovery
-                                    <svg class='icon'><use xlink:href='#icon-thinkovery'/></svg>
-                                </span>
-                                <span class='bg'></span><span class='wrapper-bg-img'>
-                                    <span class='bg-img'></span>
-                                </span>
-                            </h2>
-                        </div>
-                        <div class='wrapper-desc'>
-                            <span class='border-left'></span><span class='border-middle'></span>
-                            <time datetime='2019'>2019</time>
-                            <span class='title'>Thinkovery</span>
-                        </div>
-                    </a>
-                </li>
-                <li class='portfolio-item stuart-item' data-skill='dev' data-opacity='0.7' id='stuart'>
-                    <a href='stuart.html' title='Stéréosuper a travaillé pour Stuart'>
-                        <div class='wrapper-bloc'>
-                            <h2>
-                                <span class='logo'>
-                                    Stuart
-                                    <svg class='icon'><use xlink:href='#icon-stuart'/></svg>
-                                </span>
-                                <span class='bg'></span><span class='wrapper-bg-img'>
-                                    <span class='bg-img'></span>
-                                </span>
-                            </h2>
-                        </div>
-                        <div class='wrapper-desc'>
-                            <span class='border-left'></span><span class='border-middle'></span>
-                            <time datetime='2019'>2019</time>
-                            <span class='title'>Stuart</span>
-                        </div>
-                    </a>
-                </li>
-                <li class='portfolio-item klepierre-item' data-skill='design,dev' data-opacity='0.7' id='klepierre'>
-                    <a href='klepierre.html' title='Stéréosuper a travaillé pour Klepierre'>
-                        <div class='wrapper-bloc'>
-                            <h2>
-                                <span class='logo'>
-                                    Klepierre Bricks and Clicks
-                                    <svg class='icon'><use xlink:href='#icon-klepierre'/></svg>
-                                </span>
-                                <span class='bg'></span><span class='wrapper-bg-img'>
-                                    <span class='bg-img'></span>
-                                </span>
-                            </h2>
-                        </div>
-                        <div class='wrapper-desc'>
-                            <span class='border-left'></span><span class='border-middle'></span>
-                            <time datetime='2019'>2019</time>
-                            <span class='title'>Klepierre Bricks and Clicks</span>
-                        </div>
-                    </a>
-                </li>
-                <li class='portfolio-item trustfolio-item' data-skill='strategy,identity,design,dev' data-opacity='0.7' id='trustfolio'>
-                    <a href='trustfolio.html' title='Stéréosuper a travaillé pour Trustfolio'>
-                        <div class='wrapper-bloc'>
-                            <h2>
-                                <span class='logo'>
-                                    Trustfolio
-                                    <svg class='icon'><use xlink:href='#icon-trustfolio'/></svg>
-                                </span>
-                                <span class='bg'></span><span class='wrapper-bg-img'>
-                                    <span class='bg-img'></span>
-                                </span>
-                            </h2>
-                        </div>
-                        <div class='wrapper-desc'>
-                            <span class='border-left'></span><span class='border-middle'></span>
-                            <time datetime='2019'>2019</time>
-                            <span class='title'>Trustfolio</span>
-                        </div>
-                    </a>
-                </li>
-                <li class='portfolio-item clustree-item' data-skill='design,dev' data-opacity='0.7' id='clustree'>
-                    <a href='clustree.html' title='Stéréosuper a travaillé pour Clustree'>
-                        <div class='wrapper-bloc'>
-                            <h2>
-                                <span class='logo'>
-                                    Clustree
-                                    <svg class='icon'><use xlink:href='#icon-clustree'/></svg>
-                                </span>
-                                <span class='bg'></span><span class='wrapper-bg-img'>
-                                    <span class='bg-img'></span>
-                                </span>
-                            </h2>
-                        </div>
-                        <div class='wrapper-desc'>
-                            <span class='border-left'></span><span class='border-middle'></span>
-                            <time datetime='2018'>2018</time>
-                            <span class='title'>Clustree</span>
-                        </div>
-                    </a>
-                </li><li class='portfolio-item precogs-item' data-skill='identity,design,dev' data-opacity='0.7' id='precogs'>
-                    <a href='precogs.html' title='Stéréosuper a travaillé pour Precogs'>
-                        <div class='wrapper-bloc'>
-                            <h2>
-                                <span class='logo'>
-                                    Precogs
-                                    <svg class='icon'><use xlink:href='#icon-precogs'/></svg>
-                                </span>
-                                <span class='bg'></span><span class='wrapper-bg-img'>
-                                    <span class='bg-img'></span>
-                                </span>
-                            </h2>
-                        </div>
-                        <div class='wrapper-desc'>
-                            <span class='border-left'></span><span class='border-middle'></span>
-                            <time datetime='2018'>2018</time>
-                            <span class='title'>Precogs</span>
-                        </div>
-                    </a>
-                </li>
-                <li class='portfolio-item beneteau-item' data-skill='design,dev' data-opacity='0.7' id='beneteau'>
-                    <a href='beneteau.html' title='Stéréosuper a travaillé pour Beneteau'>
-                        <div class='wrapper-bloc'>
-                            <h2>
-                                <span class='logo'>
-                                    Groupe Beneteau
-                                    <svg class='icon'><use xlink:href='#icon-beneteau'/></svg>
-                                </span>
-                                <span class='bg'></span><span class='wrapper-bg-img'>
-                                    <span class='bg-img'></span>
-                                </span>
-                            </h2>
-                        </div>
-                        <div class='wrapper-desc'>
-                            <span class='border-left'></span><span class='border-middle'></span>
-                            <time datetime='2017'>2017</time>
-                            <span class='title'>Groupe Beneteau</span>
-                        </div>
-                    </a>
-                </li>
-                <li class='portfolio-item ector-item' data-skill='strategy,design,ux' data-opacity='0.7' id='ector'>
-                    <a href='ector.html' title='Stéréosuper a travaillé pour Ector'>
-                        <div class='wrapper-bloc'>
-                            <h2>
-                                <span class='logo'>
-                                    Ector
-                                    <svg class='icon'><use xlink:href='#icon-ector'/></svg>
-                                </span>
-                                <span class='bg'></span><span class='wrapper-bg-img'>
-                                    <span class='bg-img'></span>
-                                </span>
-                            </h2>
-                        </div>
-                        <div class='wrapper-desc'>
-                            <span class='border-left'></span><span class='border-middle'></span>
-                            <time datetime='2017'>2017</time>
-                            <span class='title'>Ector</span>
-                        </div>
-                    </a>
-                </li>
-                <li class='portfolio-item beezup-item' data-skill='design,dev' data-opacity='0.8' id='beezup'>
-                    <a href='beezup.html' title='Stéréosuper a travaillé pour Beezup'>
-                        <div class='wrapper-bloc'>
-                            <h2>
-                                <span class='logo'>
-                                    Beezup
-                                    <svg class='icon'><use xlink:href='#icon-beezup'/></svg>
-                                </span>
-                                <span class='bg'></span><span class='wrapper-bg-img'>
-                                    <span class='bg-img'></span>
-                                </span>
-                            </h2>
-                        </div>
-                        <div class='wrapper-desc'>
-                            <span class='border-left'></span><span class='border-middle'></span>
-                            <time datetime='2017'>2017</time>
-                            <span class='title'>Beezup</span>
-                        </div>
-                    </a>
-                </li>
-                <li class='portfolio-item akeneo-item' data-skill='design,dev' data-opacity='0.8' id='akeneo'>
-                    <a href='akeneo.html' title='Stéréosuper a travaillé pour Akeneo'>
-                        <div class='wrapper-bloc'>
-                            <h2>
-                                <span class='logo'>
-                                    Akeneo
-                                    <svg class='icon'><use xlink:href='#icon-akeneo'/></svg>
-                                </span>
-                                <span class='bg'></span><span class='wrapper-bg-img'>
-                                    <span class='bg-img'></span>
-                                </span>
-                            </h2>
-                        </div>
-                        <div class='wrapper-desc'>
-                            <span class='border-left'></span><span class='border-middle'></span>
-                            <time datetime='2017'>2017</time>
-                            <span class='title'>Akeneo</span>
-                        </div>
-                    </a>
-                </li>
-                <li class='portfolio-item leon-item' data-skill='design,ux,dev' data-opacity='0.8' id='leon'>
-                    <a href='leon-grosse.html' title='Stéréosuper a travaillé pour Léon Grosse'>
-                        <div class='wrapper-bloc'>
-                            <h2>
-                                <span class='logo'>
-                                    Léon Grosse
-                                    <svg class='icon'><use xlink:href='#icon-leon-grosse'/></svg>
-                                </span>
-                                <span class='bg'></span><span class='wrapper-bg-img'>
-                                    <span class='bg-img'></span>
-                                </span>
-                            </h2>
-                        </div>
-                        <div class='wrapper-desc'>
-                            <span class='border-left'></span><span class='border-middle'></span>
-                            <time datetime='2016'>2016</time>
-                            <span class='title'>Léon Grosse</span>
-                        </div>
-                    </a>
-                </li>
-                <li class='portfolio-item alven-item' data-skill='design,dev' data-opacity='0.8' id='alven'>
-                    <a href='alvencapital.html' title='Stéréosuper a travaillé pour Alven Capital'>
-                        <div class='wrapper-bloc'>
-                            <h2>
-                                <span class='logo'>
-                                    AlvenCapital
-                                    <svg class='icon'><use xlink:href='#icon-alven'/></svg>
-                                </span>
-                                <span class='bg'></span><span class='wrapper-bg-img'>
-                                    <span class='bg-img'></span>
-                                </span>
-                            </h2>
-                        </div>
-                        <div class='wrapper-desc'>
-                            <span class='border-left'></span><span class='border-middle'></span>
-                            <time datetime='2016'>2016</time>
-                            <span class='title'>Alven Capital</span>
-                        </div>
-                    </a>
-                </li>
-                <li class='portfolio-item captain-item' data-skill='strategy,identity' data-opacity='0.7' id='captain'>
-                    <a href='captain-train.html' title='Stéréosuper a travaillé pour Captain Train'>
-                        <div class='wrapper-bloc'>
-                            <h2>
-                                <span class='logo'>
-                                    Captain Train
-                                    <svg class='icon'><use xlink:href='#icon-captaintrain'/></svg>
-                                </span>
-                                <span class='bg'></span><span class='wrapper-bg-img'>
-                                    <span class='bg-img'></span>
-                                </span>
-                            </h2>
-                        </div>
-                        <div class='wrapper-desc'>
-                            <span class='border-left'></span><span class='border-middle'></span>
-                            <time datetime='2016'>2016</time>
-                            <span class='title'>Captain Train</span>
-                            <svg class='icon souvenir'><use xlink:href='#icon-souvenir'/></svg>
-                        </div>
-                    </a>
-                </li>
-                <li class='portfolio-item chauffeur-item' data-skill='strategy,identity,design,ux,dev' data-opacity='0.9' id='chauffeur'>
-                    <a href='chauffeur-prive.html' title='Stéréosuper a travaillé pour Chauffeur Privé'>
-                        <div class='wrapper-bloc'>
-                            <h2>
-                                <span class='logo'>
-                                    Chauffeur Privé
-                                    <svg class='icon'><use xlink:href='#icon-chauffeurprive'/></svg>
-                                </span>
-                                <span class='bg'></span><span class='wrapper-bg-img'>
-                                    <span class='bg-img'></span>
-                                </span>
-                            </h2>
-                        </div>
-                        <div class='wrapper-desc'>
-                            <span class='border-left'></span><span class='border-middle'></span>
-                            <time datetime='2015'>2012-2015</time>
-                            <span class='title'>Chauffeur Privé</span>
-                            <svg class='icon souvenir'><use xlink:href='#icon-souvenir'/></svg>
-                        </div>
-                    </a>
-                </li>
-                <li class='portfolio-item drivy-item' data-skill='design' data-opacity='0.9' id='drivy'>
-                    <a href='drivy.html' title='Stéréosuper a travaillé pour Drivy'>
-                        <div class='wrapper-bloc'>
-                            <h2>
-                                <span class='logo'>
-                                    Drivy
-                                    <svg class='icon'><use xlink:href='#icon-drivy'/></svg>
-                                </span>
-                                <span class='bg'></span><span class='wrapper-bg-img'>
-                                    <span class='bg-img'></span>
-                                </span>
-                            </h2>
-                        </div>
-                        <div class='wrapper-desc'>
-                            <span class='border-left'></span><span class='border-middle'></span>
-                            <time datetime='2011'>2011</time>
-                            <span class='title'>Drivy</span>
-                            <svg class='icon souvenir'><use xlink:href='#icon-souvenir'/></svg>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-            {# <div class='offset top'></div>
-            <div class='offset bottom'></div> #}
-        </section>
     </div>
 {% endblock content %}

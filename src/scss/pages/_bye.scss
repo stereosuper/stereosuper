@@ -1,0 +1,16 @@
+.team-bye {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    > li {
+        width: 20%;
+        margin: 0 0 64px;
+        &:before {
+            content: none;
+        }
+    }
+    span,
+    a {
+        display: block;
+    }
+}

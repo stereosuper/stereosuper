@@ -11,6 +11,7 @@
     "gulp-watchify": "^0.6.0",
     "mapbox-gl": "^0.26.0",
     "natives": "^1.1.6",
+    "protagonist": "^2.2.1",
     "vinyl-buffer": "^1.0.1",
     "watchify": "^3.11.1"
   },

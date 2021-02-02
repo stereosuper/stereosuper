@@ -1,42 +1,19 @@
 @charset 'utf-8';
 
-@import
-    'abstracts/variables',
-    'abstracts/functions',
-    'abstracts/mixins';
+@import 'abstracts/variables', 'abstracts/functions', 'abstracts/mixins';
 
-@import
-    'base/reset',
-    'base/fonts',
-    'base/base';
+@import 'base/reset', 'base/fonts', 'base/base';
 
-@import
-    'plugins/map',
-    'plugins/scrollAnimations';
+@import 'plugins/map', 'plugins/scrollAnimations';
 
-@import
-    'abstracts/placeholders';
+@import 'abstracts/placeholders';
 
-@import
-    'layout/grid',
-    'layout/forms',
-    'layout/header',
-    'layout/footer',
-    'layout/portfolio',
-    'layout/years';
+@import 'layout/grid', 'layout/forms', 'layout/header', 'layout/footer',
+    'layout/portfolio', 'layout/years';
 
-@import
-    'components/buttons',
-    'components/skills',
-    'components/stupid';
+@import 'components/buttons', 'components/skills', 'components/stupid';
 
-@import
-    'pages/home',
-    'pages/portfolio',
-    'pages/about',
-    'pages/contact',
-    'pages/404',
-    'layout/job';
+@import 'pages/home', 'pages/portfolio', 'pages/about', 'pages/contact',
+    'pages/404', 'pages/bye', 'layout/job';
 
-@import
-    'base/print';
+@import 'base/print';
