@@ -1,6 +1,11 @@
 #header.header-bye {
     padding: 50px 0;
     border: 0;
+    .container-small {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 }
 
 .bye {
