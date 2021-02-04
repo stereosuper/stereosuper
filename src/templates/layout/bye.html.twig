@@ -62,66 +62,13 @@
 
     <body {% block body_attr %}{% endblock %}>
 
-        <header id='header' role='banner'>
+        <header id='header' role='banner' class="header-bye">
             <div class='container'>
-                <div class='header-left'>
-                    <div class='wrapper-logo'>
-                        <a href='/accueil.html' id='logo' title="Retour à l'accueil">
-                            <svg class='icon stereo'><use xlink:href='#icon-stereo'/></svg><svg class='icon super'><use xlink:href='#icon-super'/></svg><span><strong>Stéréo</strong>super</span>
-                        </a>
-                    </div><ul class='menu-contact'>
-                        <li>
-                            <a href='mailto:bisoudeloin@stereosuper.fr' title='Envoyez nous un email' class='link-arrow'>
-                                <svg class='m-icon icon'><use xlink:href='#icon-mail'/></svg>
-                                <span>bisoudeloin@stereosuper.fr</span>
-                                <svg class='icon i1'><use xlink:href='#icon-big-arrow'/></svg>
-                                <svg class='icon i2'><use xlink:href='#icon-big-arrow'/></svg>
-                            </a>
-                        </li>
-                        <li>
-                            <a href='tel:+33951248536' title='Passez nous un coup de fil'>
-                                <svg class='m-icon icon'><use xlink:href='#icon-phone'/></svg>
-                                <span>+33 9 51 24 85 36</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div><nav class='header-right' role='navigation'>
-                    <ul class='menu-header'>
-                        <li>
-                            <a href='a-propos.html' title='En savoir plus sur nous'><span>À propos</span></a>
-                        </li>
-                        <li>
-                            <a href='contact.html' title='Nos informations de contact'>
-                                <svg class='m-icon icon'><use xlink:href='#icon-map'/></svg>
-                                <span>Nous trouver</span>
-                            </a>
-                        </li>
-                    </ul>
-
-                    <div class='lang-social'>
-                        <div class='lang'>
-                            <span class='non-active'>
-                                fr
-                            </span><span class='slash'>
-                                /
-                            </span><a href='{{ url_en }}' class='no-barba' title='English version'>
-                                en
-                            </a>
-                        </div>
-
-                        <ul class='social'>
-                            <li>
-                                <a href='https://twitter.com/stereosuper' target='_blank' title='Suivez-nous sur Twitter'>
-                                    <svg class='icon twitter'><use xlink:href='#icon-twitter'/></svg>
-                                </a>
-                            </li><li>
-                                <a href='https://www.facebook.com/stereosuper' target='_blank' title='Suivez-nous sur Facebook'>
-                                    <svg class='icon facebook'><use xlink:href='#icon-facebook'/></svg>
-                                </a>
-                            </li>
-                        </ul>
+                <div class='container-small'>
+                    <div id='logo'>
+                        <svg class='icon stereo'><use xlink:href='#icon-stereo'/></svg><svg class='icon super'><use xlink:href='#icon-super'/></svg><span><strong>Stéréo</strong>super</span>
                     </div>
-                </nav>
+                </div>
             </div>
         </header>
 
@@ -129,14 +76,8 @@
             {% block content %}{% endblock %}
         </main>
 
-        <footer id='footer' role='contentinfo'>
+        <footer id='footer' role='contentinfo' class="footer-bye">
             <div class='container'>
-                <a href='a-propos.html' class='link-arrow link-caps footer-about'>
-                    <span>À propos</span>
-                    <svg class='icon i1'><use xlink:href='#icon-big-arrow'/></svg>
-                    <svg class='icon i2'><use xlink:href='#icon-big-arrow'/></svg>
-                </a>
-
                 <div class='footer-bottom'>
                     <div class='lang'>
                         <span class='non-active'>

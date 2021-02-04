@@ -1,16 +1,157 @@
+#header.header-bye {
+    padding: 50px 0;
+    border: 0;
+}
+
+.bye {
+    .container {
+        max-width: 1240px;
+    }
+    .container-small {
+        max-width: 740px;
+    }
+    #page {
+        h2 {
+            font-size: 3.8rem;
+            color: #fff;
+            &:before {
+                content: none;
+            }
+        }
+        a {
+            text-decoration: none;
+        }
+    }
+    h1 {
+        font-size: 13vw;
+    }
+    hr {
+        display: block;
+        clear: both;
+        height: 0;
+        margin: 80px 0 120px;
+        padding: 0;
+        border: 0;
+        &:after {
+            content: '';
+            display: block;
+            width: 90px;
+            height: 1px;
+            background: #fff;
+        }
+    }
+}
+
 .team-bye {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
+    margin: 50px 0 0;
+    font-size: 1.4rem;
+    line-height: 2.2rem;
     > li {
-        width: 20%;
+        min-width: 20%;
         margin: 0 0 64px;
         &:before {
             content: none;
         }
     }
+    img {
+        max-width: 90%;
+    }
+    p {
+        margin-bottom: 0;
+    }
     span,
     a {
         display: block;
+    }
+    strong {
+        font-size: 1.6rem;
+    }
+    .status {
+        display: inline-block;
+        padding: 2px 5px;
+        margin: 0 0 25px;
+        font-family: $gotham;
+        font-weight: 700;
+        font-size: 0.9rem;
+        line-height: 1;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        background: #419bdd;
+        &.on {
+            background: #144365;
+        }
+    }
+    a {
+        font-family: $elenaitalic;
+        color: #419bdd;
+        &:hover,
+        &:focus {
+            color: #fff;
+        }
+    }
+}
+
+.big-link-bye {
+    margin-top: 64px;
+    .link-arrow {
+        font-family: $gotham;
+        color: $blue;
+        .i2 {
+            left: -18px;
+        }
+    }
+    .icon {
+        width: 34px;
+        height: 19px;
+        margin-left: 0;
+    }
+}
+
+.projects-bye {
+    display: flex;
+    > p {
+        width: 33.33%;
+    }
+    a,
+    span {
+        display: block;
+        color: $blue;
+    }
+    a {
+        &:hover,
+        &:focus {
+            color: #fff;
+        }
+    }
+    .old {
+        font-family: $elenaitalic;
+        opacity: 0.4;
+    }
+}
+
+.kiss-good-bye {
+    margin-top: 200px;
+}
+
+.footer-bye {
+    background: #000;
+}
+
+@media (max-height: 870px) and (min-width: 1200px) {
+    .bye {
+        h1 {
+            font-size: 25vh;
+        }
+    }
+}
+
+@media (max-height: 700px) and (min-width: 1200px) {
+    .bye {
+        h1 {
+            font-size: 20rem;
+        }
     }
 }
