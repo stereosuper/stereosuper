@@ -17,7 +17,7 @@
     }
     #page {
         h2 {
-            font-size: 3.8rem;
+            letter-spacing: -0.04em;
             color: #fff;
             &:before {
                 content: none;
@@ -143,6 +143,16 @@
 
 .footer-bye {
     background: #000;
+}
+
+@media (min-width: 700px) {
+    .bye {
+        #page {
+            h2 {
+                font-size: 3.8rem;
+            }
+        }
+    }
 }
 
 @media (max-height: 870px) and (min-width: 1200px) {
