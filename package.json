@@ -5,7 +5,7 @@
   "dependencies": {
     "@vimeo/player": "^2.2.1",
     "brace-expansion": "^2.0.0",
-    "browser-sync": "^2.26.14",
+    "browser-sync": "^3.0.3",
     "gulp-cache": "^0.4.5",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-watchify": "^0.6.0",
